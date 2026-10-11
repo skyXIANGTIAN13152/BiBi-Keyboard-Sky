@@ -1,0 +1,115 @@
+/**
+ * ASR 设置页火山引擎配置路由区块。
+ *
+ * 归属模块：ui/settings/compose/screens
+ */
+@file:Suppress("FunctionName")
+
+package com.brycewg.asrkb.ui.settings.compose.screens
+
+import android.content.Context
+import androidx.compose.runtime.Composable
+import com.brycewg.asrkb.R
+import com.brycewg.asrkb.ui.settings.asr.AsrSettingsUiState
+import com.brycewg.asrkb.ui.settings.compose.core.BibiUiMode
+
+internal typealias AsrExplainedSwitchApplier = (
+    target: Boolean,
+    titleResId: Int,
+    offDescResId: Int,
+    onDescResId: Int,
+    currentState: Boolean,
+    preferenceKey: String,
+    onConfirm: (Boolean) -> Unit
+) -> Unit
+
+@Composable
+internal fun AsrVolcRouteSection(
+    context: Context,
+    uiMode: BibiUiMode,
+    uiState: AsrSettingsUiState,
+    appKey: String,
+    accessKey: String,
+    apiKey: String,
+    onAppKeyChange: (String) -> Unit,
+    onAccessKeyChange: (String) -> Unit,
+    onApiKeyChange: (String) -> Unit,
+    selectedModelId: String,
+    modelLabel: String,
+    onChooseModel: () -> Unit,
+    onUpdateUseNewAuth: (Boolean) -> Unit,
+    onUpdateNonstream: (Boolean) -> Unit,
+    onUpdateDdc: (Boolean) -> Unit,
+    onUpdateVad: (Boolean) -> Unit,
+    applySwitch: AsrExplainedSwitchApplier,
+    onLanguageSelected: (String) -> Unit,
+    primaryIndexOffset: Int = 0,
+    primaryGroupCount: Int? = null
+) {
+    VolcengineConfig(
+        uiMode = uiMode,
+        appKey = appKey,
+        onAppKeyChange = onAppKeyChange,
+        accessKey = accessKey,
+        onAccessKeyChange = onAccessKeyChange,
+        apiKey = apiKey,
+        onApiKeyChange = onApiKeyChange,
+        useNewAuth = uiState.volcUseNewAuth,
+        onUseNewAuthChange = { checked ->
+            applySwitch(
+                checked,
+                R.string.label_volc_use_new_auth,
+                R.string.feature_volc_use_new_auth_off_desc,
+                R.string.feature_volc_use_new_auth_on_desc,
+                uiState.volcUseNewAuth,
+                "volc_use_new_auth_explained",
+                onUpdateUseNewAuth
+            )
+        },
+        selectedModelId = selectedModelId,
+        modelLabel = modelLabel,
+        onChooseModel = onChooseModel,
+        nonstream = uiState.volcNonstreamEnabled,
+        onNonstreamChange = { checked ->
+            applySwitch(
+                checked,
+                R.string.label_volc_nonstream,
+                R.string.feature_volc_nonstream_off_desc,
+                R.string.feature_volc_nonstream_on_desc,
+                uiState.volcNonstreamEnabled,
+                "volc_nonstream_explained",
+                onUpdateNonstream
+            )
+        },
+        ddc = uiState.volcDdcEnabled,
+        onDdcChange = { checked ->
+            applySwitch(
+                checked,
+                R.string.label_volc_ddc,
+                R.string.feature_volc_ddc_off_desc,
+                R.string.feature_volc_ddc_on_desc,
+                uiState.volcDdcEnabled,
+                "volc_ddc_explained",
+                onUpdateDdc
+            )
+        },
+        vad = uiState.volcVadEnabled,
+        onVadChange = { checked ->
+            applySwitch(
+                checked,
+                R.string.label_volc_vad,
+                R.string.feature_volc_vad_off_desc,
+                R.string.feature_volc_vad_on_desc,
+                uiState.volcVadEnabled,
+                "volc_vad_explained",
+                onUpdateVad
+            )
+        },
+        selectedLanguage = uiState.volcLanguage,
+        onLanguageSelected = { language ->
+            onLanguageSelected(language)
+        },
+        primaryIndexOffset = primaryIndexOffset,
+        primaryGroupCount = primaryGroupCount
+    )
+}

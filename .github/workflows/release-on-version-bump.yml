@@ -1,0 +1,517 @@
+name: Release on Version Bump
+
+on:
+  push:
+    branches: ["main", "master"]
+    paths:
+      - "app/build.gradle"
+      - "app/build.gradle.kts"
+      - "gradle.properties"
+      - "app/src/main/AndroidManifest.xml"
+  workflow_dispatch:
+    inputs:
+      force_release:
+        description: "Build and publish even if versionCode did not change"
+        type: boolean
+        default: false
+
+concurrency:
+  group: release-on-version-bump
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Build and Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout with full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 获取完整历史以便检测版本变化
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "21"
+          cache: "gradle"
+
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v2
+        continue-on-error: true
+        timeout-minutes: 2
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Detect version change
+        id: version
+        env:
+          GITHUB_EVENT_BEFORE: ${{ github.event.before }}
+          FORCE_RELEASE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.force_release || 'false' }}
+        run: |
+          python3 - <<'PY'
+          import os, re, subprocess
+
+          def read_file(path):
+              try:
+                  with open(path, 'r', encoding='utf-8') as f:
+                      return f.read()
+              except FileNotFoundError:
+                  return None
+
+          def parse_versions(text):
+              if not text:
+                  return None, None
+              vn = None
+              vc = None
+              m = re.search(r'versionName\s*[= ]\s*"?([0-9A-Za-z\.-_\+]+)"?', text)
+              if m:
+                  vn = m.group(1)
+              m = re.search(r'versionCode\s*[= ]\s*"?([0-9]+)"?', text)
+              if m:
+                  vc = m.group(1)
+              if vn is None:
+                  m = re.search(r'(?im)^\s*(?:VERSION_NAME|versionName)\s*=\s*([^\s#]+)', text)
+                  if m:
+                      vn = m.group(1).strip()
+              if vc is None:
+                  m = re.search(r'(?im)^\s*(?:VERSION_CODE|versionCode)\s*=\s*([0-9]+)', text)
+                  if m:
+                      vc = m.group(1).strip()
+              if vn is None:
+                  m = re.search(r'android:versionName\s*=\s*"([^"]+)"', text)
+                  if m:
+                      vn = m.group(1)
+              if vc is None:
+                  m = re.search(r'android:versionCode\s*=\s*"([^"]+)"', text)
+                  if m:
+                      vc = m.group(1)
+              return vn, vc
+
+          def get_file_at_rev(path, rev=None):
+              if rev is None:
+                  return read_file(path)
+              try:
+                  out = subprocess.check_output(['git', 'show', f'{rev}:{path}'], stderr=subprocess.STDOUT)
+                  return out.decode('utf-8', errors='ignore')
+              except subprocess.CalledProcessError:
+                  return None
+
+          paths = ['app/build.gradle', 'app/build.gradle.kts', 'gradle.properties', 'app/src/main/AndroidManifest.xml']
+
+          text_head = None
+          for p in paths:
+              content = get_file_at_rev(p, None)
+              if content:
+                  text_head = content
+                  break
+          vn_head, vc_head = parse_versions(text_head)
+
+          prev_rev = os.environ.get('GITHUB_EVENT_BEFORE') or 'HEAD^'
+          text_prev = None
+          for p in paths:
+              content = get_file_at_rev(p, prev_rev)
+              if content:
+                  text_prev = content
+                  break
+          vn_prev, vc_prev = parse_versions(text_prev)
+
+          # 只检查 versionCode 是否变化；手动重跑失败的发版可强制继续
+          changed = False
+          if vc_head and (vc_head != (vc_prev or '')):
+              changed = True
+          if os.environ.get('FORCE_RELEASE', '').lower() == 'true':
+              changed = True
+
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f'version_name={vn_head or ""}\n')
+              f.write(f'version_code={vc_head or ""}\n')
+              f.write(f'prev_version_name={vn_prev or ""}\n')
+              f.write(f'prev_version_code={vc_prev or ""}\n')
+              f.write(f'changed={"true" if changed else "false"}\n')
+          PY
+
+      - name: Check if version changed
+        if: steps.version.outputs.changed != 'true'
+        run: |
+          echo "::notice::versionCode 未变化 (当前: ${{ steps.version.outputs.version_code }}),跳过构建和发布流程"
+          echo "ℹ️ versionCode 未变化,跳过 release"
+          echo "📌 当前版本: ${{ steps.version.outputs.version_name }} (versionCode: ${{ steps.version.outputs.version_code }})"
+          echo "📌 上一版本: ${{ steps.version.outputs.prev_version_name }} (versionCode: ${{ steps.version.outputs.prev_version_code }})"
+          echo "💡 提示: 只有当 versionCode 发生变化时才会触发构建和发布"
+
+      - name: Compose current tag
+        if: steps.version.outputs.changed == 'true'
+        id: tag
+        run: |
+          V="${{ steps.version.outputs.version_name }}"
+          if [ -z "$V" ]; then V="${{ steps.version.outputs.version_code }}"; fi
+          if [ -z "$V" ]; then V="$(date +%Y%m%d)-${{ github.sha }}"; fi
+          echo "tag=v$V" >> "$GITHUB_OUTPUT"
+          echo "version_display=$V" >> "$GITHUB_OUTPUT"
+          echo "当前 tag: v$V"
+
+      - name: Extract changelog from CHANGELOG.md
+        if: steps.version.outputs.changed == 'true'
+        id: changelog
+        run: |
+          VERSION="${{ steps.version.outputs.version_name }}"
+          CURRENT_TAG="${{ steps.tag.outputs.tag }}"
+
+          echo "📖 从 CHANGELOG.md 提取版本 $VERSION 的更新内容..."
+
+          # 使用 Python 提取 CHANGELOG.md 和 CHANGELOG_EN.md 中对应版本的内容
+          python3 - <<'PY'
+          import os
+          import re
+
+          version = os.environ.get('VERSION', '')
+          current_tag = os.environ.get('CURRENT_TAG', '')
+
+          def extract_version_notes(changelog_file, version):
+              """从 CHANGELOG 文件中提取指定版本的更新内容"""
+              try:
+                  with open(changelog_file, 'r', encoding='utf-8') as f:
+                      content = f.read()
+              except FileNotFoundError:
+                  print(f"⚠️ {changelog_file} 不存在")
+                  return ""
+
+              if not content or not version:
+                  return ""
+
+              # 匹配版本标题: ## vX.X.X (YYYY-MM-DD) 或 ## vX.X.X
+              # 提取从当前版本标题到下一个 --- 或下一个版本标题之间的内容
+              pattern = rf'(## v?{re.escape(version)}[^\n]*\n)(.*?)(?=\n---|\n## v|\Z)'
+              match = re.search(pattern, content, re.DOTALL)
+
+              if match:
+                  return match.group(2).strip()
+              return ""
+
+          # 提取中文版更新内容
+          release_notes = extract_version_notes('CHANGELOG.md', version)
+          if release_notes:
+              print(f"✅ 找到版本 {version} 的中文更新内容 ({len(release_notes)} 字符)")
+          else:
+              release_notes = f"版本 {version} 已发布"
+              print(f"ℹ️ 使用默认中文更新说明")
+
+          # 提取英文版更新内容
+          release_notes_en = extract_version_notes('CHANGELOG_EN.md', version)
+          if release_notes_en:
+              print(f"✅ 找到版本 {version} 的英文更新内容 ({len(release_notes_en)} 字符)")
+          else:
+              release_notes_en = f"Version {version} released"
+              print(f"ℹ️ 使用默认英文更新说明")
+
+          # 写入 release_notes_short.txt（中文）供 version.json 使用
+          with open('release_notes_short.txt', 'w', encoding='utf-8') as f:
+              f.write(release_notes)
+
+          # 写入 release_notes_en_short.txt（英文）供 version.json 使用
+          with open('release_notes_en_short.txt', 'w', encoding='utf-8') as f:
+              f.write(release_notes_en)
+
+          # 生成 changelog.md 用于 GitHub Release（包含中英文）
+          with open('changelog.md', 'w', encoding='utf-8') as f:
+              f.write(f"## 📝 更新日志 / Changelog ({current_tag})\n\n")
+              f.write("### 中文\n\n")
+              f.write(release_notes)
+              f.write("\n\n---\n\n")
+              f.write("### English\n\n")
+              f.write(release_notes_en)
+              f.write("\n")
+
+          print(f"✅ changelog.md、release_notes_short.txt、release_notes_en_short.txt 已生成")
+          PY
+        env:
+          VERSION: ${{ steps.version.outputs.version_name }}
+          CURRENT_TAG: ${{ steps.tag.outputs.tag }}
+
+      - name: Set up Android SDK
+        if: steps.version.outputs.changed == 'true'
+        uses: android-actions/setup-android@v4
+        with:
+          # Google 已下架旧的 `tools` 包，不能再用 action 默认值 `tools platform-tools`
+          packages: platform-tools
+
+      - name: Check if keystore is configured
+        if: steps.version.outputs.changed == 'true'
+        id: check_keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          if [ -n "$KEYSTORE_BASE64" ]; then
+            echo "has_keystore=true" >> "$GITHUB_OUTPUT"
+            echo "✅ 检测到签名密钥配置"
+          else
+            echo "has_keystore=false" >> "$GITHUB_OUTPUT"
+            echo "⚠️ 未配置签名密钥,将构建 Debug APK"
+          fi
+
+      - name: Decode and setup keystore
+        if: steps.version.outputs.changed == 'true' && steps.check_keystore.outputs.has_keystore == 'true'
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          echo "解码签名密钥..."
+          echo "$KEYSTORE_BASE64" | base64 -d > release.keystore
+          echo "KEYSTORE_FILE=${{ github.workspace }}/release.keystore" >> $GITHUB_ENV
+          ls -lh release.keystore
+
+      - name: Make Gradle wrapper executable
+        if: steps.version.outputs.changed == 'true'
+        run: |
+          chmod +x ./gradlew || true
+          sed -i -e 's/\r$//' ./gradlew || true
+
+      - name: Build Release APK with signing
+        if: steps.version.outputs.changed == 'true' && steps.check_keystore.outputs.has_keystore == 'true'
+        env:
+          KEYSTORE_FILE: ${{ env.KEYSTORE_FILE }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          SF_FREE_API_KEY: ${{ secrets.SF_FREE_API_KEY }}
+          POCKETBASE_BASE_URL: ${{ secrets.POCKETBASE_BASE_URL || vars.POCKETBASE_BASE_URL }}
+          VERSION: ${{ steps.version.outputs.version_name }}
+        run: |
+          # APK 资产命名须与 app/.../ui/update/UpdateApkNaming.kt 首选项一致
+          echo "使用签名密钥分 ABI 构建 Release APK..."
+          mkdir -p release-artifacts
+          for ABI in arm64-v8a armeabi-v7a; do
+            echo "构建 ABI: $ABI"
+            ./gradlew --no-daemon clean :app:assembleRelease -PabiFilters="$ABI"
+            APK_PATH=$(ls app/build/outputs/apk/release/*.apk 2>/dev/null | grep -v unaligned | head -n 1 || true)
+            if [ -z "$APK_PATH" ]; then
+              echo "未找到 $ABI Release APK"
+              exit 1
+            fi
+            NEW_PATH="release-artifacts/app-release-${VERSION}-${ABI}.apk"
+            cp "$APK_PATH" "$NEW_PATH"
+            ls -lh "$NEW_PATH"
+          done
+
+      - name: Build Debug APK (fallback)
+        if: steps.version.outputs.changed == 'true' && steps.check_keystore.outputs.has_keystore != 'true'
+        env:
+          SF_FREE_API_KEY: ${{ secrets.SF_FREE_API_KEY }}
+          POCKETBASE_BASE_URL: ${{ secrets.POCKETBASE_BASE_URL || vars.POCKETBASE_BASE_URL }}
+          VERSION: ${{ steps.version.outputs.version_name }}
+        run: |
+          # APK 资产命名须与 app/.../ui/update/UpdateApkNaming.kt 当前前缀一致（debug 变体）
+          echo "未配置签名密钥,分 ABI 构建 Debug APK..."
+          mkdir -p release-artifacts
+          for ABI in arm64-v8a armeabi-v7a; do
+            echo "构建 ABI: $ABI"
+            ./gradlew --no-daemon clean :app:assembleDebug -PabiFilters="$ABI"
+            APK_PATH=$(ls app/build/outputs/apk/debug/*.apk 2>/dev/null | head -n 1 || true)
+            if [ -z "$APK_PATH" ]; then
+              echo "未找到 $ABI Debug APK"
+              exit 1
+            fi
+            NEW_PATH="release-artifacts/app-debug-${VERSION}-${ABI}.apk"
+            cp "$APK_PATH" "$NEW_PATH"
+            ls -lh "$NEW_PATH"
+          done
+
+      - name: Locate built APKs
+        if: steps.version.outputs.changed == 'true'
+        id: locate_apks
+        run: |
+          APK_FILES=$(find release-artifacts -maxdepth 1 -type f -name "*.apk" | sort || true)
+          if [ -z "$APK_FILES" ]; then
+            echo "未找到 APK 文件"
+            exit 1
+          fi
+          {
+            echo "apk_paths<<EOF"
+            echo "$APK_FILES"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+          echo "找到 APK 文件:"
+          ls -lh release-artifacts/*.apk
+
+      - name: Update version.json
+        if: steps.version.outputs.changed == 'true'
+        id: update_version_json
+        run: |
+          echo "📝 更新 version.json 文件..."
+
+          # 使用 Python 生成 JSON（确保格式正确）
+          python3 - <<'PY'
+          import json
+          import os
+          from datetime import datetime
+
+          version = os.environ.get('VERSION', '0.0.0')
+          version_code = os.environ.get('VERSION_CODE', '0')
+          tag = os.environ.get('TAG', 'v0.0.0')
+
+          # 从之前提取的 release_notes_short.txt 读取（来源于 CHANGELOG.md）
+          try:
+              with open('release_notes_short.txt', 'r', encoding='utf-8') as f:
+                  release_notes = f.read().strip()
+          except FileNotFoundError:
+              release_notes = f'版本 {version} 已发布'
+
+          # 从之前提取的 release_notes_en_short.txt 读取（来源于 CHANGELOG_EN.md）
+          try:
+              with open('release_notes_en_short.txt', 'r', encoding='utf-8') as f:
+                  release_notes_en = f.read().strip()
+          except FileNotFoundError:
+              release_notes_en = f'Version {version} released'
+
+          # 使用 ISO 8601 格式的时间戳（UTC）
+          current_timestamp = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+
+          # 读取现有的 version.json（如果存在）
+          try:
+              with open('version.json', 'r', encoding='utf-8') as f:
+                  data = json.load(f)
+          except (FileNotFoundError, json.JSONDecodeError):
+              data = {}
+
+          # 更新版本信息
+          data['version'] = version
+          data['version_code'] = int(version_code) if version_code.isdigit() else 0
+          data['download_url'] = f"https://github.com/BryceWG/BiBi-Keyboard/releases/tag/{tag}"
+          data['release_notes'] = release_notes
+          data['release_notes_en'] = release_notes_en
+          data['min_supported_version'] = data.get('min_supported_version', '2.6.5')
+          data['update_time'] = current_timestamp
+
+          # 写入文件
+          with open('version.json', 'w', encoding='utf-8') as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+
+          print(f"✅ version.json 已更新为版本 {version}")
+          PY
+
+          # 显示更新后的内容
+          echo "📄 version.json 内容:"
+          cat version.json
+
+          # 检查文件是否有变化
+          if git diff --quiet version.json; then
+            echo "version_changed=false" >> "$GITHUB_OUTPUT"
+            echo "ℹ️ version.json 无变化"
+          else
+            echo "version_changed=true" >> "$GITHUB_OUTPUT"
+            echo "✅ version.json 已更新"
+          fi
+        env:
+          VERSION: ${{ steps.version.outputs.version_name }}
+          VERSION_CODE: ${{ steps.version.outputs.version_code }}
+          TAG: ${{ steps.tag.outputs.tag }}
+
+      - name: Commit and push version.json
+        if: steps.version.outputs.changed == 'true' && steps.update_version_json.outputs.version_changed == 'true'
+        run: |
+          echo "📤 提交 version.json 更新..."
+
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # 最多重试 3 次
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            echo "🔄 尝试推送 (第 $((RETRY_COUNT + 1)) 次)..."
+
+            # 拉取最新的远程更改
+            git fetch origin ${{ github.ref_name }}
+            git reset --hard origin/${{ github.ref_name }}
+
+            # 重新应用 version.json 更改（从 release_notes_short.txt 和 release_notes_en_short.txt 读取已提取的内容）
+            python3 - <<'PY'
+          import json
+          import os
+          from datetime import datetime
+
+          version = os.environ.get('VERSION', '0.0.0')
+          version_code = os.environ.get('VERSION_CODE', '0')
+          tag = os.environ.get('TAG', 'v0.0.0')
+
+          # 从之前提取的 release_notes_short.txt 读取
+          try:
+              with open('release_notes_short.txt', 'r', encoding='utf-8') as f:
+                  release_notes = f.read().strip()
+          except FileNotFoundError:
+              release_notes = f'版本 {version} 已发布'
+
+          # 从之前提取的 release_notes_en_short.txt 读取
+          try:
+              with open('release_notes_en_short.txt', 'r', encoding='utf-8') as f:
+                  release_notes_en = f.read().strip()
+          except FileNotFoundError:
+              release_notes_en = f'Version {version} released'
+
+          current_timestamp = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+
+          try:
+              with open('version.json', 'r', encoding='utf-8') as f:
+                  data = json.load(f)
+          except (FileNotFoundError, json.JSONDecodeError):
+              data = {}
+
+          data['version'] = version
+          data['version_code'] = int(version_code) if version_code.isdigit() else 0
+          data['download_url'] = f"https://github.com/BryceWG/BiBi-Keyboard/releases/tag/{tag}"
+          data['release_notes'] = release_notes
+          data['release_notes_en'] = release_notes_en
+          data['min_supported_version'] = data.get('min_supported_version', '2.6.5')
+          data['update_time'] = current_timestamp
+
+          with open('version.json', 'w', encoding='utf-8') as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+          PY
+
+            # 检查是否有变化
+            if git diff --quiet version.json; then
+              echo "ℹ️ version.json 无变化，无需推送"
+              break
+            fi
+
+            # 提交更改
+            git add version.json
+            git commit -m "chore: auto-update version.json to ${{ steps.version.outputs.version_name }} [skip ci]"
+
+            # 尝试推送
+            if git push origin HEAD:${{ github.ref_name }}; then
+              echo "✅ version.json 已成功推送"
+              break
+            else
+              echo "⚠️ 推送失败，可能存在冲突"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                echo "⏳ 等待 5 秒后重试..."
+                sleep 5
+              else
+                echo "❌ 达到最大重试次数，推送失败"
+                exit 1
+              fi
+            fi
+          done
+        env:
+          VERSION: ${{ steps.version.outputs.version_name }}
+          VERSION_CODE: ${{ steps.version.outputs.version_code }}
+          TAG: ${{ steps.tag.outputs.tag }}
+
+      - name: Create GitHub Release
+        if: steps.version.outputs.changed == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: "Release ${{ steps.tag.outputs.version_display }}"
+          body_path: changelog.md
+          files: ${{ steps.locate_apks.outputs.apk_paths }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

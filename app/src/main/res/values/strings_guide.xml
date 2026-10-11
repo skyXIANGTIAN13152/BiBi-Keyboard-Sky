@@ -1,0 +1,82 @@
+<resources>
+    <!-- User guide related strings -->
+
+    <string name="btn_show_guide">View Quick Guide</string>
+    <string name="btn_view_full_docs">View Full Documentation</string>
+    <string name="btn_close">Close</string>
+    <string name="btn_close_with_seconds">Close (%1$ds)</string>
+    <string name="title_quick_guide">Quick Start Guide</string>
+
+    <!-- Enhanced Quick Guide -->
+    <string name="guide_subtitle">Making voice input simpler and more efficient</string>
+    <string name="guide_main_keyboard_title">Main Keyboard Layout</string>
+    <string name="guide_main_keyboard_desc">Main keyboard interface with microphone, polish toggle, edit panel entry, and more</string>
+    <string name="guide_edit_panel_title">Edit Panel</string>
+    <string name="guide_edit_panel_desc">Powerful text editing features including cursor movement, text selection, copy/paste, AI processing, and more</string>
+    <string name="guide_numpad_title">Number &amp; Symbol Keyboard</string>
+    <string name="guide_numpad_desc">Number and punctuation input panel with Chinese/English punctuation toggle</string>
+    <string name="guide_core_features_title">Core Features</string>
+    <string name="guide_long_press_title">Press and Hold to Record</string>
+    <string name="guide_long_press_desc">Press and hold the microphone button to start recording, release to transcribe</string>
+    <string name="guide_ai_processing_title">AI Smart Polish</string>
+    <string name="guide_ai_processing_desc">Support multiple preset templates to make recognition results more accurate</string>
+    <string name="guide_floating_title">Floating Ball Features</string>
+    <string name="guide_floating_desc">Quick switch input methods or perform floating ball voice recognition</string>
+    <string name="guide_detailed_features_title">Detailed Feature Description</string>
+    <string name="guide_detailed_features_content">【Main Keyboard Features】\n• Microphone Button (center): Press and hold to record, release to transcribe speech to text\n• Edit Panel Entry (top-left): Tap to enter edit panel\n• Enable Polish: Toggle AI polish on/off\n• Hide Keyboard: Minimize keyboard interface\n• Backspace: Swipe up/left to delete all, swipe down to undo last change\n• Settings: Open application settings\n• Switch Input Method: Quick switch to other keyboards\n• Enter: Send newline\n• Custom Punctuation: Four customizable punctuation keys at bottom\n\n【Edit Panel Features】\n• Microphone Button (center): Press and hold to record voice commands, LLM will modify content based on commands (AI Edit feature)\n• Back to Main: Exit edit panel\n• Apply Preset Prompt: Select AI template and process current text\n• Cursor Movement: Move cursor left/right, long-press for continuous movement\n• Move to Start/End: Quick jump to text beginning/end\n• Selection Mode: Enable to select text while moving cursor\n• Select All: Select all text\n• Copy/Paste: Text copy and paste functions\n• Backspace: Delete characters, supports gestures (same as main keyboard)\n• Number &amp; Symbol Keyboard: Switch to number/symbol input panel\n\n【Number &amp; Symbol Keyboard】\n• Number Row: Quick input for digits 0-9\n• Punctuation Symbols: Two rows of common punctuation marks\n• CN/EN Toggle: Switch between Chinese/English punctuation\n• Space/Enter/Backspace: Basic input functions\n• Back to Edit Panel: Exit number keyboard</string>
+    <string name="guide_first_time_title">First Time Use</string>
+    <string name="guide_mic_icon_desc">Microphone icon</string>
+    <string name="guide_ai_icon_desc">AI processing icon</string>
+    <string name="guide_floating_icon_desc">Floating ball icon</string>
+
+    <!-- Onboarding V2 -->
+    <string name="onboarding_title">Getting Started</string>
+    <string name="onboarding_page_indicator">Page %1$d/%2$d</string>
+    <string name="onboarding_btn_skip">Skip</string>
+    <string name="onboarding_btn_prev">Back</string>
+    <string name="onboarding_btn_next">Next</string>
+    <string name="onboarding_btn_finish">Finish</string>
+
+    <string name="onboarding_permissions_title">Permissions Setup</string>
+    <string name="onboarding_permissions_desc">Enable permissions as needed. You can skip any item now and configure it later.</string>
+    <string name="onboarding_permissions_required_title">Required for Core Usage</string>
+    <string name="onboarding_permissions_required_desc">These are recommended for basic voice input workflow.</string>
+    <string name="onboarding_permissions_optional_title">Optional Permissions</string>
+    <string name="onboarding_permissions_optional_desc">These improve compatibility and stability in specific scenarios.</string>
+    <string name="onboarding_permission_ime_enable_title">Enable BiBi Keyboard</string>
+    <string name="onboarding_permission_ime_enable_desc">Enable BiBi Keyboard in system input-method settings.</string>
+    <string name="onboarding_permission_ime_switch_title">Switch to BiBi Keyboard</string>
+    <string name="onboarding_permission_ime_switch_desc">Open input-method picker and switch current keyboard to BiBi Keyboard.</string>
+    <string name="settings_ime_picker_title">Input method picker</string>
+    <string name="settings_ime_picker_selected_message">BiBi Keyboard is now the current input method.</string>
+    <string name="settings_ime_picker_closed_message">The system picker was closed. If you did not switch, open it again and choose BiBi Keyboard.</string>
+    <string name="settings_ime_picker_open_failed_message">Unable to open the system input-method picker. You can switch keyboards from system settings.</string>
+    <string name="onboarding_permission_mic_title">Microphone Permission</string>
+    <string name="onboarding_permission_mic_desc">Required to record audio for speech recognition.</string>
+    <string name="onboarding_permission_overlay_title">Overlay Permission</string>
+    <string name="onboarding_permission_overlay_desc">Required when using floating-ball voice input.</string>
+    <string name="onboarding_permission_a11y_title">Accessibility Service</string>
+    <string name="onboarding_permission_a11y_desc">Improves text insertion compatibility for floating-ball mode.</string>
+    <string name="onboarding_permission_notif_title">Notification Permission</string>
+    <string name="onboarding_permission_notif_desc">Used for background service and download notifications.</string>
+    <string name="onboarding_permission_status_granted">Status: Enabled</string>
+    <string name="onboarding_permission_status_missing">Status: Not enabled</string>
+    <string name="onboarding_permission_btn_go_enable">Enable</string>
+    <string name="onboarding_permission_btn_enabled">Enabled</string>
+
+    <string name="onboarding_asr_title">Choose Speech Recognition Service</string>
+    <string name="onboarding_asr_desc">Pick a mode that fits your needs. You can change it later in settings.</string>
+    <string name="onboarding_asr_btn_apply">Apply Choice</string>
+    <string name="onboarding_asr_btn_skip">Set up later</string>
+
+    <string name="onboarding_privacy_title">Privacy &amp; Data</string>
+    <string name="onboarding_privacy_desc">You can choose whether to enable anonymous analytics for product improvement.</string>
+    <string name="onboarding_privacy_hint">No recognition text or personal content will be uploaded. This can be changed anytime.</string>
+
+    <string name="onboarding_links_title">Related Information</string>
+    <string name="onboarding_links_desc">Learn more about the project and available editions.</string>
+    <string name="onboarding_links_project">Open Project Page</string>
+    <string name="onboarding_links_website">Open Project Website</string>
+    <string name="onboarding_links_docs">Open Documentation</string>
+    <string name="onboarding_links_pro">Learn About Pro</string>
+</resources>

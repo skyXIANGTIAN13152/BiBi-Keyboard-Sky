@@ -1,0 +1,33 @@
+<resources>
+    <!-- SiliconFlow ASR 配置字符串 -->
+    <string name="sf_section_title">SiliconFlow API设置</string>
+    <string name="vendor_sf">SiliconFlow</string>
+
+    <!-- SiliconFlow configuration -->
+    <string name="label_sf_api_key">API Key（Bearer）</string>
+    <string name="label_sf_model_select">识别模型</string>
+    <string name="sf_model_default_display">FunAudioLLM/SenseVoiceSmall</string>
+    <string name="label_sf_omni_prompt">多模态识别提示词（可选）</string>
+
+    <!-- SiliconFlow 免费服务（ASR） -->
+    <string name="label_sf_free_enabled">使用免费服务</string>
+    <string name="sf_free_description">硅基流动慷慨提供的免费服务，助力您即刻体验 AI 语音识别，无需 API Key。</string>
+
+    <!-- SiliconFlow 免费服务（LLM） -->
+    <string name="sf_free_llm_description">硅基流动慷慨提供的免费 AI 后处理服务。无需 API Key。</string>
+    <string name="label_sf_free_llm_enabled">使用 SiliconFlow 提供的免费模型</string>
+    <string name="label_sf_free_llm_model">选择模型</string>
+
+    <!-- SiliconFlow 免费服务错误消息 -->
+    <string name="error_sf_free_quota_exceeded">免费服务用量已超限，请稍后再试</string>
+    <string name="error_sf_free_auth_failed">免费服务认证失败</string>
+    <string name="error_sf_free_service_unavailable">免费服务暂时不可用</string>
+
+    <!-- SiliconFlow Powered By -->
+    <string name="sf_powered_by_desc">由 SiliconFlow 提供支持</string>
+
+    <!-- SiliconFlow 免费服务注册提示 -->
+    <string name="sf_free_register_hint">注册您自己的硅基流动账号，即可使用更多模型。您将获得 14 元赠金，支持使用大部分模型。</string>
+    <string name="btn_sf_free_register">获取API Key</string>
+    <string name="btn_sf_free_guide">查看配置教程</string>
+</resources>

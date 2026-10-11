@@ -1,0 +1,10 @@
+<resources>
+    <string name="vendor_zhipu">Zhipu GLM</string>
+    <string name="zhipu_section_title">Zhipu GLM Speech Recognition</string>
+    <string name="label_zhipu_api_key">Zhipu API Key</string>
+    <string name="label_zhipu_temperature">Temperature</string>
+    <string name="error_missing_zhipu_key">Please configure Zhipu API Key first</string>
+    <string name="zhipu_temperature_hint">0.0 - 1.0, default 0.95</string>
+    <string name="label_zhipu_prompt">Context Prompt</string>
+    <string name="zhipu_prompt_hint">Provide previous transcription as context for long-form audio. Recommended under 8000 characters.</string>
+</resources>

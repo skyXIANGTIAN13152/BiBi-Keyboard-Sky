@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- クイックガイド関連文字列 - User guide related strings -->
+
+    <string name="btn_show_guide">クイックガイドを見る</string>
+    <string name="btn_view_full_docs">完全なドキュメントを見る</string>
+    <string name="btn_close">閉じる</string>
+    <string name="btn_close_with_seconds">閉じる（%1$ds）</string>
+    <string name="title_quick_guide">クイックスタートガイド</string>
+
+    <!-- Enhanced Quick Guide -->
+    <string name="guide_subtitle">音声入力をよりシンプルで効率的に</string>
+    <string name="guide_main_keyboard_title">メインキーボードレイアウト</string>
+    <string name="guide_main_keyboard_desc">マイク、校正トグル、編集パネルエントリなどを持つメインキーボードインターフェース</string>
+    <string name="guide_edit_panel_title">編集パネル</string>
+    <string name="guide_edit_panel_desc">カーソル移動、テキスト選択、コピー/貼り付け、AI処理など、強力なテキスト編集機能</string>
+    <string name="guide_numpad_title">数字と記号キーボード</string>
+    <string name="guide_numpad_desc">中/英句読点トグル付き数字と句読点入力パネル</string>
+    <string name="guide_core_features_title">コア機能</string>
+    <string name="guide_long_press_title">長押しして録音</string>
+    <string name="guide_long_press_desc">マイクボタンを長押しして録音を開始、リリースしてテキストに変換</string>
+    <string name="guide_ai_processing_title">AIスマート校正</string>
+    <string name="guide_ai_processing_desc">複数のプリセットテンプレートをサポートし、認識結果をより正確に</string>
+    <string name="guide_floating_title">フローティングボール機能</string>
+    <string name="guide_floating_desc">入力メソッドを素早く切り替えるか、フローティングボール音声認識を実行</string>
+    <string name="guide_detailed_features_title">詳細な機能説明</string>
+    <string name="guide_detailed_features_content">【メインキーボード機能】\n• マイクボタン（中央）：長押しして録音、リリースして音声をテキストに変換\n• 編集パネルエントリ（左上）：タップして編集パネルに入る\n• 校正を有効化：AI校正のオン/オフを切り替え\n• キーボードを非表示：キーボードインターフェースを最小化\n• Backspace：上/左にスワイプしてすべて削除、下にスワイプして最後の変更を元に戻す\n• 設定：アプリ設定を開く\n• 入力メソッドを切り替え：他のキーボードに素早く切り替え\n• Enter：改行を送信\n• カスタム句読点：下部に4つのカスタマイズ可能な句読点キー\n\n【編集パネル機能】\n• マイクボタン（中央）：長押しして音声コマンドを録音、LLMがコマンドに基づいて内容を変更（AI編集機能）\n• メインに戻る：編集パネルを終了\n• プリセットプロンプトを適用：AIテンプレートを選択して現在のテキストを処理\n• カーソル移動：カーソルを左右に移動、長押しで連続移動\n• 先頭/末尾に移動：テキストの先頭/末尾に素早くジャンプ\n• 選択モード：カーソル移動中にテキストを選択するために有効化\n• すべて選択：すべてのテキストを選択\n• コピー/貼り付け：テキストコピーと貼り付け機能\n• Backspace：文字を削除、ジェスチャーをサポート（メインキーボードと同じ）\n• 数字と記号キーボード：数字/記号入力パネルに切り替え\n\n【数字と記号キーボード】\n• 数字行：数字0-9の素早い入力\n• 句読点記号：一般的な句読点の2行\n• 中/英トグル：中/英句読点を切り替え\n• スペース/Enter/Backspace：基本的な入力機能\n• 編集パネルに戻る：数字キーボードを終了</string>
+    <string name="guide_first_time_title">初回使用</string>
+    <string name="guide_mic_icon_desc">マイクアイコン</string>
+    <string name="guide_ai_icon_desc">AI処理アイコン</string>
+    <string name="guide_floating_icon_desc">フローティングボールアイコン</string>
+
+    <!-- Onboarding V2 -->
+    <string name="onboarding_title">初期ガイド</string>
+    <string name="onboarding_page_indicator">%1$d/%2$d ページ</string>
+    <string name="onboarding_btn_skip">スキップ</string>
+    <string name="onboarding_btn_prev">戻る</string>
+    <string name="onboarding_btn_next">次へ</string>
+    <string name="onboarding_btn_finish">完了</string>
+
+    <string name="onboarding_permissions_title">権限設定</string>
+    <string name="onboarding_permissions_desc">必要に応じて権限を個別に設定できます。すべて後で設定可能です。</string>
+    <string name="onboarding_permissions_required_title">基本利用に推奨</string>
+    <string name="onboarding_permissions_required_desc">音声入力の主要フローを安定して使うために推奨されます。</string>
+    <string name="onboarding_permissions_optional_title">任意の権限</string>
+    <string name="onboarding_permissions_optional_desc">特定シーンでの互換性や安定性を向上します。</string>
+    <string name="onboarding_permission_ime_enable_title">BiBi キーボードを有効化</string>
+    <string name="onboarding_permission_ime_enable_desc">システムの入力方法設定で BiBi キーボードを有効にします。</string>
+    <string name="onboarding_permission_ime_switch_title">BiBi キーボードへ切り替え</string>
+    <string name="onboarding_permission_ime_switch_desc">入力方法ピッカーを開き、現在のキーボードを BiBi キーボードに切り替えます。</string>
+    <string name="settings_ime_picker_title">入力方法ピッカー</string>
+    <string name="settings_ime_picker_selected_message">現在の入力方法が BiBi キーボードになりました。</string>
+    <string name="settings_ime_picker_closed_message">システムピッカーを閉じました。切り替えていない場合は、もう一度開いて BiBi キーボードを選択してください。</string>
+    <string name="settings_ime_picker_open_failed_message">システムの入力方法ピッカーを開けませんでした。システム設定からキーボードを切り替えられます。</string>
+    <string name="onboarding_permission_mic_title">マイク権限</string>
+    <string name="onboarding_permission_mic_desc">音声認識のための録音に必要です。</string>
+    <string name="onboarding_permission_overlay_title">オーバーレイ権限</string>
+    <string name="onboarding_permission_overlay_desc">フローティングボール音声入力を使う場合に必要です。</string>
+    <string name="onboarding_permission_a11y_title">アクセシビリティサービス</string>
+    <string name="onboarding_permission_a11y_desc">フローティングボールでの文字入力互換性を改善します。</string>
+    <string name="onboarding_permission_notif_title">通知権限</string>
+    <string name="onboarding_permission_notif_desc">バックグラウンド動作とダウンロード通知に使用します。</string>
+    <string name="onboarding_permission_status_granted">状態：有効</string>
+    <string name="onboarding_permission_status_missing">状態：未設定</string>
+    <string name="onboarding_permission_btn_go_enable">有効化</string>
+    <string name="onboarding_permission_btn_enabled">有効</string>
+
+    <string name="onboarding_asr_title">音声認識サービスの選択</string>
+    <string name="onboarding_asr_desc">利用スタイルに合うモードを選択してください。後でいつでも変更できます。</string>
+    <string name="onboarding_asr_btn_apply">この選択を適用</string>
+    <string name="onboarding_asr_btn_skip">後で設定する</string>
+
+    <string name="onboarding_privacy_title">プライバシーとデータ</string>
+    <string name="onboarding_privacy_desc">品質改善のため、匿名データ収集を有効化するか選択できます。</string>
+    <string name="onboarding_privacy_hint">認識テキストや個人情報は送信されません。設定でいつでも変更できます。</string>
+
+    <string name="onboarding_links_title">関連情報</string>
+    <string name="onboarding_links_desc">プロジェクト情報、ドキュメント、Pro 版の紹介を確認できます。</string>
+    <string name="onboarding_links_project">プロジェクトページを開く</string>
+    <string name="onboarding_links_website">公式サイトを開く</string>
+    <string name="onboarding_links_docs">ドキュメントを開く</string>
+    <string name="onboarding_links_pro">Pro 版を知る</string>
+</resources>

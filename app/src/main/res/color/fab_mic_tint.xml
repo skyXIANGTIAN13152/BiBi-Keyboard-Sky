@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Listening / long-press active: darker container -->
+    <item android:state_selected="true" android:color="?attr/colorPrimary"/>
+    <!-- Pressed (before long-press): slightly darker -->
+    <item android:state_pressed="true" android:color="?attr/colorPrimary"/>
+    <!-- Default idle -->
+    <item android:color="?attr/colorPrimaryContainer"/>
+</selector>
+

@@ -1,0 +1,37 @@
+<resources>
+    <string name="vendor_openai">OpenAI</string>
+    <string name="openai_section_title">OpenAI 音声認識</string>
+    <string name="label_openai_choose_profile">チャンネルを選択</string>
+    <string name="label_openai_profile_name">チャンネル名</string>
+    <string name="btn_openai_add_profile">チャンネルを追加</string>
+    <string name="btn_openai_delete_profile">チャンネルを削除</string>
+    <string name="toast_openai_profile_added">チャンネルを追加しました</string>
+    <string name="toast_openai_profile_deleted">チャンネルを削除しました</string>
+    <string name="toast_openai_profile_delete_blocked">少なくとも1つのチャンネルを残してください</string>
+    <string name="openai_profile_default_name">OpenAI チャンネル %1$d</string>
+    <string name="label_openai_asr_endpoint">エンドポイント（../transcriptions または ../chat/completions）</string>
+    <string name="hint_openai_custom_endpoint_wav_upload">カスタム互換サービスでは、互換性を高めるため WAV 音声をアップロードします。</string>
+    <string name="label_openai_api_key">APIキー（Bearer）</string>
+    <string name="label_openai_model">認識モデル</string>
+    <string name="label_openai_streaming">ストリーミング認識</string>
+    <string name="label_openai_use_completions">Completions APIを使用</string>
+    <string name="label_openai_use_prompt">カスタムプロンプトを使用（一部のモデルでは非対応）</string>
+    <string name="label_openai_prompt">カスタムプロンプト（オプション）</string>
+    <string name="label_openai_language">認識言語</string>
+
+    <!-- ============================================== -->
+    <!-- OpenAI設定 - 機能説明 -->
+    <!-- ============================================== -->
+
+    <!-- OpenAI - プロンプトを使用 -->
+    <string name="feature_openai_use_prompt_off_desc">ガイダンスなしで音声を直接文字起こしします。</string>
+    <string name="feature_openai_use_prompt_on_desc">認識リクエストと一緒にプロンプトを送り、固有名詞や文脈を伝えます。対応状況と効果は選択したモデルとプロバイダーによって異なります。</string>
+
+    <!-- OpenAI - ストリーミング -->
+    <string name="feature_openai_streaming_off_desc">オフの場合、録音終了後に音声ファイルをアップロードして結果を取得します。</string>
+    <string name="feature_openai_streaming_on_desc">オンの場合、Realtime WebSocket で音声を送信し、話している間に中間結果を表示します。プロバイダー側が Realtime API に対応している必要があります。</string>
+
+    <!-- OpenAI - Completions を使用 -->
+    <string name="feature_openai_use_completions_off_desc">認識には文字起こしエンドポイントを使用します。</string>
+    <string name="feature_openai_use_completions_on_desc">代わりに Completions 互換エンドポイントを使用します。一部の互換プロバイダーや独自デプロイで必要です。</string>
+</resources>

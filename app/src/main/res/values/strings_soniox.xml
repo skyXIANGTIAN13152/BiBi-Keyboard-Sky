@@ -1,0 +1,48 @@
+<resources>
+    <!-- Soniox ASR configuration strings -->
+    <string name="soniox_section_title">Soniox API Settings</string>
+    <string name="vendor_soniox">Soniox</string>
+
+    <!-- Soniox configuration -->
+    <string name="label_soniox_streaming">Streaming recognition</string>
+    <string name="label_soniox_endpoint_mode">Recognition mode</string>
+    <string name="label_soniox_language">Recognition language (Multiple)</string>
+    <string name="label_soniox_language_strict">Strict language restriction</string>
+    <string name="label_soniox_api_key">API Key (Bearer)</string>
+
+    <!-- Soniox endpoint modes -->
+    <string name="soniox_endpoint_mode_low_latency">Low latency</string>
+    <string name="soniox_endpoint_mode_default">Default</string>
+    <string name="soniox_endpoint_mode_high_accuracy">High accuracy</string>
+
+    <!-- Soniox language options -->
+    <string name="soniox_lang_auto">Auto (multilingual)</string>
+    <string name="soniox_lang_en">English (en)</string>
+    <string name="soniox_lang_zh">Chinese (zh)</string>
+    <string name="soniox_lang_ja">Japanese (ja)</string>
+    <string name="soniox_lang_ko">Korean (ko)</string>
+    <string name="soniox_lang_es">Spanish (es)</string>
+    <string name="soniox_lang_pt">Portuguese (pt)</string>
+    <string name="soniox_lang_de">German (de)</string>
+    <string name="soniox_lang_fr">French (fr)</string>
+    <string name="soniox_lang_id">Indonesian (id)</string>
+    <string name="soniox_lang_ru">Russian (ru)</string>
+    <string name="soniox_lang_ar">Arabic (ar)</string>
+    <string name="soniox_lang_hi">Hindi (hi)</string>
+    <string name="soniox_lang_vi">Vietnamese (vi)</string>
+    <string name="soniox_lang_th">Thai (th)</string>
+    <string name="soniox_lang_ms">Malay (ms)</string>
+    <string name="soniox_lang_fil">Filipino (fil)</string>
+
+    <!-- ============================================== -->
+    <!-- Soniox Settings - Feature Descriptions -->
+    <!-- ============================================== -->
+
+    <!-- Soniox - Streaming -->
+    <string name="feature_soniox_streaming_off_desc">Uses non-streaming recognition. Processing starts after recording ends.</string>
+    <string name="feature_soniox_streaming_on_desc">Uses streaming recognition for real-time transcription as you speak.</string>
+
+    <!-- Soniox - Language strict restriction -->
+    <string name="feature_soniox_language_strict_off_desc">Language hints provide only a preference bias. Other languages may still be recognized.</string>
+    <string name="feature_soniox_language_strict_on_desc">Strongly restricts recognition to the specified languages only, avoiding accidental transcription in other languages.</string>
+</resources>

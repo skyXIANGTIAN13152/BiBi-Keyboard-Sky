@@ -1,0 +1,277 @@
+<resources>
+    <!-- LLM related strings -->
+
+    <!-- LLM settings -->
+    <string name="label_llm_endpoint">OpenAI Endpoint (../v1 or../chat/completions)</string>
+    <string name="label_llm_api_key">API Key</string>
+    <string name="label_llm_model">Model Name (optional)</string>
+    <string name="label_llm_temperature">Temperature</string>
+    <string name="label_llm_prompt">Post-processing prompt (output only the processed text)</string>
+    <string name="label_llm_prompt_title">Prompt Preset Title</string>
+    <string name="label_llm_prompt_presets">Polish Prompt Preset</string>
+    <string name="btn_add_preset">Add Preset</string>
+    <string name="btn_delete_preset">Delete Preset</string>
+    <string name="label_llm_choose_profile">Select Custom Vendor</string>
+    <string name="label_llm_profile_name">Profile name</string>
+    <string name="btn_llm_add_profile">Add profile</string>
+    <string name="btn_llm_delete_profile">Delete profile</string>
+    <string name="toast_llm_profile_added">Profile added</string>
+    <string name="toast_llm_profile_deleted">Profile deleted</string>
+    <string name="untitled_profile">Untitled profile</string>
+
+    <!-- LLM test call -->
+    <string name="btn_llm_test_call">Test</string>
+    <string name="btn_llm_fetch_models">Fetch Models</string>
+    <string name="llm_test_running">Testing LLM call…</string>
+    <string name="llm_test_success_title">Test Succeeded</string>
+    <string name="llm_test_success_preview">Response preview: %1$s</string>
+    <string name="llm_test_streaming_supported">Streaming output: supported</string>
+    <string name="llm_test_streaming_unsupported">Streaming output: not supported</string>
+    <string name="llm_test_timing_connect">Connection setup</string>
+    <string name="llm_test_timing_response_headers">Response headers</string>
+    <string name="llm_test_timing_first_token">First visible text</string>
+    <string name="llm_test_timing_output">Output</string>
+    <string name="llm_test_timing_response_body">Response body</string>
+    <string name="llm_test_timing_ms">%1$d ms</string>
+    <string name="llm_test_timing_total">Total %1$d ms</string>
+    <string name="llm_test_timing_reused">Connection reused (no new connection)</string>
+    <string name="llm_test_timing_new">New connection, established in %1$d ms</string>
+    <string name="llm_test_timing_bar_description">Response headers %1$d ms, first visible text %2$d ms, output %3$d ms</string>
+    <string name="llm_test_timing_fallback_used">Streaming was unavailable; non-streaming fallback was used.</string>
+    <string name="llm_test_failed_title">Test Failed</string>
+    <string name="llm_test_failed_reason">Reason: %1$s</string>
+    <string name="llm_test_failed_generic">Call failed</string>
+    <string name="llm_test_cancelled">Test canceled</string>
+    <string name="llm_test_missing_params">Please fill API endpoint</string>
+    <string name="llm_models_fetching">Fetching model list…</string>
+    <string name="llm_models_fetch_failed_title">Fetch Failed</string>
+    <string name="llm_models_fetch_failed">Failed to fetch models: %1$s</string>
+    <string name="llm_models_select_title">Select models to add</string>
+    <string name="btn_llm_models_add">Add Selected</string>
+    <string name="toast_llm_models_none_selected">No models selected</string>
+    <!-- Skip AI under char count -->
+    <string name="label_ai_skip_under_chars">Skip AI post-processing if shorter than</string>
+    <string name="helper_ai_skip_under_chars">When effective length (CJK: characters, English: words) is below this number, skip AI post-processing. Set to 0 to disable.</string>
+    <string name="title_ai_skip_under">Auto-skip threshold</string>
+
+    <!-- ============================================== -->
+    <!-- AI Post-processing Settings - Feature Descriptions -->
+    <!-- ============================================== -->
+
+    <!-- AI post-processing enabled -->
+    <string name="feature_ai_post_process_off_desc">Voice recognition results are output directly without processing.</string>
+    <string name="feature_ai_post_process_on_desc">Voice recognition results are processed by AI before output, for text polishing, punctuation, formatting, etc.</string>
+
+    <!-- Post-processing typewriter effect -->
+    <string name="label_postproc_typewriter_enabled">Typewriter effect (post-processing output)</string>
+    <string name="feature_postproc_typewriter_off_desc">Wait for post-processing to finish, then apply the complete result at once.</string>
+    <string name="feature_postproc_typewriter_on_desc">Animate streaming post-processing output with a fast typewriter effect for smoother visuals.</string>
+
+    <!-- AI edit default use last ASR -->
+    <string name="feature_ai_edit_default_use_last_asr_off_desc">When no text is selected, AI edit targets the entire input field.</string>
+    <string name="feature_ai_edit_default_use_last_asr_on_desc">When no text is selected, AI edit only targets the last recognition result segment.</string>
+
+    <!-- AI edit custom system prompt -->
+    <string name="label_ai_edit_custom_prompt_enabled">Use custom AI edit prompt</string>
+    <string name="label_ai_edit_system_prompt">AI edit system prompt</string>
+    <string name="helper_ai_edit_system_prompt">The built-in prompt is shown by default. Reset clears the custom value and keeps following the built-in default.</string>
+    <string name="action_reset_to_default">Reset to default</string>
+
+    <!-- Section titles -->
+    <string name="section_post_process_scope">Polish Mode</string>
+    <string name="section_ai_edit">AI Edit</string>
+    <string name="section_post_process_model">AI Model</string>
+
+    <string name="label_ai_post_process_enabled">Enable AI post-processing</string>
+
+    <!-- LLM vendor selection -->
+    <string name="label_llm_vendor">LLM Provider</string>
+    <string name="llm_vendor_group_configured">Configured</string>
+    <string name="llm_vendor_group_unconfigured">Not configured</string>
+    <string name="label_llm_model_select">Select Model</string>
+    <string name="btn_llm_register">Get API Key</string>
+    <string name="btn_llm_guide">Configuration Guide</string>
+    <string name="custom_llm_description">Fully customizable OpenAI-compatible API configuration. Create multiple profiles for different providers.</string>
+
+    <!-- Built-in LLM vendors -->
+    <string name="llm_vendor_sf_free">SiliconFlow</string>
+    <string name="llm_vendor_openai">OpenAI</string>
+    <string name="llm_vendor_gemini">Google Gemini</string>
+    <string name="llm_vendor_deepseek">DeepSeek</string>
+    <string name="llm_vendor_moonshot">Moonshot (Kimi)</string>
+    <string name="llm_vendor_zhipu">Zhipu GLM</string>
+    <string name="llm_vendor_volcengine">Volcengine</string>
+    <string name="llm_vendor_groq">Groq</string>
+    <string name="llm_vendor_cerebras">Cerebras</string>
+    <string name="llm_vendor_ohmygpt">OhMyGPT</string>
+    <string name="llm_vendor_fireworks">Fireworks AI</string>
+    <string name="llm_vendor_dashscope">Alibaba DashScope</string>
+    <string name="llm_vendor_custom">Custom</string>
+
+    <!-- Reasoning mode -->
+    <string name="label_reasoning_mode">Enable Deep Thinking</string>
+    <string name="title_ai_reasoning_threshold">Deep thinking threshold</string>
+    <string name="helper_ai_reasoning_threshold">Deep thinking is enabled based on recognized length. 0 always enables it; the maximum never enables it; values in between enable it when the length exceeds the threshold.</string>
+    <string name="value_ai_reasoning_always">Enabled</string>
+    <string name="value_ai_reasoning_never">Disabled</string>
+    <string name="label_custom_reasoning_params">Custom reasoning params</string>
+    <string name="hint_reasoning_mode">When enabled, the model performs reasoning analysis. Slower but better results for complex tasks.</string>
+    <string name="hint_reasoning_not_supported">Current model doesn\'t support reasoning mode</string>
+    <string name="label_reasoning_params_on_json">Reasoning params (On, JSON)</string>
+    <string name="label_reasoning_params_off_json">Reasoning params (Off, JSON)</string>
+    <string name="hint_reasoning_params_json">Enter a JSON object, e.g. {"thinking":{"type":"enabled"}}. Leave empty or {} to send nothing.</string>
+
+    <!-- SiliconFlow free/paid toggle -->
+    <string name="label_sf_use_free_service">Use free service</string>
+    <string name="sf_free_service_desc">Free AI post-processing provided by SiliconFlow. No API key required.</string>
+    <string name="sf_paid_service_hint">Enter your SiliconFlow API key for more model options.</string>
+
+    <!-- Common buttons -->
+    <string name="btn_get_api_key">Get API Key</string>
+    <string name="label_custom_model_id">Custom Model ID</string>
+    <string name="option_custom_model">Custom</string>
+
+    <!-- Built-in prompt localization -->
+    <string name="prompt_default_sf_omni">Please transcribe the following audio verbatim into text. Do not output explanations, prefixes, or suffixes. The input language may be Chinese, English, or other languages.</string>
+    <string name="prompt_default_gem">Please transcribe the following audio verbatim into text. Do not output explanations, prefixes, or suffixes.</string>
+    <string name="llm_prompt_user_input_prefix">Text to process:\n</string>
+    <string name="llm_edit_instruction_label">[Edit Instruction]</string>
+    <string name="llm_edit_original_label">[Original Text]</string>
+    <string name="llm_prompt_preset_mine_title">My Prompt</string>
+    <string name="llm_prompt_preset_default_general_title">General Post-processing</string>
+    <string name="llm_prompt_preset_default_general_content"># Role
+
+You are a top-tier ASR (Automatic Speech Recognition) post-processing expert.
+
+# Task
+
+The user will send you raw text transcribed by an ASR system. Your task is to process and refine it.
+
+# Rules
+
+1. **Remove filler words**: Completely remove meaningless fillers, hesitations, and verbal tics.
+   - **Examples**: "um", "uh", "like", "you know", etc.
+2. **Merge repetitions and self-corrections**: When the speaker repeats words/phrases or self-corrects, keep only the final and clearest intent.
+3. **Fix recognition mistakes**: Correct obvious misrecognitions based on context.
+4. **Preserve meaning**: Stay faithful to the speaker’s original intent. Do not add new information. Keep the original tone; no forced formalization.
+5. Input format note: user input may start with "Text to process:" as a marker. Ignore the marker itself and process only the text content.
+
+# Output requirements
+
+- Output only the final corrected text.
+- Do not output explanations, prefixes/suffixes, quotes, or Markdown.
+- If the input is already good enough, output it unchanged.</string>
+    <string name="llm_prompt_preset_default_polish_title">Basic Text Polish</string>
+    <string name="llm_prompt_preset_default_polish_content"># Role
+
+You are a professional text editor.
+
+# Task
+
+The user will send raw text generated by ASR. Polish and correct it.
+
+# Rules
+
+1. Correct typos and grammar errors.
+2. Add proper and natural punctuation.
+3. Remove colloquialisms, repetition, and filler words.
+4. Keep the original meaning unchanged while making expressions smoother and more written.
+5. Do not add information not present in the original text.
+6. Ignore the leading marker "Text to process:" and only process the actual content.
+
+# Output requirements
+
+- Output only the polished text.
+- Do not output explanations, prefixes/suffixes, quotes, or Markdown.</string>
+    <string name="llm_prompt_preset_default_translate_en_title">Translate to English</string>
+    <string name="llm_prompt_preset_default_translate_en_content"># Role
+
+You are a professional translation assistant.
+
+# Task
+
+The user will send you a text. Translate it into English.
+
+# Rules
+
+1. Accurately preserve the core meaning.
+2. Preserve the original tone (e.g., formal, casual, urgent).
+3. Ensure fluent and natural target-language expression.
+4. Ignore the leading marker "Text to process:" and only translate the actual content.
+
+# Output requirements
+
+- Output only the translated English text.
+- Do not output explanations, prefixes/suffixes, quotes, or Markdown.</string>
+    <string name="llm_prompt_preset_default_key_points_title">Extract Key Points</string>
+    <string name="llm_prompt_preset_default_key_points_content"># Role
+
+You are a professional information extraction assistant.
+
+# Task
+
+The user will send you a text. Extract its core points.
+
+# Rules
+
+1. Identify and extract key information and core points.
+2. Keep each point concise and clear.
+3. Use bullet-point format.
+4. Ignore the leading marker "Text to process:" and only process the actual content.
+
+# Output requirements
+
+- Output as bullet points.
+- Do not add extra explanations or wrappers.</string>
+    <string name="llm_prompt_preset_default_todo_title">Extract Action Items</string>
+    <string name="llm_prompt_preset_default_todo_content"># Role
+
+You are a professional task extraction assistant.
+
+# Task
+
+The user will send you a text. Identify and extract all action items.
+
+# Rules
+
+1. Extract tasks or actionable items mentioned in the text.
+2. If owner and deadline are mentioned, include them.
+3. If information is incomplete, omit that part.
+4. Ignore the leading marker "Text to process:" and only process the actual content.
+
+# Output requirements
+
+Use this format:
+- [ ] [Task 1]
+- [ ] [Task 2]
+
+If no action item is found, output "No action items found".</string>
+    <string name="llm_edit_system_prompt">You are a precise text editing assistant. Your task is to make only the minimal necessary edits to the original text based on the edit instruction.
+Rules:
+- Output only the final edited text. Do not output explanations, prefixes/suffixes, or quotes.
+- If the instruction is ambiguous, conflicting, or infeasible, return the original text unchanged.
+- Do not fabricate content. Unless explicitly requested, do not add/remove information or change tone/length.
+- Preserve original paragraphs, line breaks, whitespace, and punctuation unless instructed otherwise.
+- Keep language/script style consistent with the original.
+- For redaction, replace only required spans with "[REDACTED]".
+- Output must be ONLY the edited text.
+
+Examples (for style only, do not copy content):
+1) Instruction: Rewrite colloquial text to formal style while preserving meaning.
+   Original: i might be a bit late, you can start first
+   Output: I may be a little late. Please start first.
+2) Instruction: Fix typos.
+   Original: this plan look good but need more data
+   Output: This plan looks good but needs more data.
+3) Instruction: Replace comet with Kotlin.
+   Original: we are building with comet now
+   Output: we are building with Kotlin now
+4) Instruction: Convert multiline list to one line separated by commas.
+   Original: apple
+banana
+grape
+   Output: apple, banana, grape.
+5) Instruction: Redact names and phone numbers.
+   Original: Contact John, phone 1234567890
+   Output: Contact [REDACTED], phone [REDACTED]</string>
+</resources>

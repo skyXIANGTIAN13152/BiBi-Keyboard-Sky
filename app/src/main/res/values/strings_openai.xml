@@ -1,0 +1,37 @@
+<resources>
+    <string name="vendor_openai">OpenAI</string>
+    <string name="openai_section_title">OpenAI Speech-to-Text</string>
+    <string name="label_openai_choose_profile">Select channel</string>
+    <string name="label_openai_profile_name">Channel name</string>
+    <string name="btn_openai_add_profile">Add channel</string>
+    <string name="btn_openai_delete_profile">Delete channel</string>
+    <string name="toast_openai_profile_added">Channel added</string>
+    <string name="toast_openai_profile_deleted">Channel deleted</string>
+    <string name="toast_openai_profile_delete_blocked">Keep at least one channel</string>
+    <string name="openai_profile_default_name">OpenAI Channel %1$d</string>
+    <string name="label_openai_asr_endpoint">Endpoint(../transcriptions or ../chat/completions)</string>
+    <string name="hint_openai_custom_endpoint_wav_upload">Custom compatible services will upload WAV audio to improve compatibility.</string>
+    <string name="label_openai_api_key">API Key (Bearer)</string>
+    <string name="label_openai_model">Recognition model</string>
+    <string name="label_openai_streaming">Streaming recognition</string>
+    <string name="label_openai_use_completions">Use Completions API</string>
+    <string name="label_openai_use_prompt">Custom prompt (some models unsupported)</string>
+    <string name="label_openai_prompt">Custom prompt (optional)</string>
+    <string name="label_openai_language">Recognition language</string>
+
+    <!-- ============================================== -->
+    <!-- OpenAI Settings - Feature Descriptions -->
+    <!-- ============================================== -->
+
+    <!-- OpenAI - Use prompt -->
+    <string name="feature_openai_use_prompt_off_desc">Transcribes audio directly without guidance.</string>
+    <string name="feature_openai_use_prompt_on_desc">Sends the prompt with the recognition request to suggest terminology or context. Support and results depend on the selected model and provider.</string>
+
+    <!-- OpenAI - Streaming -->
+    <string name="feature_openai_streaming_off_desc">Uses file upload transcription. Results are returned after recording stops.</string>
+    <string name="feature_openai_streaming_on_desc">Uses Realtime WebSocket streaming. Shows partial results while speaking. Requires the provider to support the Realtime API.</string>
+
+    <!-- OpenAI - Use Completions -->
+    <string name="feature_openai_use_completions_off_desc">Uses the transcription endpoint for recognition.</string>
+    <string name="feature_openai_use_completions_on_desc">Uses the Completions-compatible endpoint instead. Needed for some compatible providers or custom deployments.</string>
+</resources>

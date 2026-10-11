@@ -1,0 +1,35 @@
+<resources>
+    <!-- Qwen3-ASR local ASR configuration strings -->
+    <string name="qwen3_asr_section_title">Qwen3-ASR Local ASR</string>
+    <string name="vendor_qwen3_asr">Qwen3-ASR</string>
+
+    <string name="label_qw_model_variant">Model version</string>
+    <string name="qw_model_qwen3_06b_int8">Qwen3-ASR 0.6B Int8 (806MB)</string>
+    <string name="qw_model_qwen3_17b_int8">Qwen3-ASR 1.7B Int8 (2.0GB)</string>
+    <string name="label_qw_threads">Threads (1-8)</string>
+    <string name="label_qw_preload">Aggressive model loading</string>
+    <string name="label_qw_use_itn">Enable ITN (smart number recognition)</string>
+    <string name="feature_qw_use_itn_off_desc">Keeps spoken forms, such as “one thousand two hundred thirty-four”.</string>
+    <string name="feature_qw_use_itn_on_desc">Converts supported Chinese numbers, dates, and times to common written forms, such as “1234”.</string>
+    <string name="feature_qw_preload_off_desc">Loads the model only when needed, which may cause delay on first use.</string>
+    <string name="feature_qw_preload_on_desc">Preloads the model when the keyboard appears to reduce first-use latency.</string>
+    <string name="label_qw_keep_alive">Model unload policy</string>
+    <string name="btn_qw_download_model">One-click download model</string>
+    <string name="btn_qw_import_model">Import model from local file</string>
+    <string name="btn_qw_clear_model">Clear downloaded Qwen3-ASR model</string>
+    <string name="qw_download_status_downloading">Downloading… %1$d%%</string>
+    <string name="qw_download_status_extracting_progress">Extracting… %1$d%%</string>
+    <string name="qw_download_status_done">Qwen3-ASR model installed</string>
+    <string name="qw_download_status_failed">Download or extraction failed</string>
+    <string name="qw_download_started_in_bg">Started background download. Check notification for progress.</string>
+    <string name="qw_import_started_in_bg">Started background import. Check notification for progress.</string>
+    <string name="qw_import_success">Model imported successfully: %1$s</string>
+    <string name="qw_import_failed">Model import failed: %1$s</string>
+    <string name="qw_clear_confirm_title">Clear Qwen3-ASR model?</string>
+    <string name="qw_clear_confirm_message">This will delete downloaded Qwen3-ASR model files. You can re-download later. Continue?</string>
+    <string name="qw_clear_done">Qwen3-ASR model cleared</string>
+    <string name="qw_clear_failed">Clear failed</string>
+    <string name="error_qwen3_asr_model_missing">Qwen3-ASR model files are missing. Please configure or download in Settings.</string>
+    <string name="notif_qw_title_qwen3_06b_int8">Qwen3-ASR 0.6B Int8 model (806MB)</string>
+    <string name="notif_qw_title_qwen3_17b_int8">Qwen3-ASR 1.7B Int8 model (2.0GB)</string>
+</resources>

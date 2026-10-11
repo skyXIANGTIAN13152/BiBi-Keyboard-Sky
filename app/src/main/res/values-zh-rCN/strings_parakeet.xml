@@ -1,0 +1,32 @@
+<resources>
+    <!-- Parakeet 本地 ASR 配置字符串 -->
+    <string name="parakeet_section_title">Parakeet 本地 ASR</string>
+    <string name="vendor_parakeet">Parakeet</string>
+
+    <string name="label_pk_model_variant">模型版本</string>
+    <string name="pk_model_06b_v3_int8">0.6B V3 Int8 European（456MB）</string>
+    <string name="pk_model_06b_v2_int8">0.6B V2 Int8 English（451MB）</string>
+    <string name="label_pk_threads">线程数（1-8）</string>
+    <string name="label_pk_preload">积极加载模型</string>
+    <string name="feature_pk_preload_off_desc">仅在需要时加载模型，首次使用可能有延迟。</string>
+    <string name="feature_pk_preload_on_desc">键盘显示时预加载模型，减少首次使用延迟。</string>
+    <string name="label_pk_keep_alive">模型卸载策略</string>
+    <string name="btn_pk_download_model">一键下载模型</string>
+    <string name="btn_pk_import_model">从本地导入模型</string>
+    <string name="btn_pk_clear_model">清理已下载 Parakeet 模型</string>
+    <string name="pk_download_status_downloading">下载中… %1$d%%</string>
+    <string name="pk_download_status_extracting_progress">解压中… %1$d%%</string>
+    <string name="pk_download_status_done">Parakeet 模型已安装</string>
+    <string name="pk_download_status_failed">下载或解压失败</string>
+    <string name="pk_download_started_in_bg">已开始后台下载，可在通知栏查看进度</string>
+    <string name="pk_import_started_in_bg">已开始后台导入，可在通知栏查看进度</string>
+    <string name="pk_import_success">模型导入成功：%1$s</string>
+    <string name="pk_import_failed">模型导入失败：%1$s</string>
+    <string name="pk_clear_confirm_title">清理 Parakeet 模型？</string>
+    <string name="pk_clear_confirm_message">将删除已下载的 Parakeet 模型文件，可稍后重新下载。是否继续？</string>
+    <string name="pk_clear_done">Parakeet 模型已清理</string>
+    <string name="pk_clear_failed">清理失败</string>
+    <string name="error_parakeet_model_missing">缺少 Parakeet 模型文件，请在设置中配置或下载</string>
+    <string name="notif_pk_title_06b_v3_int8">Parakeet 0.6B V3 Int8 European 模型（456MB）</string>
+    <string name="notif_pk_title_06b_v2_int8">Parakeet 0.6B V2 Int8 English 模型（451MB）</string>
+</resources>

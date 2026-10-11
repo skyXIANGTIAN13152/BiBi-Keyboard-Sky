@@ -1,0 +1,76 @@
+<resources>
+    <!-- Volcengine (Volcano Engine) ASR 設定文字列 -->
+    <string name="volc_section_title">Volcano Engine API設定</string>
+    <string name="vendor_volc">Volcano Engine</string>
+
+    <!-- Volc configuration -->
+    <string name="label_volc_asr_model">認識モデル</string>
+    <string name="volc_asr_model_streaming_v2">Doubaoストリーミング音声認識 2.0</string>
+    <string name="volc_asr_model_streaming_v1">Doubaoストリーミング音声認識 1.0</string>
+    <string name="volc_asr_model_file_v2">Doubao標準ファイル認識 2.0</string>
+    <string name="volc_asr_model_file_v1">Doubao標準ファイル認識 1.0</string>
+    <string name="volc_asr_model_file_turbo_v1">Doubao高速ファイル認識 1.0</string>
+    <string name="feature_volc_asr_model_desc">Doubaoの認識モデルを直接選べます。ストリーミングモデルは話しながら文字が出て、安定したネットワークが必要です。標準ファイル認識は録音終了後に音声全体をアップロードし、精度が高めです。高速ファイル認識も録音終了後にアップロードしますが、処理はより速いです。通常の認識以外の設定は変わりません。</string>
+    <string name="label_volc_streaming">ストリーミング認識</string>
+    <string name="label_volc_file_standard">ファイル認識（標準版）を使用</string>
+    <string name="label_volc_model_v2">Doubao ASR 2.0モデルを使用</string>
+    <string name="label_volc_ddc">セマンティックスムージングを有効化（実験的）</string>
+    <string name="label_volc_vad">VADセグメンテーションを有効化（実験的）</string>
+    <string name="label_volc_nonstream">2パス認識を有効化（実験的）</string>
+    <string name="label_volc_language">認識言語</string>
+    <string name="label_volc_use_new_auth">新しい認証方式を使用</string>
+    <string name="label_volc_api_key">X-Api-Key</string>
+
+    <!-- Volc modes hint -->
+    <string name="volc_modes_hint">Doubaoの認識モデルを直接選べます：\n
+1. ストリーミング音声認識 2.0 / 1.0：話しながら文字が出て、開始と終了の遅延が小さくなります。安定したネットワークが必要です。\n
+2. 標準ファイル認識 2.0 / 1.0（submit/query）：録音終了後に音声全体をアップロードし、精度が高めです。\n
+3. 高速ファイル認識 1.0（flash）：録音終了後にアップロードし、処理はより速いです。</string>
+
+    <!-- Volc language options -->
+    <string name="volc_lang_auto">自動（中国語/英語+方言）</string>
+    <string name="volc_lang_en_us">英語 (en-US)</string>
+    <string name="volc_lang_ja_jp">日本語 (ja-JP)</string>
+    <string name="volc_lang_id_id">インドネシア語 (id-ID)</string>
+    <string name="volc_lang_es_mx">スペイン語 (es-MX)</string>
+    <string name="volc_lang_pt_br">ポルトガル語 (pt-BR)</string>
+    <string name="volc_lang_de_de">ドイツ語 (de-DE)</string>
+    <string name="volc_lang_fr_fr">フランス語 (fr-FR)</string>
+    <string name="volc_lang_ko_kr">韓国語 (ko-KR)</string>
+    <string name="volc_lang_fil_ph">フィリピン語 (fil-PH)</string>
+    <string name="volc_lang_ms_my">マレー語 (ms-MY)</string>
+    <string name="volc_lang_th_th">タイ語 (th-TH)</string>
+    <string name="volc_lang_ar_sa">アラビア語 (ar-SA)</string>
+
+    <!-- ============================================== -->
+    <!-- Volcengine設定 - 機能説明 -->
+    <!-- ============================================== -->
+
+    <!-- 火山引擎 - ストリーミング認識 -->
+    <string name="feature_volc_streaming_off_desc">「認識モデル」で標準ファイルまたは高速ファイル認識を選んでください。録音終了後に音声全体をアップロードします。</string>
+    <string name="feature_volc_streaming_on_desc">このモードは「認識モデル」のストリーミング音声認識 1.0 または 2.0 で表されます。話しながら文字が出て、安定したネットワークが必要です。</string>
+
+    <!-- 火山引擎 - DDC（意味スムージング） -->
+    <string name="feature_volc_ddc_off_desc">追加処理なしで生の認識結果を出力します。</string>
+    <string name="feature_volc_ddc_on_desc">意味スムージングを有効にして、認識結果の表現と書式設定を自動的に最適化します。実験的機能です。</string>
+
+    <!-- 火山引擎 - VADセグメンテーション -->
+    <string name="feature_volc_vad_off_desc">録音全体を連続して認識し、発話と間に基づく自動分割は行いません。</string>
+    <string name="feature_volc_vad_on_desc">発話と間に基づいて自動分割します。長い結果が読みやすくなる場合がありますが、効果は音声とサービス側によって異なります。</string>
+
+    <!-- 火山引擎 - 二重パス認識 -->
+    <string name="feature_volc_nonstream_off_desc">ストリーミング認識の1回目の結果のみを使用し、2回目の修正は行いません。</string>
+    <string name="feature_volc_nonstream_on_desc">サービス側がストリーミング結果をもう一度修正します。最終結果が改善する場合がありますが、途中の文字は変わることがあります。</string>
+
+    <!-- 火山引擎 - ファイル認識（標準版） -->
+    <string name="feature_volc_file_standard_off_desc">「認識モデル」で高速ファイル認識 1.0 を選んでください。録音終了後にアップロードし、処理はより速いです。</string>
+    <string name="feature_volc_file_standard_on_desc">「認識モデル」で標準ファイル認識 1.0 または 2.0 を選んでください。録音終了後に音声全体をアップロード（submit/query）し、精度が高めです。</string>
+
+    <!-- 火山引擎 - モデルバージョン -->
+    <string name="feature_volc_model_v2_off_desc">「認識モデル」で対応する 1.0 モデルを選んでください。</string>
+    <string name="feature_volc_model_v2_on_desc">「認識モデル」で対応する 2.0 モデルを選んでください。精度が高く、対応言語も広がります。</string>
+
+    <!-- Volcengine - 新しい認証 -->
+    <string name="feature_volc_use_new_auth_off_desc">従来の App Key / Access Key 認証を使用します。</string>
+    <string name="feature_volc_use_new_auth_on_desc">新しい X-Api-Key 認証を使用します。Volcano Engine コンソールの認証情報に合う方式を選んでください。</string>
+</resources>

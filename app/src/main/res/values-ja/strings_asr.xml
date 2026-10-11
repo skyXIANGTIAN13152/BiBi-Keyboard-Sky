@@ -1,0 +1,28 @@
+<resources>
+    <string name="hint_need_keys">音声入力を有効にするには、設定でキーを入力してください</string>
+    <string name="error_only_zip_supported">.zip ファイルのみ対応しています</string>
+
+    <!-- ============================================== -->
+    <!-- ASR設定 - 機能説明 -->
+    <!-- ============================================== -->
+
+    <!-- 無音時自動停止 -->
+    <string name="feature_auto_stop_silence_off_desc">録音は手動で停止するまで継続されます。長いスピーチや、休止がコンテンツの一部である場合に便利です。</string>
+    <string name="feature_auto_stop_silence_on_desc">しばらく話し声が検出されないと録音を自動停止するため、手動で止める必要がありません。待ち時間と検出感度を調整できます。</string>
+
+    <!-- Backup ASR engine -->
+    <string name="feature_backup_asr_off_desc">オフの場合、音声入力はメインのプロバイダーのみを使用します。</string>
+    <string name="feature_backup_asr_on_desc">メインのサービスが利用できない、認識に失敗する、または時間がかかりすぎる場合に、バックアップを使用できます。設定により、メインと同時に開始するか、必要になった時点で開始します。</string>
+
+    <!-- Provider tags (for selector UI) -->
+    <string name="asr_vendor_tag_streaming">ストリーミング</string>
+    <string name="asr_vendor_tag_non_streaming">非ストリーミング</string>
+    <string name="asr_vendor_tag_online">オンライン</string>
+    <string name="asr_vendor_tag_local">端末内</string>
+    <string name="asr_vendor_tag_custom">カスタム</string>
+    <string name="asr_vendor_tag_pseudo_streaming">擬似ストリーミング</string>
+    <string name="asr_vendor_tag_chinese_dialect">中国語方言</string>
+    <string name="asr_vendor_tag_accurate">高精度</string>
+    <string name="asr_vendor_group_configured">設定済み</string>
+    <string name="asr_vendor_group_unconfigured">未設定</string>
+</resources>

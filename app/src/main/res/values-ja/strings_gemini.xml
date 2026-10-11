@@ -1,0 +1,32 @@
+<resources>
+    <string name="vendor_gemini">Google Gemini</string>
+    <string name="gemini_section_title">Gemini音声理解</string>
+    <string name="label_gemini_endpoint">Endpoint</string>
+    <string name="label_gemini_api_key">Gemini APIキー</string>
+    <string name="label_gemini_model">認識モデル</string>
+    <string name="label_gemini_prompt">文字起こしプロンプト</string>
+    <string name="label_gemini_disable_thinking">思考を抑制</string>
+    <string name="label_gemini_asr_mode">呼び出しモード</string>
+    <string name="gemini_asr_mode_gemini">Gemini</string>
+    <string name="gemini_asr_mode_transcribe">Transcribe</string>
+    <string name="label_gemini_transcribe_language">認識言語</string>
+    <string name="label_gemini_transcribe_custom_language">カスタム BCP-47 コード</string>
+    <string name="gemini_transcribe_language_auto">自動</string>
+    <string name="gemini_transcribe_language_mandarin">中国語（簡体字）(cmn-Hans-CN)</string>
+    <string name="gemini_transcribe_language_cantonese">広東語（繁体字）(yue-Hant-HK)</string>
+    <string name="gemini_transcribe_language_english_us">英語（米国）(en-US)</string>
+    <string name="gemini_transcribe_language_japanese">日本語 (ja-JP)</string>
+    <string name="gemini_transcribe_language_korean">韓国語 (ko-KR)</string>
+    <string name="gemini_transcribe_language_custom">カスタム</string>
+    <string name="label_gemini_transcribe_smart">Smart 文字起こし</string>
+    <string name="feature_gemini_transcribe_smart_off_desc">逐語文字起こしを使用し、フィラー、繰り返し、言い直しを保持します。</string>
+    <string name="feature_gemini_transcribe_smart_on_desc">フィラーを除去し、言い直しを修正して書式を再構成します。逐語内容が変わる場合があります。</string>
+
+    <!-- ============================================== -->
+    <!-- Gemini設定 - 機能説明 -->
+    <!-- ============================================== -->
+
+    <!-- Gemini - 思考モードを抑制 -->
+    <string name="feature_gemini_disable_thinking_off_desc">モデル既定の思考モードを使用します。より正確な結果が得られる可能性がありますが、言い換えられる可能性もあります。</string>
+    <string name="feature_gemini_disable_thinking_on_desc">対応する最小の思考設定を使用し、元の音声に近い文字起こしをより高速に返します。</string>
+</resources>

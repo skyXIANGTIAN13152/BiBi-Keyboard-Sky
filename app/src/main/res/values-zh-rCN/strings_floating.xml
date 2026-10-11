@@ -1,0 +1,161 @@
+<resources>
+    <!-- 悬浮球相关字符串 - Floating ball related strings -->
+
+    <string name="title_floating_settings">更多输入方式</string>
+    <string name="section_floating_basic">悬浮球设置</string>
+    <string name="section_volume_key_recording">音量键录音模式</string>
+    <string name="section_floating_compat">高级功能</string>
+    <string name="section_floating_keep_alive">后台保活</string>
+    <string name="label_floating_only_when_ime_visible">仅在键盘显示时显示悬浮球</string>
+    <string name="label_floating_hold_to_record">长按悬浮球录音</string>
+    <string name="label_floating_direct_drag">直接拖动移动悬浮球</string>
+    <string name="label_floating_alpha">悬浮球透明度</string>
+    <string name="label_floating_size">悬浮球大小</string>
+    <string name="toast_need_overlay_perm">请在系统设置中授予"在其他应用上层显示"权限以启用悬浮球</string>
+    <string name="label_floating_asr">使用悬浮球进行语音识别</string>
+    <string name="label_floating_keep_alive_foreground">前台服务保活</string>
+    <string name="label_floating_keep_alive_privileged">Shizuku / Root 增强保活</string>
+    <string name="label_request_battery_whitelist">申请电池优化白名单</string>
+    <string name="label_floating_ime_bridge">输入法 Hook 模块</string>
+    <string name="label_ime_bridge_pcm_recording">在桥接输入法内录音</string>
+    <string name="label_floating_ime_bridge_status">输入法 Hook 模块状态</string>
+    <string name="status_floating_ime_bridge_unknown">点击刷新</string>
+    <string name="status_floating_ime_bridge_unknown_target">当前键盘</string>
+    <string name="status_floating_ime_bridge_disabled">已关闭</string>
+    <string name="status_floating_ime_bridge_ready">已就绪：%1$s</string>
+    <string name="status_floating_ime_bridge_hidden">已检测到，键盘已隐藏：%1$s</string>
+    <string name="status_floating_ime_bridge_waiting">已检测到，等待输入框：%1$s</string>
+    <string name="status_floating_ime_bridge_no_active_ime">没有当前输入法。请先切换并打开已桥接的输入法。</string>
+    <string name="status_floating_ime_bridge_no_input_connection">没有活动输入连接：%1$s。请点进文本框并保持键盘打开。</string>
+    <string name="status_floating_ime_bridge_pcm_unsupported">%1$s 的录音区域不可用。请在桥接模块设置中开启，或检查麦克风权限与键盘窗口兼容性。</string>
+    <string name="status_floating_ime_bridge_not_found">未收到桥接响应：%1$s</string>
+    <string name="status_floating_ime_bridge_sensitive">已阻止敏感输入框：%1$s</string>
+    <string name="status_floating_ime_bridge_error">%1$s 桥接错误：%2$s</string>
+    <string name="status_floating_ime_bridge_recording_enabled">输入法内录音：已启用</string>
+    <string name="status_floating_ime_bridge_recording_disabled">输入法内录音：已关闭。桥接文字回填仍可保持开启。</string>
+    <string name="status_floating_ime_bridge_module_summary">模块：%1$s · 录音区域：%2$s · 剪贴板：%3$s</string>
+    <string name="status_floating_ime_bridge_module_unknown">未知版本</string>
+    <string name="status_floating_ime_bridge_pcm_supported">可用</string>
+    <string name="status_floating_ime_bridge_pcm_not_supported">不可用</string>
+    <string name="status_floating_ime_bridge_clipboard_supported">支持</string>
+    <string name="status_floating_ime_bridge_clipboard_not_supported">不支持</string>
+    <string name="status_floating_ime_bridge_input_summary">键盘可见：%1$s · 输入连接：%2$s · 敏感输入框：%3$s</string>
+    <string name="status_floating_ime_bridge_yes">是</string>
+    <string name="status_floating_ime_bridge_no">否</string>
+    <string name="status_floating_ime_bridge_last_failure">最近失败：%1$s</string>
+    <string name="status_floating_ime_bridge_last_failure_mic_permission">最近失败：目标输入法无法录音。请检查它的麦克风权限。（%1$s）</string>
+    <string name="status_floating_ime_bridge_last_failure_injection_unsupported">最近失败：该输入法窗口不支持通用底部触发区。（%1$s）</string>
+    <string name="floating_ime_bridge_sensitive_field">已阻止敏感输入框，未写入文字。</string>
+    <string name="floating_ime_bridge_insert_failed">输入法桥接写入失败：%1$s</string>
+    <string name="label_floating_a11y_android13_api">使用 Android13 新版 API</string>
+    <string name="label_floating_write_compat">无障碍写入文字兼容优化</string>
+    <string name="desc_floating_write_compat">在部分应用中文本框会出现背景文字被误识别，导致通过无障碍服务插入文字时会附带背景文字的情况。开启此模式后，在目标软件中使用悬浮球时会尝试"全选+粘贴"写入一个不可见字符，以屏蔽背景文字。</string>
+    <string name="label_floating_write_compat_pkgs">兼容目标包名（每行一个）</string>
+    <string name="hint_floating_write_compat_pkgs">请填写完整包名，采用前缀匹配（例如 org.telegram.messenger）。</string>
+    <string name="label_floating_write_paste">无障碍识别结果仅写入粘贴板</string>
+    <string name="desc_floating_write_paste">仅对下方指定的应用生效：在这些应用内，使用悬浮球语音输入时将结果复制到剪贴板，不尝试通过无障碍 API 插入文字。若列表中包含 all，则全局生效。</string>
+    <string name="label_floating_write_paste_pkgs">目标包名（每行一个）</string>
+    <string name="hint_floating_write_paste_pkgs">请填写完整包名进行精确匹配（例如 com.tencent.mm）。如需全局生效，单独添加一行 all。</string>
+    <string name="toast_need_accessibility_perm">请在系统设置中授予"无障碍服务"权限以支持此功能</string>
+    <string name="label_volume_key_recording">使用音量键进行语音识别</string>
+    <string name="label_volume_key_recording_mode">音量键操作方式</string>
+    <string name="option_volume_key_up_toggle">音量+开始/停止录音</string>
+    <string name="option_volume_key_down_toggle">音量-开始/停止录音</string>
+    <string name="option_volume_key_up_start_down_stop">音量+开始，音量-停止</string>
+    <string name="option_volume_key_down_start_up_stop">音量-开始，音量+停止</string>
+    <string name="label_volume_key_status_toast">录音状态提醒</string>
+    <string name="label_volume_key_stop_on_ime_hidden">键盘消失时停止录音</string>
+    <string name="toast_volume_key_recording_started">已开始录音</string>
+    <string name="toast_volume_key_recording_stopped">已停止录音</string>
+    <string name="cd_floating_asr">悬浮球语音识别</string>
+    <string name="cd_floating_edge_handle">展开悬浮球</string>
+    <string name="toast_battery_whitelist_already">已在电池优化白名单中</string>
+    <string name="toast_battery_whitelist_failed">申请电池优化白名单失败</string>
+    <string name="toast_need_floating_keep_alive_first">请先开启前台服务保活</string>
+    <string name="toast_shizuku_permission_requested">已发起 Shizuku 授权，请在 Shizuku 中确认</string>
+    <string name="toast_shizuku_permission_waiting">正在连接 Shizuku，连接后将弹出授权确认</string>
+    <string name="toast_shizuku_permission_request_failed">发起 Shizuku 授权失败</string>
+    <string name="toast_shizuku_or_root_unavailable">Shizuku 不可用且未检测到 root</string>
+    <string name="toast_floating_keep_alive_privileged_start_failed">通过 Shizuku / Root 启动保活失败</string>
+    <string name="toast_floating_recording_foreground_failed">无法启动麦克风前台服务。请先打开一次应用后重试。</string>
+
+    <!-- Floating ASR status messages -->
+    <string name="floating_asr_error">识别失败: %1$s</string>
+    <string name="floating_asr_copied">已复制到剪贴板</string>
+    <string name="accessibility_service_description">允许说点啥悬浮球和音量键录音将语音识别结果自动插入到当前输入框中。不会收集或上传任何数据。</string>
+
+    <!-- Floating radial menu -->
+    <string name="label_radial_switch_asr">切换 ASR 供应商</string>
+    <string name="label_radial_switch_ime">切换输入法</string>
+    <string name="label_radial_move">移动悬浮球</string>
+    <string name="label_radial_postproc">切换 AI 润色</string>
+    <string name="label_radial_switch_prompt">切换 AI 润色 Prompt</string>
+    <string name="label_radial_clipboard_upload">上传粘贴板</string>
+    <string name="label_radial_clipboard_pull">拉取粘贴板</string>
+    <string name="label_radial_toggle_silence_autostop">录音判停</string>
+    <string name="label_radial_open_history">查看识别历史</string>
+    <string name="label_radial_open_settings">设置</string>
+    <string name="label_choose_asr_vendor">选择 ASR 供应商</string>
+    <string name="toast_move_mode_on">已进入移动模式，再次点击悬浮球退出</string>
+    <string name="label_reset_floating_position">重置悬浮球位置</string>
+    <string name="toast_floating_position_reset">已重置悬浮球位置</string>
+
+    <string name="notif_channel_floating_keep_alive">后台保活</string>
+    <string name="notif_channel_floating_keep_alive_desc">通过常驻通知保持后台运行。</string>
+    <string name="notif_floating_keep_alive_title">%1$s运行中</string>
+    <string name="notif_floating_keep_alive_desc">今日识别%1$d字·%2$s·润色%3$s</string>
+    <string name="notif_floating_keep_alive_postproc_enabled">启用</string>
+    <string name="notif_floating_keep_alive_postproc_disabled">未启用</string>
+    <string name="notif_channel_floating_recording">悬浮球录音</string>
+    <string name="notif_channel_floating_recording_desc">悬浮球使用麦克风时显示录音状态。</string>
+    <string name="notif_floating_recording_title">%1$s正在录音</string>
+    <string name="notif_floating_recording_desc">悬浮球语音识别正在收听。</string>
+
+    <!-- ============================================== -->
+    <!-- 悬浮球设置 - 功能说明 -->
+    <!-- ============================================== -->
+
+    <!-- 使用悬浮球进行语音识别 -->
+    <string name="feature_floating_asr_off_desc">不显示悬浮球，仍可从说点啥键盘使用语音输入。</string>
+    <string name="feature_floating_asr_on_desc">在其他应用上方显示语音输入悬浮球，即使键盘未显示也可开始识别。需要悬浮窗权限；音量键控制和部分文字输入方式还需要无障碍服务或输入法桥接。</string>
+
+    <!-- 仅在键盘显示时显示悬浮球 -->
+    <string name="feature_floating_only_when_ime_visible_off_desc">即使键盘隐藏，悬浮球仍保持可见。</string>
+    <string name="feature_floating_only_when_ime_visible_on_desc">键盘隐藏时悬浮球自动隐藏，键盘出现时自动显示。键盘状态可通过无障碍或已激活的输入法桥接检测。</string>
+
+    <!-- 长按悬浮球录音 -->
+    <string name="feature_floating_hold_to_record_off_desc">点按悬浮球开始录音，再次点按停止录音。</string>
+    <string name="feature_floating_hold_to_record_on_desc">长按悬浮球开始录音，松手停止。滑出菜单或移动悬浮球需要拖动更长距离，触发时会取消本轮录音。</string>
+
+    <!-- 直接拖动移动悬浮球 -->
+    <string name="feature_floating_direct_drag_off_desc">移动悬浮球需要长按进入移动模式或通过菜单开启移动模式。</string>
+    <string name="feature_floating_direct_drag_on_desc">可直接拖动悬浮球调整位置。</string>
+
+    <!-- 音量键录音模式 -->
+    <string name="feature_volume_key_recording_off_desc">音量键保持系统默认行为，不用于控制录音。</string>
+    <string name="feature_volume_key_recording_on_desc">当键盘显示时，无障碍服务会监听音量键点击，用于开始或停止语音识别。不监听不稳定的音量键长按。</string>
+    <string name="feature_volume_key_status_toast_off_desc">音量键录音开始和停止时不额外提示，现有错误提示不受影响。</string>
+    <string name="feature_volume_key_status_toast_on_desc">使用音量键成功开始或停止录音时，显示短 Toast 提示。</string>
+    <string name="feature_volume_key_stop_on_ime_hidden_off_desc">音量键录音期间如果键盘消失，录音会继续，直到你手动停止。</string>
+    <string name="feature_volume_key_stop_on_ime_hidden_on_desc">音量键录音期间如果键盘消失，会自动停止录音。</string>
+
+    <!-- 悬浮球写入文字兼容性模式 -->
+    <string name="feature_floating_ime_bridge_off_desc">停止接受所有 Hook 联动请求；主键盘与悬浮球的非 Hook 功能不受影响。</string>
+    <string name="feature_floating_ime_bridge_on_desc">在客户端侧启用兼容 LSPosed/LSPatch 模块提供的输入法可见性、文字插入、录音和剪贴板能力，不影响模块自身设置和状态。</string>
+    <string name="feature_ime_bridge_pcm_recording_off_desc">桥接模块仍可输入识别结果，但无法在第三方键盘中长按录音。</string>
+    <string name="feature_ime_bridge_pcm_recording_on_desc">可在兼容的第三方键盘中长按录音，并将录音交给说点啥识别。录音失败时不会自动改用悬浮球或本应用的麦克风。</string>
+    <string name="feature_floating_a11y_android13_api_off_desc">识别结果通过传统无障碍 API 写入，并保留流式预览，与兼容优化功能配合，适用于一般应用和旧系统。</string>
+    <string name="feature_floating_a11y_android13_api_on_desc">在 Android 13 及以上优先通过新的无障碍 API 插入识别结果，在终端、编辑器等特殊场景有更好的表现。写入文字兼容优化功能自动失效，但会关闭流式预览功能。</string>
+    <string name="feature_floating_write_compat_off_desc">识别结果会直接写入输入框，适用于大多数应用。</string>
+    <string name="feature_floating_write_compat_on_desc">在你指定的兼容应用中，会先选中输入框内容，再通过粘贴写入识别结果，以避免混入提示文字。期间会暂时使用剪贴板，并在完成后尝试恢复原内容。</string>
+
+    <!-- 悬浮球识别结果仅写入粘贴板 -->
+    <string name="feature_floating_write_paste_off_desc">识别结果会自动输入到当前输入框。</string>
+    <string name="feature_floating_write_paste_on_desc">在你指定的应用中，识别结果只会复制到剪贴板，不会自动输入；你需要在输入框中手动粘贴。</string>
+
+    <!-- 前台保活 -->
+    <string name="feature_floating_keep_alive_off_desc">应用在后台运行一段时间后更容易被系统停止，悬浮球和音量键功能可能因此失效。</string>
+    <string name="feature_floating_keep_alive_on_desc">显示一条常驻通知，帮助悬浮球和音量键功能在后台持续可用。部分手机仍需调整电池设置。</string>
+    <string name="feature_floating_keep_alive_privileged_off_desc">只使用普通方式维持后台运行，部分手机可能仍会停止悬浮球或音量键功能。</string>
+    <string name="feature_floating_keep_alive_privileged_on_desc">使用 Shizuku 或 root 定期恢复后台服务，减少悬浮球或音量键功能失效。需要先授予 Shizuku 权限或 root 权限。</string>
+</resources>

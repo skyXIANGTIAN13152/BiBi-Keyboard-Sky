@@ -1,0 +1,82 @@
+<resources>
+    <!-- 使用指南相關字串 - User guide related strings -->
+
+    <string name="btn_show_guide">查看使用指南</string>
+    <string name="btn_view_full_docs">查看完整使用文檔</string>
+    <string name="btn_close">關閉</string>
+    <string name="btn_close_with_seconds">關閉(%1$ds)</string>
+    <string name="title_quick_guide">快速上手教學</string>
+
+    <!-- Enhanced Quick Guide -->
+    <string name="guide_subtitle">讓語音輸入更簡單高效</string>
+    <string name="guide_main_keyboard_title">主鍵盤佈局</string>
+    <string name="guide_main_keyboard_desc">主鍵盤介面，包含麥克風、潤飾開關、編輯面板入口等功能</string>
+    <string name="guide_edit_panel_title">編輯面板</string>
+    <string name="guide_edit_panel_desc">強大的文字編輯功能，支援游標移動、文字選擇、複製貼上、AI 處理等</string>
+    <string name="guide_numpad_title">數字符號鍵盤</string>
+    <string name="guide_numpad_desc">數字和標點符號輸入面板，支援中英文標點切換</string>
+    <string name="guide_core_features_title">核心功能</string>
+    <string name="guide_long_press_title">長按錄音</string>
+    <string name="guide_long_press_desc">長按麥克風按鈕開始錄音，放開自動轉錄</string>
+    <string name="guide_ai_processing_title">AI 智慧潤飾</string>
+    <string name="guide_ai_processing_desc">支援多種預設模板，讓識別結果更準確</string>
+    <string name="guide_floating_title">懸浮球功能</string>
+    <string name="guide_floating_desc">快速切換輸入法或進行懸浮球語音識別</string>
+    <string name="guide_detailed_features_title">詳細功能說明</string>
+    <string name="guide_detailed_features_content">【主鍵盤功能】\n• 麥克風按鈕（中央）：長按錄音，放開後進行語音轉錄\n• 編輯面板入口（左上角）：點擊進入編輯面板\n• 啟用潤飾：開啟/關閉 AI 潤飾功能\n• 收起鍵盤：隱藏鍵盤介面\n• 倒退鍵：上滑或左滑刪除所有內容，下滑撤回最近改動\n• 設定鍵：開啟應用程式設定介面\n• 切換輸入法：快速切換到其他輸入法\n• 換行鍵：發送換行\n• 自定義標點鍵：下方四個可自定義的標點符號按鍵\n\n【編輯面板功能】\n• 麥克風按鈕（中央）：長按錄音輸入語音指令，LLM 會根據指令修改內容（AI 編輯功能）\n• 返回主鍵盤：退出編輯面板\n• 套用預設 Prompt：選擇 AI 處理模板並處理目前文字\n• 游標移動：左移/右移游標，支援長按連續移動\n• 移至開頭/結尾：快速移動游標到文字首尾\n• 選擇模式：開啟後游標移動會選中文字\n• 全選：選中所有文字\n• 複製/貼上：文字複製貼上功能\n• 倒退：刪除字元，支援手勢（同主鍵盤）\n• 數字符號鍵盤：切換到數字符號輸入面板\n\n【數字符號鍵盤】\n• 數字行：0-9 數字快速輸入\n• 標點符號：兩行常用標點符號\n• 中英文切換：切換中文/英文標點符號\n• 空格/換行/倒退：基礎輸入功能\n• 返回編輯面板：退出數字鍵盤</string>
+    <string name="guide_first_time_title">首次使用</string>
+    <string name="guide_mic_icon_desc">麥克風圖示</string>
+    <string name="guide_ai_icon_desc">AI 處理圖示</string>
+    <string name="guide_floating_icon_desc">懸浮球圖示</string>
+
+    <!-- Onboarding V2 -->
+    <string name="onboarding_title">新手引導</string>
+    <string name="onboarding_page_indicator">第 %1$d/%2$d 頁</string>
+    <string name="onboarding_btn_skip">跳過</string>
+    <string name="onboarding_btn_prev">上一步</string>
+    <string name="onboarding_btn_next">下一步</string>
+    <string name="onboarding_btn_finish">完成</string>
+
+    <string name="onboarding_permissions_title">權限申請</string>
+    <string name="onboarding_permissions_desc">你可以按需逐項開啟權限，這裡所有權限都可先跳過，之後再設定。</string>
+    <string name="onboarding_permissions_required_title">必要應用權限</string>
+    <string name="onboarding_permissions_required_desc">建議優先開啟，可確保語音輸入核心流程穩定可用。</string>
+    <string name="onboarding_permissions_optional_title">可選權限</string>
+    <string name="onboarding_permissions_optional_desc">用於提升相容性與後台體驗，可依使用情境選擇是否開啟。</string>
+    <string name="onboarding_permission_ime_enable_title">啟用說點啥輸入法</string>
+    <string name="onboarding_permission_ime_enable_desc">在系統輸入法設定中啟用說點啥輸入法。</string>
+    <string name="onboarding_permission_ime_switch_title">切換到說點啥輸入法</string>
+    <string name="onboarding_permission_ime_switch_desc">開啟輸入法選擇器，將目前輸入法切換為說點啥。</string>
+    <string name="settings_ime_picker_title">輸入法選擇器</string>
+    <string name="settings_ime_picker_selected_message">目前輸入法已切換為說點啥。</string>
+    <string name="settings_ime_picker_closed_message">系統選擇器已關閉。如果尚未切換，請再次開啟並選擇說點啥。</string>
+    <string name="settings_ime_picker_open_failed_message">無法開啟系統輸入法選擇器，你可以前往系統設定切換輸入法。</string>
+    <string name="onboarding_permission_mic_title">麥克風權限</string>
+    <string name="onboarding_permission_mic_desc">用於錄音並執行語音辨識，是語音輸入的基礎權限。</string>
+    <string name="onboarding_permission_overlay_title">懸浮窗權限</string>
+    <string name="onboarding_permission_overlay_desc">使用懸浮球語音輸入時需要此權限。</string>
+    <string name="onboarding_permission_a11y_title">無障礙服務</string>
+    <string name="onboarding_permission_a11y_desc">用於提升懸浮球模式下的文字寫入相容性。</string>
+    <string name="onboarding_permission_notif_title">通知權限</string>
+    <string name="onboarding_permission_notif_desc">用於後台保活與模型下載等通知提醒。</string>
+    <string name="onboarding_permission_status_granted">狀態：已開啟</string>
+    <string name="onboarding_permission_status_missing">狀態：未開啟</string>
+    <string name="onboarding_permission_btn_go_enable">去開啟</string>
+    <string name="onboarding_permission_btn_enabled">已開啟</string>
+
+    <string name="onboarding_asr_title">語音辨識服務選擇</string>
+    <string name="onboarding_asr_desc">選擇你偏好的辨識模式，後續可在設定中隨時切換。</string>
+    <string name="onboarding_asr_btn_apply">套用選擇</string>
+    <string name="onboarding_asr_btn_skip">稍後設定</string>
+
+    <string name="onboarding_privacy_title">隱私與資料</string>
+    <string name="onboarding_privacy_desc">你可以決定是否啟用匿名資料蒐集來幫助改善產品體驗。</string>
+    <string name="onboarding_privacy_hint">不會上傳辨識文字與個人內容，之後可隨時在設定中調整。</string>
+
+    <string name="onboarding_links_title">相關資訊</string>
+    <string name="onboarding_links_desc">查看專案首頁、文件與 Pro 版本介紹。</string>
+    <string name="onboarding_links_project">查看專案首頁</string>
+    <string name="onboarding_links_website">查看專案官網</string>
+    <string name="onboarding_links_docs">查看專案文件</string>
+    <string name="onboarding_links_pro">了解 Pro</string>
+</resources>

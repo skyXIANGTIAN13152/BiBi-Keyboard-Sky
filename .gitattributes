@@ -1,0 +1,3 @@
+# Ensure Gradle wrapper script uses LF so it works on Linux/macOS (avoids `/bin/sh^M`).
+gradlew text eol=lf
+

@@ -1,0 +1,35 @@
+<resources>
+    <!-- Qwen3-ASR 本地 ASR 配置字串 -->
+    <string name="qwen3_asr_section_title">Qwen3-ASR 本地 ASR</string>
+    <string name="vendor_qwen3_asr">Qwen3-ASR</string>
+
+    <string name="label_qw_model_variant">模型版本</string>
+    <string name="qw_model_qwen3_06b_int8">Qwen3-ASR 0.6B Int8（806MB）</string>
+    <string name="qw_model_qwen3_17b_int8">Qwen3-ASR 1.7B Int8（2.0GB）</string>
+    <string name="label_qw_threads">執行緒數（1-8）</string>
+    <string name="label_qw_preload">積極載入模型</string>
+    <string name="label_qw_use_itn">啟用 ITN（數字智慧識別）</string>
+    <string name="feature_qw_use_itn_off_desc">保留口語寫法，例如「一千二百三十四」。</string>
+    <string name="feature_qw_use_itn_on_desc">自動將支援的中文數字、日期與時間改成常用書面寫法，例如將「一千二百三十四」寫成「1234」。</string>
+    <string name="feature_qw_preload_off_desc">僅在需要時載入模型，首次使用可能有延遲。</string>
+    <string name="feature_qw_preload_on_desc">鍵盤顯示時預載入模型，減少首次使用延遲。</string>
+    <string name="label_qw_keep_alive">模型卸載策略</string>
+    <string name="btn_qw_download_model">一鍵下載模型</string>
+    <string name="btn_qw_import_model">從本機匯入模型</string>
+    <string name="btn_qw_clear_model">清除已下載 Qwen3-ASR 模型</string>
+    <string name="qw_download_status_downloading">下載中… %1$d%%</string>
+    <string name="qw_download_status_extracting_progress">解壓中… %1$d%%</string>
+    <string name="qw_download_status_done">Qwen3-ASR 模型已安裝</string>
+    <string name="qw_download_status_failed">下載或解壓失敗</string>
+    <string name="qw_download_started_in_bg">已開始背景下載，可在通知欄查看進度</string>
+    <string name="qw_import_started_in_bg">已開始背景匯入，可在通知欄查看進度</string>
+    <string name="qw_import_success">模型匯入成功：%1$s</string>
+    <string name="qw_import_failed">模型匯入失敗：%1$s</string>
+    <string name="qw_clear_confirm_title">清除 Qwen3-ASR 模型？</string>
+    <string name="qw_clear_confirm_message">將刪除已下載的 Qwen3-ASR 模型檔案，可稍後重新下載。是否繼續？</string>
+    <string name="qw_clear_done">Qwen3-ASR 模型已清除</string>
+    <string name="qw_clear_failed">清除失敗</string>
+    <string name="error_qwen3_asr_model_missing">缺少 Qwen3-ASR 模型檔案，請在設定中配置或下載</string>
+    <string name="notif_qw_title_qwen3_06b_int8">Qwen3-ASR 0.6B Int8 模型（806MB）</string>
+    <string name="notif_qw_title_qwen3_17b_int8">Qwen3-ASR 1.7B Int8 模型（2.0GB）</string>
+</resources>

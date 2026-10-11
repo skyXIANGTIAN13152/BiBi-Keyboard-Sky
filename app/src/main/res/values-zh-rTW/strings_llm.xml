@@ -1,0 +1,276 @@
+<resources>
+    <!-- LLM 相關字串 - LLM related strings -->
+
+    <!-- LLM settings -->
+    <string name="label_llm_endpoint">OpenAI 端點（../v1 或../chat/completions）</string>
+    <string name="label_llm_api_key">API Key</string>
+    <string name="label_llm_model">模型名稱（可選）</string>
+    <string name="label_llm_temperature">溫度</string>
+    <string name="label_llm_prompt">後處理提示詞內容（僅輸出處理後的文字）</string>
+    <string name="label_llm_prompt_title">提示詞預設標題</string>
+    <string name="label_llm_prompt_presets">潤飾提示詞預設</string>
+    <string name="btn_add_preset">新增預設</string>
+    <string name="btn_delete_preset">刪除預設</string>
+    <string name="label_llm_choose_profile">選擇自訂供應商</string>
+    <string name="label_llm_profile_name">設定檔名稱</string>
+    <string name="btn_llm_add_profile">新增設定檔</string>
+    <string name="btn_llm_delete_profile">刪除設定檔</string>
+    <string name="toast_llm_profile_added">已新增設定檔</string>
+    <string name="toast_llm_profile_deleted">已刪除設定檔</string>
+    <string name="untitled_profile">未命名設定檔</string>
+
+    <!-- LLM test call -->
+    <string name="btn_llm_test_call">測試 LLM 呼叫</string>
+    <string name="btn_llm_fetch_models">取得模型清單</string>
+    <string name="llm_test_running">正在測試 LLM 呼叫…</string>
+    <string name="llm_test_success_title">測試成功</string>
+    <string name="llm_test_success_preview">回應片段：%1$s</string>
+    <string name="llm_test_streaming_supported">串流輸出：支援</string>
+    <string name="llm_test_streaming_unsupported">串流輸出：不支援</string>
+    <string name="llm_test_timing_connect">連線建立</string>
+    <string name="llm_test_timing_response_headers">回應標頭</string>
+    <string name="llm_test_timing_first_token">首個可見文字</string>
+    <string name="llm_test_timing_output">輸出</string>
+    <string name="llm_test_timing_response_body">回應本文</string>
+    <string name="llm_test_timing_ms">%1$d ms</string>
+    <string name="llm_test_timing_total">合計 %1$d ms</string>
+    <string name="llm_test_timing_reused">連線已重用（未新建連線）</string>
+    <string name="llm_test_timing_new">新建連線，建立耗時 %1$d ms</string>
+    <string name="llm_test_timing_bar_description">回應標頭 %1$d ms，首個可見文字 %2$d ms，輸出 %3$d ms</string>
+    <string name="llm_test_timing_fallback_used">串流回應不可用，已使用非串流回退。</string>
+    <string name="llm_test_failed_title">測試失敗</string>
+    <string name="llm_test_failed_reason">原因：%1$s</string>
+    <string name="llm_test_failed_generic">呼叫失敗</string>
+    <string name="llm_test_cancelled">測試已取消</string>
+    <string name="llm_test_missing_params">請填寫 API 位址</string>
+    <string name="llm_models_fetching">正在取得模型清單…</string>
+    <string name="llm_models_fetch_failed_title">取得失敗</string>
+    <string name="llm_models_fetch_failed">模型清單取得失敗：%1$s</string>
+    <string name="llm_models_select_title">選擇要加入的模型</string>
+    <string name="btn_llm_models_add">加入所選</string>
+    <string name="toast_llm_models_none_selected">未選擇任何模型</string>
+    <!-- Skip AI under char count -->
+    <string name="label_ai_skip_under_chars">少於特定字數時跳過 AI 後處理</string>
+    <string name="helper_ai_skip_under_chars">當有效字數（中文按字，英文按詞）小於此數值時不執行 AI 後處理；設為 0 表示停用。</string>
+    <string name="title_ai_skip_under">自動跳過閾值</string>
+
+    <!-- ============================================== -->
+    <!-- AI 後處理設定 - 功能說明 -->
+    <!-- ============================================== -->
+
+    <!-- AI 後處理開關 -->
+    <string name="feature_ai_post_process_off_desc">語音識別結果直接輸出，不進行任何處理。</string>
+    <string name="feature_ai_post_process_on_desc">語音識別結果將經過 AI 處理後再輸出，用於文字潤飾、標點、格式化等。</string>
+
+    <!-- 後處理打字機效果 -->
+    <string name="label_postproc_typewriter_enabled">後處理打字機效果</string>
+    <string name="feature_postproc_typewriter_off_desc">等待後處理完成後，一次套用完整結果。</string>
+    <string name="feature_postproc_typewriter_on_desc">將串流後處理結果以快速打字機效果平滑輸出，觀感更順滑。</string>
+
+    <!-- AI 編輯預設使用上次識別結果 -->
+    <string name="feature_ai_edit_default_use_last_asr_off_desc">沒有選取文字時，AI 編輯將針對整個輸入欄位生效。</string>
+    <string name="feature_ai_edit_default_use_last_asr_on_desc">沒有選取文字時，AI 編輯只對上次識別結果部分生效。</string>
+
+    <!-- AI 編輯自訂系統提示詞 -->
+    <string name="label_ai_edit_custom_prompt_enabled">使用自訂AI編輯Prompt</string>
+    <string name="label_ai_edit_system_prompt">AI 編輯系統提示詞</string>
+    <string name="helper_ai_edit_system_prompt">輸入框預設顯示內建提示詞；恢復預設會清空自訂值，並繼續跟隨內建預設提示詞。</string>
+    <string name="action_reset_to_default">恢復預設</string>
+
+    <!-- 章節標題 - Section titles -->
+    <string name="section_post_process_scope">潤飾模式</string>
+    <string name="section_ai_edit">AI 編輯</string>
+    <string name="section_post_process_model">AI 模型</string>
+
+    <string name="label_ai_post_process_enabled">啟用 AI 後處理</string>
+
+    <!-- LLM 供應商選擇 -->
+    <string name="label_llm_vendor">LLM 供應商</string>
+    <string name="llm_vendor_group_configured">已配置</string>
+    <string name="llm_vendor_group_unconfigured">未配置</string>
+    <string name="label_llm_model_select">選擇模型</string>
+    <string name="btn_llm_register">取得API Key</string>
+    <string name="btn_llm_guide">設定教學</string>
+    <string name="custom_llm_description">完全自訂的 OpenAI 相容 API 設定。可建立多個設定檔以適配不同供應商。</string>
+
+    <!-- 內建 LLM 供應商 -->
+    <string name="llm_vendor_sf_free">矽基流動</string>
+    <string name="llm_vendor_openai">OpenAI</string>
+    <string name="llm_vendor_gemini">Google Gemini</string>
+    <string name="llm_vendor_deepseek">DeepSeek</string>
+    <string name="llm_vendor_moonshot">月之暗面 (Kimi)</string>
+    <string name="llm_vendor_zhipu">智譜 GLM</string>
+    <string name="llm_vendor_volcengine">火山引擎</string>
+    <string name="llm_vendor_groq">Groq</string>
+    <string name="llm_vendor_cerebras">Cerebras</string>
+    <string name="llm_vendor_ohmygpt">OhMyGPT</string>
+    <string name="llm_vendor_fireworks">Fireworks AI</string>
+    <string name="llm_vendor_dashscope">阿里雲百鍊</string>
+    <string name="llm_vendor_custom">自訂</string>
+
+    <!-- 推理模式 -->
+    <string name="label_reasoning_mode">啟用深度思考</string>
+    <string name="title_ai_reasoning_threshold">深度思考字數閾值</string>
+    <string name="helper_ai_reasoning_threshold">深度思考按識別字數判斷是否啟用。為 0 時永久啟用，拉到上限時永不啟用，中間值則在字數超過閾值時啟用。</string>
+    <string name="value_ai_reasoning_always">啟用</string>
+    <string name="value_ai_reasoning_never">不啟用</string>
+    <string name="label_custom_reasoning_params">自訂推理參數</string>
+    <string name="hint_reasoning_mode">開啟後模型會進行推理分析，處理較慢但對複雜任務效果更好。</string>
+    <string name="hint_reasoning_not_supported">目前模型不支援推理模式</string>
+    <string name="label_reasoning_params_on_json">推理啟用參數（JSON）</string>
+    <string name="label_reasoning_params_off_json">推理關閉參數（JSON）</string>
+    <string name="hint_reasoning_params_json">填寫 JSON 物件，例如：{"thinking":{"type":"enabled"}}；留空或 {} 表示不額外傳參。</string>
+
+    <!-- 矽基流動免費/付費切換 -->
+    <string name="label_sf_use_free_service">使用免費服務</string>
+    <string name="sf_free_service_desc">矽基流動慷慨提供的免費 AI 後處理服務，無需 API Key。</string>
+    <string name="sf_paid_service_hint">填寫您自己的矽基流動 API Key 以使用更多模型。</string>
+
+    <!-- 通用按鈕 -->
+    <string name="btn_get_api_key">去獲取 Key</string>
+    <string name="label_custom_model_id">自訂模型 ID</string>
+    <string name="option_custom_model">自訂</string>
+
+    <!-- 內建提示詞多語言 -->
+    <string name="prompt_default_sf_omni">請將以下音訊逐字轉寫為文字，不要輸出解釋或前後綴。輸入語言可能是中文、英文或其他語言。</string>
+    <string name="prompt_default_gem">請將以下音訊逐字轉寫為文字，不要輸出解釋或前後綴。</string>
+    <string name="llm_prompt_user_input_prefix">待處理文字:\n</string>
+    <string name="llm_edit_instruction_label">【編輯指令】</string>
+    <string name="llm_edit_original_label">【原文】</string>
+    <string name="llm_prompt_preset_mine_title">我的提示詞</string>
+    <string name="llm_prompt_preset_default_general_title">通用後處理</string>
+    <string name="llm_prompt_preset_default_general_content"># 角色
+
+你是一位頂尖的 ASR（自動語音辨識）後處理專家。
+
+# 任務
+
+使用者會傳送一段由 ASR 系統轉錄的原始文字。你的任務是對其進行處理。
+
+# 規則
+
+1. 移除無意義的語助詞、猶豫詞與口頭禪。
+2. 合併重複與自我修正內容，只保留最終且清晰的意圖。
+3. 根據上下文修正明顯辨識錯誤。
+4. 保持語意完整，不新增資訊，不過度改寫語氣。
+5. 若輸入以「待處理文字:」開頭，忽略該標籤本身，只處理後續正文。
+
+# 輸出要求
+
+- 僅輸出修正後的最終文字。
+- 不要輸出任何解釋、前後綴、引號或 Markdown。
+- 若輸入已足夠自然，直接原樣輸出。</string>
+    <string name="llm_prompt_preset_default_polish_title">基礎文字潤飾</string>
+    <string name="llm_prompt_preset_default_polish_content"># 角色
+
+你是一位專業文字編輯。
+
+# 任務
+
+使用者會傳送 ASR 產生的原始文字。請進行潤飾與修正。
+
+# 規則
+
+1. 修正錯字與語法錯誤。
+2. 補上自然且正確的標點。
+3. 移除口語贅詞、重複與填充詞。
+4. 在不改變原意前提下，使語句更順暢。
+5. 不要新增原文沒有的資訊。
+6. 忽略前置「待處理文字:」標籤，只處理正文。
+
+# 輸出要求
+
+- 僅輸出潤飾後文字。
+- 不要輸出任何解釋、前後綴、引號或 Markdown。</string>
+    <string name="llm_prompt_preset_default_translate_en_title">翻譯為英文</string>
+    <string name="llm_prompt_preset_default_translate_en_content"># 角色
+
+你是一位專業翻譯助手。
+
+# 任務
+
+將使用者輸入文字翻譯為英文。
+
+# 規則
+
+1. 準確傳達原文核心意思。
+2. 保持原文語氣。
+3. 譯文自然流暢。
+4. 忽略前置「待處理文字:」標籤，只翻譯正文。
+
+# 輸出要求
+
+- 僅輸出英文翻譯結果。
+- 不要輸出任何解釋、前後綴、引號或 Markdown。</string>
+    <string name="llm_prompt_preset_default_key_points_title">提取關鍵要點</string>
+    <string name="llm_prompt_preset_default_key_points_content"># 角色
+
+你是一位資訊提取助手。
+
+# 任務
+
+從輸入文字中提取核心要點。
+
+# 規則
+
+1. 識別並提取關鍵資訊。
+2. 每個要點簡潔清楚。
+3. 使用無序清單（bullet points）輸出。
+4. 忽略前置「待處理文字:」標籤，只處理正文。
+
+# 輸出要求
+
+- 以無序清單輸出。
+- 不要附加多餘解釋或前後綴。</string>
+    <string name="llm_prompt_preset_default_todo_title">提取待辦事項</string>
+    <string name="llm_prompt_preset_default_todo_content"># 角色
+
+你是一位任務提取助手。
+
+# 任務
+
+從輸入文字中識別並提取所有待辦事項（Action Items）。
+
+# 規則
+
+1. 提取需完成的任務/行動項目。
+2. 若有負責人與截止日期，一併提取。
+3. 若資訊不完整，可省略不完整部分。
+4. 忽略前置「待處理文字:」標籤，只處理正文。
+
+# 輸出要求
+
+請使用以下格式：
+- [ ] [任務內容1]
+- [ ] [任務內容2]
+
+若未找到待辦事項，輸出「未找到待辦事項」。</string>
+    <string name="llm_edit_system_prompt">你是一個精確的文字編輯助手。請根據「編輯指令」對「原文」做最小必要修改。
+規則：
+- 只輸出最終結果文字，不要輸出任何解釋、前後綴或引號。
+- 若指令含糊、矛盾或無法執行，原樣返回原文。
+- 不可編造內容；除非明確要求，否則不要增刪資訊，也不要改變語氣與長度。
+- 除非指令要求，保留原段落、換行、空白與標點格式。
+- 保持語言與文字風格與原文一致。
+- 涉及去識別化時，只把必要片段替換為「[REDACTED]」。
+- Output must be ONLY the edited text.
+
+示例（僅供學習風格）：
+1) 指令：將口語改為書面語並保留原意
+   原文：我今天有點事，可能晚點到，你們先開始
+   輸出：我今天有事，可能稍晚到，請你們先開始。
+2) 指令：修正錯字
+   原文：這個方案不錯得，但資料要再確認
+   輸出：這個方案不錯的，但資料要再確認。
+3) 指令：把 comet 改成 Kotlin
+   原文：最近都在寫 comet，效果還不錯
+   輸出：最近都在寫 Kotlin，效果還不錯
+4) 指令：把換行清單改成逗號單行
+   原文：蘋果
+香蕉
+葡萄
+   輸出：蘋果，香蕉，葡萄。
+5) 指令：去識別化姓名與電話
+   原文：聯絡人張三，電話 13800000000
+   輸出：聯絡人[REDACTED]，電話[REDACTED]</string>
+</resources>

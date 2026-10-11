@@ -1,0 +1,31 @@
+<resources>
+    <!-- 備份設定相關字串 - Backup settings related strings -->
+
+    <!-- Backup settings -->
+    <string name="title_backup_settings">配置備份</string>
+    <string name="btn_open_backup_settings">配置備份</string>
+    <string name="section_file_backup">檔案備份</string>
+    <string name="btn_export_to_file">匯出到檔案</string>
+    <string name="btn_import_from_file">從檔案匯入</string>
+    <string name="section_webdav_sync">WebDAV 同步</string>
+    <string name="hint_webdav_url">WebDAV URL（如：https://dav.example.com）</string>
+    <string name="hint_webdav_username">使用者名稱（可選）</string>
+    <string name="hint_webdav_password">密碼（可選）</string>
+    <string name="btn_webdav_upload">上傳</string>
+    <string name="btn_webdav_download">恢復</string>
+
+    <string name="toast_webdav_upload_success">已上傳到 WebDAV</string>
+    <string name="toast_webdav_upload_failed">上傳失敗：%1$s</string>
+    <string name="toast_webdav_download_success">已從 WebDAV 匯入並套用</string>
+    <string name="toast_webdav_download_failed">下載/匯入失敗：%1$s</string>
+    <string name="toast_webdav_backup_not_found">伺服器上未找到 WebDAV 備份檔</string>
+    <string name="toast_webdav_url_required">請先填寫 WebDAV 伺服器基礎 URL</string>
+    <string name="toast_webdav_directory_created">已建立 BiBi Keyboard 目錄</string>
+
+    <string name="toast_export_success">已匯出：%1$s</string>
+    <string name="toast_export_failed">匯出失敗</string>
+    <string name="toast_import_success">匯入成功，已套用</string>
+    <string name="toast_import_failed">匯入失敗或格式不正確</string>
+
+    <string name="tip_backup_contains_secrets">注意：備份包含金鑰與憑證，僅用於個人備份，請妥善保管。</string>
+</resources>

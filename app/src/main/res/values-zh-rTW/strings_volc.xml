@@ -1,0 +1,76 @@
+<resources>
+    <!-- Volcengine (Volcano Engine) ASR 配置字串 -->
+    <string name="volc_section_title">Volcano Engine API設定</string>
+    <string name="vendor_volc">豆包語音</string>
+
+    <!-- Volc configuration -->
+    <string name="label_volc_asr_model">辨識模型</string>
+    <string name="volc_asr_model_streaming_v2">豆包串流語音辨識 2.0</string>
+    <string name="volc_asr_model_streaming_v1">豆包串流語音辨識 1.0</string>
+    <string name="volc_asr_model_file_v2">豆包普通檔案辨識 2.0</string>
+    <string name="volc_asr_model_file_v1">豆包普通檔案辨識 1.0</string>
+    <string name="volc_asr_model_file_turbo_v1">豆包極速檔案辨識 1.0</string>
+    <string name="feature_volc_asr_model_desc">直接選擇豆包辨識模型。串流模型邊說邊出字，需要較穩定的網路；普通檔案辨識在錄音結束後上傳完整音訊，準確度更好；極速檔案辨識同樣在錄音結束後上傳，速度更快。不會改變目前常規辨識以外的其他設定。</string>
+    <string name="label_volc_streaming">串流識別</string>
+    <string name="label_volc_file_standard">使用檔案識別普通版</string>
+    <string name="label_volc_model_v2">使用豆包語音識別 2.0 模型</string>
+    <string name="label_volc_ddc">啟用語義順滑（實驗性）</string>
+    <string name="label_volc_vad">啟用 VAD 分句（實驗性）</string>
+    <string name="label_volc_nonstream">啟用二遍識別（實驗性）</string>
+    <string name="label_volc_language">識別語言</string>
+    <string name="label_volc_use_new_auth">使用新版鑑權方式</string>
+    <string name="label_volc_api_key">X-Api-Key</string>
+
+    <!-- Volc modes hint -->
+    <string name="volc_modes_hint">可直接選擇五種豆包辨識模型：\n
+1. 串流語音辨識 2.0 / 1.0：邊說邊出字，起始與結束時延更低，需要較穩定的網路。\n
+2. 普通檔案辨識 2.0 / 1.0（提交/查詢）：錄音結束後上傳完整音訊，準確度更好。\n
+3. 極速檔案辨識 1.0（flash）：錄音結束後上傳，速度更快。</string>
+
+    <!-- Volc language options -->
+    <string name="volc_lang_auto">自動（中英文與方言）</string>
+    <string name="volc_lang_en_us">英語 (en-US)</string>
+    <string name="volc_lang_ja_jp">日語 (ja-JP)</string>
+    <string name="volc_lang_id_id">印尼語 (id-ID)</string>
+    <string name="volc_lang_es_mx">西班牙語 (es-MX)</string>
+    <string name="volc_lang_pt_br">葡萄牙語 (pt-BR)</string>
+    <string name="volc_lang_de_de">德語 (de-DE)</string>
+    <string name="volc_lang_fr_fr">法語 (fr-FR)</string>
+    <string name="volc_lang_ko_kr">韓語 (ko-KR)</string>
+    <string name="volc_lang_fil_ph">菲律賓語 (fil-PH)</string>
+    <string name="volc_lang_ms_my">馬來語 (ms-MY)</string>
+    <string name="volc_lang_th_th">泰語 (th-TH)</string>
+    <string name="volc_lang_ar_sa">阿拉伯語 (ar-SA)</string>
+
+    <!-- ============================================== -->
+    <!-- Volcano Engine ASR - 功能說明 -->
+    <!-- ============================================== -->
+
+    <!-- 火山引擎 - 串流識別 -->
+    <string name="feature_volc_streaming_off_desc">請在「辨識模型」中選擇普通檔案或極速檔案辨識。錄音結束後上傳完整音訊。</string>
+    <string name="feature_volc_streaming_on_desc">此模式已由「辨識模型」中的串流語音辨識 1.0 或 2.0 表達。邊說邊出字，需要較穩定的網路。</string>
+
+    <!-- 火山引擎 - 語義順滑 -->
+    <string name="feature_volc_ddc_off_desc">輸出原始識別結果，不做額外處理。</string>
+    <string name="feature_volc_ddc_on_desc">啟用語義順滑，自動最佳化識別結果的表達和格式。實驗性功能。</string>
+
+    <!-- 火山引擎 - VAD 分句 -->
+    <string name="feature_volc_vad_off_desc">整段錄音會連續辨識，不根據說話與停頓自動分段。</string>
+    <string name="feature_volc_vad_on_desc">會根據說話與停頓自動分段，長錄音可能更容易閱讀；實際效果取決於音訊與服務端。</string>
+
+    <!-- 火山引擎 - 二遍識別 -->
+    <string name="feature_volc_nonstream_off_desc">只使用串流辨識的第一遍結果，文字回傳較直接，但不會再進行第二次修正。</string>
+    <string name="feature_volc_nonstream_on_desc">服務端會對串流辨識結果再進行一次修正，最終文字可能更準確，但中間結果可能發生變化。</string>
+
+    <!-- 火山引擎 - 檔案識別普通版 -->
+    <string name="feature_volc_file_standard_off_desc">請在「辨識模型」中選擇極速檔案辨識 1.0。錄音結束後上傳，速度更快。</string>
+    <string name="feature_volc_file_standard_on_desc">請在「辨識模型」中選擇普通檔案辨識 1.0 或 2.0。錄音結束後上傳完整音訊（提交/查詢），準確度更好。</string>
+
+    <!-- 火山引擎 - 模型版本 -->
+    <string name="feature_volc_model_v2_off_desc">請在「辨識模型」中選擇對應的 1.0 模型。</string>
+    <string name="feature_volc_model_v2_on_desc">請在「辨識模型」中選擇對應的 2.0 模型。準確度更好，支援更多語言。</string>
+
+    <!-- 新驗證方式 - New auth -->
+    <string name="feature_volc_use_new_auth_off_desc">使用經典的 App Key / Access Key 驗證方式。</string>
+    <string name="feature_volc_use_new_auth_on_desc">使用較新的 X-Api-Key 驗證方式。請選擇與火山引擎控制台憑證一致的方式。</string>
+</resources>

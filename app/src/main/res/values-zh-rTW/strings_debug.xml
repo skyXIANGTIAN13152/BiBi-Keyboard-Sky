@@ -1,0 +1,17 @@
+<resources>
+    <!-- 調試日誌相關字串 - Debug logging related strings -->
+
+    <!-- Debug logging -->
+    <string name="about_debug_title">診斷日誌</string>
+    <string name="about_debug_desc">基礎診斷日誌會預設保存在本機。若遇到較複雜的問題，可暫時啟用詳細支援日誌以記錄更細的流程資訊。日誌不會包含辨識文字、輸入內容、剪貼簿內容或金鑰。</string>
+    <string name="about_debug_last_exit_prefix">最近一次異常結束：%1$s</string>
+    <string name="btn_debug_start_recording">啟用詳細支援日誌</string>
+    <string name="btn_debug_stop_recording">停止詳細支援日誌</string>
+    <string name="btn_debug_export">匯出診斷日誌</string>
+    <string name="toast_debug_recording_started">已啟用詳細支援日誌</string>
+    <string name="toast_debug_recording_stopped">已停止詳細支援日誌</string>
+    <string name="toast_debug_no_log">尚無可匯出的日誌</string>
+    <string name="toast_debug_stop_before_export">請先停止錄製後再匯出</string>
+    <string name="toast_debug_failed">操作失敗，請重試</string>
+    <string name="toast_debug_export_failed">匯出失敗</string>
+</resources>

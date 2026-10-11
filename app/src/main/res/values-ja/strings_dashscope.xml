@@ -1,0 +1,56 @@
+<resources>
+    <!-- DashScope (阿里云百炼) ASR 設定文字列 -->
+    <string name="dash_section_title">Alibaba Cloud DashScope ASRパラメータ</string>
+    <string name="vendor_dashscope">Alibaba Cloud DashScope</string>
+
+    <!-- DashScope configuration -->
+    <string name="label_dash_api_key">DashScope APIキー（Bearer）</string>
+    <string name="label_dash_model">認識モデル</string>
+    <string name="dash_model_fun_flash">Fun-ASR-Flash（非ストリーミング）</string>
+    <string name="dash_model_qwen_audio_flash">Qwen-Audio-3.0-ASR-Flash（非ストリーミング）</string>
+    <string name="dash_model_qwen3_flash">Qwen3-ASR-Flash（非ストリーミング）</string>
+    <string name="dash_model_qwen35_omni_flash">Qwen3.5-Omni-Flash（非ストリーミング）</string>
+    <string name="dash_model_qwen35_omni_plus">Qwen3.5-Omni-Plus（非ストリーミング）</string>
+    <string name="dash_model_fun_realtime">Fun-ASR-Realtime（ストリーミング）</string>
+    <string name="dash_model_qwen_audio_realtime">Qwen-Audio-3.0-ASR-Flash-Streaming（ストリーミング）</string>
+    <string name="dash_model_qwen3_realtime">Qwen3-ASR-Flash-Realtime（ストリーミング）</string>
+    <string name="label_dash_prompt">カスタムプロンプト/コンテキスト（オプション）</string>
+    <string name="label_dash_language">認識言語</string>
+    <string name="dash_language_max_4">最大4言語まで選択できます</string>
+    <string name="label_dash_streaming">ストリーミング認識</string>
+    <string name="label_dash_fun_asr">Fun-ASR モデルを使用（fun-asr-realtime）</string>
+    <string name="label_dash_semantic_punct">セマンティック区切りを使用</string>
+    <string name="dash_lang_auto">自動識別）</string>
+    <string name="label_dash_region">エンドポイント</string>
+    <string name="dash_region_cn">中国本土（aliyuncs.com）</string>
+    <string name="dash_region_intl">シンガポール/国際（dashscope-intl.aliyuncs.com）</string>
+
+    <!-- DashScope language options -->
+    <string name="dash_lang_zh">中国語（zh）</string>
+    <string name="dash_lang_en">英語（en）</string>
+    <string name="dash_lang_ja">日本語（ja）</string>
+    <string name="dash_lang_de">ドイツ語（de）</string>
+    <string name="dash_lang_ko">韓国語（ko）</string>
+    <string name="dash_lang_ru">ロシア語（ru）</string>
+    <string name="dash_lang_fr">フランス語（fr）</string>
+    <string name="dash_lang_pt">ポルトガル語（pt）</string>
+    <string name="dash_lang_ar">アラビア語（ar）</string>
+    <string name="dash_lang_it">イタリア語（it）</string>
+    <string name="dash_lang_es">スペイン語（es）</string>
+
+    <!-- ============================================== -->
+    <!-- DashScope設定 - 機能説明 -->
+    <!-- ============================================== -->
+
+    <!-- 通義千問 - ストリーミング -->
+    <string name="feature_dash_streaming_off_desc">非ストリーミング認識を使用します。録音終了後に処理が開始されるため、遅延が発生する可能性があります。Qwen-Audio-3.0-ASR-Flash、Fun-ASR-Flash、Qwen3.5-Omni 系列で利用できます。</string>
+    <string name="feature_dash_streaming_on_desc">ストリーミング認識を使用します。話しながら文字起こし結果がリアルタイムで表示されます。既定はQwen-Audio-3.0-ASR-Flash-Streamingで、下でFun-ASR-Realtimeに切り替えできます。</string>
+
+    <!-- Fun-ASR モデル（ストリーミングのみ） -->
+    <string name="feature_dash_fun_asr_off_desc">ストリーミングは Qwen-Audio-3.0-ASR-Flash-Streaming（既定）を使用します。</string>
+    <string name="feature_dash_fun_asr_on_desc">ストリーミングは Fun-ASR-Realtime を使用します。</string>
+
+    <!-- DashScope セマンティック区切り -->
+    <string name="feature_dash_semantic_punct_off_desc">主に発話の間で区切るため、通常は結果が速く返ります。</string>
+    <string name="feature_dash_semantic_punct_on_desc">文の意味も考慮して区切ります。句読点が自然になる場合がありますが、返答が少し遅くなることがあります。</string>
+</resources>

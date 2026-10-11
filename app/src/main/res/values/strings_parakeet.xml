@@ -1,0 +1,32 @@
+<resources>
+    <!-- Parakeet local ASR configuration strings -->
+    <string name="parakeet_section_title">Parakeet Local ASR</string>
+    <string name="vendor_parakeet">Parakeet</string>
+
+    <string name="label_pk_model_variant">Model version</string>
+    <string name="pk_model_06b_v3_int8">0.6B V3 Int8 European (456MB)</string>
+    <string name="pk_model_06b_v2_int8">0.6B V2 Int8 English (451MB)</string>
+    <string name="label_pk_threads">Threads (1-8)</string>
+    <string name="label_pk_preload">Aggressive model loading</string>
+    <string name="feature_pk_preload_off_desc">Loads the model only when needed, which may cause delay on first use.</string>
+    <string name="feature_pk_preload_on_desc">Preloads the model when the keyboard appears to reduce first-use latency.</string>
+    <string name="label_pk_keep_alive">Model unload policy</string>
+    <string name="btn_pk_download_model">One-click download model</string>
+    <string name="btn_pk_import_model">Import model from local file</string>
+    <string name="btn_pk_clear_model">Clear downloaded Parakeet model</string>
+    <string name="pk_download_status_downloading">Downloading… %1$d%%</string>
+    <string name="pk_download_status_extracting_progress">Extracting… %1$d%%</string>
+    <string name="pk_download_status_done">Parakeet model installed</string>
+    <string name="pk_download_status_failed">Download or extraction failed</string>
+    <string name="pk_download_started_in_bg">Started background download. Check notification for progress.</string>
+    <string name="pk_import_started_in_bg">Started background import. Check notification for progress.</string>
+    <string name="pk_import_success">Model imported successfully: %1$s</string>
+    <string name="pk_import_failed">Model import failed: %1$s</string>
+    <string name="pk_clear_confirm_title">Clear Parakeet model?</string>
+    <string name="pk_clear_confirm_message">This will delete downloaded Parakeet model files. You can re-download later. Continue?</string>
+    <string name="pk_clear_done">Parakeet model cleared</string>
+    <string name="pk_clear_failed">Clear failed</string>
+    <string name="error_parakeet_model_missing">Parakeet model files are missing. Please configure or download in Settings.</string>
+    <string name="notif_pk_title_06b_v3_int8">Parakeet 0.6B V3 Int8 European model (456MB)</string>
+    <string name="notif_pk_title_06b_v2_int8">Parakeet 0.6B V2 Int8 English model (451MB)</string>
+</resources>

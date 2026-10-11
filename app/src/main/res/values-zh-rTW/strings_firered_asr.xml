@@ -1,0 +1,48 @@
+<resources>
+    <!-- FireRedASR V2 本機 ASR 設定字串 -->
+    <string name="firered_asr_section_title">FireRedASR V2 本機 ASR</string>
+    <string name="vendor_firered_asr">FireRedASR V2</string>
+
+    <!-- FireRedASR V2 設定 -->
+    <string name="label_fr_model_variant">模型版本</string>
+    <string name="label_fr_threads">執行緒數（1-8）</string>
+    <string name="label_fr_keep_alive">模型卸載策略</string>
+    <string name="label_fr_preload">積極載入模型</string>
+    <string name="fr_model_ctc_int8">中英雙語 CTC（int8，約 740MB）</string>
+    <string name="btn_fr_download_model">一鍵下載模型</string>
+    <string name="btn_fr_import_model">從本機匯入模型</string>
+    <string name="btn_fr_clear_model">清除已下載的 FireRedASR V2 模型</string>
+    <string name="fr_download_status_downloading">下載中… %1$d%%</string>
+    <string name="fr_download_status_extracting_progress">解壓中… %1$d%%</string>
+    <string name="fr_download_status_done">FireRedASR V2 模型已安裝</string>
+    <string name="fr_download_status_failed">下載或解壓失敗</string>
+    <string name="fr_download_started_in_bg">已開始背景下載，請到通知欄查看進度</string>
+    <string name="fr_import_started_in_bg">已開始背景匯入，請到通知欄查看進度</string>
+    <string name="fr_import_success">模型匯入成功：%1$s</string>
+    <string name="fr_import_failed">模型匯入失敗：%1$s</string>
+    <string name="fr_import_status_extracting">匯入中… %1$d%%</string>
+    <string name="fr_clear_confirm_title">確認清除 FireRedASR V2 模型？</string>
+    <string name="fr_clear_confirm_message">將刪除已下載的 FireRedASR V2 模型檔案，可稍後重新下載。是否繼續？</string>
+    <string name="fr_clear_done">已清除 FireRedASR V2 模型</string>
+    <string name="fr_clear_failed">清除失敗</string>
+
+    <!-- 錯誤提示 -->
+    <string name="error_firered_asr_model_missing">缺少 FireRedASR V2 模型檔案，請稍後在設定中配置或下載</string>
+
+    <!-- 模型下載通知 -->
+    <string name="notif_fr_title_ctc_int8">FireRedASR V2（CTC · int8）</string>
+
+    <!-- FireRedASR V2 - 功能說明 -->
+    <string name="feature_fr_preload_off_desc">僅在需要時載入模型，首次使用可能有延遲。</string>
+    <string name="feature_fr_preload_on_desc">鍵盤顯示時預載入模型，減少首次使用延遲。</string>
+
+    <!-- FireRedASR V2 - 使用 ITN -->
+    <string name="label_fr_use_itn">啟用 ITN（數字智慧識別）</string>
+    <string name="feature_fr_use_itn_off_desc">保留口語寫法，例如「一千二百三十四」。</string>
+    <string name="feature_fr_use_itn_on_desc">自動將支援的中文數字、日期與時間改成常用書面寫法，例如將「一千二百三十四」寫成「1234」。</string>
+
+    <!-- FireRedASR V2 - 偽串流模式 -->
+    <string name="label_fr_pseudo_stream">啟用偽串流預覽（固定時長分句）</string>
+    <string name="feature_fr_pseudo_stream_off_desc">不進行分句預覽，整段錄音結束後一次性辨識，效果與傳統本機辨識相同。</string>
+    <string name="feature_fr_pseudo_stream_on_desc">按固定時長將語音拆成小段，先給出本機預覽結果，整段錄音結束後再統一辨識並覆蓋預覽文字。</string>
+</resources>

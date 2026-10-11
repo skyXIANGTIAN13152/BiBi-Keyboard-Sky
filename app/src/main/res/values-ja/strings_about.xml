@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 関連情報ページ文字列 - About page related strings -->
+
+    <!-- About -->
+    <string name="btn_about">について</string>
+    <string name="about_title">について</string>
+    <string name="about_app_name">アプリ名：%1$s</string>
+    <string name="about_version">バージョン：%1$s</string>
+    <string name="about_package">パッケージ：%1$s</string>
+    <string name="about_auto_update_check">更新を自動チェック</string>
+    <string name="about_open_github">プロジェクトページを開く</string>
+    <string name="about_project_url">https://github.com/BryceWG/BiBi-Keyboard</string>
+    <string name="about_open_website">公式サイトを開く</string>
+    <string name="about_website_url">https://bibi.brycewg.com</string>
+    <string name="about_open_docs">ドキュメントを開く</string>
+    <string name="about_docs_url">https://bibidocs.brycewg.com</string>
+    <string name="about_desc">マルチベンダーASRとLLM後処理付きの軽量音声入力IME</string>
+
+    <string name="label_asr_total_chars">音声認識からの総文字数：%1$d</string>
+
+    <!-- Model download notifications -->
+    <string name="notif_channel_model_download">モデルダウンロード</string>
+    <string name="notif_channel_model_download_desc">ローカルモデルダウンロードと展開の進行状況</string>
+    <string name="notif_model_summary_title">モデルダウンロード</string>
+    <string name="notif_model_summary_text">バックグラウンドでモデルをダウンロード/展開中</string>
+
+    <!-- About: Usage stats -->
+    <string name="about_stats_title">使用統計</string>
+    <string name="about_stats_overview">概要</string>
+    <string name="about_days_with_you">BiBi Keyboard は%1$d日間あなたと一緒にいました</string>
+    <string name="about_stats_total_audio_label">総音声時間</string>
+    <string name="about_stats_total_chars_label">総文字数</string>
+    <string name="about_stats_sessions_label">セッション数</string>
+    <string name="about_stats_avg_audio_label">平均音声時間</string>
+    <string name="about_stats_avg_chars_label">平均文字数</string>
+    <string name="about_stats_avg_speed_label">平均速度</string>
+    <string name="about_stats_avg_speed_value">%1$s文字/分</string>
+    <string name="about_stats_daily_avg_7d_label">日平均（過去7日間）</string>
+    <string name="about_stats_weekly_avg_4w_label">週平均（過去4週間）</string>
+    <string name="about_stats_chars_with_audio">%1$s文字 · %2$s</string>
+    <string name="about_by_vendor">プロバイダー別</string>
+    <string name="about_online_asr_failure_title">オンライン ASR の失敗率（過去 30 日）</string>
+    <string name="about_proc_prefix">所要</string>
+    <string name="about_last_7_days">過去7日間（文字）</string>
+    <string name="about_empty_stats_placeholder">まだデータがありません</string>
+    <string name="about_stats_share">共有</string>
+    <string name="about_stats_share_title">使用統計を共有</string>
+    <string name="about_stats_share_subtitle">マイ使用記録</string>
+    <string name="about_stats_share_save">保存</string>
+    <string name="about_stats_share_action">共有</string>
+    <string name="about_stats_share_chooser_title">使用統計を共有</string>
+    <string name="about_stats_share_saved">Pictures/BiBi に保存しました</string>
+    <string name="about_stats_share_save_failed">画像の保存に失敗しました</string>
+    <string name="about_stats_share_failed">画像の共有に失敗しました</string>
+    <string name="about_stats_share_top_vendors">よく使うプロバイダー</string>
+    <string name="about_stats_share_footer_site">bibi.brycewg.com</string>
+    <string name="about_stats_share_days_unit">日</string>
+    <string name="about_stats_share_tagline">AI音声キーボード</string>
+    <string name="about_stats_share_hero_caption">%1$sと一緒に過ごした日々</string>
+    <string name="about_stats_share_insight_time_saved">約%1$sのタイピング時間を節約</string>
+
+    <!-- オープンソース謝辞 -->
+    <string name="about_acknowledgements_title">謝辞</string>
+    <string name="about_acknowledgements_desc">本プロジェクトは以下の優れたオープンソースプロジェクトに基づいて構築されています。開発者の皆様に心より感謝いたします：</string>
+    <string name="about_view_full_licenses">完全なライセンスを表示</string>
+    <string name="about_licenses_dialog_title">サードパーティライセンス</string>
+
+    <string name="about_sherpa_onnx_title">k2-fsa/sherpa-onnx</string>
+    <string name="about_sherpa_onnx_desc">ローカルASRモデルの技術ソリューションを提供し、オフライン音声認識を可能にします</string>
+
+    <string name="about_syncclipboard_title">Jeric-X/SyncClipboard</string>
+    <string name="about_syncclipboard_desc">クリップボード同期のバックエンドサービスを提供します（ローカルでは実行されず、サーバーが必要です）</string>
+
+    <string name="about_phosphor_title">phosphor-icons/homepage</string>
+    <string name="about_phosphor_desc">アプリケーション全体で使用されるほぼすべてのアイコンを提供します</string>
+
+    <string name="about_miuix_title">compose-miuix-ui/miuix</string>
+    <string name="about_miuix_desc">設定画面の体験を支える Miuix スタイルの Compose UI コンポーネント、アイコン、Preference コンポーネントを提供します</string>
+
+    <string name="about_wavelineview_desc">録音波形アニメーションの実装方案を提供し、オーディオ可視化効果をよりスムーズで美しくします。</string>
+
+    <string name="about_tenvad_title">TEN-framework/ten-vad</string>
+    <string name="about_tenvad_desc">音声活動検出（VAD）モデルを提供し、スマートな録音自動停止機能を実現します</string>
+
+    <string name="unit_chars">文字</string>
+    <string name="unit_0_min">0分</string>
+    <string name="fmt_h_m">%1$d時間%2$d分</string>
+    <string name="fmt_m_s">%1$d分%2$d秒</string>
+    <string name="fmt_s">%1$d秒</string>
+    <string name="about_wavelineview_title">Jay-Goo/WaveLineView</string>
+</resources>

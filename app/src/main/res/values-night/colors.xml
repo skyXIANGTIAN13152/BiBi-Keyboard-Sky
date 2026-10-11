@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Mode Colors - Softened -->
+    <color name="ic_launcher_background_color">#1F1F1F</color> <!-- Softer Dark Background -->
+    <color name="ic_launcher_foreground_color">#BBBBBB</color> <!-- Dimmer Light Foreground -->
+
+    <!-- 启动画面颜色（深色模式：黑色背景、白色前景） -->
+    <color name="splash_background">#000000</color>
+    <color name="splash_foreground">#FFFFFF</color>
+
+    <!-- ASR 标签色（深色，莫兰迪自然色系） -->
+    <color name="asr_tag_bg_online">#1E2B3A</color>
+    <color name="asr_tag_fg_online">#BBD4F4</color>
+
+    <color name="asr_tag_bg_local">#1D3328</color>
+    <color name="asr_tag_fg_local">#BFE6D2</color>
+
+    <color name="asr_tag_bg_streaming">#3A321E</color>
+    <color name="asr_tag_fg_streaming">#FFE7B6</color>
+
+    <color name="asr_tag_bg_non_streaming">#263233</color>
+    <color name="asr_tag_fg_non_streaming">#CBE0E0</color>
+
+    <color name="asr_tag_bg_pseudo_streaming">#322B1A</color>
+    <color name="asr_tag_fg_pseudo_streaming">#FFE7B6</color>
+
+    <color name="asr_tag_bg_custom">#2B2035</color>
+    <color name="asr_tag_fg_custom">#E0C9F2</color>
+
+    <color name="asr_tag_bg_cn_dialect">#3A1F28</color>
+    <color name="asr_tag_fg_cn_dialect">#FFB8C8</color>
+
+    <color name="asr_tag_bg_accurate">#2A2F38</color>
+    <color name="asr_tag_fg_accurate">#D8E0EF</color>
+
+    <!-- 录音测试延迟链路固定色（与动态主题无关） -->
+    <color name="recording_latency_green">#35C98A</color>
+    <color name="recording_latency_on_green">#002112</color>
+    <color name="recording_latency_blue">#5BA7FF</color>
+    <color name="recording_latency_on_blue">#001E3B</color>
+    <color name="recording_latency_orange">#FFB05A</color>
+    <color name="recording_latency_on_orange">#331300</color>
+
+    <!-- LLM 测试耗时分段固定色（与动态主题无关） -->
+    <color name="llm_timing_blue">#5BA7FF</color>
+    <color name="llm_timing_green">#5ED17A</color>
+    <color name="llm_timing_yellow">#F6D15B</color>
+</resources>

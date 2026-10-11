@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 图标颜色 (日间默认) -->
+    <color name="ic_launcher_background_color">#FCFCFC</color>
+    <color name="ic_launcher_foreground_color">#777777</color>
+
+    <!-- 启动画面颜色（浅色模式：白色背景、黑色前景） -->
+    <color name="splash_background">#FFFFFF</color>
+    <color name="splash_foreground">#000000</color>
+
+    <!-- ASR 标签色（浅色，莫兰迪自然色系） -->
+    <color name="asr_tag_bg_online">#E3EBF4</color>
+    <color name="asr_tag_fg_online">#2F4A67</color>
+
+    <color name="asr_tag_bg_local">#E2EEE7</color>
+    <color name="asr_tag_fg_local">#2E5A45</color>
+
+    <color name="asr_tag_bg_streaming">#F2EBD9</color>
+    <color name="asr_tag_fg_streaming">#6B5630</color>
+
+    <color name="asr_tag_bg_non_streaming">#E6EDEC</color>
+    <color name="asr_tag_fg_non_streaming">#3E5B5C</color>
+
+    <color name="asr_tag_bg_pseudo_streaming">#EFE2C8</color>
+    <color name="asr_tag_fg_pseudo_streaming">#6B5630</color>
+
+    <color name="asr_tag_bg_custom">#EAE4F1</color>
+    <color name="asr_tag_fg_custom">#5B3E73</color>
+
+    <color name="asr_tag_bg_cn_dialect">#F0DEE4</color>
+    <color name="asr_tag_fg_cn_dialect">#6A3D4A</color>
+
+    <color name="asr_tag_bg_accurate">#E5E8EF</color>
+    <color name="asr_tag_fg_accurate">#3B4557</color>
+
+    <!-- 录音测试延迟链路固定色（与动态主题无关） -->
+    <color name="recording_latency_green">#166B46</color>
+    <color name="recording_latency_on_green">#FFFFFF</color>
+    <color name="recording_latency_blue">#1565C0</color>
+    <color name="recording_latency_on_blue">#FFFFFF</color>
+    <color name="recording_latency_orange">#8F3F08</color>
+    <color name="recording_latency_on_orange">#FFFFFF</color>
+
+    <!-- LLM 测试耗时分段固定色（与动态主题无关） -->
+    <color name="llm_timing_blue">#1565C0</color>
+    <color name="llm_timing_green">#2E7D32</color>
+    <color name="llm_timing_yellow">#C79100</color>
+
+    <!-- 识别历史阶段时间轴固定色（与动态主题无关） -->
+    <color name="history_timing_audio_input">#4DD0C8</color>
+    <color name="history_timing_recognition">#5BA7FF</color>
+    <color name="history_timing_postprocess">#F6D15B</color>
+    <color name="history_timing_ai_postprocess">#FF8BB1</color>
+    <color name="history_timing_text_delivery">#57D2E1</color>
+</resources>

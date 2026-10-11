@@ -1,0 +1,47 @@
+<resources>
+    <!-- X-ASR 本地流式 ASR 配置字串 -->
+    <string name="x_asr_section_title">X-ASR（本機）</string>
+    <string name="vendor_x_asr">X-ASR</string>
+
+    <!-- X-ASR configuration -->
+    <string name="label_x_asr_model_variant">模型版本</string>
+    <string name="label_x_asr_threads">執行緒數（1-8）</string>
+    <string name="label_x_asr_keep_alive">模型卸載策略</string>
+    <string name="x_asr_variant_480ms">中英（480 ms，530MB）</string>
+    <string name="btn_x_asr_download_model">一鍵下載模型</string>
+    <string name="btn_x_asr_import_model">從本機匯入模型</string>
+    <string name="btn_x_asr_clear_model">清除已下載模型</string>
+    <string name="x_asr_download_status_downloading">下載中… %1$d%%</string>
+    <string name="x_asr_download_status_extracting_progress">解壓中… %1$d%%</string>
+    <string name="x_asr_download_status_done">模型已安裝</string>
+    <string name="x_asr_download_status_failed">下載或解壓失敗</string>
+    <string name="x_asr_download_started_in_bg">已開始背景下載，請到通知欄查看進度</string>
+    <string name="x_asr_import_started_in_bg">已開始背景匯入，請到通知欄查看進度</string>
+    <string name="x_asr_import_success">模型匯入成功：%1$s</string>
+    <string name="x_asr_import_failed">模型匯入失敗：%1$s</string>
+    <string name="x_asr_clear_confirm_title">確認清除模型？</string>
+    <string name="x_asr_clear_confirm_message">將刪除已下載的模型檔案，可稍後重新下載。是否繼續？</string>
+    <string name="x_asr_clear_done">已清除模型</string>
+    <string name="x_asr_clear_failed">清除失敗</string>
+    <string name="x_asr_loading_model">本機模型載入中…</string>
+    <string name="label_x_asr_preload">積極載入模型</string>
+    <string name="label_x_asr_use_itn">啟用 ITN（數字智慧識別）</string>
+
+    <!-- Error message -->
+    <string name="error_x_asr_model_missing">缺少 X-ASR 模型檔案，請稍後在設定中配置或下載</string>
+
+    <!-- Model download notifications -->
+    <string name="notif_x_asr_title_480ms">X-ASR 模型（480 ms）</string>
+
+    <!-- ============================================== -->
+    <!-- X-ASR - 功能說明 -->
+    <!-- ============================================== -->
+
+    <!-- X-ASR - 預載入模型 -->
+    <string name="feature_x_asr_preload_off_desc">僅在需要時載入模型，首次使用可能有延遲。</string>
+    <string name="feature_x_asr_preload_on_desc">鍵盤顯示時預載入模型，減少首次使用延遲。</string>
+
+    <!-- X-ASR - 使用 ITN -->
+    <string name="feature_x_asr_use_itn_off_desc">保留口語寫法，例如「一千二百三十四」。</string>
+    <string name="feature_x_asr_use_itn_on_desc">自動將支援的中文數字、日期與時間改成常用書面寫法，例如將「一千二百三十四」寫成「1234」。</string>
+</resources>

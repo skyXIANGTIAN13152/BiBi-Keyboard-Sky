@@ -1,0 +1,10 @@
+<resources>
+    <string name="vendor_zhipu">智譜 GLM</string>
+    <string name="zhipu_section_title">智譜 GLM 音声認識</string>
+    <string name="label_zhipu_api_key">智譜 API キー</string>
+    <string name="label_zhipu_temperature">Temperature（温度）</string>
+    <string name="error_missing_zhipu_key">先に智譜 API キーを設定してください</string>
+    <string name="zhipu_temperature_hint">0.0 - 1.0、デフォルト 0.95</string>
+    <string name="label_zhipu_prompt">コンテキストプロンプト</string>
+    <string name="zhipu_prompt_hint">長文音声のコンテキストとして以前の文字起こし結果を提供できます。8000文字以下を推奨。</string>
+</resources>

@@ -1,0 +1,48 @@
+<resources>
+    <!-- FireRedASR V2 local ASR configuration strings -->
+    <string name="firered_asr_section_title">FireRedASR V2 (Local)</string>
+    <string name="vendor_firered_asr">FireRedASR V2</string>
+
+    <!-- FireRedASR V2 configuration -->
+    <string name="label_fr_model_variant">Model version</string>
+    <string name="label_fr_threads">Threads (1-8)</string>
+    <string name="label_fr_keep_alive">Model unload policy</string>
+    <string name="label_fr_preload">Aggressive model loading</string>
+    <string name="fr_model_ctc_int8">Zh + En CTC (int8, ~740MB)</string>
+    <string name="btn_fr_download_model">One-click download model</string>
+    <string name="btn_fr_import_model">Import from local</string>
+    <string name="btn_fr_clear_model">Clear downloaded FireRedASR V2 model</string>
+    <string name="fr_download_status_downloading">Downloading… %1$d%%</string>
+    <string name="fr_download_status_extracting_progress">Extracting… %1$d%%</string>
+    <string name="fr_download_status_done">FireRedASR V2 model installed</string>
+    <string name="fr_download_status_failed">Download or extraction failed</string>
+    <string name="fr_download_started_in_bg">Started background download. See notification for progress</string>
+    <string name="fr_import_started_in_bg">Started background import. See notification for progress</string>
+    <string name="fr_import_success">Model imported successfully: %1$s</string>
+    <string name="fr_import_failed">Model import failed: %1$s</string>
+    <string name="fr_import_status_extracting">Importing… %1$d%%</string>
+    <string name="fr_clear_confirm_title">Clear FireRedASR V2 model?</string>
+    <string name="fr_clear_confirm_message">This will delete downloaded FireRedASR V2 model files. You can re-download later. Continue?</string>
+    <string name="fr_clear_done">FireRedASR V2 model cleared</string>
+    <string name="fr_clear_failed">Clear failed</string>
+
+    <!-- Error message -->
+    <string name="error_firered_asr_model_missing">FireRedASR V2 model files are missing. Please configure or download later in Settings.</string>
+
+    <!-- Model download notifications -->
+    <string name="notif_fr_title_ctc_int8">FireRedASR V2 (CTC · int8)</string>
+
+    <!-- FireRedASR V2 Settings - Feature Descriptions -->
+    <string name="feature_fr_preload_off_desc">Loads the model only when needed, which may cause delay on first use.</string>
+    <string name="feature_fr_preload_on_desc">Preloads the model when the keyboard appears to reduce first-use latency.</string>
+
+    <!-- FireRedASR V2 - Use ITN -->
+    <string name="label_fr_use_itn">Enable ITN (smart number recognition)</string>
+    <string name="feature_fr_use_itn_off_desc">Keeps spoken forms, such as “one thousand two hundred thirty-four”.</string>
+    <string name="feature_fr_use_itn_on_desc">Converts supported Chinese numbers, dates, and times to common written forms, such as “1234”.</string>
+
+    <!-- FireRedASR V2 - Pseudo streaming -->
+    <string name="label_fr_pseudo_stream">Enable pseudo streaming preview (fixed-length segments)</string>
+    <string name="feature_fr_pseudo_stream_off_desc">Disable pseudo streaming. Audio is recognized once at the end, same as traditional offline mode.</string>
+    <string name="feature_fr_pseudo_stream_on_desc">Splits audio into fixed-length segments for local preview, then runs full recognition at the end to overwrite the preview text.</string>
+</resources>

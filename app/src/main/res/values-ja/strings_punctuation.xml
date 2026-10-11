@@ -1,0 +1,27 @@
+<resources>
+    <!-- 共通 sherpa-onnx 句読点モデル（ct-transformer zh+en） -->
+    <string name="label_punct_model_shared">共通句読点モデル（60MB、一部の音声認識モデルで使用）</string>
+    <string name="btn_punct_download_model">句読点モデルをダウンロード</string>
+    <string name="btn_punct_import_model">句読点モデルをインポート</string>
+    <string name="btn_punct_clear_model">句読点モデルを削除</string>
+
+    <string name="punct_download_status_downloading">句読点モデルをダウンロード中… %1$d%%</string>
+    <string name="punct_download_status_extracting_progress">句読点モデルを展開中… %1$d%%</string>
+    <string name="punct_download_status_done">句読点モデルをインストールしました</string>
+    <string name="punct_download_status_failed">句読点モデルのダウンロードまたは展開に失敗しました</string>
+    <string name="punct_download_started_in_bg">句読点モデルのバックグラウンドダウンロードを開始しました。通知から進捗を確認できます。</string>
+
+    <string name="punct_import_started_in_bg">句読点モデルのバックグラウンドインポートを開始しました。通知から進捗を確認できます。</string>
+    <string name="punct_import_success">句読点モデルのインポートが完了しました：%1$s</string>
+    <string name="punct_import_failed">句読点モデルのインポートに失敗しました：%1$s</string>
+
+    <string name="punct_clear_confirm_title">句読点モデルを削除しますか？</string>
+    <string name="punct_clear_confirm_message">共通のローカル句読点モデルを削除します。後で ASR 設定から再ダウンロードできます。続行しますか？</string>
+    <string name="punct_clear_done">句読点モデルを削除しました</string>
+    <string name="punct_clear_failed">句読点モデルの削除に失敗しました</string>
+
+    <string name="notif_punct_title">句読点モデル（60MB,共通）</string>
+
+    <!-- FireRedASR V2 選択・呼び出し時に句読点モデルがない場合の通知 -->
+    <string name="toast_punct_model_missing">ローカルの句読点モデルが見つかりません。FireRedASR V2 の認識結果に句読点が付かない場合があります。ASR 設定から共通の句読点モデルをダウンロードできます。</string>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="vendor_zhipu">智譜 GLM</string>
+    <string name="zhipu_section_title">智譜 GLM 語音辨識</string>
+    <string name="label_zhipu_api_key">智譜 API Key</string>
+    <string name="label_zhipu_temperature">Temperature（溫度）</string>
+    <string name="error_missing_zhipu_key">請先設定智譜 API Key</string>
+    <string name="zhipu_temperature_hint">0.0 - 1.0，預設 0.95</string>
+    <string name="label_zhipu_prompt">上下文提示</string>
+    <string name="zhipu_prompt_hint">在長文本場景中，可提供之前的轉錄結果作為上下文。建議小於 8000 字。</string>
+</resources>

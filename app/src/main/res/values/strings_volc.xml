@@ -1,0 +1,76 @@
+<resources>
+    <!-- Volcengine (Volcano Engine) ASR configuration strings -->
+    <string name="volc_section_title">Volcano Engine API Settings</string>
+    <string name="vendor_volc">Volcano Engine</string>
+
+    <!-- Volc configuration -->
+    <string name="label_volc_asr_model">Recognition model</string>
+    <string name="volc_asr_model_streaming_v2">Doubao streaming speech recognition 2.0</string>
+    <string name="volc_asr_model_streaming_v1">Doubao streaming speech recognition 1.0</string>
+    <string name="volc_asr_model_file_v2">Doubao standard file recognition 2.0</string>
+    <string name="volc_asr_model_file_v1">Doubao standard file recognition 1.0</string>
+    <string name="volc_asr_model_file_turbo_v1">Doubao turbo file recognition 1.0</string>
+    <string name="feature_volc_asr_model_desc">Choose a Doubao recognition model directly. Streaming models show text as you speak and need a stable network. Standard file recognition uploads the full recording after you stop and is more accurate. Turbo file recognition also uploads after you stop and is faster. Does not change settings other than regular recognition.</string>
+    <string name="label_volc_streaming">Streaming recognition</string>
+    <string name="label_volc_file_standard">Use file recognition (standard)</string>
+    <string name="label_volc_model_v2">Use Doubao ASR 2.0 model</string>
+    <string name="label_volc_ddc">Enable semantic smoothing (experimental)</string>
+    <string name="label_volc_vad">Enable VAD segmentation (experimental)</string>
+    <string name="label_volc_nonstream">Enable two-pass recognition (experimental)</string>
+    <string name="label_volc_language">Recognition language</string>
+    <string name="label_volc_use_new_auth">Use new authentication method</string>
+    <string name="label_volc_api_key">X-Api-Key</string>
+
+    <!-- Volc modes hint -->
+    <string name="volc_modes_hint">Choose a Doubao recognition model directly:\n
+1. Streaming speech recognition 2.0 / 1.0: text appears as you speak, with lower start/end latency; needs a stable network.\n
+2. Standard file recognition 2.0 / 1.0 (submit/query): uploads the full recording after you stop; more accurate.\n
+3. Turbo file recognition 1.0 (flash): uploads after you stop; faster.</string>
+
+    <!-- Volc language options -->
+    <string name="volc_lang_auto">Auto (Chinese/English + dialects)</string>
+    <string name="volc_lang_en_us">English (en-US)</string>
+    <string name="volc_lang_ja_jp">Japanese (ja-JP)</string>
+    <string name="volc_lang_id_id">Indonesian (id-ID)</string>
+    <string name="volc_lang_es_mx">Spanish (es-MX)</string>
+    <string name="volc_lang_pt_br">Portuguese (pt-BR)</string>
+    <string name="volc_lang_de_de">German (de-DE)</string>
+    <string name="volc_lang_fr_fr">French (fr-FR)</string>
+    <string name="volc_lang_ko_kr">Korean (ko-KR)</string>
+    <string name="volc_lang_fil_ph">Filipino (fil-PH)</string>
+    <string name="volc_lang_ms_my">Malay (ms-MY)</string>
+    <string name="volc_lang_th_th">Thai (th-TH)</string>
+    <string name="volc_lang_ar_sa">Arabic (ar-SA)</string>
+
+    <!-- ============================================== -->
+    <!-- Volcengine Settings - Feature Descriptions -->
+    <!-- ============================================== -->
+
+    <!-- Volcengine - Streaming -->
+    <string name="feature_volc_streaming_off_desc">Choose standard or turbo file recognition under Recognition model. The full recording is uploaded after you stop.</string>
+    <string name="feature_volc_streaming_on_desc">This mode is now selected as streaming speech recognition 1.0 or 2.0 under Recognition model. Text appears as you speak; a stable network is required.</string>
+
+    <!-- Volcengine - DDC (semantic smoothing) -->
+    <string name="feature_volc_ddc_off_desc">Outputs raw recognition results without additional processing.</string>
+    <string name="feature_volc_ddc_on_desc">Enables semantic smoothing to automatically optimize expression and formatting of recognition results. Experimental feature.</string>
+
+    <!-- Volcengine - VAD segmentation -->
+    <string name="feature_volc_vad_off_desc">The recording is recognized continuously without automatic segmentation based on speech and pauses.</string>
+    <string name="feature_volc_vad_on_desc">The recording is automatically segmented based on speech and pauses, which may make long results easier to read. Results depend on the audio and provider.</string>
+
+    <!-- Volcengine - Two-pass recognition -->
+    <string name="feature_volc_nonstream_off_desc">Uses only the first-pass streaming result. Text returns directly, without a second correction pass.</string>
+    <string name="feature_volc_nonstream_on_desc">The provider performs a second correction pass on the streaming result. Final text may improve, but interim text may change.</string>
+
+    <!-- Volcengine - File recognition (standard mode) -->
+    <string name="feature_volc_file_standard_off_desc">Choose turbo file recognition 1.0 under Recognition model. Uploads after you stop and is faster.</string>
+    <string name="feature_volc_file_standard_on_desc">Choose standard file recognition 1.0 or 2.0 under Recognition model. Uploads the full recording after you stop (submit/query) and is more accurate.</string>
+
+    <!-- Volcengine - Model version -->
+    <string name="feature_volc_model_v2_off_desc">Choose the matching 1.0 model under Recognition model.</string>
+    <string name="feature_volc_model_v2_on_desc">Choose the matching 2.0 model under Recognition model. Better accuracy and broader language support.</string>
+
+    <!-- Volcengine - New auth -->
+    <string name="feature_volc_use_new_auth_off_desc">Uses the classic App Key / Access Key authentication.</string>
+    <string name="feature_volc_use_new_auth_on_desc">Uses the newer X-Api-Key authentication. Choose the method that matches your Volcano Engine console credentials.</string>
+</resources>

@@ -1,0 +1,73 @@
+<resources>
+    <!-- SenseVoice 本地 ASR 配置字串 -->
+    <string name="sensevoice_section_title">SenseVoice 本地 ASR</string>
+    <string name="vendor_sensevoice">SenseVoice</string>
+
+    <!-- SenseVoice local settings -->
+    <string name="label_sv_threads">執行緒數（1-8）</string>
+    <string name="label_sv_language">識別語言</string>
+    <string name="sv_lang_auto">自動</string>
+    <string name="sv_lang_zh">中文 (zh)</string>
+    <string name="sv_lang_en">英語 (en)</string>
+    <string name="sv_lang_ja">日語 (ja)</string>
+    <string name="sv_lang_ko">韓語 (ko)</string>
+    <string name="sv_lang_yue">粵語 (yue)</string>
+    <string name="label_sv_use_itn">啟用 ITN（數字智慧識別）</string>
+    <string name="btn_sv_download_model">一鍵下載模型</string>
+    <string name="btn_sv_download_model_int8">一鍵下載模型</string>
+    <string name="btn_sv_download_model_full">一鍵下載模型</string>
+    <string name="btn_sv_import_model">從本機匯入模型</string>
+    <string name="btn_sv_clear_model">清除已下載模型</string>
+    <string name="sv_download_status_downloading">下載中… %1$d%%</string>
+    <string name="sv_download_status_extracting_progress">解壓中… %1$d%%</string>
+    <string name="sv_download_status_done">模型已安裝</string>
+    <string name="sv_download_status_failed">下載或解壓失敗</string>
+    <string name="sv_download_started_in_bg">已開始背景下載，請到通知欄查看進度</string>
+    <string name="sv_import_started_in_bg">已開始背景匯入，請到通知欄查看進度</string>
+    <string name="sv_import_success">模型匯入成功：%1$s</string>
+    <string name="sv_import_failed">模型匯入失敗：%1$s</string>
+    <string name="sv_import_status_extracting">匯入中… %1$d%%</string>
+    <string name="sv_clear_confirm_title">確認清除模型？</string>
+    <string name="sv_clear_confirm_message">將刪除已下載的模型檔案，可稍後重新下載。是否繼續？</string>
+    <string name="sv_clear_done">已清除模型</string>
+    <string name="sv_clear_failed">清除失敗</string>
+    <string name="label_sv_model_variant">模型版本</string>
+    <string name="sv_model_small_int8">Small（int8，約160MB）</string>
+    <string name="sv_model_small_full">Small（fp32，約850MB）</string>
+    <string name="sv_loading_model">本機模型載入中…</string>
+    <string name="sv_loading_model_while_listening">正在聆聽…本機模型背景載入中…</string>
+    <string name="sv_model_ready">本機模型載入完成</string>
+    <string name="sv_model_ready_with_ms">本機模型載入完成（%1$d ms）</string>
+    <string name="label_sv_preload">積極載入模型</string>
+    <string name="label_sv_keep_alive">模型卸載策略</string>
+    <string name="sv_keep_alive_immediate">不保留（識別後立即卸載）</string>
+    <string name="sv_keep_alive_5m">5 分鐘</string>
+    <string name="sv_keep_alive_15m">15 分鐘</string>
+    <string name="sv_keep_alive_30m">30 分鐘</string>
+    <string name="sv_keep_alive_always">始終保持（直到參數變更）</string>
+
+    <!-- Error messages -->
+    <string name="error_local_asr_not_ready">本機引擎未就緒，請在後續整合 sherpa‑onnx 相依與模型後再試</string>
+    <string name="error_sensevoice_model_missing">缺少 SenseVoice 模型檔案，請稍後在設定中配置或下載</string>
+
+    <!-- Model download notifications -->
+    <string name="notif_model_title_small_int8">SenseVoice 模型（Small int8）</string>
+    <string name="notif_model_title_small_full">SenseVoice 模型（Small fp32）</string>
+
+    <!-- ============================================== -->
+    <!-- SenseVoice - 功能說明 -->
+    <!-- ============================================== -->
+
+    <!-- SenseVoice - 使用 ITN -->
+    <string name="feature_sv_use_itn_off_desc">保留口語寫法，例如「一千二百三十四」。</string>
+    <string name="feature_sv_use_itn_on_desc">自動將支援的中文數字、日期與時間改成常用書面寫法，例如將「一千二百三十四」寫成「1234」。</string>
+
+    <!-- SenseVoice - 預載入模型 -->
+    <string name="feature_sv_preload_off_desc">僅在需要時載入模型，首次使用可能有延遲。</string>
+    <string name="feature_sv_preload_on_desc">鍵盤顯示時預載入模型，減少首次使用延遲。</string>
+
+    <!-- SenseVoice - 伺流式模式 -->
+    <string name="label_sv_pseudo_stream">啟用偽串流預覽（固定時長分句）</string>
+    <string name="feature_sv_pseudo_stream_off_desc">不啟用伺流式預覽，錄音結束後一次性辨識，行為與傳統本機辨識相同。</string>
+    <string name="feature_sv_pseudo_stream_on_desc">按固定時長將語音切成小段，先給出本機預覽結果，錄音結束後再對整段語音重新辨識並覆寫預覽文字。</string>
+</resources>

@@ -1,0 +1,161 @@
+<resources>
+    <!-- Floating ball related strings -->
+
+    <string name="title_floating_settings">More Input Methods</string>
+    <string name="section_floating_basic">Floating Ball Settings</string>
+    <string name="section_volume_key_recording">Volume Key Recording Mode</string>
+    <string name="section_floating_compat">Advanced</string>
+    <string name="section_floating_keep_alive">Background Keep-Alive</string>
+    <string name="label_floating_only_when_ime_visible">Only show floating ball when keyboard is visible</string>
+    <string name="label_floating_hold_to_record">Hold the floating ball to record</string>
+    <string name="label_floating_direct_drag">Drag to move the floating ball</string>
+    <string name="label_floating_alpha">Floating ball transparency</string>
+    <string name="label_floating_size">Floating ball size</string>
+    <string name="toast_need_overlay_perm">Please grant "Display over other apps" in system settings to enable the floating ball</string>
+    <string name="label_floating_asr">Use floating ball for voice recognition</string>
+    <string name="label_floating_keep_alive_foreground">Keep alive with a foreground service</string>
+    <string name="label_floating_keep_alive_privileged">Keep alive via Shizuku / root</string>
+    <string name="label_request_battery_whitelist">Request battery optimization whitelist</string>
+    <string name="label_floating_ime_bridge">IME Hook module</string>
+    <string name="label_ime_bridge_pcm_recording">Record inside bridged IME</string>
+    <string name="label_floating_ime_bridge_status">IME Hook module status</string>
+    <string name="status_floating_ime_bridge_unknown">Tap to refresh</string>
+    <string name="status_floating_ime_bridge_unknown_target">current keyboard</string>
+    <string name="status_floating_ime_bridge_disabled">Disabled</string>
+    <string name="status_floating_ime_bridge_ready">Ready: %1$s</string>
+    <string name="status_floating_ime_bridge_hidden">Detected, keyboard hidden: %1$s</string>
+    <string name="status_floating_ime_bridge_waiting">Detected, waiting for input field: %1$s</string>
+    <string name="status_floating_ime_bridge_no_active_ime">No active keyboard. Select and open a bridged keyboard first.</string>
+    <string name="status_floating_ime_bridge_no_input_connection">No active input connection: %1$s. Tap a text field and keep the keyboard open.</string>
+    <string name="status_floating_ime_bridge_pcm_unsupported">Recording area unavailable in %1$s. Enable it in the bridge module settings, or check microphone permission and keyboard window support.</string>
+    <string name="status_floating_ime_bridge_not_found">No bridge response: %1$s</string>
+    <string name="status_floating_ime_bridge_sensitive">Sensitive field blocked: %1$s</string>
+    <string name="status_floating_ime_bridge_error">Bridge error in %1$s: %2$s</string>
+    <string name="status_floating_ime_bridge_recording_enabled">IME-side recording: enabled</string>
+    <string name="status_floating_ime_bridge_recording_disabled">IME-side recording: disabled. Bridge text insertion can still stay enabled.</string>
+    <string name="status_floating_ime_bridge_module_summary">Module: %1$s · Recording area: %2$s · Clipboard: %3$s</string>
+    <string name="status_floating_ime_bridge_module_unknown">unknown version</string>
+    <string name="status_floating_ime_bridge_pcm_supported">available</string>
+    <string name="status_floating_ime_bridge_pcm_not_supported">unavailable</string>
+    <string name="status_floating_ime_bridge_clipboard_supported">supported</string>
+    <string name="status_floating_ime_bridge_clipboard_not_supported">not supported</string>
+    <string name="status_floating_ime_bridge_input_summary">IME visible: %1$s · input connection: %2$s · sensitive field: %3$s</string>
+    <string name="status_floating_ime_bridge_yes">yes</string>
+    <string name="status_floating_ime_bridge_no">no</string>
+    <string name="status_floating_ime_bridge_last_failure">Last failure: %1$s</string>
+    <string name="status_floating_ime_bridge_last_failure_mic_permission">Last failure: target keyboard cannot record audio. Check its microphone permission. (%1$s)</string>
+    <string name="status_floating_ime_bridge_last_failure_injection_unsupported">Last failure: this keyboard window does not support the generic bottom trigger. (%1$s)</string>
+    <string name="floating_ime_bridge_sensitive_field">Sensitive input field blocked. Text was not inserted.</string>
+    <string name="floating_ime_bridge_insert_failed">IME bridge insertion failed: %1$s</string>
+    <string name="label_floating_a11y_android13_api">Use Android 13 Accessibility IME API</string>
+    <string name="label_floating_write_compat">Accessibility write compatibility optimization</string>
+    <string name="desc_floating_write_compat">Some apps expose background placeholder text to Accessibility, which contaminates final insertion. When enabled, in target apps the floating ball switches to Select-All + Paste with an invisible marker to avoid placeholder issues. The clipboard may be used temporarily (best-effort restore). Works for Telegram, Douyin, etc.</string>
+    <string name="label_floating_write_compat_pkgs">Target package names (one per line)</string>
+    <string name="hint_floating_write_compat_pkgs">Enter package or prefix (e.g., org.telegram). A trailing * means prefix match (e.g., org.telegram.*).</string>
+    <string name="label_floating_write_paste">Accessibility: copy result to clipboard only</string>
+    <string name="desc_floating_write_paste">Applies only to the packages below: in these apps, when using floating voice input, copy the result to the clipboard instead of inserting via Accessibility APIs. If a line contains all, it applies globally.</string>
+    <string name="label_floating_write_paste_pkgs">Target packages (one per line)</string>
+    <string name="hint_floating_write_paste_pkgs">Enter exact package names (e.g., com.tencent.mm). To apply globally, add a single line with all.</string>
+    <string name="toast_need_accessibility_perm">Please enable Accessibility Service in system settings to support this feature</string>
+    <string name="label_volume_key_recording">Use volume keys for voice recognition</string>
+    <string name="label_volume_key_recording_mode">Volume key action</string>
+    <string name="option_volume_key_up_toggle">Volume+ starts / stops recording</string>
+    <string name="option_volume_key_down_toggle">Volume- starts / stops recording</string>
+    <string name="option_volume_key_up_start_down_stop">Volume+ starts, Volume- stops</string>
+    <string name="option_volume_key_down_start_up_stop">Volume- starts, Volume+ stops</string>
+    <string name="label_volume_key_status_toast">Recording status reminder</string>
+    <string name="label_volume_key_stop_on_ime_hidden">Stop recording when keyboard disappears</string>
+    <string name="toast_volume_key_recording_started">Recording started</string>
+    <string name="toast_volume_key_recording_stopped">Recording stopped</string>
+    <string name="cd_floating_asr">Floating ball voice recognition</string>
+    <string name="cd_floating_edge_handle">Show floating ball</string>
+    <string name="toast_battery_whitelist_already">Already ignoring battery optimizations</string>
+    <string name="toast_battery_whitelist_failed">Failed to request battery whitelist</string>
+    <string name="toast_need_floating_keep_alive_first">Enable foreground keep-alive first</string>
+    <string name="toast_shizuku_permission_requested">Shizuku permission requested. Please grant it in Shizuku.</string>
+    <string name="toast_shizuku_permission_waiting">Connecting to Shizuku. Permission prompt will appear once connected.</string>
+    <string name="toast_shizuku_permission_request_failed">Failed to request Shizuku permission</string>
+    <string name="toast_shizuku_or_root_unavailable">Shizuku is unavailable and root is not detected</string>
+    <string name="toast_floating_keep_alive_privileged_start_failed">Failed to start keep-alive via Shizuku / root</string>
+    <string name="toast_floating_recording_foreground_failed">Unable to start microphone foreground service. Open the app once, then try again.</string>
+
+    <!-- Floating ASR status messages -->
+    <string name="floating_asr_error">Recognition failed: %1$s</string>
+    <string name="floating_asr_copied">Copied to clipboard</string>
+    <string name="accessibility_service_description">Allow floating ball and volume-key recording to insert ASR results into the current input field. No data is collected or uploaded.</string>
+
+    <!-- Floating radial menu -->
+    <string name="label_radial_switch_asr">Switch ASR provider</string>
+    <string name="label_radial_switch_ime">Switch input method</string>
+    <string name="label_radial_move">Move floating ball</string>
+    <string name="label_radial_postproc">Toggle AI polish</string>
+    <string name="label_radial_switch_prompt">Switch AI polish prompt</string>
+    <string name="label_radial_clipboard_upload">Upload Clipboard</string>
+    <string name="label_radial_clipboard_pull">Pull Clipboard</string>
+    <string name="label_radial_toggle_silence_autostop">Toggle auto-stop on silence</string>
+    <string name="label_radial_open_history">ASR History</string>
+    <string name="label_radial_open_settings">Settings</string>
+    <string name="label_choose_asr_vendor">Choose ASR provider</string>
+    <string name="toast_move_mode_on">Move mode enabled. Tap the ball to exit.</string>
+    <string name="label_reset_floating_position">Reset floating ball position</string>
+    <string name="toast_floating_position_reset">Floating ball position reset</string>
+
+    <string name="notif_channel_floating_keep_alive">Background keep-alive</string>
+    <string name="notif_channel_floating_keep_alive_desc">Keeps the app running with a persistent notification.</string>
+    <string name="notif_floating_keep_alive_title">%1$s running</string>
+    <string name="notif_floating_keep_alive_desc">Today %1$d chars · %2$s · Polish %3$s</string>
+    <string name="notif_floating_keep_alive_postproc_enabled">enabled</string>
+    <string name="notif_floating_keep_alive_postproc_disabled">disabled</string>
+    <string name="notif_channel_floating_recording">Floating recording</string>
+    <string name="notif_channel_floating_recording_desc">Shows recording status while the floating ball uses the microphone.</string>
+    <string name="notif_floating_recording_title">%1$s is recording</string>
+    <string name="notif_floating_recording_desc">Floating voice recognition is listening.</string>
+
+    <!-- ============================================== -->
+    <!-- Floating Settings - Feature Explanations -->
+    <!-- ============================================== -->
+
+    <!-- Floating ASR -->
+    <string name="feature_floating_asr_off_desc">The floating ball is hidden. You can still use voice input from BiBi Keyboard.</string>
+    <string name="feature_floating_asr_on_desc">Shows a voice-input floating ball over other apps, so recognition can start while the keyboard is hidden. Overlay permission is required; volume-key control and some text-entry methods also need Accessibility or the IME bridge.</string>
+
+    <!-- Floating only when IME visible -->
+    <string name="feature_floating_only_when_ime_visible_off_desc">The floating ball remains visible even when the keyboard is hidden.</string>
+    <string name="feature_floating_only_when_ime_visible_on_desc">The floating ball is automatically hidden when the keyboard is hidden and shown when the keyboard appears. Keyboard state can be detected by Accessibility or by an active IME bridge.</string>
+
+    <!-- Hold floating ball to record -->
+    <string name="feature_floating_hold_to_record_off_desc">Tap the floating ball to start recording, then tap it again to stop.</string>
+    <string name="feature_floating_hold_to_record_on_desc">Press and hold the floating ball to record, then release to stop. Opening the menu or moving the ball requires a longer drag and cancels the current recording.</string>
+
+    <!-- Floating direct drag -->
+    <string name="feature_floating_direct_drag_off_desc">Moving the floating ball requires long-pressing to enter move mode or using the menu.</string>
+    <string name="feature_floating_direct_drag_on_desc">You can drag the floating ball directly to reposition it.</string>
+
+    <!-- Volume key recording -->
+    <string name="feature_volume_key_recording_off_desc">Volume keys keep their normal system behavior and will not control recording.</string>
+    <string name="feature_volume_key_recording_on_desc">When a keyboard is visible, the Accessibility Service listens for volume key clicks to start or stop voice recognition. Long-press volume keys are not used.</string>
+    <string name="feature_volume_key_status_toast_off_desc">Volume key recording starts and stops silently, except for existing error prompts.</string>
+    <string name="feature_volume_key_status_toast_on_desc">Shows a short toast when volume keys successfully start or stop recording.</string>
+    <string name="feature_volume_key_stop_on_ime_hidden_off_desc">If the keyboard disappears while volume-key recording is active, recording continues until you stop it manually.</string>
+    <string name="feature_volume_key_stop_on_ime_hidden_on_desc">If the keyboard disappears while volume-key recording is active, recording stops automatically.</string>
+
+    <!-- Floating write compatibility mode -->
+    <string name="feature_floating_ime_bridge_off_desc">Stops accepting all Hook linkage requests. Non-Hook features of the main keyboard and floating ball are unaffected.</string>
+    <string name="feature_floating_ime_bridge_on_desc">Enables IME visibility, text insertion, recording, and clipboard capabilities provided by a compatible LSPosed/LSPatch module on the client side. Module settings and status are unaffected.</string>
+    <string name="feature_ime_bridge_pcm_recording_off_desc">The bridge can still enter recognition results, but long-press recording inside a third-party keyboard is unavailable.</string>
+    <string name="feature_ime_bridge_pcm_recording_on_desc">You can long-press to record in a compatible third-party keyboard and send the recording to BiBi Keyboard for recognition. If recording fails, it does not automatically switch to the floating ball or this app\'s microphone.</string>
+    <string name="feature_floating_a11y_android13_api_off_desc">Recognition results are written with the traditional Accessibility API. Streaming preview stays available and works with write-compatibility optimization. This is for typical apps and older systems.</string>
+    <string name="feature_floating_a11y_android13_api_on_desc">On Android 13 and later, results are inserted first via the new Accessibility API. This works better in terminals, editors, and similar special cases. Write-compatibility optimization is disabled automatically, and streaming preview is turned off.</string>
+    <string name="feature_floating_write_compat_off_desc">Recognition results are entered directly into the text field. This works for most apps.</string>
+    <string name="feature_floating_write_compat_on_desc">In apps you select, the current text is selected before the result is pasted to avoid including placeholder text. The clipboard is used temporarily, and the app attempts to restore its previous contents afterward.</string>
+
+    <!-- Floating write paste -->
+    <string name="feature_floating_write_paste_off_desc">Recognition results are entered automatically into the current text field.</string>
+    <string name="feature_floating_write_paste_on_desc">In apps you select, recognition results are only copied to the clipboard and are not entered automatically. You need to paste them yourself.</string>
+
+    <!-- Floating keep alive -->
+    <string name="feature_floating_keep_alive_off_desc">The app is more likely to be stopped after running in the background for a while, so floating-ball and volume-key features may become unavailable.</string>
+    <string name="feature_floating_keep_alive_on_desc">Shows an ongoing notification to help keep floating-ball and volume-key features available in the background. Some phones may still require battery settings changes.</string>
+    <string name="feature_floating_keep_alive_privileged_off_desc">Uses only the standard method to stay active in the background. Some phones may still stop floating-ball or volume-key features.</string>
+    <string name="feature_floating_keep_alive_privileged_on_desc">Uses Shizuku or root to periodically restore the background service, reducing interruptions to floating-ball or volume-key features. Shizuku or root permission is required.</string>
+</resources>

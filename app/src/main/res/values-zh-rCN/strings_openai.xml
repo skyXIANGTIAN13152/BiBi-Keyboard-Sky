@@ -1,0 +1,38 @@
+<resources>
+    <string name="vendor_openai">OpenAI</string>
+    <string name="openai_section_title">OpenAI 语音转文字</string>
+    <string name="label_openai_choose_profile">选择渠道</string>
+    <string name="label_openai_profile_name">渠道名称</string>
+    <string name="btn_openai_add_profile">新增渠道</string>
+    <string name="btn_openai_delete_profile">删除渠道</string>
+    <string name="toast_openai_profile_added">已新增渠道</string>
+    <string name="toast_openai_profile_deleted">已删除渠道</string>
+    <string name="toast_openai_profile_delete_blocked">请至少保留一个渠道</string>
+    <string name="openai_profile_default_name">OpenAI 渠道 %1$d</string>
+    <string name="label_openai_asr_endpoint">Endpoint（../transcriptions 或 ../chat/completions）</string>
+    <string name="hint_openai_custom_endpoint_wav_upload">自定义兼容服务将使用 WAV 上传，以提高兼容性。</string>
+    <string name="label_openai_api_key">API Key（Bearer）</string>
+    <string name="label_openai_model">识别模型</string>
+    <string name="label_openai_streaming">流式识别</string>
+    <string name="label_openai_use_completions">使用 Completions 接口</string>
+    <string name="label_openai_use_prompt">自定义 Prompt（仅部分模型可用）</string>
+    <string name="label_openai_prompt">自定义 Prompt（可选）</string>
+    <string name="label_openai_language">识别语言</string>
+
+    <!-- ============================================== -->
+    <!-- OpenAI ASR - 功能说明 -->
+    <!-- Feature Explanations for OpenAI ASR -->
+    <!-- ============================================== -->
+
+    <!-- 使用提示词 - Use prompt -->
+    <string name="feature_openai_use_prompt_off_desc">直接转写音频，不使用引导。</string>
+    <string name="feature_openai_use_prompt_on_desc">将提示词随识别请求发送，用来提示专有名词或上下文。是否生效以及效果取决于所选模型和服务商。</string>
+
+    <!-- 流式识别 - Streaming -->
+    <string name="feature_openai_streaming_off_desc">关闭时使用文件上传识别，停止录音后返回结果。</string>
+    <string name="feature_openai_streaming_on_desc">开启后使用 Realtime WebSocket 流式识别，说话时实时显示中间结果。需要服务商支持 Realtime API。</string>
+
+    <!-- 使用 Completions - Use Completions -->
+    <string name="feature_openai_use_completions_off_desc">使用转写接口进行识别。</string>
+    <string name="feature_openai_use_completions_on_desc">改为使用 Completions 兼容接口。部分兼容服务商或自建部署需要此选项。</string>
+</resources>

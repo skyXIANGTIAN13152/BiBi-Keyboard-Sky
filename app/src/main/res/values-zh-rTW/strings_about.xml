@@ -1,0 +1,91 @@
+<resources>
+    <!-- 關於頁面相關字串 - About page related strings -->
+
+    <!-- About -->
+    <string name="btn_about">關於</string>
+    <string name="about_title">關於</string>
+    <string name="about_app_name">應用程式名稱：%1$s</string>
+    <string name="about_version">版本：%1$s</string>
+    <string name="about_package">套件名稱：%1$s</string>
+    <string name="about_auto_update_check">自動檢查更新</string>
+    <string name="about_open_github">查看專案首頁</string>
+    <string name="about_project_url">https://github.com/BryceWG/BiBi-Keyboard</string>
+    <string name="about_open_website">查看專案官網</string>
+    <string name="about_website_url">https://bibi.brycewg.com</string>
+    <string name="about_open_docs">查看專案文件</string>
+    <string name="about_docs_url">https://bibidocs.brycewg.com</string>
+    <string name="about_desc">簡潔高效的語音輸入法，支援多家 ASR 與 LLM 後處理</string>
+
+    <string name="label_asr_total_chars">歷史語音識別總字數：%1$d</string>
+
+    <!-- Model download notifications -->
+    <string name="notif_channel_model_download">模型下載</string>
+    <string name="notif_channel_model_download_desc">本機模型下載與解壓進度通知</string>
+    <string name="notif_model_summary_title">模型下載</string>
+    <string name="notif_model_summary_text">正在背景下載/解壓本機模型</string>
+
+    <!-- About: Usage stats -->
+    <string name="about_stats_title">使用統計</string>
+    <string name="about_stats_overview">總覽</string>
+    <string name="about_days_with_you">說點啥已陪伴你 %1$d 天</string>
+    <string name="about_stats_total_audio_label">總音訊時長</string>
+    <string name="about_stats_total_chars_label">總辨識字數</string>
+    <string name="about_stats_sessions_label">工作階段次數</string>
+    <string name="about_stats_avg_audio_label">平均音訊時長</string>
+    <string name="about_stats_avg_chars_label">平均字數</string>
+    <string name="about_stats_avg_speed_label">平均速度</string>
+    <string name="about_stats_avg_speed_value">%1$s 字/分鐘</string>
+    <string name="about_stats_daily_avg_7d_label">每日平均（近 7 天）</string>
+    <string name="about_stats_weekly_avg_4w_label">每週平均（近 4 週）</string>
+    <string name="about_stats_chars_with_audio">%1$s 字 · %2$s</string>
+    <string name="about_by_vendor">按供應商</string>
+    <string name="about_online_asr_failure_title">線上 ASR 呼叫失敗率（近 30 天）</string>
+    <string name="about_proc_prefix">耗時</string>
+    <string name="about_last_7_days">最近 7 天（字數）</string>
+    <string name="about_empty_stats_placeholder">尚無統計資料</string>
+    <string name="about_stats_share">分享</string>
+    <string name="about_stats_share_title">分享使用紀錄</string>
+    <string name="about_stats_share_subtitle">我的使用紀錄</string>
+    <string name="about_stats_share_save">儲存</string>
+    <string name="about_stats_share_action">分享</string>
+    <string name="about_stats_share_chooser_title">分享使用紀錄</string>
+    <string name="about_stats_share_saved">已儲存到 Pictures/BiBi</string>
+    <string name="about_stats_share_save_failed">儲存圖片失敗</string>
+    <string name="about_stats_share_failed">分享圖片失敗</string>
+    <string name="about_stats_share_top_vendors">常用供應商</string>
+    <string name="about_stats_share_footer_site">bibi.brycewg.com</string>
+    <string name="about_stats_share_days_unit">天</string>
+    <string name="about_stats_share_tagline">AI 語音鍵盤</string>
+    <string name="about_stats_share_hero_caption">%1$s 與你相伴</string>
+    <string name="about_stats_share_insight_time_saved">約省下 %1$s 打字時間</string>
+
+    <!-- 開源致謝 -->
+    <string name="about_acknowledgements_title">開源致謝</string>
+    <string name="about_acknowledgements_desc">本專案基於以下優秀的開源專案構建，在此向這些專案的開發者表示誠摯的感謝：</string>
+    <string name="about_view_full_licenses">檢視完整授權</string>
+    <string name="about_licenses_dialog_title">第三方授權</string>
+
+    <string name="about_sherpa_onnx_title">k2-fsa/sherpa-onnx</string>
+    <string name="about_sherpa_onnx_desc">提供了本機 ASR 模型的技術方案支援，使離線語音識別成為可能</string>
+
+    <string name="about_syncclipboard_title">Jeric-X/SyncClipboard</string>
+    <string name="about_syncclipboard_desc">提供了剪貼簿同步的後端服務支援（非軟體本機執行，需要伺服器）</string>
+
+    <string name="about_phosphor_title">phosphor-icons/homepage</string>
+    <string name="about_phosphor_desc">提供了軟體內幾乎所有的圖示資源</string>
+
+    <string name="about_miuix_title">compose-miuix-ui/miuix</string>
+    <string name="about_miuix_desc">提供了 Miuix 風格的 Compose UI 元件、圖示與偏好設定元件，支援設定頁體驗</string>
+
+    <string name="about_wavelineview_desc">提供了錄音波形動畫的實現方案，使音頻可視化效果更加流暢美觀</string>
+
+    <string name="about_tenvad_title">TEN-framework/ten-vad</string>
+    <string name="about_tenvad_desc">提供了語音活動檢測（VAD）模型，用於智能判停錄音功能</string>
+
+    <string name="unit_chars">字</string>
+    <string name="unit_0_min">0 分鐘</string>
+    <string name="fmt_h_m">%1$d 小時 %2$d 分鐘</string>
+    <string name="fmt_m_s">%1$d 分鐘 %2$d 秒</string>
+    <string name="fmt_s">%1$d 秒</string>
+    <string name="about_wavelineview_title">Jay-Goo/WaveLineView</string>
+</resources>

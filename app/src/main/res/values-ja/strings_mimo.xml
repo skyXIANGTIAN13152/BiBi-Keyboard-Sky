@@ -1,0 +1,22 @@
+<resources>
+    <string name="vendor_mimo">小米 MiMo</string>
+    <string name="label_mimo_asr_api_key">MiMo APIキー</string>
+    <string name="label_mimo_asr_endpoint">MiMo Endpoint</string>
+    <string name="label_mimo_asr_endpoint_preset">エンドポイント</string>
+    <string name="label_mimo_asr_model">認識モデル</string>
+    <string name="label_mimo_asr_prompt">System Prompt（v2.5のみ）</string>
+    <string name="label_mimo_disable_thinking">推論を無効化</string>
+    <string name="feature_mimo_disable_thinking_off_desc">モデル既定の思考モードを使います。より慎重になる一方で遅くなりやすいです。</string>
+    <string name="feature_mimo_disable_thinking_on_desc">思考を無効化し、元の音声により近い、より速い文字起こしを行います。</string>
+    <string name="mimo_endpoint_cn">Token Plan（中国大陸）</string>
+    <string name="mimo_endpoint_sgp">Token Plan（シンガポール）</string>
+    <string name="mimo_endpoint_ams">Token Plan（ヨーロッパ）</string>
+    <string name="mimo_endpoint_paygo">従量課金</string>
+    <string name="mimo_endpoint_custom">カスタム</string>
+    <string name="label_mimo_asr_language">認識言語</string>
+    <string name="mimo_lang_auto">自動検出</string>
+    <string name="mimo_lang_zh">中国語</string>
+    <string name="mimo_lang_en">英語</string>
+    <string name="mimo_model_asr">mimo-v2.5-asr</string>
+    <string name="mimo_model_au">mimo-v2.5</string>
+</resources>

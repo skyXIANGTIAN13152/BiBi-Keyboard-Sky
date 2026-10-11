@@ -1,0 +1,76 @@
+<resources>
+    <!-- Clipboard sync related strings -->
+
+    <!-- SyncClipboard settings -->
+    <string name="section_sync_clipboard">مزامنة الحافظة</string>
+    <string name="label_enable_sync_clipboard">استخدام SyncClipboard لمزامنة الحافظة</string>
+    <string name="feature_sync_clipboard_off_desc">لا تتم مزامنة الحافظة مع خادم SyncClipboard.</string>
+    <string name="feature_sync_clipboard_on_desc">يزامن الحافظة مع خادم SyncClipboard لديك حتى يمكن نقل النص بين الأجهزة.</string>
+    <string name="label_sc_server_base">عنوان الخادم الأساسي (سيُلحق /SyncClipboard.json)</string>
+    <string name="label_sc_username">اسم المستخدم</string>
+    <string name="label_sc_password">كلمة المرور</string>
+    <string name="label_sc_pull_interval">فترة السحب الدوري (ثانية، 1-600)</string>
+    <string name="label_sc_auto_receive">الاستقبال التلقائي</string>
+    <string name="feature_sc_auto_receive_off_desc">يرفع تغييرات الحافظة المحلية فقط؛ ولا يسحب التحديثات البعيدة.</string>
+    <string name="feature_sc_auto_receive_on_desc">يستقبل أيضاً تحديثات الحافظة من الخادم (فورياً عند الدعم، وإلا بالسحب الدوري).</string>
+    <string name="summary_sc_auto_receive_off">متوقف: رفع فقط</string>
+    <string name="summary_sc_auto_receive_detecting">جارٍ اكتشاف ما يدعمه الخادم…</string>
+    <string name="summary_sc_auto_receive_realtime">مفعّل: الخادم يدعم المزامنة الفورية</string>
+    <string name="summary_sc_auto_receive_polling">مفعّل: استخدام السحب الدوري</string>
+    <string name="label_sc_keep_background_realtime">الحفاظ على اتصال فوري في الخلفية</string>
+    <string name="feature_sc_keep_background_realtime_off_desc">تبقى المزامنة الفورية نشطة فقط بينما يبقيها التطبيق أو الخدمات ذات الصلة قيد التشغيل.</string>
+    <string name="feature_sc_keep_background_realtime_on_desc">يحاول إبقاء اتصال SyncClipboard الفوري حياً في الخلفية.</string>
+    <string name="label_sc_sync_images">مزامنة الصور</string>
+    <string name="feature_sc_sync_images_off_desc">لا ترفع أو تنزّل صور الحافظة.</string>
+    <string name="feature_sc_sync_images_on_desc">تنزّل الصور البعيدة وترفع الصور الجديدة من المجلد المحدد.</string>
+    <string name="label_sc_sync_files">مزامنة الملفات</string>
+    <string name="feature_sc_sync_files_off_desc">لا ترفع أو تنزّل ملفات الحافظة.</string>
+    <string name="feature_sc_sync_files_on_desc">تنزّل الملفات البعيدة وترفع الملفات الجديدة من المجلد المحدد.</string>
+    <string name="label_sc_attachment_max_size">حد حجم المرفق (MB، 1-1024)</string>
+    <string name="summary_sc_watch_tree_not_selected">لم يُحدّد مجلد: تنزيل فقط.</string>
+    <string name="summary_sc_watch_tree_selected">المجلد المحدد: %1$s. سيتم رفع الملفات الجديدة.</string>
+    <string name="btn_sc_choose_watch_tree">اختيار مجلد</string>
+    <string name="btn_sc_clear_watch_tree">مسح المجلد</string>
+    <string name="sc_watch_tree_download_directory_not_allowed">Download/BiBi مخصص للملفات المتزامنة. اختر مجلدًا آخر.</string>
+    <string name="sc_attachment_notification_channel">مزامنة مرفقات الحافظة</string>
+    <string name="sc_attachment_notification_uploading">جارٍ رفع المرفق</string>
+    <string name="sc_attachment_notification_downloading">جارٍ تنزيل المرفق</string>
+    <string name="sc_attachment_notification_uploaded">تم رفع المرفق</string>
+    <string name="sc_attachment_notification_upload_failed">فشل رفع المرفق</string>
+    <string name="sc_attachment_notification_downloaded">تم تنزيل المرفق</string>
+    <string name="sc_attachment_notification_download_failed">فشل تنزيل المرفق</string>
+    <string name="btn_sc_test_pull">تحقق</string>
+    <string name="sc_test_success">نجح السحب</string>
+    <string name="sc_test_failed">فشل السحب. تحقّق من الرابط وبيانات الاعتماد.</string>
+    <string name="sc_status_uploaded">تم رفع الحافظة بنجاح</string>
+    <string name="sc_status_upload_failed">فشل رفع الحافظة</string>
+    <string name="sc_share_file_target_label">الرفع إلى مزامنة الحافظة</string>
+    <string name="btn_sc_project_home">صفحة المشروع</string>
+    <string name="sc_open_browser_failed">تعذّر فتح المتصفح</string>
+    
+    <!-- Clipboard manager panel -->
+    <string name="ext_btn_clipboard">الحافظة</string>
+    <string name="cd_clipboard_back">رجوع</string>
+    <string name="cd_clipboard_delete">حذف</string>
+    <string name="clip_count_format">%1$d عنصر</string>
+    <string name="clip_delete_title">حذف (المثبّت يُبقى)</string>
+    <string name="clip_delete_before_1h">قبل ساعة</string>
+    <string name="clip_delete_before_24h">قبل 24 ساعة</string>
+    <string name="clip_delete_before_7d">قبل 7 أيام</string>
+    <string name="clip_delete_all_non_pinned">كل غير المثبّت</string>
+    <string name="clip_pinned">مثبّت</string>
+    <string name="clip_unpinned">أُلغي التثبيت</string>
+    <string name="clip_deleted">محذوف</string>
+    <string name="clip_cannot_delete_pinned">مثبّت. اسحب يميناً لإلغاء التثبيت</string>
+    <string name="clip_swipe_delete">حذف</string>
+    <string name="clip_swipe_pin">تثبيت</string>
+    <string name="clip_swipe_unpin">إلغاء التثبيت</string>
+
+    <!-- Clipboard file sync / download -->
+    <string name="clip_file_download_success">تم تنزيل الملف</string>
+    <string name="clip_file_download_failed">فشل تنزيل الملف</string>
+    <string name="clip_file_download_error">خطأ تنزيل الملف: %1$s</string>
+    <string name="clip_file_not_found">الملف غير موجود</string>
+    <string name="clip_file_open_chooser_title">فتح الملف</string>
+    <string name="clip_file_open_failed">تعذّر فتح الملف: %1$s</string>
+</resources>

@@ -1,0 +1,49 @@
+<resources>
+    <!-- 更新檢查相關字串 - Update check related strings -->
+
+    <string name="btn_check_update">檢查更新</string>
+
+    <!-- Update check -->
+    <string name="update_checking">正在檢查更新…</string>
+    <string name="update_no_update">已是最新版本</string>
+    <string name="update_check_failed">檢查更新失敗：%1$s</string>
+    <string name="update_dialog_title">發現新版本</string>
+    <string name="update_dialog_message">目前版本：%1$s\n最新版本：%2$s\n\n是否前往下載？</string>
+    <string name="current_version_info_title">目前版本資訊</string>
+    <string name="current_version_message">目前版本：%1$s\n\n已是最新版本！</string>
+    <string name="btn_download">下載</string>
+    <string name="btn_view_release_page">發佈頁</string>
+    <string name="btn_manual_check">手動查看</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_view_changelog">歷史</string>
+    <string name="update_feedback_title">更新</string>
+
+    <string name="download_source_title">選擇下載源</string>
+    <string name="download_source_github_official">GitHub 官方</string>
+    <string name="download_source_mirror_1">GitHub 鏡像1</string>
+    <string name="download_source_mirror_2">GitHub 鏡像2</string>
+    <string name="download_source_mirror_3">GitHub 鏡像3</string>
+    <string name="update_timestamp_label">更新時間：%1$s</string>
+    <string name="update_release_notes_label">更新說明：\n%1$s</string>
+    <string name="error_open_browser">無法開啟瀏覽器</string>
+
+    <!-- APK 下載與安裝 -->
+    <string name="apk_download_notification_title">下載更新</string>
+    <string name="apk_download_notification_channel_name">應用程式更新下載</string>
+    <string name="apk_download_notification_channel_desc">下載應用程式更新套件並自動安裝</string>
+    <string name="apk_download_preparing">正在準備下載…</string>
+    <string name="apk_download_progress">下載中 %1$d%% (%2$d MB / %3$d MB)</string>
+    <string name="apk_download_complete">下載完成，正在準備安裝…</string>
+    <string name="apk_download_complete_click_to_install">下載完成，點擊安裝</string>
+    <string name="apk_download_failed">下載失敗：%1$s</string>
+    <string name="apk_download_started">已開始下載更新套件</string>
+    <string name="apk_download_start_failed">啟動下載失敗</string>
+    <string name="apk_install_permission_required_title">需要安裝權限</string>
+    <string name="apk_install_permission_required_message">請在系統設定中允許安裝來自此來源的應用程式</string>
+    <string name="apk_install_failed">安裝失敗，請手動安裝</string>
+    <string name="download_source_latency_pending">延遲：測試中…</string>
+    <string name="download_source_latency_value">延遲：%1$d ms</string>
+    <string name="download_source_latency_timeout">延遲：超時</string>
+    <string name="download_source_latency_failed">延遲：不可用</string>
+    <string name="download_source_latency_note">所示延遲為 HTTP 回應耗時，僅作可達性參考，不能反映實際下載吞吐。</string>
+</resources>

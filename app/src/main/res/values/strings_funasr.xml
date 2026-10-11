@@ -1,0 +1,76 @@
+<resources>
+    <!-- FunASR Nano local ASR configuration strings -->
+    <string name="funasr_section_title">FunASR Nano Local ASR</string>
+    <string name="vendor_funasr_nano">FunASR Nano</string>
+
+    <!-- FunASR Nano local settings -->
+    <string name="label_fn_model_variant">Model version</string>
+    <string name="fn_model_nano_int8">FunASR Nano (int8, ~690MB)</string>
+    <string name="fn_model_mlt_nano_int8">FunASR MLT Nano (multilingual, int8, ~690MB)</string>
+    <string name="label_fn_language_preset">Recognition language</string>
+    <string name="fn_lang_auto">Auto / Unspecified</string>
+    <string name="fn_lang_zh">Chinese</string>
+    <string name="fn_lang_en">English</string>
+    <string name="fn_lang_yue">Cantonese</string>
+    <string name="fn_lang_ja">Japanese</string>
+    <string name="fn_lang_ko">Korean</string>
+    <string name="fn_lang_vi">Vietnamese</string>
+    <string name="fn_lang_id">Indonesian</string>
+    <string name="fn_lang_th">Thai</string>
+    <string name="fn_lang_ms">Malay</string>
+    <string name="fn_lang_fil">Filipino</string>
+    <string name="fn_lang_ar">Arabic</string>
+    <string name="fn_lang_hi">Hindi</string>
+    <string name="fn_lang_bg">Bulgarian</string>
+    <string name="fn_lang_hr">Croatian</string>
+    <string name="fn_lang_cs">Czech</string>
+    <string name="fn_lang_da">Danish</string>
+    <string name="fn_lang_nl">Dutch</string>
+    <string name="fn_lang_et">Estonian</string>
+    <string name="fn_lang_fi">Finnish</string>
+    <string name="fn_lang_el">Greek</string>
+    <string name="fn_lang_hu">Hungarian</string>
+    <string name="fn_lang_ga">Irish</string>
+    <string name="fn_lang_lv">Latvian</string>
+    <string name="fn_lang_lt">Lithuanian</string>
+    <string name="fn_lang_mt">Maltese</string>
+    <string name="fn_lang_pl">Polish</string>
+    <string name="fn_lang_pt">Portuguese</string>
+    <string name="fn_lang_ro">Romanian</string>
+    <string name="fn_lang_sk">Slovak</string>
+    <string name="fn_lang_sl">Slovenian</string>
+    <string name="fn_lang_sv">Swedish</string>
+    <string name="label_fn_threads">Threads (1-8)</string>
+    <string name="label_fn_use_itn">Enable ITN (smart number recognition)</string>
+    <string name="feature_fn_use_itn_off_desc">Keeps spoken forms, such as “one thousand two hundred thirty-four”.</string>
+    <string name="feature_fn_use_itn_on_desc">Converts supported Chinese numbers, dates, and times to common written forms, such as “1234”.</string>
+    <string name="label_fn_user_prompt">User prompt</string>
+    <string name="fn_user_prompt_hint">Long prompts may slow down processing.</string>
+    <string name="label_fn_preload">Aggressive model loading</string>
+    <string name="feature_fn_preload_off_desc">Loads the model only when needed, which may cause delay on first use.</string>
+    <string name="feature_fn_preload_on_desc">Preloads the model when the keyboard appears to reduce first-use latency.</string>
+    <string name="label_fn_keep_alive">Model unload policy</string>
+    <string name="btn_fn_download_model">One-click download model</string>
+    <string name="btn_fn_import_model">Import model from local file</string>
+    <string name="btn_fn_clear_model">Clear downloaded model</string>
+    <string name="fn_download_status_downloading">Downloading… %1$d%%</string>
+    <string name="fn_download_status_extracting_progress">Extracting… %1$d%%</string>
+    <string name="fn_download_status_done">Model installed</string>
+    <string name="fn_download_status_failed">Download or extraction failed</string>
+    <string name="fn_download_started_in_bg">Started background download. Check notification for progress.</string>
+    <string name="fn_import_started_in_bg">Started background import. Check notification for progress.</string>
+    <string name="fn_import_success">Model imported successfully: %1$s</string>
+    <string name="fn_import_failed">Model import failed: %1$s</string>
+    <string name="fn_import_status_extracting">Importing… %1$d%%</string>
+    <string name="fn_clear_confirm_title">Confirm clear model?</string>
+    <string name="fn_clear_confirm_message">This will delete downloaded model files. You can re-download later. Continue?</string>
+    <string name="fn_clear_done">Model cleared</string>
+    <string name="fn_clear_failed">Clear failed</string>
+
+    <!-- Error messages -->
+    <string name="error_funasr_model_missing">FunASR Nano model is missing. Configure or download it later in Settings.</string>
+
+    <!-- Model download notifications -->
+    <string name="notif_fn_title_nano_int8">FunASR Nano Model (int8)</string>
+    <string name="notif_fn_title_mlt_nano_int8">FunASR MLT Nano Model (int8)</string>
+</resources>

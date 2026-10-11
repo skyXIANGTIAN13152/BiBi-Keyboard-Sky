@@ -1,0 +1,49 @@
+<resources>
+    <!-- Soniox ASR 配置字符串 -->
+    <string name="soniox_section_title">Soniox API设置</string>
+    <string name="vendor_soniox">Soniox</string>
+
+    <!-- Soniox configuration -->
+    <string name="label_soniox_streaming">流式识别</string>
+    <string name="label_soniox_endpoint_mode">识别模式</string>
+    <string name="label_soniox_language">识别语言（可多选）</string>
+    <string name="label_soniox_language_strict">严格限制识别语言</string>
+    <string name="label_soniox_api_key">API Key（Bearer）</string>
+
+    <!-- Soniox endpoint modes -->
+    <string name="soniox_endpoint_mode_low_latency">低延迟</string>
+    <string name="soniox_endpoint_mode_default">默认</string>
+    <string name="soniox_endpoint_mode_high_accuracy">高精度</string>
+
+    <!-- Soniox language options -->
+    <string name="soniox_lang_auto">自动（多语言）</string>
+    <string name="soniox_lang_en">英语 (en)</string>
+    <string name="soniox_lang_zh">中文 (zh)</string>
+    <string name="soniox_lang_ja">日语 (ja)</string>
+    <string name="soniox_lang_ko">韩语 (ko)</string>
+    <string name="soniox_lang_es">西班牙语 (es)</string>
+    <string name="soniox_lang_pt">葡萄牙语 (pt)</string>
+    <string name="soniox_lang_de">德语 (de)</string>
+    <string name="soniox_lang_fr">法语 (fr)</string>
+    <string name="soniox_lang_id">印尼语 (id)</string>
+    <string name="soniox_lang_ru">俄语 (ru)</string>
+    <string name="soniox_lang_ar">阿拉伯语 (ar)</string>
+    <string name="soniox_lang_hi">印地语 (hi)</string>
+    <string name="soniox_lang_vi">越南语 (vi)</string>
+    <string name="soniox_lang_th">泰语 (th)</string>
+    <string name="soniox_lang_ms">马来语 (ms)</string>
+    <string name="soniox_lang_fil">菲律宾语 (fil)</string>
+
+    <!-- ============================================== -->
+    <!-- Soniox ASR - 功能说明 -->
+    <!-- Feature Explanations for Soniox ASR -->
+    <!-- ============================================== -->
+
+    <!-- 流式识别 - Streaming recognition -->
+    <string name="feature_soniox_streaming_off_desc">使用非流式识别。录音结束后开始处理。</string>
+    <string name="feature_soniox_streaming_on_desc">使用流式识别，边说话边实时转写。</string>
+
+    <!-- 语言严格限制 - Language strict restriction -->
+    <string name="feature_soniox_language_strict_off_desc">语言提示仅作为偏好参考，仍可能识别出其他语言。</string>
+    <string name="feature_soniox_language_strict_on_desc">严格限制仅识别指定语言，避免误转写为其他语言。</string>
+</resources>

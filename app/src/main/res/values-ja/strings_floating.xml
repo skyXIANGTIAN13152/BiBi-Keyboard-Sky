@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- フローティングボール関連文字列 - Floating ball related strings -->
+
+    <string name="title_floating_settings">その他の入力方法</string>
+    <string name="section_floating_basic">フローティングボール設定</string>
+    <string name="section_volume_key_recording">音量キー録音モード</string>
+    <string name="section_floating_compat">高度な機能</string>
+    <string name="section_floating_keep_alive">バックグラウンド保活</string>
+    <string name="label_floating_only_when_ime_visible">キーボード表示時のみフローティングボールを表示する</string>
+    <string name="label_floating_hold_to_record">フローティングボールを長押しして録音</string>
+    <string name="label_floating_direct_drag">直接ドラッグでフローティングボールを移動</string>
+    <string name="label_floating_alpha">フローティングボールの透明度</string>
+    <string name="label_floating_size">フローティングボールのサイズ</string>
+    <string name="toast_need_overlay_perm">フローティングボールを有効にするには、システム設定で「他のアプリの上に表示」を許可してください</string>
+    <string name="label_floating_asr">フローティングボールで音声認識を使用する</string>
+    <string name="label_floating_keep_alive_foreground">フォアグラウンドサービスで保活する</string>
+    <string name="label_floating_keep_alive_privileged">Shizuku / root で保活する</string>
+    <string name="label_request_battery_whitelist">電池最適化の除外を申請</string>
+    <string name="label_floating_ime_bridge">IME Hook モジュール</string>
+    <string name="label_ime_bridge_pcm_recording">ブリッジIME内で録音</string>
+    <string name="label_floating_ime_bridge_status">IME Hook モジュールの状態</string>
+    <string name="status_floating_ime_bridge_unknown">タップして更新</string>
+    <string name="status_floating_ime_bridge_unknown_target">現在のキーボード</string>
+    <string name="status_floating_ime_bridge_disabled">無効</string>
+    <string name="status_floating_ime_bridge_ready">準備完了：%1$s</string>
+    <string name="status_floating_ime_bridge_hidden">検出済み、キーボードは非表示：%1$s</string>
+    <string name="status_floating_ime_bridge_waiting">検出済み、入力欄を待機中：%1$s</string>
+    <string name="status_floating_ime_bridge_no_active_ime">有効なキーボードがありません。ブリッジ済みキーボードを選択して開いてください。</string>
+    <string name="status_floating_ime_bridge_no_input_connection">有効な入力接続がありません：%1$s。テキスト欄をタップし、キーボードを開いたままにしてください。</string>
+    <string name="status_floating_ime_bridge_pcm_unsupported">%1$s の録音エリアは利用できません。ブリッジモジュール設定で有効にするか、マイク権限とキーボードウィンドウの対応を確認してください。</string>
+    <string name="status_floating_ime_bridge_not_found">ブリッジ応答なし：%1$s</string>
+    <string name="status_floating_ime_bridge_sensitive">機密入力欄をブロック：%1$s</string>
+    <string name="status_floating_ime_bridge_error">%1$s のブリッジエラー：%2$s</string>
+    <string name="status_floating_ime_bridge_recording_enabled">IME内録音：有効</string>
+    <string name="status_floating_ime_bridge_recording_disabled">IME内録音：無効。ブリッジのテキスト挿入は有効のままにできます。</string>
+    <string name="status_floating_ime_bridge_module_summary">モジュール：%1$s・録音エリア：%2$s・クリップボード：%3$s</string>
+    <string name="status_floating_ime_bridge_module_unknown">不明なバージョン</string>
+    <string name="status_floating_ime_bridge_pcm_supported">利用可能</string>
+    <string name="status_floating_ime_bridge_pcm_not_supported">利用不可</string>
+    <string name="status_floating_ime_bridge_clipboard_supported">対応</string>
+    <string name="status_floating_ime_bridge_clipboard_not_supported">非対応</string>
+    <string name="status_floating_ime_bridge_input_summary">IME表示：%1$s・入力接続：%2$s・機密入力欄：%3$s</string>
+    <string name="status_floating_ime_bridge_yes">はい</string>
+    <string name="status_floating_ime_bridge_no">いいえ</string>
+    <string name="status_floating_ime_bridge_last_failure">直近の失敗：%1$s</string>
+    <string name="status_floating_ime_bridge_last_failure_mic_permission">直近の失敗：対象キーボードで録音できません。マイク権限を確認してください。（%1$s）</string>
+    <string name="status_floating_ime_bridge_last_failure_injection_unsupported">直近の失敗：このキーボードウィンドウは汎用の下部トリガーに対応していません。（%1$s）</string>
+    <string name="floating_ime_bridge_sensitive_field">機密入力欄のため挿入をブロックしました。</string>
+    <string name="floating_ime_bridge_insert_failed">IMEブリッジで挿入できませんでした：%1$s</string>
+    <string name="label_floating_a11y_android13_api">Android 13 の新しい API を使用</string>
+    <string name="label_floating_write_compat">アクセシビリティ書き込み互換性の最適化</string>
+    <string name="desc_floating_write_compat">一部のアプリでは背景テキストが誤認識され、無障害サービス経由でテキストを挿入する際に背景テキストも含まれてしまう場合があります。このモードを有効にすると、対象アプリでフローティングボールを使用する際、「全選択+貼り付け」で不可視文字を挿入し、背景テキストの問題を回避します。</string>
+    <string name="label_floating_write_compat_pkgs">ターゲットパッケージ名（1行に1つ）</string>
+    <string name="hint_floating_write_compat_pkgs">パッケージまたはプレフィックスを入力（例：org.telegram）。末尾の*はプレフィックス一致を意味します（例：org.telegram.*）。</string>
+    <string name="label_floating_write_paste">アクセシビリティ認識結果はクリップボードのみにコピー</string>
+    <string name="desc_floating_write_paste">以下のパッケージにのみ適用：これらのアプリでフローティング音声入力を使用する場合、アクセシビリティAPI経由で挿入する代わりに結果をクリップボードにコピーします。行にallが含まれている場合、グローバルに適用されます。</string>
+    <string name="label_floating_write_paste_pkgs">ターゲットパッケージ（1行に1つ）</string>
+    <string name="hint_floating_write_paste_pkgs">正確なパッケージ名を入力（例：com.tencent.mm）。グローバルに適用するには、allを含む行を1つ追加してください。</string>
+    <string name="toast_need_accessibility_perm">この機能をサポートするには、システム設定でアクセシビリティサービスを有効にしてください</string>
+    <string name="label_volume_key_recording">音量キーで音声認識を使用する</string>
+    <string name="label_volume_key_recording_mode">音量キーの操作</string>
+    <string name="option_volume_key_up_toggle">音量+で録音開始/停止</string>
+    <string name="option_volume_key_down_toggle">音量-で録音開始/停止</string>
+    <string name="option_volume_key_up_start_down_stop">音量+で開始、音量-で停止</string>
+    <string name="option_volume_key_down_start_up_stop">音量-で開始、音量+で停止</string>
+    <string name="label_volume_key_status_toast">録音状態の通知</string>
+    <string name="label_volume_key_stop_on_ime_hidden">キーボード非表示時に録音を停止</string>
+    <string name="toast_volume_key_recording_started">録音を開始しました</string>
+    <string name="toast_volume_key_recording_stopped">録音を停止しました</string>
+    <string name="cd_floating_asr">フローティングボール音声認識</string>
+    <string name="cd_floating_edge_handle">フローティングボールを表示</string>
+    <string name="toast_battery_whitelist_already">すでに電池最適化の除外済みです</string>
+    <string name="toast_battery_whitelist_failed">電池最適化の除外申請に失敗しました</string>
+    <string name="toast_need_floating_keep_alive_first">先にフォアグラウンド保活を有効にしてください</string>
+    <string name="toast_shizuku_permission_requested">Shizuku の権限を要求しました。Shizuku で許可してください。</string>
+    <string name="toast_shizuku_permission_waiting">Shizuku に接続中です。接続後に権限確認が表示されます。</string>
+    <string name="toast_shizuku_permission_request_failed">Shizuku の権限要求に失敗しました</string>
+    <string name="toast_shizuku_or_root_unavailable">Shizuku が利用できず、root も検出されません</string>
+    <string name="toast_floating_keep_alive_privileged_start_failed">Shizuku / root による保活起動に失敗しました</string>
+    <string name="toast_floating_recording_foreground_failed">マイクのフォアグラウンドサービスを開始できません。アプリを一度開いてから再試行してください。</string>
+
+    <!-- Floating ASR status messages -->
+    <string name="floating_asr_error">認識失敗：%1$s</string>
+    <string name="floating_asr_copied">クリップボードにコピーしました</string>
+    <string name="accessibility_service_description">フローティングボールと音量キー録音がASR結果を現在の入力フィールドに挿入できるようにします。データは収集またはアップロードされません。</string>
+
+    <!-- Floating radial menu -->
+    <string name="label_radial_switch_asr">ASRプロバイダーを切り替え</string>
+    <string name="label_radial_switch_ime">入力メソッドを切り替え</string>
+    <string name="label_radial_move">フローティングボールを移動</string>
+    <string name="label_radial_postproc">AI校正を切り替え</string>
+    <string name="label_radial_switch_prompt">AI校正プロンプトを切り替え</string>
+    <string name="label_radial_clipboard_upload">クリップボードをアップロード</string>
+    <string name="label_radial_clipboard_pull">クリップボードをプル</string>
+    <string name="label_radial_toggle_silence_autostop">無音時自動停止を切り替え</string>
+    <string name="label_radial_open_history">ASR履歴</string>
+    <string name="label_radial_open_settings">設定</string>
+    <string name="label_choose_asr_vendor">ASRプロバイダーを選択</string>
+    <string name="toast_move_mode_on">移動モードが有効になりました。ボールをタップして終了します。</string>
+    <string name="label_reset_floating_position">フローティングボール位置をリセット</string>
+    <string name="toast_floating_position_reset">フローティングボールの位置をリセットしました</string>
+
+    <string name="notif_channel_floating_keep_alive">バックグラウンド保活</string>
+    <string name="notif_channel_floating_keep_alive_desc">常駐通知でバックグラウンド動作を維持します。</string>
+    <string name="notif_floating_keep_alive_title">%1$s 実行中</string>
+    <string name="notif_floating_keep_alive_desc">今日%1$d文字・%2$s・校正%3$s</string>
+    <string name="notif_floating_keep_alive_postproc_enabled">有効</string>
+    <string name="notif_floating_keep_alive_postproc_disabled">無効</string>
+    <string name="notif_channel_floating_recording">フローティング録音</string>
+    <string name="notif_channel_floating_recording_desc">フローティングボールがマイクを使用している間、録音状態を表示します。</string>
+    <string name="notif_floating_recording_title">%1$s が録音中</string>
+    <string name="notif_floating_recording_desc">フローティング音声認識が待機しています。</string>
+
+    <!-- ============================================== -->
+    <!-- フローティング設定 - 機能説明 -->
+    <!-- ============================================== -->
+
+    <!-- フローティングASR -->
+    <string name="feature_floating_asr_off_desc">フローティングボールは表示されません。BiBi Keyboard からは引き続き音声入力を利用できます。</string>
+    <string name="feature_floating_asr_on_desc">他のアプリの上に音声入力用フローティングボールを表示し、キーボードが非表示でも認識を開始できます。オーバーレイ権限が必要で、音量キー操作と一部の文字入力方式にはアクセシビリティまたは IME ブリッジも必要です。</string>
+
+    <!-- キーボード表示時のみフローティングボールを表示 -->
+    <string name="feature_floating_only_when_ime_visible_off_desc">キーボードが非表示でもフローティングボールは表示されたままになります。</string>
+    <string name="feature_floating_only_when_ime_visible_on_desc">キーボードが非表示のときにフローティングボールが自動的に非表示になり、キーボードが表示されると表示されます。キーボードの状態は、アクセシビリティまたは有効な IME ブリッジで検出できます。</string>
+
+    <!-- フローティングボールの長押し録音 -->
+    <string name="feature_floating_hold_to_record_off_desc">フローティングボールをタップして録音を開始し、もう一度タップして停止します。</string>
+    <string name="feature_floating_hold_to_record_on_desc">フローティングボールを長押しして録音を開始し、指を離すと停止します。メニュー表示や移動にはより長いドラッグが必要で、切り替わると今回の録音はキャンセルされます。</string>
+
+    <!-- 直接ドラッグ移動 -->
+    <string name="feature_floating_direct_drag_off_desc">移動するには長押しで移動モードに入るか、メニューから移動を選ぶ必要があります。</string>
+    <string name="feature_floating_direct_drag_on_desc">フローティングボールを直接ドラッグして移動できます。</string>
+
+    <!-- 音量キー録音 -->
+    <string name="feature_volume_key_recording_off_desc">音量キーは通常のシステム動作のままで、録音操作には使われません。</string>
+    <string name="feature_volume_key_recording_on_desc">キーボード表示中、アクセシビリティサービスが音量キーのクリックを監視し、音声認識の開始または停止に使用します。不安定な音量キー長押しは使用しません。</string>
+    <string name="feature_volume_key_status_toast_off_desc">音量キー録音の開始と停止は追加通知なしで行います。既存のエラー通知には影響しません。</string>
+    <string name="feature_volume_key_status_toast_on_desc">音量キーで録音の開始または停止に成功したとき、短い Toast を表示します。</string>
+    <string name="feature_volume_key_stop_on_ime_hidden_off_desc">音量キー録音中にキーボードが消えても、手動で停止するまで録音を続けます。</string>
+    <string name="feature_volume_key_stop_on_ime_hidden_on_desc">音量キー録音中にキーボードが消えると、自動的に録音を停止します。</string>
+
+    <!-- フローティング書き込み互換モード -->
+    <string name="feature_floating_ime_bridge_off_desc">すべての Hook 連携リクエストの受付を停止します。メインキーボードとフローティングボールの非 Hook 機能には影響しません。</string>
+    <string name="feature_floating_ime_bridge_on_desc">互換のある LSPosed/LSPatch モジュールが提供する IME 表示、テキスト挿入、録音、クリップボード機能をクライアント側で有効にします。モジュール自身の設定と状態には影響しません。</string>
+    <string name="feature_ime_bridge_pcm_recording_off_desc">ブリッジで認識結果を入力できますが、他社製キーボード内での長押し録音は利用できません。</string>
+    <string name="feature_ime_bridge_pcm_recording_on_desc">対応する他社製キーボード内で長押し録音し、BiBi Keyboard に認識させられます。録音に失敗しても、フローティングボールや本アプリのマイクには自動で切り替わりません。</string>
+    <string name="feature_floating_a11y_android13_api_off_desc">認識結果は従来のアクセシビリティ API で書き込み、ストリーミングプレビューも利用できます。書き込み互換性の最適化と組み合わせて、一般的なアプリや旧システム向けです。</string>
+    <string name="feature_floating_a11y_android13_api_on_desc">Android 13 以降では、新しいアクセシビリティ API で認識結果を優先的に挿入します。ターミナルやエディタなどの特殊な場面でより安定します。書き込み互換性の最適化は自動的に無効になり、ストリーミングプレビューもオフになります。</string>
+    <string name="feature_floating_write_compat_off_desc">認識結果を入力欄へ直接入力します。ほとんどのアプリで利用できます。</string>
+    <string name="feature_floating_write_compat_on_desc">指定した対応アプリでは、入力欄の内容を選択してから結果を貼り付け、ヒント文字の混入を防ぎます。クリップボードを一時使用し、完了後に元の内容の復元を試みます。</string>
+
+    <!-- フローティング書き込み貼り付け -->
+    <string name="feature_floating_write_paste_off_desc">認識結果を現在の入力欄へ自動入力します。</string>
+    <string name="feature_floating_write_paste_on_desc">指定したアプリでは、認識結果をクリップボードへコピーするだけで自動入力しません。自分で貼り付ける必要があります。</string>
+
+    <!-- フローティング保活 -->
+    <string name="feature_floating_keep_alive_off_desc">バックグラウンドでしばらく動作すると、アプリが停止されやすくなり、フローティングボールや音量キー機能が使えなくなる場合があります。</string>
+    <string name="feature_floating_keep_alive_on_desc">常駐通知を表示し、フローティングボールや音量キー機能をバックグラウンドでも利用しやすくします。端末によっては電池設定の変更も必要です。</string>
+    <string name="feature_floating_keep_alive_privileged_off_desc">通常の方法だけでバックグラウンド動作を維持します。端末によってはフローティングボールや音量キー機能が停止する場合があります。</string>
+    <string name="feature_floating_keep_alive_privileged_on_desc">Shizuku または root を使ってバックグラウンドサービスを定期的に復帰させ、機能の中断を減らします。Shizuku または root 権限が必要です。</string>
+</resources>

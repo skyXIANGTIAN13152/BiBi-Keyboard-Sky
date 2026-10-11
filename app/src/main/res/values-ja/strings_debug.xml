@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- デバッグログ関連文字列 - Debug logging related strings -->
+
+    <!-- Debug logging -->
+    <string name="about_debug_title">診断ログ</string>
+    <string name="about_debug_desc">基本的な診断ログは既定で端末内に記録されます。より詳しい調査が必要な場合のみ、詳細サポートログを一時的に有効にできます。ASR テキスト、入力内容、クリップボード内容、キーは記録しません。</string>
+    <string name="about_debug_last_exit_prefix">直近の異常終了: %1$s</string>
+    <string name="btn_debug_start_recording">詳細サポートログを有効化</string>
+    <string name="btn_debug_stop_recording">詳細サポートログを停止</string>
+    <string name="btn_debug_export">診断ログをエクスポート</string>
+    <string name="toast_debug_recording_started">詳細サポートログを有効化しました</string>
+    <string name="toast_debug_recording_stopped">詳細サポートログを停止しました</string>
+    <string name="toast_debug_no_log">エクスポートするログがありません</string>
+    <string name="toast_debug_stop_before_export">エクスポート前に記録を停止してください</string>
+    <string name="toast_debug_failed">操作失敗。再試行してください</string>
+    <string name="toast_debug_export_failed">エクスポートに失敗しました</string>
+</resources>

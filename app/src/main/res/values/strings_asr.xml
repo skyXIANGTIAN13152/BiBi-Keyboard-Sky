@@ -1,0 +1,28 @@
+<resources>
+    <string name="hint_need_keys">Fill in keys in Settings to enable voice input</string>
+    <string name="error_only_zip_supported">Only .zip files are supported</string>
+
+    <!-- ============================================== -->
+    <!-- ASR Settings - Feature Descriptions -->
+    <!-- ============================================== -->
+
+    <!-- Auto stop on silence -->
+    <string name="feature_auto_stop_silence_off_desc">Recording continues until you manually stop it. Useful for capturing longer speech or when pauses are part of your content.</string>
+    <string name="feature_auto_stop_silence_on_desc">Automatically stops recording after no speech is detected for a while, so you do not need to stop it manually. You can adjust the wait time and detection sensitivity.</string>
+
+    <!-- Backup ASR engine -->
+    <string name="feature_backup_asr_off_desc">When off, voice input uses only the primary provider.</string>
+    <string name="feature_backup_asr_on_desc">If the primary provider is unavailable, fails, or takes too long, the app can use the backup provider instead. Depending on your backup settings, it may start together with the primary provider or only when needed.</string>
+
+    <!-- Provider tags (for selector UI) -->
+    <string name="asr_vendor_tag_streaming">Streaming</string>
+    <string name="asr_vendor_tag_non_streaming">Non-streaming</string>
+    <string name="asr_vendor_tag_online">Online</string>
+    <string name="asr_vendor_tag_local">On-device</string>
+    <string name="asr_vendor_tag_custom">Custom</string>
+    <string name="asr_vendor_tag_pseudo_streaming">Pseudo-streaming</string>
+    <string name="asr_vendor_tag_chinese_dialect">Chinese dialects</string>
+    <string name="asr_vendor_tag_accurate">Accurate</string>
+    <string name="asr_vendor_group_configured">Configured</string>
+    <string name="asr_vendor_group_unconfigured">Not configured</string>
+</resources>

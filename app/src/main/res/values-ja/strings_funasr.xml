@@ -1,0 +1,76 @@
+<resources>
+    <!-- FunASR Nano ローカル ASR 設定文字列 -->
+    <string name="funasr_section_title">FunASR NanoローカルASR</string>
+    <string name="vendor_funasr_nano">FunASR Nano</string>
+
+    <!-- FunASR Nano local settings -->
+    <string name="label_fn_model_variant">モデルバージョン</string>
+    <string name="fn_model_nano_int8">FunASR Nano（int8、約690MB）</string>
+    <string name="fn_model_mlt_nano_int8">FunASR MLT Nano（多言語、int8、約690MB）</string>
+    <string name="label_fn_language_preset">認識言語</string>
+    <string name="fn_lang_auto">自動 / 未指定</string>
+    <string name="fn_lang_zh">中国語</string>
+    <string name="fn_lang_en">英語</string>
+    <string name="fn_lang_yue">広東語</string>
+    <string name="fn_lang_ja">日本語</string>
+    <string name="fn_lang_ko">韓国語</string>
+    <string name="fn_lang_vi">ベトナム語</string>
+    <string name="fn_lang_id">インドネシア語</string>
+    <string name="fn_lang_th">タイ語</string>
+    <string name="fn_lang_ms">マレー語</string>
+    <string name="fn_lang_fil">フィリピン語</string>
+    <string name="fn_lang_ar">アラビア語</string>
+    <string name="fn_lang_hi">ヒンディー語</string>
+    <string name="fn_lang_bg">ブルガリア語</string>
+    <string name="fn_lang_hr">クロアチア語</string>
+    <string name="fn_lang_cs">チェコ語</string>
+    <string name="fn_lang_da">デンマーク語</string>
+    <string name="fn_lang_nl">オランダ語</string>
+    <string name="fn_lang_et">エストニア語</string>
+    <string name="fn_lang_fi">フィンランド語</string>
+    <string name="fn_lang_el">ギリシャ語</string>
+    <string name="fn_lang_hu">ハンガリー語</string>
+    <string name="fn_lang_ga">アイルランド語</string>
+    <string name="fn_lang_lv">ラトビア語</string>
+    <string name="fn_lang_lt">リトアニア語</string>
+    <string name="fn_lang_mt">マルタ語</string>
+    <string name="fn_lang_pl">ポーランド語</string>
+    <string name="fn_lang_pt">ポルトガル語</string>
+    <string name="fn_lang_ro">ルーマニア語</string>
+    <string name="fn_lang_sk">スロバキア語</string>
+    <string name="fn_lang_sl">スロベニア語</string>
+    <string name="fn_lang_sv">スウェーデン語</string>
+    <string name="label_fn_threads">スレッド数（1-8）</string>
+    <string name="label_fn_use_itn">ITNを有効化（数字スマート認識）</string>
+    <string name="feature_fn_use_itn_off_desc">「千二百三十四」のような話し言葉の表記を保ちます。</string>
+    <string name="feature_fn_use_itn_on_desc">対応する中国語の数字、日付、時刻を「1234」のような一般的な書面表記に変換します。</string>
+    <string name="label_fn_user_prompt">ユーザープロンプト</string>
+    <string name="fn_user_prompt_hint">長いプロンプトは処理が遅くなる可能性があります。</string>
+    <string name="label_fn_preload">積極的にモデルを読み込む</string>
+    <string name="feature_fn_preload_off_desc">必要なときにのみモデルを読み込むため、初回使用時に遅延が発生する可能性があります。</string>
+    <string name="feature_fn_preload_on_desc">キーボードが表示されたときにモデルを事前読み込みし、初回使用の遅延を減らします。</string>
+    <string name="label_fn_keep_alive">モデルアンロード方針</string>
+    <string name="btn_fn_download_model">モデルをワンクリックでダウンロード</string>
+    <string name="btn_fn_import_model">ローカルファイルからモデルをインポート</string>
+    <string name="btn_fn_clear_model">ダウンロードしたモデルをクリア</string>
+    <string name="fn_download_status_downloading">ダウンロード中…%1$d%%</string>
+    <string name="fn_download_status_extracting_progress">展開中… %1$d%%</string>
+    <string name="fn_download_status_done">モデルがインストールされました</string>
+    <string name="fn_download_status_failed">ダウンロードまたは展開失敗</string>
+    <string name="fn_download_started_in_bg">バックグラウンドダウンロードを開始しました。進行状況は通知で確認してください。</string>
+    <string name="fn_import_started_in_bg">バックグラウンドインポートを開始しました。進行状況は通知で確認してください。</string>
+    <string name="fn_import_success">モデルのインポートに成功しました：%1$s</string>
+    <string name="fn_import_failed">モデルのインポートに失敗しました：%1$s</string>
+    <string name="fn_import_status_extracting">インポート中… %1$d%%</string>
+    <string name="fn_clear_confirm_title">モデルクリアの確認</string>
+    <string name="fn_clear_confirm_message">ダウンロードしたモデルファイルが削除されます。後で再ダウンロードできます。続行しますか？</string>
+    <string name="fn_clear_done">モデルがクリアされました</string>
+    <string name="fn_clear_failed">クリア失敗</string>
+
+    <!-- Error messages -->
+    <string name="error_funasr_model_missing">FunASR Nanoモデルがありません。設定で後で設定またはダウンロードしてください。</string>
+
+    <!-- Model download notifications -->
+    <string name="notif_fn_title_nano_int8">FunASR Nanoモデル（int8）</string>
+    <string name="notif_fn_title_mlt_nano_int8">FunASR MLT Nanoモデル（int8）</string>
+</resources>

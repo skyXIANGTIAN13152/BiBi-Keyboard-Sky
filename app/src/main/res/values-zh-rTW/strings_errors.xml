@@ -1,0 +1,43 @@
+<resources>
+    <!-- 錯誤提示相關字串 - Error messages related strings -->
+
+    <!-- Errors (ASR engines) -->
+    <string name="error_record_permission_denied">錄音權限未授予</string>
+    <string name="error_audio_init_failed">錄音初始化失敗</string>
+    <string name="error_audio_error">錄音錯誤：%1$s</string>
+    <string name="error_audio_empty">空白音訊</string>
+    <string name="error_audio_empty_skipped">識別為空白音訊，已略過轉錄</string>
+    <string name="error_missing_gemini_key">未設定 Gemini API Key</string>
+    <string name="error_missing_dashscope_key">未設定 DashScope API Key</string>
+    <string name="error_missing_siliconflow_key">未設定 SiliconFlow API Key</string>
+    <string name="error_missing_eleven_key">未設定 ElevenLabs API Key</string>
+    <string name="error_missing_soniox_key">未設定 Soniox API Key</string>
+    <string name="error_missing_stepaudio_key">未設定階躍星辰 API Key</string>
+    <string name="error_missing_openrouter_key">未設定 OpenRouter API Key</string>
+    <string name="error_missing_mimo_key">未設定 MiMo API Key</string>
+    <string name="error_request_failed_http">識別請求失敗：HTTP %1$d%2$s</string>
+    <string name="error_asr_request_failed_http">ASR 請求失敗：HTTP %1$d%2$s</string>
+    <string name="error_dash_getpolicy_failed_http">getPolicy 失敗：HTTP %1$d%2$s</string>
+    <string name="error_dash_no_data">getPolicy 回應無 data 欄位</string>
+    <string name="error_dash_missing_upload_host">getPolicy 回應缺少 upload_host</string>
+    <string name="error_oss_upload_failed_http">OSS 上傳失敗：%1$d%2$s</string>
+    <string name="error_asr_empty_result">識別回傳為空</string>
+    <string name="error_asr_timeout">識別逾時，請稍後重試</string>
+    <string name="error_recognize_failed_with_reason">識別失敗：%1$s</string>
+    <string name="error_dashscope_unsupported_model">不支援的 DashScope ASR 模型：%1$s</string>
+    <string name="error_local_model_integrity_failed">本機模型檔案完整性異常：%1$s。請刪除後重新下載或匯入模型。</string>
+    <string name="error_model_download_incomplete">下載未完成，請重試以繼續下載。</string>
+    <string name="error_model_package_verify_failed">下載包校驗失敗，請重新下載。</string>
+    <string name="error_model_download_cancelled">已取消下載</string>
+
+    <!-- User-facing ASR error toasts (floating + keyboard) -->
+    <string name="asr_error_empty_result">未識別到內容，請再說一遍</string>
+    <string name="asr_error_network_unavailable">網路連線失敗，請檢查網路後重試</string>
+    <string name="asr_error_network_handshake">網路連線異常（握手失敗），請稍後重試或切換網路</string>
+    <string name="asr_error_mic_permission_denied">需要麥克風權限才能識別，請在設定中開啟</string>
+    <string name="asr_error_mic_in_use">麥克風正被其他應用程式使用，請稍後再試</string>
+    <string name="asr_error_auth_invalid">鑑權失敗，憑證無效或已過期，請在設定中更新</string>
+    <string name="asr_error_auth_forbidden">權限不足，請檢查服務開通狀態</string>
+
+    <string name="error_auto_copied">錯誤訊息已自動複製</string>
+</resources>

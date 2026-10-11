@@ -1,0 +1,48 @@
+<resources>
+    <!-- Soniox ASR 配置字串 -->
+    <string name="soniox_section_title">Soniox API設定</string>
+    <string name="vendor_soniox">Soniox</string>
+
+    <!-- Soniox configuration -->
+    <string name="label_soniox_streaming">串流識別</string>
+    <string name="label_soniox_endpoint_mode">識別模式</string>
+    <string name="label_soniox_language">識別語言（可複選）</string>
+    <string name="label_soniox_language_strict">嚴格限制識別語言</string>
+    <string name="label_soniox_api_key">API Key（Bearer）</string>
+
+    <!-- Soniox endpoint modes -->
+    <string name="soniox_endpoint_mode_low_latency">低延遲</string>
+    <string name="soniox_endpoint_mode_default">預設</string>
+    <string name="soniox_endpoint_mode_high_accuracy">高精度</string>
+
+    <!-- Soniox language options -->
+    <string name="soniox_lang_auto">自動（多語言）</string>
+    <string name="soniox_lang_en">英語 (en)</string>
+    <string name="soniox_lang_zh">中文 (zh)</string>
+    <string name="soniox_lang_ja">日語 (ja)</string>
+    <string name="soniox_lang_ko">韓語 (ko)</string>
+    <string name="soniox_lang_es">西班牙語 (es)</string>
+    <string name="soniox_lang_pt">葡萄牙語 (pt)</string>
+    <string name="soniox_lang_de">德語 (de)</string>
+    <string name="soniox_lang_fr">法語 (fr)</string>
+    <string name="soniox_lang_id">印尼語 (id)</string>
+    <string name="soniox_lang_ru">俄語 (ru)</string>
+    <string name="soniox_lang_ar">阿拉伯語 (ar)</string>
+    <string name="soniox_lang_hi">印地語 (hi)</string>
+    <string name="soniox_lang_vi">越南語 (vi)</string>
+    <string name="soniox_lang_th">泰語 (th)</string>
+    <string name="soniox_lang_ms">馬來語 (ms)</string>
+    <string name="soniox_lang_fil">菲律賓語 (fil)</string>
+
+    <!-- ============================================== -->
+    <!-- Soniox ASR - 功能說明 -->
+    <!-- ============================================== -->
+
+    <!-- Soniox - 串流識別 -->
+    <string name="feature_soniox_streaming_off_desc">使用非串流識別。錄音結束後開始處理。</string>
+    <string name="feature_soniox_streaming_on_desc">使用串流識別，邊說話邊即時轉寫。</string>
+
+    <!-- Soniox - 語言嚴格限制 -->
+    <string name="feature_soniox_language_strict_off_desc">語言提示僅作為偏好參考，仍可能識別出其他語言。</string>
+    <string name="feature_soniox_language_strict_on_desc">嚴格限制僅識別指定語言，避免誤轉寫為其他語言。</string>
+</resources>

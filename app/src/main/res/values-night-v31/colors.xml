@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Monet Dark: Softened Dark Background, Dimmed Light Foreground -->
+    <color name="ic_launcher_background_color">@android:color/system_accent1_700</color>
+    <color name="ic_launcher_foreground_color">@android:color/system_accent1_200</color>
+</resources>

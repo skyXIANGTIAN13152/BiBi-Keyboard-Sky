@@ -1,0 +1,534 @@
+<resources>
+  <!-- ============================================== -->
+  <!-- Basic Information -->
+  <!-- ============================================== -->
+  <string name="app_name">BiBi Keyboard</string>
+  <string name="fxliang_fcitx_voice_input_provider_label">BiBi Keyboard Link</string>
+  <!-- PocketBase 统计服务地址（渠道可覆盖）；为空则不上报 -->
+  <string name="pocketbase_base_url" translatable="false"></string>
+
+  <string name="qs_tile_ime_picker">Switch input method</string>
+
+  <!-- ============================================== -->
+  <!-- Keyboard Status Information -->
+  <!-- ============================================== -->
+  <string name="status_idle">Ready</string>
+  <string name="status_listening">Listening…</string>
+  <string name="status_recognizing">Recognizing…</string>
+  <string name="status_backup_asr_used">Used backup engine result</string>
+  <string name="status_backup_asr_loading">Starting local backup recognition…</string>
+  <string name="status_backup_asr_recognizing">Recognizing with local backup…</string>
+  <string name="status_ai_processing">AI polishing…</string>
+  <string name="status_ai_edit_listening">Speak your edit instruction…</string>
+  <string name="status_ai_editing">AI editing…</string>
+  <string name="status_cancelled">Canceled</string>
+  <string name="status_last_request_ms">Last request time: %1$d ms</string>
+  <string name="status_reverted_to_raw">Reverted to raw transcript</string>
+  <string name="status_revert_postprocess_unavailable">Cannot revert AI polish</string>
+  <string name="status_postprocess_interrupted_raw">AI polish canceled; used raw transcript</string>
+  <string name="status_undone">Undone last change</string>
+  <string name="status_llm_empty_result">AI edit failed: no result</string>
+  <string name="status_last_asr_not_found">Last ASR result not found; canceled</string>
+  <string name="hint_need_llm_keys">Configure AI polish first</string>
+  <string name="hint_cannot_read_text">Current app text is not readable</string>
+  <string name="status_llm_failed_used_raw">AI polish failed; used raw text</string>
+  <string name="status_llm_edit_failed">AI edit failed. Please try again</string>
+  <string name="hint_need_permission">Microphone permission is required for voice input</string>
+  <string name="status_postproc">AI Polish: %1$s</string>
+  <string name="action_revert_postprocess">Revert AI polish</string>
+
+  <string name="toggle_on">ON</string>
+  <string name="toggle_off">OFF</string>
+  <string name="label_recording_gesture_cancel">Swipe Left Cancel</string>
+  <string name="label_recording_gesture_send">Swipe Right Send</string>
+  <string name="label_recording_tap_cancel">Tap to Cancel</string>
+  <string name="label_recording_tap_send">Tap to Send</string>
+  <string name="hint_swipe_down_lock">Swipe down to lock recording</string>
+  <string name="hint_tap_to_stop_recording">Tap to stop recording</string>
+
+  <string name="label_ai_edit_default_use_last_asr">Only apply to the last transcript segment</string>
+  <string name="label_auto_start_recording_on_show">Auto start recording when keyboard appears</string>
+  <string name="label_continuous_capture">Continuous recording while visible</string>
+  <string name="label_auto_enter_after_asr">Auto enter after input</string>
+  <string name="label_auto_switch_ime_after_asr">Switch to specified IME after input</string>
+  <string name="btn_retry">Connect failed, retry?</string>
+
+  <!-- ============================================== -->
+  <!-- Settings Related -->
+  <!-- ============================================== -->
+  <string name="btn_one_click_setup">One-click Setup</string>
+
+  <string name="settings_title">BiBi Keyboard Settings</string>
+  <string name="settings_tab_input">Input</string>
+  <string name="settings_tab_smart">Smart</string>
+  <string name="settings_tab_system">System</string>
+  <string name="settings_ui_mode">UI style</string>
+  <string name="settings_ui_mode_summary">Choose Miuix or Material style</string>
+  <string name="settings_ui_mode_miuix">Miuix</string>
+  <string name="settings_ui_mode_material">Material</string>
+  <string name="settings_theme_mode">Theme mode</string>
+  <string name="settings_theme_mode_system">Follow system</string>
+  <string name="settings_theme_mode_light">Light</string>
+  <string name="settings_theme_mode_dark">Dark</string>
+  <string name="home_summary_enabled">Enabled</string>
+  <string name="home_summary_disabled">Disabled</string>
+  <string name="home_summary_more_input_disabled">Not enabled</string>
+  <string name="home_summary_more_input_volume_key_enabled">Volume key input enabled</string>
+  <string name="home_summary_more_input_floating_enabled">Floating ball input enabled</string>
+  <string name="home_summary_more_input_both_enabled">Volume key and floating ball enabled</string>
+  <string name="home_summary_more_input_accessibility_missing">Accessibility not enabled</string>
+  <string name="home_summary_setup_done">Basic setup complete</string>
+  <string name="home_summary_setup_progress">Basic setup %1$d/%2$d</string>
+  <string name="home_summary_input_tap_control">Tap control</string>
+  <string name="home_summary_input_hold_control">Long-press control</string>
+  <string name="home_summary_asr_format">Auto-stop %1$s · %2$s</string>
+  <string name="home_summary_ai_format">%1$s · %2$s · %3$s</string>
+  <string name="home_summary_api_log_errors">Recent API calls have errors</string>
+  <string name="home_summary_update_available">New version available</string>
+  <string name="title_input_settings">Input Settings</string>
+  <string name="title_asr_settings">Speech Recognition Settings</string>
+  <string name="title_ai_settings">AI Feature Settings</string>
+  <string name="title_other_settings">Other Settings</string>
+  <string name="btn_settings_search">Search Settings</string>
+  <string name="title_settings_search">Search Settings</string>
+  <string name="hint_settings_search">Search settings</string>
+  <string name="cd_settings_search_clear">Clear search text</string>
+  <string name="cd_show_password">Show password</string>
+  <string name="cd_hide_password">Hide password</string>
+  <string name="text_settings_search_empty">No matching settings</string>
+
+  <!-- Settings page section titles -->
+  <string name="section_settings_items">Main Settings</string>
+  <string name="section_general">Background Keep-Alive</string>
+
+  <string name="label_app_key">X-Api-App-Key</string>
+  <string name="label_access_key">X-Api-Access-Key</string>
+  <string name="label_asr_vendor">Speech Recognition Provider</string>
+  <string name="label_backup_asr_engine">Backup speech recognition engine</string>
+  <string name="label_backup_asr_enabled">Enable backup engine</string>
+  <string name="label_backup_asr_vendor">Backup provider</string>
+  <string name="label_backup_asr_timeout_sensitivity">Timeout sensitivity</string>
+  <string name="label_backup_asr_local_residency">Local backup mode</string>
+  <string name="hint_backup_asr_uses_existing_config">Uses the provider settings already configured on this page</string>
+  <string name="hint_backup_asr_timeout_sensitivity">Higher sensitivity switches to the backup result sooner when the primary engine is slow</string>
+  <string name="hint_backup_asr_local_residency">On-demand releases local backup models after idle time; resident keeps them loaded for the fastest fallback.</string>
+  <string name="option_backup_asr_timeout_sensitivity_relaxed">Relaxed</string>
+  <string name="option_backup_asr_timeout_sensitivity_balanced">Balanced (Recommended)</string>
+  <string name="option_backup_asr_timeout_sensitivity_sensitive">Sensitive</string>
+  <string name="option_backup_asr_local_residency_on_demand">Load on demand</string>
+  <string name="option_backup_asr_local_residency_resident">Keep resident</string>
+
+  <!-- ============================================== -->
+  <!-- Custom Punctuation -->
+  <!-- ============================================== -->
+  <string name="custom_punct_section_title">Custom Punctuation Buttons</string>
+  <string name="label_custom_punct_1">Button 1</string>
+  <string name="label_custom_punct_2">Button 2</string>
+  <string name="label_custom_punct_3">Button 3</string>
+  <string name="label_custom_punct_4">Button 4</string>
+
+  <!-- ============================================== -->
+  <!-- Speech Presets -->
+  <!-- ============================================== -->
+  <string name="label_speech_preset_section">Speech Presets</string>
+  <string name="label_speech_preset_select">Current preset</string>
+  <string name="speech_preset_empty_placeholder">No presets yet</string>
+  <string name="speech_preset_untitled">Untitled preset</string>
+  <string name="hint_speech_preset_name">Preset name</string>
+  <string name="hint_speech_preset_content">Preset content</string>
+  <string name="btn_speech_preset_add">Add</string>
+  <string name="btn_speech_preset_delete">Delete</string>
+  <string name="speech_preset_default_name">Preset %1$d</string>
+  <string name="toast_speech_preset_added">Preset added</string>
+  <string name="toast_speech_preset_deleted">Preset deleted</string>
+  <string name="dialog_speech_preset_delete_title">Delete Preset</string>
+  <string name="dialog_speech_preset_delete_message">Delete \"%1$s\"?</string>
+  <string name="speech_preset_intro">When the ASR result exactly equals a preset Name, it will be replaced by its Content. Useful for quick phrases, signatures, addresses, IDs. Matching: first case-sensitive, then case-insensitive if not matched; triggers only when the entire text equals the Name. May need to enable Trim trailing punctuation.</string>
+
+  <!-- ============================================== -->
+  <!-- Language Settings -->
+  <!-- ============================================== -->
+  <string name="label_language">App Language</string>
+  <string name="lang_follow_system">Follow System</string>
+  <string name="lang_zh_cn">Simplified Chinese</string>
+  <string name="lang_zh_tw">Traditional Chinese</string>
+  <string name="lang_ja">Japanese</string>
+  <string name="lang_en">English</string>
+  <string name="lang_ar">Arabic</string>
+
+  <!-- ============================================== -->
+  <!-- General Toasts -->
+  <!-- ============================================== -->
+  <string name="toast_backup_asr_used">Used backup engine result</string>
+  <string name="toast_preset_added">Preset added</string>
+  <string name="toast_preset_deleted">Preset deleted</string>
+  <string name="untitled_preset">Untitled preset</string>
+  <string name="switched_preset">Switched: %1$s</string>
+  <string name="toast_search_changed_asr_vendor">Switched ASR provider: %1$s</string>
+  <string name="toast_search_changed_llm_vendor">Switched post-processing model provider: %1$s</string>
+
+  <!-- ============================================== -->
+  <!-- Input Related -->
+  <!-- ============================================== -->
+  <string name="label_trim_trailing_punct">Remove trailing punctuation and emoji</string>
+  <string name="label_trim_trailing_punct_threshold">Removal threshold</string>
+  <string name="trim_trailing_punct_threshold_value">Within %1$d words/chars</string>
+  <string name="trim_trailing_punct_threshold_unlimited">Unlimited</string>
+  <string name="label_mic_haptic">Haptic feedback for keys and floating ball</string>
+  <string name="label_mic_tap_toggle">Tap to start/stop recording</string>
+  <string name="label_test_input">Try the IME</string>
+  <string name="btn_test_input">Try the IME</string>
+
+  <!-- ============================================== -->
+  <!-- Extension Button Configuration -->
+  <!-- ============================================== -->
+  <string name="label_extension_buttons">Custom keyboard layout</string>
+  <string name="keyboard_layout_summary">Main %1$dx%2$d, AI %3$dx%4$d</string>
+  <string name="keyboard_layout_editor_title">Custom keyboard layout</string>
+  <string name="keyboard_layout_panel_selector">Layout</string>
+  <string name="keyboard_layout_panel_main">Main</string>
+  <string name="keyboard_layout_panel_ai_edit">AI edit</string>
+  <string name="keyboard_layout_panel_recording">Recording</string>
+  <string name="keyboard_layout_cols">Cols</string>
+  <string name="keyboard_layout_rows">Rows</string>
+  <string name="keyboard_layout_reset_default">Reset</string>
+  <string name="keyboard_layout_clear_current">Clear</string>
+  <string name="keyboard_layout_import_export">Share</string>
+  <string name="keyboard_layout_copy_json">Copy JSON</string>
+  <string name="keyboard_layout_json_label">Layout JSON</string>
+  <string name="keyboard_layout_import_json">Import JSON</string>
+  <string name="keyboard_layout_import_success">Layout imported</string>
+  <string name="keyboard_layout_import_failed">Invalid layout JSON</string>
+  <string name="keyboard_layout_export_copied">Layout JSON copied</string>
+  <string name="keyboard_layout_save_success">Layout saved</string>
+  <string name="keyboard_layout_error_invalid">Layout has missing, overlapping, or out-of-bounds buttons.</string>
+  <string name="keyboard_layout_block_status">Status</string>
+  <string name="keyboard_layout_block_ai_info">AI info</string>
+  <string name="btn_save">Save</string>
+  <string name="btn_delete">Delete</string>
+  <string name="ext_btn_default_summary">Undo, Select All, Copy, Hide Keyboard</string>
+  <string name="ext_btn_none_selected">Not selected</string>
+  <string name="ext_btn_must_select_4">Please select exactly 4 buttons</string>
+  <string name="ext_btn_max_4">Maximum 4 buttons</string>
+  <string name="ext_btn_none">Disabled</string>
+  <string name="ext_btn_select">Selection Mode</string>
+  <string name="ext_btn_select_all">Select All</string>
+  <string name="ext_btn_copy">Copy</string>
+  <string name="ext_btn_asr_history">Recognition history</string>
+  <string name="ext_btn_paste">Paste</string>
+  <string name="ext_btn_cursor_left">Move Left</string>
+  <string name="ext_btn_cursor_right">Move Right</string>
+  <string name="ext_btn_prev_punct">Previous punctuation</string>
+  <string name="ext_btn_next_punct">Next punctuation</string>
+  <string name="ext_btn_move_start">Move to Start</string>
+  <string name="ext_btn_move_end">Move to End</string>
+  <string name="ext_btn_numpad">Numpad</string>
+  <string name="ext_btn_undo">Undo</string>
+  <string name="ext_btn_hide">Hide keyboard</string>
+  <string name="ext_btn_silence_autostop">Auto-stop on silence</string>
+  <string name="ext_btn_mic_tap_toggle">Recording mode</string>
+  <string name="ext_btn_floating_keyboard">Floating keyboard</string>
+  <string name="ext_btn_auto_enter_after_asr">Auto enter after input</string>
+  <string name="status_copied">Copied</string>
+  <string name="status_pasted">Pasted</string>
+  <string name="status_nothing_to_undo">Nothing to undo</string>
+  <string name="asr_history_empty">No recognition history</string>
+  <string name="cd_asr_history_back">Back</string>
+
+  <!-- ============================================== -->
+  <!-- General Buttons -->
+  <!-- ============================================== -->
+  <string name="toast_setup_all_done">All set</string>
+  <string name="toast_setup_enable_keyboard_first">Enable the keyboard in system settings, then come back</string>
+  <string name="toast_setup_choose_keyboard">Please select "BiBi Keyboard" as the current input method</string>
+  <string name="toast_setup_aborted">Setup aborted: %1$s</string>
+  <string name="setup_abort_reason_ime_timeout">Input method selection timed out</string>
+  <string name="btn_get_api_key_guide">View Configuration Guide</string>
+  <string name="btn_local_model_guide">View Configuration Guide</string>
+
+  <!-- ============================================== -->
+  <!-- Silence Auto-stop Settings -->
+  <!-- ============================================== -->
+  <string name="section_silence_autostop">Auto-stop on Silence</string>
+  <string name="label_recording_auto_stop_mode">Recording auto-stop mode</string>
+  <string name="option_recording_auto_stop_manual">Manual control</string>
+  <string name="option_recording_auto_stop_silence">Stop when speech ends</string>
+  <string name="option_recording_auto_stop_max_duration">Timeout stop</string>
+  <string name="label_auto_stop_silence">Auto stop when no speech</string>
+  <string name="label_silence_window_ms">Stop window (ms)</string>
+  <string name="label_silence_sensitivity">Stop-recording sensitivity (1-10; higher stops sooner)</string>
+  <string name="label_recording_max_duration">Maximum recording duration</string>
+  <string name="label_recording_max_duration_value_s">%1$d s</string>
+
+  <!-- ============================================== -->
+  <!-- Other General Settings -->
+  <!-- ============================================== -->
+  <string name="label_audio_ducking_on_record">Audio ducking during recording</string>
+  <string name="label_auto_cancel_empty_audio_input">Auto discard invalid input</string>
+  <string name="label_auto_filter_silent_audio_segments">Auto filter silent parts</string>
+  <string name="label_offline_denoise">Offline denoise for non-streaming ASR</string>
+  <string name="label_upload_audio_compression">Compress audio before upload</string>
+  <string name="label_headset_mic_priority">Try headset microphone (experimental)</string>
+  <!-- External IME linking (AIDL) -->
+  <string name="label_external_ime_link_aidl">Allow external IME linking (AIDL)</string>
+  <string name="external_aidl_guide_title">How to Use the Linking Feature</string>
+  <string name="external_aidl_guide_message">This feature enables voice recognition from external IMEs via AIDL. Currently supported: Fcitx (Little Penguin) and Trime.\n\nFirst enable it in BiBi Keyboard: Settings - Input Settings - Allow external IME linking (AIDL) (no floating ball or accessibility service required).\n\nThen set up your IME:\n\n[Fcitx (Little Penguin)]\n1. Download the modified Fcitx: https://github.com/BryceWG/fcitx5-android-lexi-keyboard/releases (uninstall the original Fcitx first and back up your data)\n2. Open Fcitx Settings - Virtual Keyboard - Long-press Space Bar Behavior - Voice Input (AIDL)\n3. Long-press the space bar in the IME panel to start voice input\n\n[Trime]\n1. Download the modified Trime: https://github.com/BryceWG/trime-bibi-keyboard/releases\n2. In Trime Settings - General, enable \"BiBi Keyboard AIDL voice input\".If the theme scheme you are using does not have the long-press VOICE_ASSIST function, you can enable the "Microphone Button in Toolbar".\n3. Long-press the button with the VOICE_ASSIST function to start recording, and release it to stop; or click the microphone button in the input method toolbar to start recording, and click again to stop and display the text on the screen.</string>
+  <string name="external_aidl_guide_btn_close">Close</string>
+  <string name="external_aidl_guide_btn_open_release">Open Release Page</string>
+  <string name="external_aidl_guide_choose_release_title">Select a release page</string>
+  <string name="external_aidl_guide_release_fcitx">Modified Fcitx (Little Penguin)</string>
+  <string name="external_aidl_guide_release_trime">Modified Trime</string>
+  <string name="external_aidl_guide_open_failed">Cannot open browser, please visit manually</string>
+
+  <!-- Model Selection Guide -->
+  <string name="model_guide_title">Choose Speech Recognition Model</string>
+  <string name="model_guide_message">To use BiBi Keyboard, please choose a speech recognition model type:</string>
+  <string name="model_guide_option_sf_free">⭐ Free Cloud Service (Recommended)</string>
+  <string name="model_guide_option_sf_free_desc">No configuration needed, powered by SiliconFlow. Includes free ASR and AI text enhancement.</string>
+  <string name="model_guide_option_sf_free_action">Ready to use immediately, limited free quota</string>
+  <string name="model_guide_sf_free_ready">Free service enabled, ready to use!</string>
+  <string name="model_guide_option_local">📦 Local Model</string>
+  <string name="model_guide_option_local_desc">No API key required, works offline, more private</string>
+  <string name="model_guide_option_local_action">Will download SenseVoice model (~1GB) and enable offline recognition</string>
+  <string name="model_guide_option_online">☁️ Online Model (Custom)</string>
+  <string name="model_guide_option_online_desc">Better recognition accuracy, supports multiple providers (Volcengine, OpenAI, Gemini, etc.), requires API key configuration</string>
+  <string name="model_guide_option_online_action">Will open the configuration guide to help you set up API keys</string>
+  <string name="model_guide_online_dialog_message">Online speech recognition supports multiple providers (Volcengine, SiliconFlow, OpenAI, Gemini, DashScope, Soniox, ElevenLabs, etc.). Please refer to the configuration guide for detailed instructions.</string>
+  <string name="model_guide_select_prompt">Please select a model type</string>
+  <string name="model_guide_downloading">Downloading model, please wait…</string>
+  <string name="model_guide_download_complete">Model download complete</string>
+  <string name="model_guide_config_doc_url">https://brycewg.notion.site/bibi-keyboard-providers-guide</string>
+  <string name="local_model_guide_config_doc_url">https://bibidocs.brycewg.com/getting-started/asr-providers.html#%E6%9C%AC%E5%9C%B0%E6%A8%A1%E5%9E%8B%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97</string>
+  <string name="label_return_prev_ime_on_hide">Switch to specified IME when hidden</string>
+  <string name="toast_bt_connect_permission_required">Bluetooth connect permission is required to use headset mic</string>
+  <string name="toast_bt_connect_permission_denied">Bluetooth connect permission denied; headset priority disabled</string>
+  <string name="toast_vad_sensitivity_applied">Stop sensitivity updated; will apply to the next recording</string>
+
+  <!-- Privacy & Data toggles -->
+  <string name="section_data_retention">Data Retention</string>
+  <string name="label_disable_asr_history">Disable ASR history</string>
+  <string name="label_disable_usage_stats">Disable usage statistics</string>
+  <string name="label_data_collection">Anonymous data collection</string>
+  <string name="dialog_disable_asr_history_title">Disable ASR history?</string>
+  <string name="dialog_disable_asr_history_message">This will clear existing history and stop saving new ASR history. Are you sure to disable this feature?</string>
+  <string name="dialog_disable_usage_stats_title">Disable usage statistics?</string>
+  <string name="dialog_disable_usage_stats_message">This will clear statistics (total characters and aggregated stats) and stop recording new stats. Are you sure to disable this feature?</string>
+  <string name="btn_confirm">Confirm</string>
+  <string name="btn_skip_guide">Skip for now, I\'ll configure later</string>
+  <string name="toast_cleared_history">History cleared</string>
+  <string name="btn_clear_clipboard_history">Clear clipboard history</string>
+  <string name="dialog_clear_clipboard_history_title">Clear clipboard history?</string>
+  <string name="dialog_clear_clipboard_history_message">This deletes all clipboard history saved by the app, including pinned items. The current system clipboard is not affected.</string>
+  <string name="toast_cleared_clipboard_history">Clipboard history cleared</string>
+  <string name="toast_clear_clipboard_history_failed">Couldn’t clear clipboard history</string>
+  <string name="toast_cleared_stats">Statistics cleared</string>
+
+  <!-- ============================================== -->
+  <!-- General Toasts -->
+  <!-- ============================================== -->
+  <string name="toast_accessibility_enabled">Accessibility service enabled. Auto-insert is now available.</string>
+  <string name="toast_silence_autostop_on">Auto-stop on silence enabled</string>
+  <string name="toast_silence_autostop_off">Auto-stop on silence disabled</string>
+  <string name="toast_mic_tap_mode_on">Switched to tap-to-start</string>
+  <string name="toast_mic_tap_mode_off">Switched to hold-to-talk</string>
+  <string name="toast_floating_keyboard_on">Floating keyboard enabled</string>
+  <string name="toast_floating_keyboard_off">Floating keyboard disabled</string>
+  <string name="toast_auto_enter_after_asr_on">Auto enter after input enabled</string>
+  <string name="toast_auto_enter_after_asr_off">Auto enter after input disabled</string>
+
+  <!-- ============================================== -->
+  <!-- Feature Explainer Dialog -->
+  <!-- ============================================== -->
+  <string name="dialog_feature_explainer_title">Feature Description</string>
+  <string name="dialog_feature_explainer_turn_on">You are about to turn ON this feature:</string>
+  <string name="dialog_feature_explainer_turn_off">You are about to turn OFF this feature:</string>
+  <string name="dialog_feature_explainer_from">Current:</string>
+  <string name="dialog_feature_explainer_to">Will become:</string>
+  <string name="dialog_feature_explainer_dont_show_again">Don\'t show again</string>
+
+  <!-- ============================================== -->
+  <!-- Feature Descriptions for Input Settings -->
+  <!-- ============================================== -->
+  <!-- Trim trailing punctuation -->
+  <string name="feature_trim_trailing_punct_off_desc">Recognition results will keep all content as is.</string>
+  <string name="feature_trim_trailing_punct_on_desc">Recognition results within the threshold will remove trailing punctuation and emoji. Set the threshold to Unlimited to apply it to any length.</string>
+
+  <!-- Mic haptic -->
+  <string name="feature_mic_haptic_off_desc">No haptic feedback when pressing keys or interacting with the floating ball.</string>
+  <string name="feature_mic_haptic_on_desc">Provides haptic feedback when pressing keys or interacting with the floating ball for better tactile experience.</string>
+
+  <!-- Mic tap toggle -->
+  <string name="feature_mic_tap_toggle_off_desc">Long-press the mic button to record, release to stop recording.</string>
+  <string name="feature_mic_tap_toggle_on_desc">Tap the mic button to start recording, tap again to stop. Easier for one-handed operation.</string>
+
+  <!-- Auto start recording on show -->
+  <string name="feature_auto_start_recording_on_show_off_desc">You need to manually press the mic button to start recording after the keyboard appears.</string>
+  <string name="feature_auto_start_recording_on_show_on_desc">Recording starts automatically when the keyboard appears, saving you one tap.</string>
+  <string name="feature_continuous_capture_off_desc">Recording does not continue while the keyboard or floating ball is visible; it starts only after you press the mic button.</string>
+  <string name="feature_continuous_capture_on_desc">While the keyboard or floating ball is visible, audio is recorded locally in the background so recognition can start faster when you press the mic. Audio is not uploaded until you start recognition.</string>
+
+  <!-- Auto enter after input -->
+  <string name="feature_auto_enter_after_asr_off_desc">After recognition (and AI post-processing if enabled), only the text is committed. You can still swipe right on the mic to send with Enter for that session.</string>
+  <string name="feature_auto_enter_after_asr_on_desc">After input finishes—including AI post-processing when enabled—automatically presses Enter / the editor Send action so chat apps can send the message. Empty results are skipped.</string>
+
+  <!-- Auto switch IME after input -->
+  <string name="feature_auto_switch_ime_after_asr_off_desc">After input finishes, this keyboard stays current. It does not switch to another IME.</string>
+  <string name="feature_auto_switch_ime_after_asr_on_desc">After post-processing finishes and the composing preview is committed, automatically switches to the IME selected in “Target IME” so you can continue editing. If none is set, switches to the previous IME. Empty results are skipped.</string>
+
+  <!-- Fcitx5 return on switcher -->
+  <string name="feature_fcitx5_return_on_switcher_off_desc">The IME switcher key opens the system input method picker.</string>
+  <string name="feature_fcitx5_return_on_switcher_on_desc">The IME switcher key returns to the specified input method (falls back to the previous one if not set).</string>
+
+  <!-- Return prev IME on hide -->
+  <string name="feature_return_prev_ime_on_hide_off_desc">The current input method remains as BiBi Keyboard after hiding.</string>
+  <string name="feature_return_prev_ime_on_hide_on_desc">Switches to the specified input method when the keyboard is hidden (falls back to the previous one if not set), convenient for temporary voice input.</string>
+
+  <!-- Hide recent tasks -->
+  <string name="feature_hide_recent_tasks_off_desc">The app card is visible in the recent tasks overview.</string>
+  <string name="feature_hide_recent_tasks_on_desc">The app card is hidden from the recent tasks overview for a cleaner multitasking view. May reduce background keep-alive capability.</string>
+
+  <!-- Duck media on record -->
+  <string name="feature_duck_media_on_record_off_desc">The app does not ask other apps to lower their volume or pause during recording, so media audio may be picked up by the microphone.</string>
+  <string name="feature_duck_media_on_record_on_desc">During recording, the app asks other apps to temporarily lower their volume or pause to reduce media interference. The result depends on the system and the media app.</string>
+
+  <!-- Offline denoise -->
+  <string name="feature_auto_cancel_empty_audio_input_off_desc">Non-streaming recognition requests are sent even when the recording contains no detected speech.</string>
+  <string name="feature_auto_cancel_empty_audio_input_on_desc">Before sending a completed recording, the app checks it on your device. If it contains no speech, the recording is discarded instead of being sent to the recognition provider.</string>
+  <string name="feature_auto_filter_silent_audio_segments_off_desc">Non-streaming recognition uses the original recording, including silent pauses.</string>
+  <string name="feature_auto_filter_silent_audio_segments_on_desc">Before recognition, the app removes silent parts of a completed recording on your device. This shortens the audio and can reduce upload time.</string>
+
+  <!-- Offline denoise -->
+  <string name="feature_offline_denoise_off_desc">Raw audio is used without model-based denoise.</string>
+  <string name="feature_offline_denoise_on_desc">Applies model-based denoise before non-streaming upload or offline recognition. Limited improvement for low-volume speech.</string>
+
+  <!-- Upload audio compression -->
+  <string name="feature_upload_audio_compression_off_desc">Completed recordings are uploaded in their original uncompressed format. Uploads use more data, but no extra compression is performed first.</string>
+  <string name="feature_upload_audio_compression_on_desc">When supported by the recognition provider, completed recordings are compressed before upload. This uses less data and may upload faster.</string>
+
+  <!-- Headset mic priority -->
+  <string name="feature_headset_mic_priority_off_desc">Uses the device\'s built-in microphone for recording.</string>
+  <string name="feature_headset_mic_priority_on_desc">Prioritizes the headset microphone when available. Experimental feature, requires Bluetooth permission and nearby devices permission.</string>
+
+  <!-- ============================================== -->
+  <!-- Other Settings - Feature Explanations -->
+  <!-- ============================================== -->
+
+  <!-- Disable ASR history -->
+  <string name="feature_disable_asr_history_off_desc">Recognition history will be saved for later review and management.</string>
+  <string name="feature_disable_asr_history_on_desc">Recognition history will not be saved. Enabling this will clear all existing history. Use this to protect your privacy.</string>
+
+  <!-- Disable usage statistics -->
+  <string name="feature_disable_usage_stats_off_desc">Usage statistics (total characters and aggregated data) will be collected for your reference.</string>
+  <string name="feature_disable_usage_stats_on_desc">Usage statistics will not be collected. Enabling this will clear all existing statistics. Use this to protect your privacy.</string>
+
+  <!-- Anonymous data collection -->
+  <string name="feature_data_collection_off_desc">Anonymous usage data will not be uploaded.</string>
+  <string name="feature_data_collection_on_desc">Anonymous usage data (app version, install channel, first seen date, Android version (SDK), device model, ASR event metadata, app language, app starts) will be uploaded once per day. No recognition text or personal content is included.</string>
+
+  <!-- Data collection consent dialog -->
+  <string name="title_data_collection_consent">Anonymous Data Collection</string>
+  <string name="msg_data_collection_consent">To help improve BiBi Keyboard, we would like to collect anonymous usage statistics. This includes: app version, install channel, first seen date, Android version (SDK), device model, ASR event metadata (provider, audio duration, processing time, character count, source channel, whether AI post-processing was used), app language, and app start events. No recognition text or personal content will be uploaded. The collection code is open-source. Do you agree to enable this?</string>
+  <string name="btn_agree">Agree</string>
+  <string name="btn_disagree">Not now</string>
+
+  <!-- ============================================== -->
+  <!-- Pro Version Promo -->
+  <!-- ============================================== -->
+  <string name="pro_promo_btn_close">Close</string>
+  <string name="about_btn_learn_pro">Learn about Pro</string>
+  <string name="pro_paywall_title">BiBi Keyboard Pro</string>
+  <string name="pro_paywall_eyebrow">UPGRADE YOUR VOICE INPUT</string>
+  <string name="pro_paywall_heading">More control for every sentence</string>
+  <string name="pro_paywall_subtitle">Keep the complete open-source core and add advanced tools for daily dictation</string>
+  <string name="pro_paywall_price">$5.49 / ¥36</string>
+  <string name="pro_paywall_price_note">One-time purchase · No subscription · Follows your Google account</string>
+  <string name="pro_paywall_compare_title">Free and Pro comparison</string>
+  <string name="pro_paywall_feature_header">Feature</string>
+  <string name="pro_paywall_free_header">Free</string>
+  <string name="pro_paywall_pro_header">Pro</string>
+  <string name="pro_paywall_included">Included</string>
+  <string name="pro_paywall_not_included">Not included</string>
+  <string name="pro_paywall_included_mark">✓</string>
+  <string name="pro_paywall_not_included_mark">—</string>
+  <string name="pro_paywall_feature_core_asr">Multi-provider ASR, streaming and local models</string>
+  <string name="pro_paywall_feature_ai">AI post-processing and basic AI editing</string>
+  <string name="pro_paywall_feature_input">Keyboard, floating ball and external calls</string>
+  <string name="pro_paywall_feature_layout">Layouts, presets and settings backup</string>
+  <string name="pro_paywall_feature_continuous">Continuous speaking mode</string>
+  <string name="pro_paywall_feature_hotwords">Hotwords, phoneme enhancement and learning</string>
+  <string name="pro_paywall_feature_context">Input context, AI Assistant and app prompts</string>
+  <string name="pro_paywall_feature_text">Traditional Chinese and regex processing</string>
+  <string name="pro_paywall_feature_theme">Omni-direction cursor and advanced themes</string>
+  <string name="pro_paywall_feature_webdav">Automatic WebDAV backup</string>
+  <string name="pro_paywall_purchase_title">Choose how to get Pro</string>
+  <string name="pro_paywall_play_store">Get Pro on Google Play</string>
+  <string name="pro_paywall_qr">Pay with WeChat or Alipay</string>
+  <string name="pro_paywall_telegram">Contact the author / join Telegram</string>
+  <string name="pro_paywall_purchase_note">Play Store purchases can be used on devices signed in to the same Google account. QR payments are exchanged for a Play redemption code.</string>
+  <string name="pro_paywall_home_title">Discover BiBi Keyboard Pro</string>
+  <string name="pro_paywall_home_summary">Compare editions and unlock advanced voice input.</string>
+  <string name="pro_paywall_home_dismiss">Dismiss Pro promotion</string>
+
+  <!-- Payment QR Dialog -->
+  <string name="payment_qr_title">Purchase Pro via QR Code</string>
+  <string name="payment_qr_instruction">Pay the author directly via WeChat or Alipay (¥36 CNY), then send the payment screenshot with your order number to the author email. The author will reply with a Play Store redemption code for "说点啥 Pro" (activation code). Your phone must be able to use the Play Store to redeem it. The reply will arrive within 1-2 days at most.</string>
+  <string name="payment_qr_wechat">WeChat</string>
+  <string name="payment_qr_alipay">Alipay</string>
+  <string name="payment_qr_save">Save</string>
+  <string name="payment_qr_email_label">Copy author email</string>
+  <string name="payment_qr_email_tap_copy">Tap to copy</string>
+  <string name="payment_qr_email_copied">Email copied to clipboard</string>
+  <string name="payment_qr_save_success">Saved to gallery</string>
+  <string name="payment_qr_save_failed">Failed to save</string>
+
+  <!-- Recording test -->
+  <string name="title_recording_test">Recording Test</string>
+  <string name="recording_test_latency_chain">Latency Chain</string>
+  <string name="recording_test_status_idle">Ready to record</string>
+  <string name="recording_test_status_recording">Recording</string>
+  <string name="recording_test_status_ready">Audio ready</string>
+  <string name="recording_test_status_processing">Processing</string>
+  <string name="recording_test_total_label">Total latency</string>
+  <string name="recording_test_segment_record">Record</string>
+  <string name="recording_test_segment_asr">ASR</string>
+  <string name="recording_test_segment_ai">AI</string>
+  <string name="recording_test_press_time">Pressed</string>
+  <string name="recording_test_first_frame_time">First frame</string>
+  <string name="recording_test_audio_title">Recording / Volume</string>
+  <string name="recording_test_duration_label">Duration</string>
+  <string name="recording_test_current_level_label">Current level</string>
+  <string name="recording_test_peak_level_label">Peak level</string>
+  <string name="recording_test_silence_label">Silence</string>
+  <string name="recording_test_percent_value">%1$d%%</string>
+  <string name="recording_test_play">Play</string>
+  <string name="recording_test_playing">Playing</string>
+  <string name="recording_test_rerecord">Clear</string>
+  <string name="recording_test_recognition_title">Recognition and Processing</string>
+  <string name="recording_test_asr_label">ASR</string>
+  <string name="recording_test_asr_summary">%1$s · %2$s%3$s</string>
+  <string name="recording_test_asr_mode_push_pcm">Current streaming/push channel</string>
+  <string name="recording_test_asr_mode_file">Current file channel</string>
+  <string name="recording_test_asr_backup_suffix"> · Backup %1$s · %2$s</string>
+  <string name="recording_test_backup_strategy_parallel">Parallel</string>
+  <string name="recording_test_backup_strategy_lazy">Lazy serial</string>
+  <string name="recording_test_auto_transcribe">Auto transcribe</string>
+  <string name="recording_test_ai_label">AI</string>
+  <string name="recording_test_prompt_summary">Choose the prompt preset used for AI post-processing</string>
+  <string name="recording_test_ai_process">AI Process</string>
+  <string name="recording_test_result_compare">Result Compare</string>
+  <string name="recording_test_raw_result">Raw:</string>
+  <string name="recording_test_ai_result">AI:</string>
+  <string name="recording_test_empty_result_placeholder">No result yet</string>
+  <string name="recording_test_no_prompt">Current prompt</string>
+  <string name="recording_test_record">Record</string>
+  <string name="recording_test_stop">Stop</string>
+  <string name="recording_test_error_record">Recording failed: %1$s</string>
+  <string name="recording_test_error_empty_audio">No audio was captured</string>
+  <string name="recording_test_error_playback">Playback failed: %1$s</string>
+  <string name="recording_test_error_transcribe">Transcription failed: %1$s</string>
+  <string name="recording_test_error_transcribe_timeout">Transcription timed out</string>
+  <string name="recording_test_error_vendor_unavailable">The current ASR configuration is unavailable for this test</string>
+  <string name="recording_test_error_ai">AI processing failed: %1$s</string>
+  <string name="toast_ime_bridge_protocol_mismatch">The IME Bridge module is incompatible with BiBi Keyboard. Update the module or app.</string>
+  <string name="toast_ime_bridge_connection_failed">Unable to connect to the IME Bridge module. Check that it is enabled and the current input method is selected in LSPosed.</string>
+</resources>

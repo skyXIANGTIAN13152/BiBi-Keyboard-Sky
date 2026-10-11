@@ -1,0 +1,17 @@
+<resources>
+    <!-- 调试日志相关字符串 - Debug logging related strings -->
+
+    <!-- Debug logging -->
+    <string name="about_debug_title">诊断日志</string>
+    <string name="about_debug_desc">基础诊断日志会默认记录在本地。遇到复杂问题时，可临时开启详细支持日志以记录更细的链路信息。日志不会包含识别文本、输入内容、剪贴板内容或密钥。</string>
+    <string name="about_debug_last_exit_prefix">最近一次异常退出：%1$s</string>
+    <string name="btn_debug_start_recording">开启详细支持日志</string>
+    <string name="btn_debug_stop_recording">停止详细支持日志</string>
+    <string name="btn_debug_export">导出诊断日志</string>
+    <string name="toast_debug_recording_started">已开启详细支持日志</string>
+    <string name="toast_debug_recording_stopped">已停止详细支持日志</string>
+    <string name="toast_debug_no_log">暂无可导出的日志</string>
+    <string name="toast_debug_stop_before_export">请先停止录制后再导出</string>
+    <string name="toast_debug_failed">操作失败，请重试</string>
+    <string name="toast_debug_export_failed">导出失败</string>
+</resources>

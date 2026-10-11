@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- クリップボード同期関連文字列 - Clipboard sync related strings -->
+
+    <!-- SyncClipboard settings -->
+    <string name="section_sync_clipboard">クリップボード同期</string>
+    <string name="label_enable_sync_clipboard">SyncClipboardを使用してクリップボードを同期</string>
+    <string name="feature_sync_clipboard_off_desc">SyncClipboard サーバーとクリップボードを同期しません。</string>
+    <string name="feature_sync_clipboard_on_desc">SyncClipboard サーバーとクリップボードを同期し、端末間でテキストをやり取りできます。</string>
+    <string name="label_sc_server_base">サーバーベースURL（/SyncClipboard.jsonを追加）</string>
+    <string name="label_sc_username">ユーザー名</string>
+    <string name="label_sc_password">パスワード</string>
+    <string name="label_sc_pull_interval">定期プルの間隔（秒、1-600）</string>
+    <string name="label_sc_auto_receive">自動受信</string>
+    <string name="feature_sc_auto_receive_off_desc">ローカルのクリップボード変更のみをアップロードし、遠隔の更新は取得しません。</string>
+    <string name="feature_sc_auto_receive_on_desc">サーバーからのクリップボード更新も受信します（対応時はリアルタイム、それ以外は定期プル）。</string>
+    <string name="summary_sc_auto_receive_off">オフ：アップロードのみ</string>
+    <string name="summary_sc_auto_receive_detecting">サーバーの対応方式を確認中…</string>
+    <string name="summary_sc_auto_receive_realtime">オン：サーバーはリアルタイム同期に対応</string>
+    <string name="summary_sc_auto_receive_polling">オン：定期プルを使用</string>
+    <string name="label_sc_keep_background_realtime">バックグラウンドでリアルタイム接続を維持</string>
+    <string name="feature_sc_keep_background_realtime_off_desc">リアルタイム同期は、アプリや関連サービスが稼働している間だけ維持されます。</string>
+    <string name="feature_sc_keep_background_realtime_on_desc">バックグラウンドでも SyncClipboard のリアルタイム接続を維持しようとします。</string>
+    <string name="label_sc_sync_images">画像を同期</string>
+    <string name="feature_sc_sync_images_off_desc">クリップボード画像をアップロードまたはダウンロードしません。</string>
+    <string name="feature_sc_sync_images_on_desc">リモート画像をダウンロードし、選択したフォルダー内の新規画像をアップロードします。</string>
+    <string name="label_sc_sync_files">ファイルを同期</string>
+    <string name="feature_sc_sync_files_off_desc">クリップボードファイルをアップロードまたはダウンロードしません。</string>
+    <string name="feature_sc_sync_files_on_desc">リモートファイルをダウンロードし、選択したフォルダー内の新規ファイルをアップロードします。</string>
+    <string name="label_sc_attachment_max_size">添付ファイルの上限（MB、1-1024）</string>
+    <string name="summary_sc_watch_tree_not_selected">フォルダー未選択：ダウンロードのみ。</string>
+    <string name="summary_sc_watch_tree_selected">選択済みフォルダー：%1$s。新規ファイルをアップロードします。</string>
+    <string name="btn_sc_choose_watch_tree">フォルダーを選択</string>
+    <string name="btn_sc_clear_watch_tree">フォルダーを解除</string>
+    <string name="sc_watch_tree_download_directory_not_allowed">Download/BiBi は同期ファイル用です。別のフォルダーを選択してください。</string>
+    <string name="sc_attachment_notification_channel">クリップボード添付ファイルの同期</string>
+    <string name="sc_attachment_notification_uploading">添付ファイルをアップロード中</string>
+    <string name="sc_attachment_notification_downloading">添付ファイルをダウンロード中</string>
+    <string name="sc_attachment_notification_uploaded">添付ファイルをアップロードしました</string>
+    <string name="sc_attachment_notification_upload_failed">添付ファイルのアップロードに失敗しました</string>
+    <string name="sc_attachment_notification_downloaded">添付ファイルをダウンロードしました</string>
+    <string name="sc_attachment_notification_download_failed">添付ファイルのダウンロードに失敗しました</string>
+    <string name="btn_sc_test_pull">検証</string>
+    <string name="sc_test_success">プル成功</string>
+    <string name="sc_test_failed">プル失敗。URLと認証情報を確認してください。</string>
+    <string name="sc_status_uploaded">クリップボードが正常にアップロードされました</string>
+    <string name="sc_status_upload_failed">クリップボードのアップロードに失敗しました</string>
+    <string name="sc_share_file_target_label">クリップボード同期へアップロード</string>
+    <string name="btn_sc_project_home">プロジェクトホーム</string>
+    <string name="sc_open_browser_failed">ブラウザを開けません</string>
+    
+
+    <!-- Clipboard manager panel -->
+    <string name="ext_btn_clipboard">クリップボード</string>
+    <string name="cd_clipboard_back">戻る</string>
+    <string name="cd_clipboard_delete">削除</string>
+    <string name="clip_count_format">%1$d 件</string>
+    <string name="clip_delete_title">削除（固定は保持）</string>
+    <string name="clip_delete_before_1h">1時間前まで</string>
+    <string name="clip_delete_before_24h">24時間前まで</string>
+    <string name="clip_delete_before_7d">7日前まで</string>
+    <string name="clip_delete_all_non_pinned">固定以外をすべて</string>
+    <string name="clip_pinned">固定しました</string>
+    <string name="clip_unpinned">固定を解除しました</string>
+    <string name="clip_deleted">削除しました</string>
+    <string name="clip_cannot_delete_pinned">固定済みです。右スワイプで解除してください</string>
+    <string name="clip_swipe_delete">削除</string>
+    <string name="clip_swipe_pin">固定</string>
+    <string name="clip_swipe_unpin">固定解除</string>
+
+    <!-- クリップボードファイルの同期 / ダウンロード -->
+    <string name="clip_file_download_success">ファイルをダウンロードしました</string>
+    <string name="clip_file_download_failed">ファイルのダウンロードに失敗しました</string>
+    <string name="clip_file_download_error">ファイルのダウンロード中にエラーが発生しました: %1$s</string>
+    <string name="clip_file_not_found">ファイルが見つかりません</string>
+    <string name="clip_file_open_chooser_title">ファイルを開く</string>
+    <string name="clip_file_open_failed">ファイルを開けません: %1$s</string>
+</resources>

@@ -1,0 +1,77 @@
+<resources>
+    <!-- Clipboard sync related strings -->
+
+    <!-- SyncClipboard settings -->
+    <string name="section_sync_clipboard">Clipboard Sync</string>
+    <string name="label_enable_sync_clipboard">Use SyncClipboard to sync clipboard</string>
+    <string name="feature_sync_clipboard_off_desc">Clipboard is not synced with a SyncClipboard server.</string>
+    <string name="feature_sync_clipboard_on_desc">Syncs clipboard with your SyncClipboard server so text can move across devices.</string>
+    <string name="label_sc_server_base">Server base URL (will append /SyncClipboard.json)</string>
+    <string name="label_sc_username">Username</string>
+    <string name="label_sc_password">Password</string>
+    <string name="label_sc_pull_interval">Periodic pull interval (sec, 1-600)</string>
+    <string name="label_sc_auto_receive">Automatic receive</string>
+    <string name="feature_sc_auto_receive_off_desc">Only uploads local clipboard changes; does not pull remote updates.</string>
+    <string name="feature_sc_auto_receive_on_desc">Also receives clipboard updates from the server (realtime when supported, otherwise periodic pull).</string>
+    <string name="summary_sc_auto_receive_off">Off: upload only</string>
+    <string name="summary_sc_auto_receive_detecting">Detecting server support…</string>
+    <string name="summary_sc_auto_receive_realtime">On: server supports realtime sync</string>
+    <string name="summary_sc_auto_receive_polling">On: using periodic pull</string>
+    <string name="label_sc_keep_background_realtime">Keep background realtime connection</string>
+    <string name="feature_sc_keep_background_realtime_off_desc">Realtime sync only stays active while the app or related services keep it running.</string>
+    <string name="feature_sc_keep_background_realtime_on_desc">Tries to keep the realtime SyncClipboard connection alive in the background.</string>
+    <string name="label_sc_sync_images">Sync images</string>
+    <string name="feature_sc_sync_images_off_desc">Do not upload or download clipboard images.</string>
+    <string name="feature_sc_sync_images_on_desc">Download remote images and upload new images from the selected folder.</string>
+    <string name="label_sc_sync_files">Sync files</string>
+    <string name="feature_sc_sync_files_off_desc">Do not upload or download clipboard files.</string>
+    <string name="feature_sc_sync_files_on_desc">Download remote files and upload new files from the selected folder.</string>
+    <string name="label_sc_attachment_max_size">Attachment size limit (MB, 1-1024)</string>
+    <string name="summary_sc_watch_tree_not_selected">No folder selected: download only.</string>
+    <string name="summary_sc_watch_tree_selected">Selected folder: %1$s. New files will be uploaded.</string>
+    <string name="btn_sc_choose_watch_tree">Choose folder</string>
+    <string name="btn_sc_clear_watch_tree">Clear folder</string>
+    <string name="sc_watch_tree_download_directory_not_allowed">Download/BiBi is reserved for synced files. Choose another folder.</string>
+    <string name="sc_attachment_notification_channel">Clipboard attachment sync</string>
+    <string name="sc_attachment_notification_uploading">Uploading attachment</string>
+    <string name="sc_attachment_notification_downloading">Downloading attachment</string>
+    <string name="sc_attachment_notification_uploaded">Attachment uploaded</string>
+    <string name="sc_attachment_notification_upload_failed">Attachment upload failed</string>
+    <string name="sc_attachment_notification_downloaded">Attachment downloaded</string>
+    <string name="sc_attachment_notification_download_failed">Attachment download failed</string>
+    <string name="btn_sc_test_pull">Validate</string>
+    <string name="sc_test_success">Pull succeeded</string>
+    <string name="sc_test_failed">Pull failed. Please check URL and credentials.</string>
+    <string name="sc_status_uploaded">Clipboard uploaded successfully</string>
+    <string name="sc_status_upload_failed">Clipboard upload failed</string>
+    <string name="sc_share_file_target_label">Upload to Clipboard Sync</string>
+    <string name="btn_sc_project_home">Project Home</string>
+    <string name="sc_open_browser_failed">Cannot open browser</string>
+    
+
+    <!-- Clipboard manager panel -->
+    <string name="ext_btn_clipboard">Clipboard</string>
+    <string name="cd_clipboard_back">Back</string>
+    <string name="cd_clipboard_delete">Delete</string>
+    <string name="clip_count_format">%1$d items</string>
+    <string name="clip_delete_title">Delete (pinned kept)</string>
+    <string name="clip_delete_before_1h">Before 1 hour</string>
+    <string name="clip_delete_before_24h">Before 24 hours</string>
+    <string name="clip_delete_before_7d">Before 7 days</string>
+    <string name="clip_delete_all_non_pinned">All non‑pinned</string>
+    <string name="clip_pinned">Pinned</string>
+    <string name="clip_unpinned">Unpinned</string>
+    <string name="clip_deleted">Deleted</string>
+    <string name="clip_cannot_delete_pinned">Pinned. Swipe right to unpin</string>
+    <string name="clip_swipe_delete">Delete</string>
+    <string name="clip_swipe_pin">Pin</string>
+    <string name="clip_swipe_unpin">Unpin</string>
+
+    <!-- Clipboard file sync / download -->
+    <string name="clip_file_download_success">File downloaded</string>
+    <string name="clip_file_download_failed">File download failed</string>
+    <string name="clip_file_download_error">File download error: %1$s</string>
+    <string name="clip_file_not_found">File not found</string>
+    <string name="clip_file_open_chooser_title">Open file</string>
+    <string name="clip_file_open_failed">Cannot open file: %1$s</string>
+</resources>

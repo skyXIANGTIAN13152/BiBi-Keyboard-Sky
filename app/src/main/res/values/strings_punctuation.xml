@@ -1,0 +1,27 @@
+<resources>
+    <!-- Shared sherpa-onnx punctuation model (ct-transformer zh+en) -->
+    <string name="label_punct_model_shared">Shared punctuation model (60MB, used by some ASR models)</string>
+    <string name="btn_punct_download_model">Download punctuation model</string>
+    <string name="btn_punct_import_model">Import punctuation model</string>
+    <string name="btn_punct_clear_model">Clear punctuation model</string>
+
+    <string name="punct_download_status_downloading">Downloading punctuation model… %1$d%%</string>
+    <string name="punct_download_status_extracting_progress">Extracting punctuation model… %1$d%%</string>
+    <string name="punct_download_status_done">Punctuation model installed</string>
+    <string name="punct_download_status_failed">Punctuation model download or extract failed</string>
+    <string name="punct_download_started_in_bg">Started downloading punctuation model in background. See notification for progress.</string>
+
+    <string name="punct_import_started_in_bg">Started importing punctuation model in background. See notification for progress.</string>
+    <string name="punct_import_success">Punctuation model imported: %1$s</string>
+    <string name="punct_import_failed">Failed to import punctuation model: %1$s</string>
+
+    <string name="punct_clear_confirm_title">Clear punctuation model?</string>
+    <string name="punct_clear_confirm_message">This will delete the shared local punctuation model. You can download it again later. Continue?</string>
+    <string name="punct_clear_done">Punctuation model cleared</string>
+    <string name="punct_clear_failed">Failed to clear punctuation model</string>
+
+    <string name="notif_punct_title">Punctuation model (60MB, shared)</string>
+
+    <!-- Toast when punctuation model is missing for FireRedASR V2 -->
+    <string name="toast_punct_model_missing">No local punctuation model detected. FireRedASR V2 results may lack punctuation. You can download the shared punctuation model in ASR settings.</string>
+</resources>

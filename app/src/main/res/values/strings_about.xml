@@ -1,0 +1,91 @@
+<resources>
+    <!-- About page related strings -->
+
+    <!-- About -->
+    <string name="btn_about">About</string>
+    <string name="about_title">About</string>
+    <string name="about_app_name">App name: %1$s</string>
+    <string name="about_version">Version: %1$s</string>
+    <string name="about_package">Package: %1$s</string>
+    <string name="about_auto_update_check">Auto-check for updates</string>
+    <string name="about_open_github">Open Project Page</string>
+    <string name="about_project_url">https://github.com/BryceWG/BiBi-Keyboard</string>
+    <string name="about_open_website">Open Project Website</string>
+    <string name="about_website_url">https://bibi.brycewg.com</string>
+    <string name="about_open_docs">Open Documentation</string>
+    <string name="about_docs_url">https://bibidocs.brycewg.com</string>
+    <string name="about_desc">A lightweight voice input IME with multi-vendor ASR and LLM post-processing</string>
+
+    <string name="label_asr_total_chars">Total characters from speech recognition: %1$d</string>
+
+    <!-- Model download notifications -->
+    <string name="notif_channel_model_download">Model Downloads</string>
+    <string name="notif_channel_model_download_desc">Progress of local model download and extraction</string>
+    <string name="notif_model_summary_title">Model Downloads</string>
+    <string name="notif_model_summary_text">Downloading/extracting models in background</string>
+
+    <!-- About: Usage stats -->
+    <string name="about_stats_title">Usage Stats</string>
+    <string name="about_stats_overview">Overview</string>
+    <string name="about_days_with_you">BiBi Keyboard has been with you for %1$d days</string>
+    <string name="about_stats_total_audio_label">Total audio time</string>
+    <string name="about_stats_total_chars_label">Total characters</string>
+    <string name="about_stats_sessions_label">Sessions</string>
+    <string name="about_stats_avg_audio_label">Avg. audio</string>
+    <string name="about_stats_avg_chars_label">Avg. characters</string>
+    <string name="about_stats_avg_speed_label">Avg. speed</string>
+    <string name="about_stats_avg_speed_value">%1$s chars/min</string>
+    <string name="about_stats_daily_avg_7d_label">Daily avg (last 7 days)</string>
+    <string name="about_stats_weekly_avg_4w_label">Weekly avg (last 4 weeks)</string>
+    <string name="about_stats_chars_with_audio">%1$s chars · %2$s</string>
+    <string name="about_by_vendor">By provider</string>
+    <string name="about_online_asr_failure_title">Online ASR failure rate (last 30 days)</string>
+    <string name="about_proc_prefix">time</string>
+    <string name="about_last_7_days">Last 7 days (chars)</string>
+    <string name="about_empty_stats_placeholder">No data yet</string>
+    <string name="about_stats_share">Share</string>
+    <string name="about_stats_share_title">Share usage stats</string>
+    <string name="about_stats_share_subtitle">My usage record</string>
+    <string name="about_stats_share_save">Save</string>
+    <string name="about_stats_share_action">Share</string>
+    <string name="about_stats_share_chooser_title">Share usage stats</string>
+    <string name="about_stats_share_saved">Saved to Pictures/BiBi</string>
+    <string name="about_stats_share_save_failed">Failed to save image</string>
+    <string name="about_stats_share_failed">Failed to share image</string>
+    <string name="about_stats_share_top_vendors">Top providers</string>
+    <string name="about_stats_share_footer_site">bibi.brycewg.com</string>
+    <string name="about_stats_share_days_unit">days</string>
+    <string name="about_stats_share_tagline">AI Voice Keyboard</string>
+    <string name="about_stats_share_hero_caption">%1$s has been with you</string>
+    <string name="about_stats_share_insight_time_saved">≈ %1$s of typing saved</string>
+
+    <!-- Open Source Acknowledgements -->
+    <string name="about_acknowledgements_title">Acknowledgements</string>
+    <string name="about_acknowledgements_desc">This project is built upon the following excellent open source projects. We sincerely thank their developers:</string>
+    <string name="about_view_full_licenses">View Full Licenses</string>
+    <string name="about_licenses_dialog_title">Third-Party Licenses</string>
+
+    <string name="about_sherpa_onnx_title">k2-fsa/sherpa-onnx</string>
+    <string name="about_sherpa_onnx_desc">Provides technical solution for local ASR models, enabling offline speech recognition</string>
+
+    <string name="about_syncclipboard_title">Jeric-X/SyncClipboard</string>
+    <string name="about_syncclipboard_desc">Provides backend service for clipboard synchronization (not running locally, requires server)</string>
+
+    <string name="about_phosphor_title">phosphor-icons/homepage</string>
+    <string name="about_phosphor_desc">Provides almost all icons used throughout the application</string>
+
+    <string name="about_miuix_title">compose-miuix-ui/miuix</string>
+    <string name="about_miuix_desc">Provides Miuix-style Compose UI components, icons, and preference components for the settings experience</string>
+
+    <string name="about_wavelineview_title">Jay-Goo/WaveLineView</string>
+    <string name="about_wavelineview_desc">Provides beautiful wave animation implementation for audio visualization, making recording experience more fluid and visually appealing</string>
+
+    <string name="about_tenvad_title">TEN-framework/ten-vad</string>
+    <string name="about_tenvad_desc">Provides Voice Activity Detection (VAD) model for smart auto-stop recording functionality</string>
+
+    <string name="unit_chars">chars</string>
+    <string name="unit_0_min">0 min</string>
+    <string name="fmt_h_m">%1$d h %2$d m</string>
+    <string name="fmt_m_s">%1$d m %2$d s</string>
+    <string name="fmt_s">%1$d s</string>
+</resources>

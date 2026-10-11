@@ -1,0 +1,56 @@
+<resources>
+    <!-- DashScope (阿里雲百煉) ASR 配置字串 -->
+    <string name="dash_section_title">阿里雲百煉 ASR 參數</string>
+    <string name="vendor_dashscope">阿里雲百煉</string>
+
+    <!-- DashScope configuration -->
+    <string name="label_dash_api_key">DashScope API Key（Bearer）</string>
+    <string name="label_dash_model">辨識模型</string>
+    <string name="dash_model_fun_flash">Fun-ASR-Flash（非串流）</string>
+    <string name="dash_model_qwen_audio_flash">Qwen-Audio-3.0-ASR-Flash（非串流）</string>
+    <string name="dash_model_qwen3_flash">Qwen3-ASR-Flash（非串流）</string>
+    <string name="dash_model_qwen35_omni_flash">Qwen3.5-Omni-Flash（非串流）</string>
+    <string name="dash_model_qwen35_omni_plus">Qwen3.5-Omni-Plus（非串流）</string>
+    <string name="dash_model_fun_realtime">Fun-ASR-Realtime（串流）</string>
+    <string name="dash_model_qwen_audio_realtime">Qwen-Audio-3.0-ASR-Flash-Streaming（串流）</string>
+    <string name="dash_model_qwen3_realtime">Qwen3-ASR-Flash-Realtime（串流）</string>
+    <string name="label_dash_prompt">自定義提示詞/識別上下文（可選）</string>
+    <string name="label_dash_language">識別語言</string>
+    <string name="dash_language_max_4">最多選擇 4 種語言</string>
+    <string name="label_dash_streaming">串流識別</string>
+    <string name="label_dash_fun_asr">使用 Fun-ASR 模型進行識別（fun-asr-realtime）</string>
+    <string name="label_dash_semantic_punct">使用語義斷句</string>
+    <string name="dash_lang_auto">自動識別</string>
+    <string name="label_dash_region">請求端點</string>
+    <string name="dash_region_cn">中國大陸（aliyuncs.com）</string>
+    <string name="dash_region_intl">新加坡/國際（dashscope-intl.aliyuncs.com）</string>
+
+    <!-- DashScope language options -->
+    <string name="dash_lang_zh">中文 (zh)</string>
+    <string name="dash_lang_en">英語 (en)</string>
+    <string name="dash_lang_ja">日語 (ja)</string>
+    <string name="dash_lang_de">德語 (de)</string>
+    <string name="dash_lang_ko">韓語 (ko)</string>
+    <string name="dash_lang_ru">俄語 (ru)</string>
+    <string name="dash_lang_fr">法語 (fr)</string>
+    <string name="dash_lang_pt">葡萄牙語 (pt)</string>
+    <string name="dash_lang_ar">阿拉伯語 (ar)</string>
+    <string name="dash_lang_it">義大利語 (it)</string>
+    <string name="dash_lang_es">西班牙語 (es)</string>
+
+    <!-- ============================================== -->
+    <!-- DashScope ASR - 功能說明 -->
+    <!-- ============================================== -->
+
+    <!-- 通義千問 - 串流識別 -->
+    <string name="feature_dash_streaming_off_desc">使用非串流識別。錄音結束後開始處理，可能有延遲。可用於 Qwen-Audio-3.0-ASR-Flash、Fun-ASR-Flash 與 Qwen3.5-Omni 系列模型。</string>
+    <string name="feature_dash_streaming_on_desc">使用串流識別。邊說話邊即時顯示轉寫結果。預設使用 Qwen-Audio-3.0-ASR-Flash-Streaming；也可在下方切換 Fun-ASR-Realtime。</string>
+
+    <!-- Fun-ASR 模型（僅串流） -->
+    <string name="feature_dash_fun_asr_off_desc">串流識別使用 Qwen-Audio-3.0-ASR-Flash-Streaming（預設）。</string>
+    <string name="feature_dash_fun_asr_on_desc">串流識別使用 Fun-ASR-Realtime。</string>
+
+    <!-- DashScope 語義斷句 -->
+    <string name="feature_dash_semantic_punct_off_desc">主要根據說話停頓斷句，通常回傳更快。</string>
+    <string name="feature_dash_semantic_punct_on_desc">結合語句含義判斷斷句，標點可能更自然，但回傳可能稍慢。</string>
+</resources>

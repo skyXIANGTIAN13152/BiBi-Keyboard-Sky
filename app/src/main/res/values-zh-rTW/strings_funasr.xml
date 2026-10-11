@@ -1,0 +1,76 @@
+<resources>
+    <!-- FunASR Nano 本地 ASR 配置字串 -->
+    <string name="funasr_section_title">FunASR Nano 本地 ASR</string>
+    <string name="vendor_funasr_nano">FunASR Nano</string>
+
+    <!-- FunASR Nano local settings -->
+    <string name="label_fn_model_variant">模型版本</string>
+    <string name="fn_model_nano_int8">FunASR Nano（int8，約690MB）</string>
+    <string name="fn_model_mlt_nano_int8">FunASR MLT Nano（多國語言，int8，約690MB）</string>
+    <string name="label_fn_language_preset">識別語言</string>
+    <string name="fn_lang_auto">自動 / 不指定</string>
+    <string name="fn_lang_zh">中文</string>
+    <string name="fn_lang_en">英文</string>
+    <string name="fn_lang_yue">粵語</string>
+    <string name="fn_lang_ja">日文</string>
+    <string name="fn_lang_ko">韓文</string>
+    <string name="fn_lang_vi">越南語</string>
+    <string name="fn_lang_id">印尼語</string>
+    <string name="fn_lang_th">泰語</string>
+    <string name="fn_lang_ms">馬來語</string>
+    <string name="fn_lang_fil">菲律賓語</string>
+    <string name="fn_lang_ar">阿拉伯語</string>
+    <string name="fn_lang_hi">印地語</string>
+    <string name="fn_lang_bg">保加利亞語</string>
+    <string name="fn_lang_hr">克羅地亞語</string>
+    <string name="fn_lang_cs">捷克語</string>
+    <string name="fn_lang_da">丹麥語</string>
+    <string name="fn_lang_nl">荷蘭語</string>
+    <string name="fn_lang_et">愛沙尼亞語</string>
+    <string name="fn_lang_fi">芬蘭語</string>
+    <string name="fn_lang_el">希臘語</string>
+    <string name="fn_lang_hu">匈牙利語</string>
+    <string name="fn_lang_ga">愛爾蘭語</string>
+    <string name="fn_lang_lv">拉脫維亞語</string>
+    <string name="fn_lang_lt">立陶宛語</string>
+    <string name="fn_lang_mt">馬耳他語</string>
+    <string name="fn_lang_pl">波蘭語</string>
+    <string name="fn_lang_pt">葡萄牙語</string>
+    <string name="fn_lang_ro">羅馬尼亞語</string>
+    <string name="fn_lang_sk">斯洛伐克語</string>
+    <string name="fn_lang_sl">斯洛文尼亞語</string>
+    <string name="fn_lang_sv">瑞典語</string>
+    <string name="label_fn_threads">執行緒數（1-8）</string>
+    <string name="label_fn_use_itn">啟用 ITN（數字智慧識別）</string>
+    <string name="feature_fn_use_itn_off_desc">保留口語寫法，例如「一千二百三十四」。</string>
+    <string name="feature_fn_use_itn_on_desc">自動將支援的中文數字、日期與時間改成常用書面寫法，例如將「一千二百三十四」寫成「1234」。</string>
+    <string name="label_fn_user_prompt">User Prompt（提示詞）</string>
+    <string name="fn_user_prompt_hint">較長的 Prompt 可能會拖慢處理速度。</string>
+    <string name="label_fn_preload">積極載入模型</string>
+    <string name="feature_fn_preload_off_desc">僅在需要時載入模型，首次使用可能有延遲。</string>
+    <string name="feature_fn_preload_on_desc">鍵盤顯示時預載入模型，減少首次使用延遲。</string>
+    <string name="label_fn_keep_alive">模型卸載策略</string>
+    <string name="btn_fn_download_model">一鍵下載模型</string>
+    <string name="btn_fn_import_model">從本機匯入模型</string>
+    <string name="btn_fn_clear_model">清除已下載模型</string>
+    <string name="fn_download_status_downloading">下載中… %1$d%%</string>
+    <string name="fn_download_status_extracting_progress">解壓中… %1$d%%</string>
+    <string name="fn_download_status_done">模型已安裝</string>
+    <string name="fn_download_status_failed">下載或解壓失敗</string>
+    <string name="fn_download_started_in_bg">已開始背景下載，可在通知欄查看進度</string>
+    <string name="fn_import_started_in_bg">已開始背景匯入，可在通知欄查看進度</string>
+    <string name="fn_import_success">模型匯入成功：%1$s</string>
+    <string name="fn_import_failed">模型匯入失敗：%1$s</string>
+    <string name="fn_import_status_extracting">匯入中… %1$d%%</string>
+    <string name="fn_clear_confirm_title">確認清除模型？</string>
+    <string name="fn_clear_confirm_message">將刪除已下載模型檔案，可稍後重新下載。是否繼續？</string>
+    <string name="fn_clear_done">模型已清除</string>
+    <string name="fn_clear_failed">清除失敗</string>
+
+    <!-- Error messages -->
+    <string name="error_funasr_model_missing">缺少 FunASR Nano 模型檔案，請稍後在設定中配置或下載</string>
+
+    <!-- Model download notifications -->
+    <string name="notif_fn_title_nano_int8">FunASR Nano 模型（int8）</string>
+    <string name="notif_fn_title_mlt_nano_int8">FunASR MLT Nano 模型（int8）</string>
+</resources>

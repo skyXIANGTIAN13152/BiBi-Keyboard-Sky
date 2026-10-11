@@ -1,0 +1,532 @@
+<resources>
+  <!-- ============================================== -->
+  <!-- 基礎資訊 -->
+  <!-- ============================================== -->
+  <string name="app_name">說點啥</string>
+  <string name="fxliang_fcitx_voice_input_provider_label">說點啥聯動</string>
+
+  <string name="qs_tile_ime_picker">切換輸入法</string>
+
+  <!-- ============================================== -->
+  <!-- 鍵盤狀態資訊 -->
+  <!-- ============================================== -->
+  <string name="status_idle">就緒</string>
+  <string name="status_listening">正在聆聽…</string>
+  <string name="status_recognizing">識別中…</string>
+  <string name="status_backup_asr_used">使用備用引擎結果</string>
+  <string name="status_backup_asr_loading">正在啟動本地備用識別…</string>
+  <string name="status_backup_asr_recognizing">正在使用本地備用識別…</string>
+  <string name="status_ai_processing">AI 潤飾中…</string>
+  <string name="status_ai_edit_listening">請說出編輯指令…</string>
+  <string name="status_ai_editing">AI 編輯中…</string>
+  <string name="status_cancelled">已取消</string>
+  <string name="status_last_request_ms">上次識別耗時：%1$d ms</string>
+  <string name="status_reverted_to_raw">已切換為原始識別結果</string>
+  <string name="status_revert_postprocess_unavailable">無法撤回潤飾</string>
+  <string name="status_postprocess_interrupted_raw">已取消潤飾，使用原始識別結果</string>
+  <string name="status_undone">已撤回最近改動</string>
+  <string name="status_llm_empty_result">AI 編輯失敗：未傳回結果</string>
+  <string name="status_last_asr_not_found">未找到上一次識別文字，已取消替換</string>
+  <string name="hint_need_llm_keys">需要配置 AI 潤飾參數</string>
+  <string name="hint_cannot_read_text">目前應用程式的文字不可讀取</string>
+  <string name="status_llm_failed_used_raw">AI 潤飾失敗，已使用原文</string>
+  <string name="status_llm_edit_failed">AI 編輯失敗，請重試</string>
+  <string name="hint_need_permission">需要麥克風權限以進行語音輸入</string>
+  <string name="status_postproc">AI 潤飾：%1$s</string>
+  <string name="action_revert_postprocess">撤回潤飾</string>
+
+  <string name="toggle_on">開啟</string>
+  <string name="toggle_off">關閉</string>
+  <string name="label_recording_gesture_cancel">左滑取消</string>
+  <string name="label_recording_gesture_send">右滑發送</string>
+  <string name="label_recording_tap_cancel">點擊取消</string>
+  <string name="label_recording_tap_send">點擊發送</string>
+  <string name="hint_swipe_down_lock">下滑鎖定錄音</string>
+  <string name="hint_tap_to_stop_recording">點按結束錄音</string>
+
+  <string name="label_ai_edit_default_use_last_asr">只對上次識別結果部分生效</string>
+  <string name="label_auto_start_recording_on_show">鍵盤出現自動開始錄音</string>
+  <string name="label_continuous_capture">可見時持續錄音</string>
+  <string name="label_auto_enter_after_asr">輸入完成後自動Enter</string>
+  <string name="label_auto_switch_ime_after_asr">輸入完成後切換到指定輸入法</string>
+  <string name="btn_retry">連線失敗，重試？</string>
+
+  <!-- ============================================== -->
+  <!-- 設定相關 -->
+  <!-- ============================================== -->
+  <string name="btn_one_click_setup">一鍵設定</string>
+
+  <string name="settings_title">說點啥設定</string>
+  <string name="settings_tab_input">輸入</string>
+  <string name="settings_tab_smart">智慧</string>
+  <string name="settings_tab_system">系統</string>
+  <string name="settings_ui_mode">介面風格</string>
+  <string name="settings_ui_mode_summary">選擇 Miuix 或 Material 風格</string>
+  <string name="settings_ui_mode_miuix">Miuix</string>
+  <string name="settings_ui_mode_material">Material</string>
+  <string name="settings_theme_mode">主題模式</string>
+  <string name="settings_theme_mode_system">跟隨系統</string>
+  <string name="settings_theme_mode_light">淺色</string>
+  <string name="settings_theme_mode_dark">深色</string>
+  <string name="home_summary_enabled">已開啟</string>
+  <string name="home_summary_disabled">已關閉</string>
+  <string name="home_summary_more_input_disabled">未啟用</string>
+  <string name="home_summary_more_input_volume_key_enabled">已啟用音量鍵輸入</string>
+  <string name="home_summary_more_input_floating_enabled">已啟用懸浮球輸入</string>
+  <string name="home_summary_more_input_both_enabled">已啟用音量鍵、懸浮球</string>
+  <string name="home_summary_more_input_accessibility_missing">無障礙未開啟</string>
+  <string name="home_summary_setup_done">基礎設定已完成</string>
+  <string name="home_summary_setup_progress">基礎設定進度 %1$d/%2$d</string>
+  <string name="home_summary_input_tap_control">點按控制</string>
+  <string name="home_summary_input_hold_control">長按控制</string>
+  <string name="home_summary_asr_format">錄音判停%1$s · %2$s</string>
+  <string name="home_summary_ai_format">%1$s · %2$s · %3$s</string>
+  <string name="home_summary_api_log_errors">近 10 筆 API 呼叫存在錯誤</string>
+  <string name="home_summary_update_available">發現新版本</string>
+  <string name="title_input_settings">輸入設定</string>
+  <string name="title_asr_settings">語音辨識設定</string>
+  <string name="title_ai_settings">AI 功能設定</string>
+  <string name="title_other_settings">其他設定</string>
+  <string name="btn_settings_search">搜尋設定</string>
+  <string name="title_settings_search">搜尋設定</string>
+  <string name="hint_settings_search">搜尋設定項目</string>
+  <string name="cd_settings_search_clear">清除搜尋內容</string>
+  <string name="cd_show_password">顯示密碼</string>
+  <string name="cd_hide_password">隱藏密碼</string>
+  <string name="text_settings_search_empty">找不到符合的設定項目</string>
+
+  <!-- Settings page section titles -->
+  <string name="section_settings_items">主要設定項</string>
+  <string name="section_general">後臺保活</string>
+
+  <string name="label_app_key">X-Api-App-Key</string>
+  <string name="label_access_key">X-Api-Access-Key</string>
+  <string name="label_asr_vendor">語音識別服務商</string>
+  <string name="label_backup_asr_engine">備用語音識別引擎</string>
+  <string name="label_backup_asr_enabled">啟用備用引擎</string>
+  <string name="label_backup_asr_vendor">備用服務商</string>
+  <string name="label_backup_asr_timeout_sensitivity">逾時閾值敏感度</string>
+  <string name="label_backup_asr_local_residency">本地備用模式</string>
+  <string name="hint_backup_asr_uses_existing_config">直接使用本頁已有的服務商設定，無需額外設定</string>
+  <string name="hint_backup_asr_timeout_sensitivity">敏感度越高，主引擎越容易被判定逾時並更快切換到備用結果</string>
+  <string name="hint_backup_asr_local_residency">按需載入會在閒置後釋放本地備用模型；保持常駐會繼續占用記憶體以換取最快兜底。</string>
+  <string name="option_backup_asr_timeout_sensitivity_relaxed">寬鬆</string>
+  <string name="option_backup_asr_timeout_sensitivity_balanced">均衡（推薦）</string>
+  <string name="option_backup_asr_timeout_sensitivity_sensitive">敏感</string>
+  <string name="option_backup_asr_local_residency_on_demand">按需載入</string>
+  <string name="option_backup_asr_local_residency_resident">保持常駐</string>
+
+  <!-- ============================================== -->
+  <!-- 自定義標點 -->
+  <!-- ============================================== -->
+  <string name="custom_punct_section_title">自定義標點按鈕</string>
+  <string name="label_custom_punct_1">按鈕1</string>
+  <string name="label_custom_punct_2">按鈕2</string>
+  <string name="label_custom_punct_3">按鈕3</string>
+  <string name="label_custom_punct_4">按鈕4</string>
+
+  <!-- ============================================== -->
+  <!-- 語音預設 -->
+  <!-- ============================================== -->
+  <string name="label_speech_preset_section">語音預置資訊</string>
+  <string name="label_speech_preset_select">目前預置資訊</string>
+  <string name="speech_preset_empty_placeholder">尚未新增預置資訊</string>
+  <string name="speech_preset_untitled">未命名預置資訊</string>
+  <string name="hint_speech_preset_name">預置資訊名稱</string>
+  <string name="hint_speech_preset_content">預置資訊內容</string>
+  <string name="btn_speech_preset_add">新增</string>
+  <string name="btn_speech_preset_delete">刪除</string>
+  <string name="speech_preset_default_name">預置資訊 %1$d</string>
+  <string name="toast_speech_preset_added">已新增預置資訊</string>
+  <string name="toast_speech_preset_deleted">已刪除預置資訊</string>
+  <string name="dialog_speech_preset_delete_title">刪除預置資訊</string>
+  <string name="dialog_speech_preset_delete_message">確定刪除「%1$s」嗎？</string>
+  <string name="speech_preset_intro">當語音識別結果與某個「名稱」完全一致時，將自動替換為其「內容」。適合常用短語、簽名、地址、工號等快速輸入。匹配規則：先嚴格大小寫匹配，未命中則忽略大小寫匹配；僅當整段文字與名稱相同才會觸發。可能需要開啟去除句尾標點</string>
+
+  <!-- ============================================== -->
+  <!-- 語言設定 -->
+  <!-- ============================================== -->
+  <string name="label_language">應用程式語言</string>
+  <string name="lang_follow_system">跟隨系統</string>
+  <string name="lang_zh_cn">簡體中文</string>
+  <string name="lang_zh_tw">繁體中文</string>
+  <string name="lang_ja">日語</string>
+  <string name="lang_en">English</string>
+  <string name="lang_ar">العربية</string>
+
+  <!-- ============================================== -->
+  <!-- 通用提示 -->
+  <!-- ============================================== -->
+  <string name="toast_backup_asr_used">使用備用引擎結果</string>
+  <string name="toast_preset_added">已新增預設</string>
+  <string name="toast_preset_deleted">已刪除預設</string>
+  <string name="untitled_preset">未命名預設</string>
+  <string name="switched_preset">已切換：%1$s</string>
+  <string name="toast_search_changed_asr_vendor">已切換語音辨識服務商：%1$s</string>
+  <string name="toast_search_changed_llm_vendor">已切換後處理模型供應商：%1$s</string>
+
+  <!-- ============================================== -->
+  <!-- 輸入相關 -->
+  <!-- ============================================== -->
+  <string name="label_trim_trailing_punct">去除句末標點與 emoji</string>
+  <string name="label_trim_trailing_punct_threshold">去除閾值</string>
+  <string name="trim_trailing_punct_threshold_value">%1$d 字詞以內</string>
+  <string name="trim_trailing_punct_threshold_unlimited">無限制</string>
+  <string name="label_mic_haptic">按鍵與懸浮球震動回饋</string>
+  <string name="label_mic_tap_toggle">鍵盤錄音使用點按啟停</string>
+  <string name="label_test_input">體驗輸入</string>
+  <string name="btn_test_input">體驗輸入</string>
+
+  <!-- ============================================== -->
+  <!-- 擴展按鈕配置 -->
+  <!-- ============================================== -->
+  <string name="label_extension_buttons">自訂鍵盤布局</string>
+  <string name="keyboard_layout_summary">主鍵盤 %1$dx%2$d，AI %3$dx%4$d</string>
+  <string name="keyboard_layout_editor_title">自訂鍵盤布局</string>
+  <string name="keyboard_layout_panel_selector">編輯布局</string>
+  <string name="keyboard_layout_panel_main">主鍵盤</string>
+  <string name="keyboard_layout_panel_ai_edit">AI 編輯</string>
+  <string name="keyboard_layout_panel_recording">錄音</string>
+  <string name="keyboard_layout_cols">列</string>
+  <string name="keyboard_layout_rows">行</string>
+  <string name="keyboard_layout_reset_default">重置</string>
+  <string name="keyboard_layout_clear_current">清空</string>
+  <string name="keyboard_layout_import_export">分享</string>
+  <string name="keyboard_layout_copy_json">複製 JSON</string>
+  <string name="keyboard_layout_json_label">布局 JSON</string>
+  <string name="keyboard_layout_import_json">匯入 JSON</string>
+  <string name="keyboard_layout_import_success">布局已匯入</string>
+  <string name="keyboard_layout_import_failed">布局 JSON 無效</string>
+  <string name="keyboard_layout_export_copied">布局 JSON 已複製</string>
+  <string name="keyboard_layout_save_success">布局已儲存</string>
+  <string name="keyboard_layout_error_invalid">布局存在必選按鈕缺失、重疊或越界。</string>
+  <string name="keyboard_layout_block_status">狀態列</string>
+  <string name="keyboard_layout_block_ai_info">AI 資訊列</string>
+  <string name="btn_save">儲存</string>
+  <string name="btn_delete">刪除</string>
+  <string name="ext_btn_default_summary">復原、全選、複製、隱藏鍵盤</string>
+  <string name="ext_btn_none_selected">未選擇</string>
+  <string name="ext_btn_must_select_4">請選擇恰好 4 個按鈕</string>
+  <string name="ext_btn_max_4">最多選擇 4 個按鈕</string>
+  <string name="ext_btn_none">停用</string>
+  <string name="ext_btn_select">選擇模式</string>
+  <string name="ext_btn_select_all">全選</string>
+  <string name="ext_btn_copy">複製</string>
+  <string name="ext_btn_asr_history">識別歷史</string>
+  <string name="ext_btn_paste">貼上</string>
+  <string name="ext_btn_cursor_left">左移</string>
+  <string name="ext_btn_cursor_right">右移</string>
+  <string name="ext_btn_prev_punct">上個標點</string>
+  <string name="ext_btn_next_punct">下個標點</string>
+  <string name="ext_btn_move_start">移至開頭</string>
+  <string name="ext_btn_move_end">移至結尾</string>
+  <string name="ext_btn_numpad">數字鍵盤</string>
+  <string name="ext_btn_undo">復原</string>
+  <string name="ext_btn_hide">隱藏鍵盤</string>
+  <string name="ext_btn_silence_autostop">錄音判停</string>
+  <string name="ext_btn_mic_tap_toggle">錄音模式切換</string>
+  <string name="ext_btn_floating_keyboard">懸浮鍵盤</string>
+  <string name="ext_btn_auto_enter_after_asr">輸入完成後自動Enter</string>
+  <string name="status_copied">已複製</string>
+  <string name="status_pasted">已貼上</string>
+  <string name="status_nothing_to_undo">無可復原的操作</string>
+  <string name="asr_history_empty">暫無識別歷史</string>
+  <string name="cd_asr_history_back">返回</string>
+
+  <!-- ============================================== -->
+  <!-- 通用按鈕 -->
+  <!-- ============================================== -->
+  <string name="toast_setup_all_done">已完成所有設定</string>
+  <string name="toast_setup_enable_keyboard_first">請在系統設定中啟用鍵盤後返回</string>
+  <string name="toast_setup_choose_keyboard">請選擇「說點啥」為目前輸入法</string>
+  <string name="toast_setup_aborted">設定已中止：%1$s</string>
+  <string name="setup_abort_reason_ime_timeout">選擇輸入法逾時</string>
+  <string name="btn_get_api_key_guide">去查看配置教學</string>
+  <string name="btn_local_model_guide">去查看配置教學</string>
+
+  <!-- ============================================== -->
+  <!-- 錄音判停設定 -->
+  <!-- ============================================== -->
+  <string name="section_silence_autostop">錄音判停設定</string>
+  <string name="label_recording_auto_stop_mode">錄音自動停止方式</string>
+  <string name="option_recording_auto_stop_manual">手動控制</string>
+  <string name="option_recording_auto_stop_silence">停說自動停止</string>
+  <string name="option_recording_auto_stop_max_duration">逾時停止</string>
+  <string name="label_auto_stop_silence">停說自動停止錄音</string>
+  <string name="label_silence_window_ms">判停時間閾值（毫秒）</string>
+  <string name="label_silence_sensitivity">判停靈敏度（1-10，越高越容易停錄）</string>
+  <string name="label_recording_max_duration">最長錄音時長</string>
+  <string name="label_recording_max_duration_value_s">%1$d 秒</string>
+
+  <!-- ============================================== -->
+  <!-- 其他通用設定 -->
+  <!-- ============================================== -->
+  <string name="label_audio_ducking_on_record">錄音時音訊避讓</string>
+  <string name="label_auto_cancel_empty_audio_input">自動撤銷無效輸入</string>
+  <string name="label_auto_filter_silent_audio_segments">自動過濾靜音部分</string>
+  <string name="label_offline_denoise">非串流辨識降噪</string>
+  <string name="label_upload_audio_compression">上傳音訊前壓縮</string>
+  <string name="label_headset_mic_priority">嘗試使用耳機麥克風（實驗性）</string>
+  <!-- 外部輸入法聯動（AIDL） -->
+  <string name="label_external_ime_link_aidl">允許外部輸入法聯動（AIDL）</string>
+  <string name="external_aidl_guide_title">如何使用聯動功能</string>
+  <string name="external_aidl_guide_message">支援從外部輸入法調用說點啥的語音識別能力（AIDL）。目前支援：小企鵝輸入法（Fcitx）與同文輸入法（Trime）。\n\n請先在說點啥中啟用：設定 - 輸入設定 - 允許外部輸入法聯動（AIDL）（無需啟用懸浮球和無障礙功能）。\n\n然後依你使用的輸入法進行設定：\n\n【Fcitx（小企鵝）】\n1. 下載修改版 Fcitx：https://github.com/BryceWG/fcitx5-android-lexi-keyboard/releases（需解除安裝原版並注意備份資料）\n2. 開啟 Fcitx 設定 - 虛擬鍵盤 - 空格鍵長按行為 - 語音輸入(AIDL)\n3. 在輸入法面板長按空格鍵即可語音輸入\n\n【Trime（同文）】\n1. 下載修改版同文：https://github.com/BryceWG/trime-bibi-keyboard/releases\n2. 在同文設定 - 一般設定 - 開啟「說點啥 AIDL 語音輸入」，若使用的主題方案無長按 VOICE_ASSIST 功能，則可啟用「工具列麥克風按鈕」\n3. 長按具備 VOICE_ASSIST 功能的按鈕開始錄音，放開即停止；或在輸入法工具列點選麥克風按鈕開始錄音，再次點選則停止並上屏。</string>
+  <string name="external_aidl_guide_btn_close">關閉</string>
+  <string name="external_aidl_guide_btn_open_release">開啟Release頁</string>
+  <string name="external_aidl_guide_choose_release_title">選擇要開啟的 Release 頁</string>
+  <string name="external_aidl_guide_release_fcitx">Fcitx（小企鵝）修改版</string>
+  <string name="external_aidl_guide_release_trime">Trime（同文）修改版</string>
+  <string name="external_aidl_guide_open_failed">無法開啟瀏覽器，請手動存取</string>
+
+  <!-- 模型選擇引導 -->
+  <string name="model_guide_title">選擇語音識別模型</string>
+  <string name="model_guide_message">使用說點啥前，請先選擇語音識別模型類型：</string>
+  <string name="model_guide_option_sf_free">⭐ 免費雲端服務（推薦）</string>
+  <string name="model_guide_option_sf_free_desc">無需任何配置，由硅基流動提供支援。包含免費的語音識別和 AI 文字優化。</string>
+  <string name="model_guide_option_sf_free_action">開箱即用，有免費用量限制</string>
+  <string name="model_guide_sf_free_ready">免費服務已啟用，可以開始使用！</string>
+  <string name="model_guide_option_local">📦 使用本機模型</string>
+  <string name="model_guide_option_local_desc">無需配置密鑰，可以離線使用，隱私更安全</string>
+  <string name="model_guide_option_local_action">將下載 SenseVoice 模型（約1GB）並啟用離線識別</string>
+  <string name="model_guide_option_online">☁️ 使用線上模型（自訂）</string>
+  <string name="model_guide_option_online_desc">識別更精準，支援多種供應商（火山引擎、OpenAI、Gemini 等），需要配置密鑰</string>
+  <string name="model_guide_option_online_action">將開啟配置指南，幫助您完成密鑰配置</string>
+  <string name="model_guide_online_dialog_message">線上語音識別支援多種供應商（火山引擎、硅基流動、OpenAI、Gemini、阿里雲百煉、Soniox、ElevenLabs 等），請參閱配置指南了解詳細步驟。</string>
+  <string name="model_guide_select_prompt">請選擇一種模型類型</string>
+  <string name="model_guide_downloading">正在下載模型，請稍候…</string>
+  <string name="model_guide_download_complete">模型下載完成</string>
+  <string name="model_guide_config_doc_url">https://brycewg.notion.site/bibi-keyboard-providers-guide</string>
+  <string name="local_model_guide_config_doc_url">https://bibidocs.brycewg.com/getting-started/asr-providers.html#%E6%9C%AC%E5%9C%B0%E6%A8%A1%E5%9E%8B%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97</string>
+  <string name="label_return_prev_ime_on_hide">鍵盤收起後切換到指定輸入法</string>
+  <string name="toast_bt_connect_permission_required">需要藍牙連線權限以使用耳機麥克風</string>
+  <string name="toast_bt_connect_permission_denied">已拒絕藍牙連線權限，將停用耳機麥克風優先</string>
+  <string name="toast_vad_sensitivity_applied">已套用判停靈敏度，將在下次錄音生效</string>
+
+  <!-- 隱私與資料開關 -->
+  <string name="section_data_retention">記錄留痕</string>
+  <string name="label_disable_asr_history">關閉識別歷史記錄</string>
+  <string name="label_disable_usage_stats">關閉資料統計記錄</string>
+  <string name="label_data_collection">匿名使用資料收集</string>
+  <string name="dialog_disable_asr_history_title">確認關閉識別歷史？</string>
+  <string name="dialog_disable_asr_history_message">關閉後將清除歷史記錄，且不再保存新的識別歷史。是否確認關閉該功能？</string>
+  <string name="dialog_disable_usage_stats_title">確認關閉資料統計？</string>
+  <string name="dialog_disable_usage_stats_message">關閉後將清除統計資料（總字數與使用統計），且不再記錄新的統計。是否確認關閉該功能？</string>
+  <string name="btn_confirm">確認</string>
+  <string name="btn_skip_guide">暫時跳過，稍後設定</string>
+  <string name="toast_cleared_history">已清除識別歷史</string>
+  <string name="btn_clear_clipboard_history">清除剪貼簿記錄</string>
+  <string name="dialog_clear_clipboard_history_title">清除剪貼簿記錄？</string>
+  <string name="dialog_clear_clipboard_history_message">這會刪除應用程式儲存的全部剪貼簿記錄，包括置頂內容；不會影響系統目前的剪貼簿。</string>
+  <string name="toast_cleared_clipboard_history">已清除剪貼簿記錄</string>
+  <string name="toast_clear_clipboard_history_failed">清除剪貼簿記錄失敗</string>
+  <string name="toast_cleared_stats">已清除統計資料</string>
+
+  <!-- ============================================== -->
+  <!-- 通用 Toast -->
+  <!-- ============================================== -->
+  <string name="toast_accessibility_enabled">無障礙服務已啟用，現在可以自動插入文字了</string>
+  <string name="toast_silence_autostop_on">已開啟錄音判停</string>
+  <string name="toast_silence_autostop_off">已關閉錄音判停</string>
+  <string name="toast_mic_tap_mode_on">已切換為點按啟停</string>
+  <string name="toast_mic_tap_mode_off">已切換為長按說話</string>
+  <string name="toast_floating_keyboard_on">已開啟懸浮鍵盤</string>
+  <string name="toast_floating_keyboard_off">已關閉懸浮鍵盤</string>
+  <string name="toast_auto_enter_after_asr_on">已開啟輸入完成後自動Enter</string>
+  <string name="toast_auto_enter_after_asr_off">已關閉輸入完成後自動Enter</string>
+
+  <!-- ============================================== -->
+  <!-- 功能說明彈窗 -->
+  <!-- ============================================== -->
+  <string name="dialog_feature_explainer_title">功能說明</string>
+  <string name="dialog_feature_explainer_turn_on">您即將開啟該功能：</string>
+  <string name="dialog_feature_explainer_turn_off">您即將關閉該功能：</string>
+  <string name="dialog_feature_explainer_from">目前狀態：</string>
+  <string name="dialog_feature_explainer_to">變更後：</string>
+  <string name="dialog_feature_explainer_dont_show_again">不再提示</string>
+
+  <!-- ============================================== -->
+  <!-- 輸入設定功能說明 -->
+  <!-- ============================================== -->
+  <!-- 去除句末標點 -->
+  <string name="feature_trim_trailing_punct_off_desc">識別結果保留所有內容。</string>
+  <string name="feature_trim_trailing_punct_on_desc">閾值以內的辨識結果將自動去除句末標點和 emoji。將閾值設為無限制時，任意長度都會處理。</string>
+
+  <!-- 按鍵震動 -->
+  <string name="feature_mic_haptic_off_desc">按下按鍵或操作懸浮球時沒有震動回饋。</string>
+  <string name="feature_mic_haptic_on_desc">按下按鍵或操作懸浮球時提供震動回饋，觸感更好。</string>
+
+  <!-- 點按控制 -->
+  <string name="feature_mic_tap_toggle_off_desc">長按麥克風按鈕開始錄音，放開停止錄音。</string>
+  <string name="feature_mic_tap_toggle_on_desc">點擊麥克風按鈕開始錄音，再次點擊停止。方便單手操作。</string>
+
+  <!-- 自動開始錄音 -->
+  <string name="feature_auto_start_recording_on_show_off_desc">鍵盤出現後需要手動按麥克風按鈕開始錄音。</string>
+  <string name="feature_auto_start_recording_on_show_on_desc">鍵盤出現時自動開始錄音，省去一次點擊操作。</string>
+  <string name="feature_continuous_capture_off_desc">鍵盤或懸浮球可見時不會持續錄音，按麥後才開始錄音。</string>
+  <string name="feature_continuous_capture_on_desc">鍵盤或懸浮球可見期間在本機持續錄音，按麥後可以更快開始辨識。開始辨識前不會上傳音訊。</string>
+
+  <!-- Auto enter after input -->
+  <string name="feature_auto_enter_after_asr_off_desc">辨識（及開啟時的 AI 後處理）完成後僅提交文字，不會自動 Enter。仍可在錄音時右滑麥克風，讓本次結果提交後 Enter 傳送。</string>
+  <string name="feature_auto_enter_after_asr_on_desc">每次輸入完成（若開啟 AI 後處理則在後處理完成後）自動 Enter 或觸發編輯器傳送動作，方便在聊天應用中直接傳送。空結果不會 Enter。</string>
+
+  <!-- 輸入完成後自動切換輸入法 -->
+  <string name="feature_auto_switch_ime_after_asr_off_desc">輸入完成後仍保持目前輸入法，不會自動切換。</string>
+  <string name="feature_auto_switch_ime_after_asr_on_desc">後處理完成且預覽文字固化後，自動切換到「指定輸入法」中選定的輸入法，方便二次編輯。未指定時切換到上一個輸入法。空結果不會切換。</string>
+
+  <!-- 輸入法切換鍵功能 -->
+  <string name="feature_fcitx5_return_on_switcher_off_desc">輸入法切換鍵開啟系統的輸入法選擇器。</string>
+  <string name="feature_fcitx5_return_on_switcher_on_desc">輸入法切換鍵直接返回指定輸入法，未設定時返回上一個輸入法。</string>
+
+  <!-- 收起後切回上一個輸入法 -->
+  <string name="feature_return_prev_ime_on_hide_off_desc">鍵盤收起後，目前輸入法仍為說點啥。</string>
+  <string name="feature_return_prev_ime_on_hide_on_desc">鍵盤收起時自動切換到指定輸入法，未設定時返回上一個輸入法，方便臨時語音輸入。</string>
+
+  <!-- 隱藏任務卡片 -->
+  <string name="feature_hide_recent_tasks_off_desc">應用程式卡片在最近任務清單中可見。</string>
+  <string name="feature_hide_recent_tasks_on_desc">應用程式卡片在最近任務清單中隱藏，多工介面更清爽。可能會降低後臺保活能力。</string>
+
+  <!-- 錄音時音訊避讓 -->
+  <string name="feature_duck_media_on_record_off_desc">錄音時不主動要求其他應用程式降低音量或暫停播放，媒體聲音可能會被麥克風錄入。</string>
+  <string name="feature_duck_media_on_record_on_desc">錄音時要求其他應用程式暫時降低音量或暫停播放，以減少媒體聲音干擾。實際效果取決於系統與播放應用程式。</string>
+
+  <!-- 空白音訊偵測與靜音過濾 -->
+  <string name="feature_auto_cancel_empty_audio_input_off_desc">非串流辨識會照常送出錄音，即使錄音中沒有偵測到人聲。</string>
+  <string name="feature_auto_cancel_empty_audio_input_on_desc">錄音結束後，應用程式會先在裝置上檢查是否有人聲。若沒有偵測到人聲，本次錄音會直接捨棄，不會傳送給辨識服務商。</string>
+  <string name="feature_auto_filter_silent_audio_segments_off_desc">非串流辨識使用原始錄音，包含中間停頓和靜音片段。</string>
+  <string name="feature_auto_filter_silent_audio_segments_on_desc">辨識前，應用程式會在裝置上刪除錄音中的靜音片段，縮短音訊長度，並可能減少上傳時間。</string>
+
+  <!-- 非串流降噪 -->
+  <string name="feature_offline_denoise_off_desc">非串流上傳或離線辨識前不進行模型降噪。</string>
+  <string name="feature_offline_denoise_on_desc">在非串流上傳或離線辨識前進行模型降噪，對低聲說話改善有限。</string>
+
+  <!-- 上傳音訊壓縮 -->
+  <string name="feature_upload_audio_compression_off_desc">錄音結束後直接上傳未壓縮的原始音訊。使用的流量較多，但上傳前無需額外壓縮。</string>
+  <string name="feature_upload_audio_compression_on_desc">辨識服務商支援時，錄音結束後會先壓縮再上傳，減少流量，並可能加快上傳速度。</string>
+
+  <!-- 耳機麥克風優先 -->
+  <string name="feature_headset_mic_priority_off_desc">使用裝置內建麥克風進行錄音。</string>
+  <string name="feature_headset_mic_priority_on_desc">優先使用耳機麥克風（如果可用）。實驗性功能，需要藍牙權限和取得附近裝置權限。</string>
+
+  <!-- ============================================== -->
+  <!-- 其他設定 - 功能說明 -->
+  <!-- ============================================== -->
+
+  <!-- 關閉識別歷史 -->
+  <string name="feature_disable_asr_history_off_desc">識別歷史記錄將被儲存，以便稍後檢視和管理。</string>
+  <string name="feature_disable_asr_history_on_desc">識別歷史記錄將不會被儲存。啟用此選項將清除所有現有歷史。用於保護你的隱私。</string>
+
+  <!-- 關閉資料統計 -->
+  <string name="feature_disable_usage_stats_off_desc">使用統計（總字元數和彙總資料）將被收集以供你參考。</string>
+  <string name="feature_disable_usage_stats_on_desc">使用統計將不會被收集。啟用此選項將清除所有現有統計資料。用於保護你的隱私。</string>
+
+  <!-- 匿名使用資料收集 -->
+  <string name="feature_data_collection_off_desc">不會上傳任何匿名使用資料。</string>
+  <string name="feature_data_collection_on_desc">會每天隨機一次上傳匿名使用資料（應用版本、安裝渠道、初次使用時間、Android 版本（SDK）、裝置型號、識別事件中繼資料、介面語言、啟動次數等），不包含識別文字或任何個人內容。</string>
+
+  <!-- 匿名資料收集同意彈窗 -->
+  <string name="title_data_collection_consent">匿名資料收集說明</string>
+  <string name="msg_data_collection_consent">為了改進說點啥的體驗，我們希望收集少量匿名使用資料，包括：應用版本、安裝渠道、初次使用時間、Android 版本（SDK）、裝置型號、語音識別事件中繼資料（供應商、音訊時長、處理耗時、字數、來源渠道、是否使用 AI 後處理）、應用介面語言，以及應用啟動次數。不會上傳識別文字或任何個人資訊。相關收集與上報程式碼已開源。是否同意開啟？</string>
+  <string name="btn_agree">同意</string>
+  <string name="btn_disagree">暫不</string>
+
+  <!-- ============================================== -->
+  <!-- Pro 版宣傳 -->
+  <!-- ============================================== -->
+  <string name="pro_promo_btn_close">關閉</string>
+  <string name="about_btn_learn_pro">了解 Pro</string>
+  <string name="pro_paywall_title">說點啥 Pro</string>
+  <string name="pro_paywall_eyebrow">升級你的語音輸入</string>
+  <string name="pro_paywall_heading">讓每句話都更可控</string>
+  <string name="pro_paywall_subtitle">保留完整開源核心，再加入面向日常語音輸入的進階工具</string>
+  <string name="pro_paywall_price">5.49 美元 / 36 元</string>
+  <string name="pro_paywall_price_note">一次買斷 · 無訂閱 · 權限跟隨 Google 帳戶</string>
+  <string name="pro_paywall_compare_title">開源版與 Pro 對比</string>
+  <string name="pro_paywall_feature_header">功能</string>
+  <string name="pro_paywall_free_header">免費版</string>
+  <string name="pro_paywall_pro_header">Pro</string>
+  <string name="pro_paywall_included">支援</string>
+  <string name="pro_paywall_not_included">不支援</string>
+  <string name="pro_paywall_included_mark">✓</string>
+  <string name="pro_paywall_not_included_mark">—</string>
+  <string name="pro_paywall_feature_core_asr">多供應商 ASR、串流辨識與本地模型</string>
+  <string name="pro_paywall_feature_ai">AI 後處理與基礎 AI 編輯</string>
+  <string name="pro_paywall_feature_input">鍵盤、懸浮球與外部呼叫</string>
+  <string name="pro_paywall_feature_layout">鍵盤配置、預設與設定備份</string>
+  <string name="pro_paywall_feature_continuous">暢說模式</string>
+  <string name="pro_paywall_feature_hotwords">熱詞、音素增強與糾正學習</string>
+  <string name="pro_paywall_feature_context">輸入框上下文、AI 助手與應用 Prompt</string>
+  <string name="pro_paywall_feature_text">繁體轉換與正則後處理</string>
+  <string name="pro_paywall_feature_theme">全向游標與進階主題</string>
+  <string name="pro_paywall_feature_webdav">WebDAV 自動備份</string>
+  <string name="pro_paywall_purchase_title">選擇取得 Pro 的方式</string>
+  <string name="pro_paywall_play_store">透過 Google Play 取得 Pro</string>
+  <string name="pro_paywall_qr">透過微信或支付寶付款</string>
+  <string name="pro_paywall_telegram">聯絡作者 / 加入 Telegram</string>
+  <string name="pro_paywall_purchase_note">Play 商店購買可在登入同一 Google 帳戶的裝置上使用。付款碼購買會兌換為 Play 商店商品兌換碼。</string>
+  <string name="pro_paywall_home_title">了解說點啥 Pro</string>
+  <string name="pro_paywall_home_summary">比較版本，解鎖進階語音輸入。</string>
+  <string name="pro_paywall_home_dismiss">關閉 Pro 提示</string>
+
+  <!-- 付款碼彈窗 -->
+  <string name="payment_qr_title">透過付款碼購買 Pro</string>
+  <string name="payment_qr_instruction">您可以透過微信或支付寶向作者直接付款（36 元），然後將付款截圖和備註資訊（包含訂單號）傳送到作者郵箱。作者會回覆 Play 商店「說點啥 Pro」的商品兌換碼（啟用碼），需要手機可正常使用 Play 商店進行兌換。最晚 1-2 天內回覆。</string>
+  <string name="payment_qr_wechat">微信</string>
+  <string name="payment_qr_alipay">支付寶</string>
+  <string name="payment_qr_save">儲存</string>
+  <string name="payment_qr_email_label">複製作者郵箱</string>
+  <string name="payment_qr_email_tap_copy">點擊複製</string>
+  <string name="payment_qr_email_copied">郵箱已複製到剪貼簿</string>
+  <string name="payment_qr_save_success">已儲存到相簿</string>
+  <string name="payment_qr_save_failed">儲存失敗</string>
+
+  <!-- 錄音測試 -->
+  <string name="title_recording_test">錄音測試</string>
+  <string name="recording_test_latency_chain">延遲鏈路</string>
+  <string name="recording_test_status_idle">準備錄音</string>
+  <string name="recording_test_status_recording">錄音中</string>
+  <string name="recording_test_status_ready">音訊已就緒</string>
+  <string name="recording_test_status_processing">處理中</string>
+  <string name="recording_test_total_label">總延遲</string>
+  <string name="recording_test_segment_record">錄音</string>
+  <string name="recording_test_segment_asr">ASR</string>
+  <string name="recording_test_segment_ai">AI</string>
+  <string name="recording_test_press_time">按下</string>
+  <string name="recording_test_first_frame_time">首幀</string>
+  <string name="recording_test_audio_title">錄音 / 音量</string>
+  <string name="recording_test_duration_label">時長</string>
+  <string name="recording_test_current_level_label">目前音量</string>
+  <string name="recording_test_peak_level_label">峰值音量</string>
+  <string name="recording_test_silence_label">靜音占比</string>
+  <string name="recording_test_percent_value">%1$d%%</string>
+  <string name="recording_test_play">試聽</string>
+  <string name="recording_test_playing">播放中</string>
+  <string name="recording_test_rerecord">清理</string>
+  <string name="recording_test_recognition_title">識別與處理</string>
+  <string name="recording_test_asr_label">ASR</string>
+  <string name="recording_test_asr_summary">%1$s · %2$s%3$s</string>
+  <string name="recording_test_asr_mode_push_pcm">目前流式/推送通道</string>
+  <string name="recording_test_asr_mode_file">目前檔案通道</string>
+  <string name="recording_test_asr_backup_suffix"> · 備用 %1$s · %2$s</string>
+  <string name="recording_test_backup_strategy_parallel">並行</string>
+  <string name="recording_test_backup_strategy_lazy">懶載入串行</string>
+  <string name="recording_test_auto_transcribe">自動轉錄</string>
+  <string name="recording_test_ai_label">AI</string>
+  <string name="recording_test_prompt_summary">選擇 AI 後處理使用的提示詞預設</string>
+  <string name="recording_test_ai_process">AI處理</string>
+  <string name="recording_test_result_compare">結果對比</string>
+  <string name="recording_test_raw_result">原始：</string>
+  <string name="recording_test_ai_result">AI：</string>
+  <string name="recording_test_empty_result_placeholder">暫無結果</string>
+  <string name="recording_test_no_prompt">目前提示詞</string>
+  <string name="recording_test_record">錄音</string>
+  <string name="recording_test_stop">停止</string>
+  <string name="recording_test_error_record">錄音失敗：%1$s</string>
+  <string name="recording_test_error_empty_audio">沒有擷取到音訊</string>
+  <string name="recording_test_error_playback">播放失敗：%1$s</string>
+  <string name="recording_test_error_transcribe">轉錄失敗：%1$s</string>
+  <string name="recording_test_error_transcribe_timeout">轉錄逾時</string>
+  <string name="recording_test_error_vendor_unavailable">目前 ASR 設定無法用於本次測試</string>
+  <string name="recording_test_error_ai">AI 處理失敗：%1$s</string>
+  <string name="toast_ime_bridge_protocol_mismatch">輸入法橋接模組與說點啥版本不相容，請更新模組或應用程式。</string>
+  <string name="toast_ime_bridge_connection_failed">無法連線輸入法橋接模組，請確認已在 LSPosed 中啟用模組並勾選目前輸入法。</string>
+</resources>

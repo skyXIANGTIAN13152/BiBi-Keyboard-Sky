@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- キーボード関連文字列 - Keyboard related strings -->
+
+    <!-- Content Descriptions -->
+    <string name="cd_mic">マイク</string>
+    <string name="cd_settings">設定</string>
+    <string name="cd_enter">Enter</string>
+    <string name="cd_backspace">Backspace</string>
+    <string name="cd_switch_ime">入力メソッドを切り替え</string>
+    <string name="cd_postproc_toggle">AI校正</string>
+    <string name="cd_ai_edit">AI編集</string>
+    <string name="cd_hide">キーボードを非表示</string>
+    <string name="cd_prompt_picker">校正プロンプトを切り替え</string>
+    <string name="cd_vendor_picker">ASRプロバイダーを切り替え</string>
+    <string name="cd_floating_keyboard_drag">フローティングキーボードを移動</string>
+    <string name="cd_floating_keyboard_resize">フローティングキーボードのサイズ変更</string>
+    <string name="cd_keyboard_dock_left">キーボードを左へ移動</string>
+    <string name="cd_keyboard_dock_right">キーボードを右へ移動</string>
+    <string name="cd_numpad_back">編集パネルに戻る</string>
+    <string name="cd_space">スペース</string>
+    <string name="cd_punct_lang_toggle">中/英句読点を切り替え</string>
+    <string name="cd_punct_btn_1">カスタムキー1</string>
+    <string name="cd_punct_btn_2">カスタムキー2</string>
+    <string name="cd_punct_btn_3">カスタムキー3</string>
+    <string name="cd_punct_btn_4">カスタムキー4</string>
+
+    <!-- Extension buttons content descriptions -->
+    <string name="desc_extension_button_1">拡張ボタン1</string>
+    <string name="desc_extension_button_2">拡張ボタン2</string>
+    <string name="desc_extension_button_3">拡張ボタン3</string>
+    <string name="desc_extension_button_4">拡張ボタン4</string>
+    <string name="desc_extension_center_button_1">拡張中央ボタン1</string>
+    <string name="desc_extension_center_button_2">拡張中央ボタン2</string>
+
+    <!-- Edit panel content descriptions -->
+    <string name="cd_return_main">メインキーボードに戻る</string>
+    <string name="cd_apply_preset_prompt">プリセットプロンプトを適用</string>
+    <string name="cd_cursor_left">カーソルを左に移動</string>
+    <string name="cd_cursor_right">カーソルを右に移動</string>
+    <string name="cd_numpad">数字パッド</string>
+    <string name="cd_select_toggle">選択モードを切り替え</string>
+    <string name="cd_select_all">すべて選択</string>
+    <string name="cd_copy">コピー</string>
+    <string name="cd_paste">貼り付け</string>
+    <string name="cd_move_home">先頭に移動</string>
+    <string name="cd_move_end">末尾に移動</string>
+    <string name="cd_undo">元に戻す</string>
+
+    <!-- AI編集パネル操作ガイド -->
+    <string name="ime_ai_edit_guide_tap">マイクをタップして編集指示を録音し、もう一度タップして停止します</string>
+    <string name="ime_ai_edit_guide_hold">マイクを長押しして編集指示を話し、離すと停止します</string>
+
+    <!-- Keyboard height -->
+    <string name="label_keyboard_height">キーボードスケール</string>
+    <string name="label_ime_tablet_floating_keyboard">フローティングキーボード</string>
+    <string name="feature_ime_tablet_floating_keyboard_off_desc">大画面でもキーボードは下部に固定されたままです。</string>
+    <string name="feature_ime_tablet_floating_keyboard_on_desc">大画面ではキーボードをフローティング表示し、位置を変えて片手操作しやすくできます。</string>
+    <string name="keyboard_height_small">小</string>
+    <string name="keyboard_height_medium">中</string>
+    <string name="keyboard_height_large">大</string>
+
+    <!-- Haptic feedback strength -->
+    <string name="label_haptic_feedback_strength">入力/タップの触覚強度</string>
+    <string name="haptic_strength_off">オフ</string>
+    <string name="haptic_strength_system">システム</string>
+    <string name="haptic_strength_weak">弱い</string>
+    <string name="haptic_strength_light">やや弱い</string>
+    <string name="haptic_strength_medium">中</string>
+    <string name="haptic_strength_strong">やや強い</string>
+    <string name="haptic_strength_heavy">強い</string>
+
+    <!-- Keyboard bottom padding -->
+    <string name="label_keyboard_bottom_padding">キーボード下部パディング</string>
+    <string name="keyboard_bottom_padding_value">%d dp</string>
+
+    <!-- Waveform sensitivity -->
+    <string name="label_waveform_sensitivity">波形感度（1-10；高いほど反応が大きい）</string>
+
+    <!-- Keyboard layout option -->
+    <string name="label_fcitx5_return_on_switcher">IME切り替えキーが指定のIMEに戻せる</string>
+    <string name="label_ime_switch_target">指定IME</string>
+    <string name="ime_switch_target_previous">前の入力メソッド</string>
+    <string name="label_hide_recent_task_card">最近のタスクプレビューを非表示</string>
+    <string name="label_keep_alive_notification_click">常駐通知のジャンプ先</string>
+
+    <!-- Section titles -->
+    <string name="section_input_behavior">入力動作</string>
+    <string name="section_audio_and_link">オーディオと外部連携</string>
+    <string name="section_ui_settings">UI設定</string>
+    <string name="section_main_ui">アプリ UI</string>
+    <string name="section_keyboard_ui">キーボード UI</string>
+</resources>

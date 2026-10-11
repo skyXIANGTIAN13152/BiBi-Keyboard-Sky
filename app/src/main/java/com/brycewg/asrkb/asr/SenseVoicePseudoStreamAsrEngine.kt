@@ -1,0 +1,47 @@
+package com.brycewg.asrkb.asr
+
+import android.content.Context
+import com.brycewg.asrkb.store.Prefs
+import kotlinx.coroutines.CoroutineScope
+
+/**
+ * SenseVoice 本地模型伪流式引擎：
+ * - 定时分片，小片段离线识别后通过 onPartial 预览；
+ * - 会话结束时对整段音频再识别一次，通过 onFinal 覆盖最终结果。
+ */
+class SenseVoicePseudoStreamAsrEngine(
+    context: Context,
+    scope: CoroutineScope,
+    prefs: Prefs,
+    listener: StreamingAsrEngine.Listener,
+    onRequestDuration: ((Long) -> Unit)? = null
+) : LocalModelPseudoStreamAsrEngine(context, scope, prefs, listener, onRequestDuration) {
+
+    companion object {
+        private const val TAG = "SvPseudoStreamEngine"
+    }
+
+    private val delegate = SenseVoicePseudoStreamDelegate(
+        context = context,
+        scope = scope,
+        prefs = prefs,
+        listener = listener,
+        sampleRate = sampleRate,
+        onRequestDuration = onRequestDuration,
+        tag = TAG
+    )
+
+    override fun ensureReady(): Boolean = delegate.ensureReady()
+
+    override fun onSessionStart(sessionId: Long) {
+        delegate.onSessionStart(sessionId)
+    }
+
+    override fun onSegmentBoundary(sessionId: Long, pcmSegment: ByteArray) {
+        delegate.onSegmentBoundary(sessionId, pcmSegment)
+    }
+
+    override suspend fun onSessionFinished(sessionId: Long, fullPcm: ByteArray) {
+        delegate.onSessionFinished(sessionId, fullPcm)
+    }
+}

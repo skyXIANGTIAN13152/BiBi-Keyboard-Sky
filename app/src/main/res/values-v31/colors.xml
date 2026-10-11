@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Monet Light: Ultra Light Background (L* 99), Soft Dark Foreground -->
+    <color name="ic_launcher_background_color">@android:color/system_accent1_10</color>
+    <color name="ic_launcher_foreground_color">@android:color/system_accent1_600</color>
+</resources>

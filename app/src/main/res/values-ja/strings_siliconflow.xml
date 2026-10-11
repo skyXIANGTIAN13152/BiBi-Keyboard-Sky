@@ -1,0 +1,33 @@
+<resources>
+    <!-- SiliconFlow ASR 設定文字列 -->
+    <string name="sf_section_title">SiliconFlow API設定</string>
+    <string name="vendor_sf">SiliconFlow</string>
+
+    <!-- SiliconFlow configuration -->
+    <string name="label_sf_api_key">APIキー（Bearer）</string>
+    <string name="label_sf_model_select">認識モデル</string>
+    <string name="sf_model_default_display">FunAudioLLM/SenseVoiceSmall</string>
+    <string name="label_sf_omni_prompt">マルチモーダル文字起こしプロンプト（オプション）</string>
+
+    <!-- SiliconFlow 無料サービス（ASR） -->
+    <string name="label_sf_free_enabled">無料サービスを使用</string>
+    <string name="sf_free_description">SiliconFlow から寛大に提供された無料サービスで、すぐに AI 音声認識を体験できます。APIキー不要。</string>
+
+    <!-- SiliconFlow 無料サービス（LLM） -->
+    <string name="sf_free_llm_description">SiliconFlow から寛大に提供された無料AI後処理サービス。APIキー不要。</string>
+    <string name="label_sf_free_llm_enabled">SiliconFlow 提供の無料モデルを使用</string>
+    <string name="label_sf_free_llm_model">モデルを選択</string>
+
+    <!-- SiliconFlow 無料サービスエラーメッセージ -->
+    <string name="error_sf_free_quota_exceeded">無料サービスの使用量が上限を超えました。後でもう一度お試しください</string>
+    <string name="error_sf_free_auth_failed">無料サービスの認証に失敗しました</string>
+    <string name="error_sf_free_service_unavailable">無料サービスは一時的に利用できません</string>
+
+    <!-- SiliconFlow Powered By -->
+    <string name="sf_powered_by_desc">Powered by SiliconFlow</string>
+
+    <!-- SiliconFlow 無料サービス登録案内 -->
+    <string name="sf_free_register_hint">SiliconFlow アカウントを登録すると、より多くのモデルを利用できます。14元のボーナスクレジットが付与され、ほとんどのモデルに対応しています。</string>
+    <string name="btn_sf_free_register">API Keyを取得</string>
+    <string name="btn_sf_free_guide">設定ガイド</string>
+</resources>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="hint_need_keys">需要在設定中填寫金鑰以啟用語音輸入</string>
+    <string name="error_only_zip_supported">僅支援匯入 .zip 檔案</string>
+
+    <!-- ============================================== -->
+    <!-- ASR 設定 - 功能說明 -->
+    <!-- ============================================== -->
+
+    <!-- 無人說話自動停止錄音 -->
+    <string name="feature_auto_stop_silence_off_desc">錄音會持續到你手動停止。適合錄製較長的語音或者停頓是內容一部分的場景。</string>
+    <string name="feature_auto_stop_silence_on_desc">連續一段時間沒有偵測到說話聲時自動停止錄音，省去手動停止。你可以調整等待時間與偵測靈敏度。</string>
+
+    <!-- 備用語音識別引擎 -->
+    <string name="feature_backup_asr_off_desc">關閉時僅使用主引擎進行識別。</string>
+    <string name="feature_backup_asr_on_desc">主要服務不可用、辨識失敗或等待過久時，可改用備用服務。依照備用設定，它可能與主要服務同時開始，也可能等到需要時才啟動。</string>
+
+    <!-- 服務商標籤（用於選擇器展示） -->
+    <string name="asr_vendor_tag_streaming">流式</string>
+    <string name="asr_vendor_tag_non_streaming">非流</string>
+    <string name="asr_vendor_tag_online">在線</string>
+    <string name="asr_vendor_tag_local">本地</string>
+    <string name="asr_vendor_tag_custom">自訂</string>
+    <string name="asr_vendor_tag_pseudo_streaming">偽流</string>
+    <string name="asr_vendor_tag_chinese_dialect">中文方言</string>
+    <string name="asr_vendor_tag_accurate">準確</string>
+    <string name="asr_vendor_group_configured">已配置</string>
+    <string name="asr_vendor_group_unconfigured">未配置</string>
+</resources>

@@ -1,0 +1,248 @@
+package com.brycewg.asrkb.util
+
+import android.content.Context
+import android.util.Log
+import com.brycewg.asrkb.asr.LlmPostProcessor
+import com.brycewg.asrkb.store.Prefs
+import kotlinx.coroutines.CancellationException
+
+/**
+ * 识别结果末处理：统一封装去尾处理与可选 AI 后处理
+ */
+object AsrFinalFilters {
+    private const val TAG = "AsrFinalFilters"
+
+    /** Observes the actual LLM request without participating in result processing. */
+    interface AiPostprocessTimingObserver {
+        fun onAiPostprocessStarted()
+        fun onAiPostprocessFinished()
+    }
+
+    fun shouldTrimTrailingPunctAndEmoji(prefs: Prefs, text: String): Boolean = shouldTrimTrailingPunctAndEmoji(
+        enabled = prefs.trimFinalTrailingPunct,
+        effectiveCharCount = TextSanitizer.countEffectiveChars(text),
+        threshold = prefs.trimFinalTrailingPunctThreshold
+    )
+
+    internal fun shouldTrimTrailingPunctAndEmoji(
+        enabled: Boolean,
+        effectiveCharCount: Int,
+        threshold: Int
+    ): Boolean {
+        if (!enabled) return false
+        val normalizedThreshold = threshold.coerceIn(
+            Prefs.TRIM_FINAL_TRAILING_PUNCT_THRESHOLD_MIN,
+            Prefs.TRIM_FINAL_TRAILING_PUNCT_THRESHOLD_UNLIMITED
+        )
+        return normalizedThreshold == Prefs.TRIM_FINAL_TRAILING_PUNCT_THRESHOLD_UNLIMITED ||
+            effectiveCharCount <= normalizedThreshold
+    }
+
+    /**
+     * 执行基础过滤：去除句末标点/emoji，并处理预置替换
+     */
+    fun applySimple(context: Context, prefs: Prefs, input: String): String {
+        var out = input
+        try {
+            if (shouldTrimTrailingPunctAndEmoji(prefs, input)) {
+                out = TextSanitizer.trimTrailingPunctAndEmoji(out)
+            }
+        } catch (t: Throwable) {
+            Log.w(TAG, "trimTrailingPunct failed", t)
+        }
+
+        // 预置替换（最高优先级，直接返回替换文案）
+        return try {
+            val rep = prefs.findSpeechPresetReplacement(out)
+            if (!rep.isNullOrEmpty()) rep else out
+        } catch (t: Throwable) {
+            Log.w(TAG, "speech preset replacement failed", t)
+            out
+        }
+    }
+
+    /**
+     * 可选 AI 后处理：
+     * - 先按需要去除句末标点；
+     * - 若开启 LLM 且配置完整，调用 LLM 后处理；
+     * - 结束后再次按需要去除句末标点
+     * 返回值沿用 LlmPostProcessor 的结果结构，text 字段为最终可提交文本。
+     */
+    suspend fun applyWithAi(
+        context: Context,
+        prefs: Prefs,
+        input: String,
+        postProcessor: LlmPostProcessor = LlmPostProcessor(),
+        promptOverride: String? = null,
+        forceAi: Boolean = false,
+        onStreamingUpdate: ((String) -> Unit)? = null,
+        aiTimingObserver: AiPostprocessTimingObserver? = null
+    ): LlmPostProcessor.LlmProcessResult {
+        if (input.isBlank()) {
+            return LlmPostProcessor.LlmProcessResult(
+                ok = true,
+                text = input,
+                errorMessage = null,
+                httpCode = null,
+                usedAi = false,
+                attempted = false,
+                llmMs = 0
+            )
+        }
+        val shouldTrimTrailing = try {
+            shouldTrimTrailingPunctAndEmoji(prefs, input)
+        } catch (t: Throwable) {
+            Log.w(TAG, "trim threshold calculation failed", t)
+            false
+        }
+
+        // 预修剪
+        val base = try {
+            if (shouldTrimTrailing) {
+                TextSanitizer.trimTrailingPunctAndEmoji(
+                    input
+                )
+            } else {
+                input
+            }
+        } catch (t: Throwable) {
+            Log.w(TAG, "pre-trim failed", t)
+            input
+        }
+
+        // 语音预设替换：若命中则跳过 LLM 与全部其他处理（含正则/繁体），直接返回
+        try {
+            val rep = prefs.findSpeechPresetReplacement(base)
+            if (!rep.isNullOrEmpty()) {
+                return LlmPostProcessor.LlmProcessResult(
+                    ok = true,
+                    text = rep,
+                    errorMessage = null,
+                    httpCode = null,
+                    usedAi = false,
+                    attempted = false,
+                    llmMs = 0
+                )
+            }
+        } catch (t: Throwable) {
+            Log.w(TAG, "speech preset replacement failed (ai branch)", t)
+        }
+
+        if (base.isBlank()) {
+            return LlmPostProcessor.LlmProcessResult(
+                ok = true,
+                text = base,
+                errorMessage = null,
+                httpCode = null,
+                usedAi = false,
+                attempted = false,
+                llmMs = 0
+            )
+        }
+
+        var processed = base
+        var ok = true
+        var http: Int? = null
+        var err: String? = null
+        var aiAttempted = false
+        var aiMs: Long = 0
+        var llmVendorId: String? = null
+
+        // 少于阈值时自动跳过 AI 后处理（forceAi 时不跳过）
+        val skipForShort = try {
+            if (forceAi || prefs.postprocSkipUnderChars <= 0) {
+                false
+            } else {
+                TextSanitizer.countEffectiveChars(base) < prefs.postprocSkipUnderChars
+            }
+        } catch (t: Throwable) {
+            Log.w(TAG, "skip threshold calculation failed", t)
+            false
+        }
+
+        if (!skipForShort && (forceAi || prefs.postProcessEnabled) && prefs.hasLlmKeys()) {
+            aiAttempted = true
+            val t0 = System.nanoTime()
+            notifyAiTimingStarted(aiTimingObserver)
+            try {
+                val res = postProcessor.processWithStatus(
+                    base,
+                    prefs,
+                    promptOverride,
+                    onStreamingUpdate = onStreamingUpdate
+                )
+                ok = res.ok
+                processed = res.text
+                http = res.httpCode
+                err = res.errorMessage
+                llmVendorId = res.llmVendorId
+                aiMs =
+                    if (res.llmMs >
+                        0
+                    ) {
+                        res.llmMs
+                    } else {
+                        ((System.nanoTime() - t0) / 1_000_000L).coerceAtLeast(0L)
+                    }
+            } catch (t: CancellationException) {
+                throw t
+            } catch (t: Throwable) {
+                Log.e(TAG, "LLM post-processing threw", t)
+                ok = false
+                processed = base
+                err = t.message
+                aiMs = ((System.nanoTime() - t0) / 1_000_000L).coerceAtLeast(0L)
+            } finally {
+                notifyAiTimingFinished(aiTimingObserver)
+            }
+        }
+
+        // 后修剪
+        processed = try {
+            if (shouldTrimTrailing) {
+                TextSanitizer.trimTrailingPunctAndEmoji(
+                    processed
+                )
+            } else {
+                processed
+            }
+        } catch (t: Throwable) {
+            Log.w(TAG, "post-trim failed", t)
+            processed
+        }
+
+        // AI 返回空：视为失败（由上层决定是否回退到 applySimple）
+        if (aiAttempted && ok && processed.isBlank()) {
+            ok = false
+            err = err ?: "Empty AI output"
+        }
+
+        val usedAi = aiAttempted && ok && processed.isNotBlank()
+        return LlmPostProcessor.LlmProcessResult(
+            ok = ok,
+            text = processed,
+            errorMessage = err,
+            httpCode = http,
+            usedAi = usedAi,
+            attempted = aiAttempted,
+            llmMs = if (aiAttempted) aiMs.coerceAtLeast(0L) else 0,
+            llmVendorId = llmVendorId
+        )
+    }
+
+    private fun notifyAiTimingStarted(observer: AiPostprocessTimingObserver?) {
+        try {
+            observer?.onAiPostprocessStarted()
+        } catch (t: Throwable) {
+            Log.w(TAG, "AI timing observer start failed", t)
+        }
+    }
+
+    private fun notifyAiTimingFinished(observer: AiPostprocessTimingObserver?) {
+        try {
+            observer?.onAiPostprocessFinished()
+        } catch (t: Throwable) {
+            Log.w(TAG, "AI timing observer finish failed", t)
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat)",
+      "mcp__auggie-mcp__codebase-retrieval",
+      "Bash(find:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

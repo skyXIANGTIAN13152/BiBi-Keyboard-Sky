@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- バックアップ設定関連文字列 - Backup settings related strings -->
+
+    <!-- Backup settings -->
+    <string name="title_backup_settings">バックアップと同期</string>
+    <string name="btn_open_backup_settings">バックアップと同期</string>
+    <string name="section_file_backup">ファイルバックアップ</string>
+    <string name="btn_export_to_file">ファイルにエクスポート</string>
+    <string name="btn_import_from_file">ファイルからインポート</string>
+    <string name="section_webdav_sync">WebDAV同期</string>
+    <string name="hint_webdav_url">WebDAV URL（例：https://dav.example.com）</string>
+    <string name="hint_webdav_username">ユーザー名（オプション）</string>
+    <string name="hint_webdav_password">パスワード（オプション）</string>
+    <string name="btn_webdav_upload">アップロード</string>
+    <string name="btn_webdav_download">復元</string>
+
+    <string name="toast_webdav_upload_success">WebDAVにアップロードしました</string>
+    <string name="toast_webdav_upload_failed">アップロード失敗：%1$s</string>
+    <string name="toast_webdav_download_success">WebDAVからインポートしました</string>
+    <string name="toast_webdav_download_failed">ダウンロード/インポート失敗：%1$s</string>
+    <string name="toast_webdav_backup_not_found">WebDAVサーバー上にバックアップファイルが見つかりません</string>
+    <string name="toast_webdav_url_required">WebDAVベースURLを入力してください</string>
+    <string name="toast_webdav_directory_created">BiBi Keyboard ディレクトリが作成されました</string>
+
+    <string name="toast_export_success">エクスポート：%1$s</string>
+    <string name="toast_export_failed">エクスポート失敗</string>
+    <string name="toast_import_success">正常にインポートして適用しました</string>
+    <string name="toast_import_failed">インポート失敗または形式が正しくありません</string>
+
+    <string name="tip_backup_contains_secrets">注意：バックアップにはキーと認証情報が含まれています。プライベートに保ってください。</string>
+</resources>

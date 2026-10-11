@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- エラーメッセージ関連文字列 - Error messages related strings -->
+
+    <!-- Errors (ASR engines) -->
+    <string name="error_record_permission_denied">録音権限が許可されていません</string>
+    <string name="error_audio_init_failed">録音初期化失敗</string>
+    <string name="error_audio_error">録音エラー：%1$s</string>
+    <string name="error_audio_empty">空の音声</string>
+    <string name="error_audio_empty_skipped">空の音声として判定されたため、文字起こしをスキップしました</string>
+    <string name="error_missing_gemini_key">Gemini APIキーが設定されていません</string>
+    <string name="error_missing_dashscope_key">DashScope APIキーが設定されていません</string>
+    <string name="error_missing_siliconflow_key">SiliconFlow APIキーが設定されていません</string>
+    <string name="error_missing_eleven_key">ElevenLabs APIキーが設定されていません</string>
+    <string name="error_missing_soniox_key">Soniox APIキーが設定されていません</string>
+    <string name="error_missing_stepaudio_key">StepFun APIキーが設定されていません</string>
+    <string name="error_missing_openrouter_key">OpenRouter APIキーが設定されていません</string>
+    <string name="error_missing_mimo_key">MiMo APIキーが設定されていません</string>
+    <string name="error_request_failed_http">認識リクエスト失敗：HTTP %1$d%2$s</string>
+    <string name="error_asr_request_failed_http">ASRリクエスト失敗：HTTP %1$d%2$s</string>
+    <string name="error_dash_getpolicy_failed_http">getPolicy失敗：HTTP %1$d%2$s</string>
+    <string name="error_dash_no_data">getPolicyレスポンスにデータがありません</string>
+    <string name="error_dash_missing_upload_host">getPolicyレスポンスにupload_hostがありません</string>
+    <string name="error_oss_upload_failed_http">OSSアップロード失敗：%1$d%2$s</string>
+    <string name="error_asr_empty_result">空のASR結果</string>
+    <string name="error_asr_timeout">認識がタイムアウトしました。しばらくしてから再試行してください。</string>
+    <string name="error_recognize_failed_with_reason">認識失敗：%1$s</string>
+    <string name="error_dashscope_unsupported_model">サポートされていない DashScope ASR モデル：%1$s</string>
+    <string name="error_local_model_integrity_failed">ローカルモデルファイルの整合性チェックに失敗しました：%1$s。モデルを削除して再ダウンロードまたは再インポートしてください。</string>
+    <string name="error_model_download_incomplete">ダウンロードが完了していません。再試行して続きから取得してください。</string>
+    <string name="error_model_package_verify_failed">ダウンロードしたパッケージの検証に失敗しました。再ダウンロードしてください。</string>
+    <string name="error_model_download_cancelled">ダウンロードをキャンセルしました</string>
+
+    <!-- User-facing ASR error toasts (floating + keyboard) -->
+    <string name="asr_error_empty_result">音声が認識されませんでした。もう一度お試しください。</string>
+    <string name="asr_error_network_unavailable">ネットワーク接続失敗。接続を確認して再試行してください。</string>
+    <string name="asr_error_network_handshake">接続ハンドシェイク失敗。もう一度お試しいただくか、ネットワークを切り替えてください。</string>
+    <string name="asr_error_mic_permission_denied">マイク権限が必要です。設定で有効にしてください。</string>
+    <string name="asr_error_mic_in_use">マイクが他のアプリで使用されています。後でもう一度お試しください。</string>
+    <string name="asr_error_auth_invalid">認証失敗。認証情報が無効または期限切れです。設定で更新してください。</string>
+    <string name="asr_error_auth_forbidden">禁止されています。サービス権限を確認してください。</string>
+
+    <string name="error_auto_copied">エラーメッセージを自動コピーしました</string>
+</resources>
