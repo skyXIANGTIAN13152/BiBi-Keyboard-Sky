@@ -23,6 +23,13 @@
 2. 新用户按应用引导启用语音输入法并授予麦克风权限。
 3. 使用本地识别时，在应用中下载对应模型；APK 不附带大型语音识别模型。使用云端服务时，自行配置服务与 API 凭证。
 
+GitHub 会自动简化包含中文的附件文件名，因此提供两种下载：
+
+- **直接安装 APK**：`SaySomething-Sky-Wuji-4.4.5-sky.1-arm64.apk`，安装后应用名称为 **说点啥(Sky无极君特供版)**。
+- **保留中文安装包名称的 ZIP**：`SaySomething-Sky-Wuji-4.4.5-sky.1-arm64.zip`，解压后得到 **说点啥(Sky无极君特供版).apk**。
+
+两种下载包含同一个已签名安装包，任选一种即可。
+
 应用 ID 为 `com.brycewg.asrkb.cherry`，沿用此前 BiBi Cherry 个人版的应用 ID 与签名，可以覆盖更新该个人版并保留数据。它与原版 `com.brycewg.asrkb` 独立安装。
 
 本改版通过本仓库的 **Releases** 手动更新，已关闭原版自动更新源，避免安装到其他发行版。应用“关于”页的 **Download Sky Edition Updates** 可打开下载入口。
@@ -44,7 +51,7 @@
 ./gradlew :app:assembleDebug -PabiFilters=arm64-v8a
 ```
 
-Windows 使用 `gradlew.bat`。发布构建使用 `:app:assembleRelease`，通过 `KEYSTORE_FILE`、`KEYSTORE_PASSWORD`、`KEY_ALIAS` 和 `KEY_PASSWORD` 环境变量指定自己的签名。不要提交签名文件或密码。官方提供的本改版发布包使用维护者持续保管的签名，其他人自行签名的 APK 不能直接覆盖它。
+Windows 使用 `gradlew.bat`。发布构建使用 `:app:assembleRelease`，通过 `KEYSTORE_FILE`、`KEYSTORE_PASSWORD`、`KEY_ALIAS` 和 `KEY_PASSWORD` 环境变量指定自己的签名。不要提交签名文件或密码。本仓库提供的发布包使用维护者持续保管的签名，其他人自行签名的 APK 不能直接覆盖它。
 
 默认不设置 `SF_FREE_API_KEY` 与 `POCKETBASE_BASE_URL`。仓库包含构建所需的上游 sherpa-onnx AAR；大型 ASR 模型由应用按需下载。
 

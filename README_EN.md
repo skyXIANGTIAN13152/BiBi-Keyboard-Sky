@@ -10,4 +10,6 @@ Changes include a sculpted Cherry Ivory keyboard, English controls, a BACK label
 
 Version: **4.4.5-sky.1 (176)**. APK: ARM64, Android 8.0+. Package: `com.brycewg.asrkb.cherry`, retaining the earlier personal build identity and signing key. It installs separately from the upstream package. Updates are available manually from this repository; the upstream automatic updater is disabled for this distribution.
 
+GitHub normalizes non-ASCII attachment filenames. Install `SaySomething-Sky-Wuji-4.4.5-sky.1-arm64.apk` directly, or download `SaySomething-Sky-Wuji-4.4.5-sky.1-arm64.zip` to extract the exact filename **说点啥(Sky无极君特供版).apk**. Both contain the same signed APK and display the full Chinese app name after installation.
+
 No private credentials, recordings, transcripts, signing keys or large ASR models are shipped in this repository. Models can be downloaded in the app; cloud services require the user's own setup. Build with JDK 21, Gradle wrapper 9.4.1, Android SDK 37 and Build Tools 36.0.0. See the Chinese README for commands and signing environment variables.
