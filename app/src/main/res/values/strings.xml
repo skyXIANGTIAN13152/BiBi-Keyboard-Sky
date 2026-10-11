@@ -1,8 +1,9 @@
+<!-- Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md. -->
 <resources>
   <!-- ============================================== -->
   <!-- Basic Information -->
   <!-- ============================================== -->
-  <string name="app_name">BiBi Keyboard</string>
+  <string name="app_name">说点啥(Sky无极君特供版)</string>
   <string name="fxliang_fcitx_voice_input_provider_label">BiBi Keyboard Link</string>
   <!-- PocketBase 统计服务地址（渠道可覆盖）；为空则不上报 -->
   <string name="pocketbase_base_url" translatable="false"></string>
@@ -12,7 +13,7 @@
   <!-- ============================================== -->
   <!-- Keyboard Status Information -->
   <!-- ============================================== -->
-  <string name="status_idle">Ready</string>
+  <string name="status_idle">READY</string>
   <string name="status_listening">Listening…</string>
   <string name="status_recognizing">Recognizing…</string>
   <string name="status_backup_asr_used">Used backup engine result</string>

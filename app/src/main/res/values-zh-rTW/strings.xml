@@ -1,8 +1,9 @@
+<!-- Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md. -->
 <resources>
   <!-- ============================================== -->
   <!-- 基礎資訊 -->
   <!-- ============================================== -->
-  <string name="app_name">說點啥</string>
+  <string name="app_name">说点啥(Sky无极君特供版)</string>
   <string name="fxliang_fcitx_voice_input_provider_label">說點啥聯動</string>
 
   <string name="qs_tile_ime_picker">切換輸入法</string>

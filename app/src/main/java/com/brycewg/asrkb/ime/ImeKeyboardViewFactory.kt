@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * 输入法主键盘 View 树工厂，替代旧 keyboard_view.xml 主布局。
  *
@@ -35,6 +36,9 @@ import com.brycewg.asrkb.ime.layout.KeyboardLayoutPanel
 import com.brycewg.asrkb.ime.layout.KeyboardLayoutViewTags
 import com.brycewg.asrkb.store.Prefs
 import com.brycewg.asrkb.ui.BibiViewThemes
+import com.brycewg.asrkb.ui.CherryKeyDrawable
+import com.brycewg.asrkb.ui.widgets.CherryImageButton
+import com.brycewg.asrkb.ui.widgets.CherryTextButton
 import com.brycewg.asrkb.ui.widgets.PunctKeyView
 import com.brycewg.asrkb.ui.widgets.WaveformView
 
@@ -165,6 +169,7 @@ internal object ImeKeyboardViewFactory {
         root.findViewById<TextView>(R.id.txtAiEditInfo)?.setTextColor(theme.panelContent)
         root.findViewById<TextView>(R.id.clip_txtCount)?.setTextColor(theme.panelContent)
         root.findViewById<TextView>(R.id.asr_hist_txtCount)?.setTextColor(theme.panelContent)
+        applyCherryKeyCaps(root)
     }
 
     fun applyKeyboardPanelBackground(root: View, prefs: Prefs, floating: Boolean) {
@@ -183,7 +188,8 @@ internal object ImeKeyboardViewFactory {
             } else {
                 0f
             }
-            setColor(theme.keyboardBackground)
+            orientation = GradientDrawable.Orientation.TL_BR
+            colors = intArrayOf(0xFFDBD7D2.toInt(), 0xFFBFB9B2.toInt())
         }
         panel.clipToOutline = floating
     }
@@ -486,7 +492,7 @@ internal object ImeKeyboardViewFactory {
         }
     }
 
-    private fun createDockButton(context: Context, buttonId: Int, contentDescriptionRes: Int, iconRes: Int): ImageButton = ImageButton(context).apply {
+    private fun createDockButton(context: Context, buttonId: Int, contentDescriptionRes: Int, iconRes: Int): ImageButton = CherryImageButton(context).apply {
         id = buttonId
         visibility = View.GONE
         contentDescription = context.getString(contentDescriptionRes)
@@ -511,6 +517,7 @@ internal object ImeKeyboardViewFactory {
         KeyboardLayoutViewTags.markBlockView(view, panel, def, dynamic)
         if (dynamic) {
             view.visibility = View.GONE
+            applyCherryKeyCap(view)
         }
         return view
     }
@@ -736,7 +743,7 @@ internal object ImeKeyboardViewFactory {
         id: Int,
         contentDescriptionRes: Int,
         imageRes: Int? = null
-    ): ImageButton = ImageButton(context).apply {
+    ): ImageButton = CherryImageButton(context).apply {
         this.id = id
         contentDescription = context.getString(contentDescriptionRes)
         layoutParams = ConstraintLayout.LayoutParams(dp(context, 40), dp(context, 40))
@@ -760,7 +767,7 @@ internal object ImeKeyboardViewFactory {
         imageRes: Int,
         weight: Float,
         marginEndDp: Int
-    ): ImageButton = ImageButton(context).apply {
+    ): ImageButton = CherryImageButton(context).apply {
         this.id = id
         tag = "key40"
         contentDescription = context.getString(contentDescriptionRes)
@@ -780,7 +787,7 @@ internal object ImeKeyboardViewFactory {
         }
     }
 
-    private fun micButton(context: Context, id: Int, contentDescriptionRes: Int): ImageButton = ImageButton(context).apply {
+    private fun micButton(context: Context, id: Int, contentDescriptionRes: Int): ImageButton = CherryImageButton(context).apply {
         this.id = id
         contentDescription = context.getString(contentDescriptionRes)
         setImageResource(R.drawable.microphone)
@@ -856,7 +863,7 @@ internal object ImeKeyboardViewFactory {
         )
     }
 
-    private fun keyButton(context: Context, id: Int, contentDescriptionRes: Int): Button = Button(context).apply {
+    private fun keyButton(context: Context, id: Int, contentDescriptionRes: Int): Button = CherryTextButton(context).apply {
         this.id = id
         contentDescription = context.getString(contentDescriptionRes)
         background = ContextCompat.getDrawable(context, R.drawable.bg_key_rect_button)
@@ -886,7 +893,8 @@ internal object ImeKeyboardViewFactory {
         isFocusable = true
         gravity = Gravity.CENTER
         setTextColor(UiColors.get(context, UiColorTokens.kbdKeyFg))
-        setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
+        setTextSize(TypedValue.COMPLEX_UNIT_SP, 11.5f)
+        setPadding(dp(context, 7), 0, dp(context, 7), dp(context, 12))
         layoutParams = ConstraintLayout.LayoutParams(dp(context, 86), dp(context, 86))
     }
 
@@ -977,6 +985,52 @@ internal object ImeKeyboardViewFactory {
             is Button -> applyRectKeyTheme(theme)
             is TextView -> applyRectKeyTheme(theme)
         }
+    }
+
+    private fun applyCherryKeyCaps(root: View) {
+        val ids = (iconKeyIds.toList() + rectKeyIds.toList() + listOf(
+            R.id.btnPunct2, R.id.btnPunct3, R.id.btnMic, R.id.btnAiPanelMic,
+            R.id.np_btnBackspace, R.id.np_btnEnter, R.id.np_key_space
+        )).distinct()
+        ids.forEach { id -> root.findViewById<View>(id)?.let(::applyCherryKeyCap) }
+        fun visit(view: View) {
+            if (view.tag == "key40" || KeyboardLayoutViewTags.isDynamicBlockView(view)) applyCherryKeyCap(view)
+            if (view is ViewGroup) for (i in 0 until view.childCount) visit(view.getChildAt(i))
+        }
+        visit(root)
+        root.findViewById<TextView>(R.id.txtStatusText)?.apply {
+            translationY = -dp(context, 6).toFloat()
+            setTextSize(TypedValue.COMPLEX_UNIT_SP, 11f)
+            letterSpacing = 0.1f
+        }
+        root.findViewById<TextView>(R.id.txtAiEditInfo)?.translationY = -dp(root.context, 6).toFloat()
+        root.findViewById<WaveformView>(R.id.waveformView)?.apply {
+            translationY = -dp(context, 5).toFloat()
+        }
+    }
+
+    private fun applyCherryKeyCap(view: View) {
+        val microphone = view.id == R.id.btnMic || view.id == R.id.btnAiPanelMic
+        val red = microphone || view.id in listOf(R.id.btnBackspace, R.id.btnEnter, R.id.np_btnBackspace, R.id.np_btnEnter)
+        view.backgroundTintList = null
+        view.foreground = null
+        view.clipToOutline = false
+        view.stateListAnimator = null
+        view.elevation = 0f
+        view.translationZ = 0f
+        view.background = CherryKeyDrawable(view.context, red,
+            legend = if(view.id == R.id.btnAiEdit) "BACK" else "",
+            watermark = view.id == R.id.btnExtCenter2,
+            microphone = microphone)
+        val fg = if(red) 0xFFFFF8EE.toInt() else 0xFF92182C.toInt()
+        if(view is ImageButton) view.imageTintList = ColorStateList.valueOf(fg)
+        if(view is TextView) view.setTextColor(fg)
+        if(view is PunctKeyView) view.setKeyTextColor(fg)
+        if(view.id == R.id.btnExtCenter2 && view is TextView) {
+            view.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12f)
+            view.letterSpacing = 0.1f
+        }
+        if(view.id == R.id.btnAiEdit) view.contentDescription = "BACK — Return to typing keyboard"
     }
 
     private val iconKeyIds: IntArray = (

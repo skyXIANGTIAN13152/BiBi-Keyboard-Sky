@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * IME 标点组合按键绘制视图。
  *
@@ -79,7 +80,7 @@ class PunctKeyView @JvmOverloads constructor(
 
         // 计算主符号边界并进行中心校正（使用字形边界而非 advance 宽度）
         val cx = w / 2f
-        val cy = h / 2f
+        val cy = h / 2f - dp(5f) + if(isPressed) dp(3f) else 0f
 
         val prim = primaryText
         if (prim.isNotEmpty()) {
@@ -98,7 +99,7 @@ class PunctKeyView @JvmOverloads constructor(
         val sec = secondaryText
         if (sec.isNotEmpty()) {
             secondaryPaint.getTextBounds(sec, 0, sec.length, secondaryBounds)
-            val topMargin = dp(2f)
+            val topMargin = dp(5f) + if(isPressed) dp(3f) else 0f
             val fm2 = secondaryPaint.fontMetrics
             val y = topMargin - fm2.ascent // 顶部对齐：y 使文本顶部接近 topMargin
             val textCenterXOffset2 = (secondaryBounds.left + secondaryBounds.right) / 2f

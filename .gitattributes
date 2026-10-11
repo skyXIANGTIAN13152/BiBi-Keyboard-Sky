@@ -1,3 +1,8 @@
 # Ensure Gradle wrapper script uses LF so it works on Linux/macOS (avoids `/bin/sh^M`).
 gradlew text eol=lf
 
+
+# Modified for Sky Wuji Edition, 2026-10-11: preserve license and notice bytes.
+LICENSE -text
+NOTICE -text
+app/src/main/assets/licenses/* -text

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md. -->
 <resources>
     <!-- 是否启用内置更新检查/下载逻辑（主渠道默认开启） -->
-    <bool name="enable_update_checker">true</bool>
+    <bool name="enable_update_checker">false</bool>
 </resources>
 

@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * Compose 关于页。
  *
@@ -51,7 +52,6 @@ fun AboutSettingsScreen(
     val prefs = remember(appContext) { Prefs(appContext) }
     val aboutInfo = remember(appContext) { buildAboutInfo(context) }
     val latestExitInfo = remember(appContext) { buildLatestExitInfo(context) }
-    var autoUpdateCheck by remember { mutableStateOf(prefs.autoUpdateCheckEnabled) }
     var debugRecording by remember { mutableStateOf(DebugLogManager.isRecording()) }
     var licensesDialog by remember { mutableStateOf<SettingsLongTextDialogState?>(null) }
 
@@ -81,14 +81,11 @@ fun AboutSettingsScreen(
                     contentPadding = PaddingValues(0.dp)
                 ) {
                     SettingsPreferenceGroup(
-                        SettingsEntry.Switch(
-                            id = "about_auto_update_check",
-                            titleRes = R.string.about_auto_update_check,
-                            checked = autoUpdateCheck,
-                            onCheckedChange = {
-                                autoUpdateCheck = it
-                                prefs.autoUpdateCheckEnabled = it
-                            }
+                        SettingsEntry.Action(
+                            id = "sky_download_updates",
+                            titleRes = R.string.sky_download_updates,
+                            icon = Icons.Rounded.OpenInBrowser,
+                            onClick = { actions.openUrl(R.string.sky_releases_url) }
                         ),
                         SettingsEntry.Action(
                             id = "about_project",

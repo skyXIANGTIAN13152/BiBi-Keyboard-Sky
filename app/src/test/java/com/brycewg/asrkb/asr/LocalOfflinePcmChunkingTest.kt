@@ -1,8 +1,11 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 package com.brycewg.asrkb.asr
 
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertSame
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class LocalOfflinePcmChunkingTest {
@@ -81,11 +84,42 @@ class LocalOfflinePcmChunkingTest {
         splitLocalOfflinePcm16(ByteArray(3), SAMPLE_RATE)
     }
 
+    @Test
+    fun funAsrNanoLongUtterancesKeepEverySampleWithinModelBudget() {
+        // Includes the two failing device recordings, the generic 24s chunk,
+        // and a two-minute utterance with a partial final chunk.
+        for (durationMs in listOf(8_000, 8_001, 18_400, 18_600, 24_000, 121_337)) {
+            val pcm = ByteArray(bytesForMs(durationMs)) { (it % 251).toByte() }
+            val chunks = splitLocalOfflinePcm16(
+                pcm, SAMPLE_RATE,
+                maxChunkMs = FUNASR_NANO_MAX_CHUNK_MS,
+                minChunkMs = FUNASR_NANO_MIN_CHUNK_MS
+            )
+            assertTrue(chunks.all { it.isNotEmpty() && it.size <= bytesForMs(8_000) && it.size % 2 == 0 })
+            assertArrayEquals(pcm, chunks.fold(ByteArray(0)) { all, chunk -> all + chunk })
+        }
+    }
+
+    @Test
+    fun funAsrNanoShorterBudgetAlsoTriggersSilenceAnalysis() {
+        val pcm = ByteArray(bytesForMs(18_400))
+        assertFalse(localOfflinePcmNeedsChunking(pcm, SAMPLE_RATE))
+        assertTrue(localOfflinePcmNeedsChunking(pcm, SAMPLE_RATE, FUNASR_NANO_MAX_CHUNK_MS))
+        val chunks = splitLocalOfflinePcm16(
+            pcm, SAMPLE_RATE,
+            maxChunkMs = FUNASR_NANO_MAX_CHUNK_MS,
+            silenceRanges = listOf(byteRange(6_200, 6_600), byteRange(13_000, 13_400)),
+            minChunkMs = FUNASR_NANO_MIN_CHUNK_MS
+        )
+        assertEquals(listOf(6_400, 6_800, 5_200).map(::bytesForMs), chunks.map { it.size })
+        assertArrayEquals(pcm, chunks.fold(ByteArray(0)) { all, chunk -> all + chunk })
+    }
+
     private companion object {
         const val SAMPLE_RATE = 16_000
         const val HARD_CHUNK_BYTES = SAMPLE_RATE * 2 * 24
 
-        fun bytesForMs(durationMs: Int): Int = SAMPLE_RATE * 2 * durationMs / 1_000
+        fun bytesForMs(durationMs: Int): Int = (SAMPLE_RATE.toLong() * 2 * durationMs / 1_000).toInt()
 
         fun byteRange(startMs: Int, endMs: Int): IntRange = bytesForMs(startMs) until bytesForMs(endMs)
     }

@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 package com.brycewg.asrkb.asr
 
 import android.content.Context
@@ -11,6 +12,16 @@ import java.io.File
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.sync.withLock
+
+// The shipped Nano model shares a 512-token KV cache between prompt, audio and output.
+// A 24-second generic offline chunk can exhaust it and silently truncate transcription,
+// especially with hotwords in the prompt. Leave room for both hotwords and decoded text.
+internal const val FUNASR_NANO_MAX_CHUNK_MS = 8_000
+internal const val FUNASR_NANO_MIN_CHUNK_MS = 6_000
+
+// Exactly-zero PCM cannot contain speech, but Nano may hallucinate on it.
+// Do not use an energy threshold: retain even the quietest nonzero samples.
+internal fun hasFunAsrNanoAudioSignal(pcm: ByteArray): Boolean = pcm.any { it != 0.toByte() }
 
 /**
  * 本地 FunASR Nano（通过 sherpa-onnx）非流式文件识别引擎。
@@ -131,7 +142,11 @@ class FunAsrNanoFileAsrEngine(
                 return
             }
 
-            val chunks = splitLocalOfflinePcm16WithVad(context, prefs, pcm, sampleRate)
+            val chunks = splitLocalOfflinePcm16WithVad(
+                context, prefs, pcm, sampleRate,
+                maxChunkMs = FUNASR_NANO_MAX_CHUNK_MS,
+                minChunkMs = FUNASR_NANO_MIN_CHUNK_MS
+            )
             if (chunks.isEmpty()) {
                 reportDuration()
                 val msg = context.getString(R.string.error_audio_empty)
@@ -176,6 +191,7 @@ class FunAsrNanoFileAsrEngine(
             }
             val texts = ArrayList<String>(chunks.size)
             for (chunk in chunks) {
+                if (!hasFunAsrNanoAudioSignal(chunk)) continue
                 val text = manager.decodeOffline(
                     assetManager = null,
                     encoderAdaptor = resolvedModel.encoderAdaptorPath,
@@ -205,7 +221,8 @@ class FunAsrNanoFileAsrEngine(
                         notifyLoadDone()
                     }
                 )
-                if (!text.isNullOrBlank()) texts += text.trim()
+                val transcript = cleanFunAsrNanoText(text.orEmpty())
+                if (transcript.isNotBlank()) texts += transcript
             }
             val text = joinNonStreamingChunkTexts(texts)
 

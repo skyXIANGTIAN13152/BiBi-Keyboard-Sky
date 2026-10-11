@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * 自定义键盘布局的默认值、JSON 读写与旧扩展按钮迁移。
  *
@@ -144,7 +145,7 @@ object KeyboardLayoutStore {
         BlockInstance("status", BlockPlacement(2f, 0f, 3f, 1f)),
         BlockInstance("ai_edit", BlockPlacement(0f, 1f, 1f, 1f)),
         BlockInstance("postproc", BlockPlacement(1f, 1f, 1f, 1f)),
-        BlockInstance("mic", BlockPlacement(2.5f, 1f, 2f, 2f)),
+        BlockInstance("mic", BlockPlacement(2f, 1f, 3f, 2f)),
         BlockInstance("clipboard", BlockPlacement(5f, 1f, 1f, 1f)),
         BlockInstance("backspace", BlockPlacement(6f, 1f, 1f, 1f)),
         BlockInstance("settings", BlockPlacement(0f, 2f, 1f, 1f)),

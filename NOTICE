@@ -502,3 +502,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 ================================================================================
+
+================================================================================
+Sky Wuji modified distribution / 说点啥(Sky无极君特供版)
+Modified on 2026-10-11 by Sky无极君 (skyXIANGTIAN13152).
+Based on BiBi Keyboard (说点啥) v4.4.5 by BryceWG.
+Upstream: https://github.com/BryceWG/BiBi-Keyboard
+Base commit: 12eb5c31ec72f8aff34c53eccbcca1f605e54a41
+Modified distribution: https://github.com/skyXIANGTIAN13152/BiBi-Keyboard-Sky
+Changes: Cherry Ivory sculpted keyboard theme, English controls, BACK label,
+SKY.无极 watermark, separate application ID, <=8-second FunASR Nano decoding
+chunks, /sil output cleanup, exactly-zero PCM suppression, and edition branding.
+This is an unofficial modified distribution, not an official upstream release.
+The original copyright and all third-party notices above remain in effect.
+See MODIFICATIONS.md for the complete modified-file inventory.

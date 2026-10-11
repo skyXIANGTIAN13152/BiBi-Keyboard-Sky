@@ -1,3 +1,4 @@
+<!-- Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md. -->
 <resources>
     <!-- Keyboard related strings -->
 
@@ -36,7 +37,7 @@
     <string name="cd_cursor_right">Move cursor right</string>
     <string name="cd_numpad">Number pad</string>
     <string name="cd_numpad_back">Back to edit panel</string>
-    <string name="cd_space">Space</string>
+    <string name="cd_space">SPACE</string>
     <string name="cd_punct_lang_toggle">Toggle C/E punctuation</string>
     <string name="cd_select_toggle">Toggle selection mode</string>
     <string name="cd_select_all">Select all</string>

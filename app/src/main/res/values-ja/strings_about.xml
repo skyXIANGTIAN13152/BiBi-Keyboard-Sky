@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md. -->
 <resources>
     <!-- 関連情報ページ文字列 - About page related strings -->
 
@@ -9,13 +10,13 @@
     <string name="about_version">バージョン：%1$s</string>
     <string name="about_package">パッケージ：%1$s</string>
     <string name="about_auto_update_check">更新を自動チェック</string>
-    <string name="about_open_github">プロジェクトページを開く</string>
+    <string name="about_open_github">Original Project by BryceWG</string>
     <string name="about_project_url">https://github.com/BryceWG/BiBi-Keyboard</string>
     <string name="about_open_website">公式サイトを開く</string>
     <string name="about_website_url">https://bibi.brycewg.com</string>
     <string name="about_open_docs">ドキュメントを開く</string>
     <string name="about_docs_url">https://bibidocs.brycewg.com</string>
-    <string name="about_desc">マルチベンダーASRとLLM後処理付きの軽量音声入力IME</string>
+    <string name="about_desc">Sky Wuji Edition, based on BiBi Keyboard (Shuo Dian Sha) v4.4.5 by BryceWG. Unofficial modified distribution under Apache 2.0. Includes the Cherry Ivory theme and local FunASR Nano fixes. Original copyright and third-party notices are retained.</string>
 
     <string name="label_asr_total_chars">音声認識からの総文字数：%1$d</string>
 

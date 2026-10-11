@@ -47,3 +47,20 @@ docs/.vitepress/cache
 app/.cxx/Debug/
 # CocoIndex Code (ccc)
 /.cocoindex_code/
+
+# Sky edition local-only files (never publish signing material or device data).
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+*.apk
+*.aab
+*.pcm
+*.wav
+*.mp3
+*-private.*
+signing/
+release-artifacts/
+.env
+.env.*

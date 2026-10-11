@@ -1,0 +1,5 @@
+<!-- Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md. -->
+<resources>
+    <string name="sky_download_updates">Download Sky Edition Updates</string>
+    <string name="sky_releases_url">https://github.com/skyXIANGTIAN13152/BiBi-Keyboard-Sky/releases</string>
+</resources>

@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * 设置页更新检查与下载流程协调器。
  *
@@ -108,11 +109,11 @@ internal class SettingsUpdateCoordinator(
     }
 
     fun openChangelogHistory() {
-        openUrl("https://bibi.brycewg.com/changelog.html")
+        openUrl("https://github.com/skyXIANGTIAN13152/BiBi-Keyboard-Sky/releases")
     }
 
     fun openManualReleasePage() {
-        openUrl("https://github.com/BryceWG/BiBi-Keyboard/releases")
+        openUrl("https://github.com/skyXIANGTIAN13152/BiBi-Keyboard-Sky/releases")
     }
 
     private fun maybeResumePendingApkInstall() {
@@ -201,7 +202,7 @@ internal class SettingsUpdateCoordinator(
         val base = if (baseEnd > 0) {
             originalUrl.substring(0, baseEnd)
         } else {
-            "https://github.com/BryceWG/BiBi-Keyboard"
+            "https://github.com/skyXIANGTIAN13152/BiBi-Keyboard-Sky"
         }
         val tag = "v$version"
         return UpdateApkNaming.releaseDownloadCandidates(version, selectUpdateApkAbi()).map { apkName ->

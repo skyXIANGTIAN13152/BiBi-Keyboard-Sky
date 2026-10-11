@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md. -->
 <resources>
   <!-- ============================================== -->
   <!-- 基础信息 -->
   <!-- ============================================== -->
-  <string name="app_name">BiBi Keyboard</string>
+  <string name="app_name">说点啥(Sky无极君特供版)</string>
   <string name="fxliang_fcitx_voice_input_provider_label">BiBi Keyboard 連携</string>
 
   <string name="qs_tile_ime_picker">入力方法の切り替え</string>

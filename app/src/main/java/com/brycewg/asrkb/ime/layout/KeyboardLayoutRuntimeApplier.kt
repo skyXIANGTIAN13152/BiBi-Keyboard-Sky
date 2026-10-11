@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * 将自定义键盘布局应用到 IME View 树。
  *
@@ -59,7 +60,7 @@ object KeyboardLayoutRuntimeApplier {
         val width = resolveFrameWidth(frame, root) ?: return false
         val margin = dp(root, KEY_MARGIN_DP * scale)
         val cellWidth = width.toFloat() / layout.gridSize.cols.toFloat()
-        val cellHeight = cellWidth * scale
+        val cellHeight = cellWidth * scale * 1.28f
         val targetHeight = (cellHeight * layout.gridSize.rows).toInt()
         var changed = setSize(frame, ViewGroup.LayoutParams.MATCH_PARENT, targetHeight)
         changed = resetFrameTopMargin(frame) || changed
@@ -212,7 +213,7 @@ object KeyboardLayoutRuntimeApplier {
             val micBounds = scaledMicBounds(0, 0, width, height)
             applyMicButtonSizing(
                 button = view.findViewById(R.id.btnMic),
-                width = micBounds.width,
+                width = (micBounds.width * 0.84f).toInt(),
                 height = micBounds.height
             ) ||
                 centered

@@ -1,0 +1,11 @@
+{
+  "version": "4.4.5",
+  "version_code": 173,
+  "download_url": "https://github.com/BryceWG/BiBi-Keyboard/releases/tag/v4.4.5",
+  "release_notes": "### 新增功能\n\n- **深度思考字数阈值**：深度思考改为按识别字数启用。为 0 时始终开启，拉到上限则始终关闭，中间值仅在字数超过阈值时启用\n- **Android 13 无障碍写入**：悬浮球可选使用新版无障碍 IME API 插入文字，终端和编辑器等场景更稳；开启后会关闭流式预览与写入兼容优化\n\n### 改进优化\n\n- **[Pro] 光标滑动**：滑动更跟手，多行上下移动更准；AI 编辑面板也可进入该模式\n\n### 问题修复\n\n- **识别历史丢失**：修复某些场景下识别记录丢失的问题\n- **[Pro] 光标滑动**：修复动态键盘布局下无法进入滑动模式、滑到文本首尾时光标消失的问题",
+  "release_notes_en": "### New Features\n\n- **Deep Thinking Threshold**: Deep thinking now turns on based on recognized length. 0 always enables it; the maximum never enables it; values in between enable it when the length exceeds the threshold\n- **Android 13 Accessibility Insert**: Optional new Accessibility IME API for the floating ball, more reliable in terminals and editors. Turns off streaming preview and write-compatibility optimization\n\n### Improvements\n\n- **[Pro] Cursor Glide**: Smoother tracking and more accurate vertical movement in multi-line fields; also available from the AI edit panel\n\n### Bug Fixes\n\n- **History Loss on IME Switch**: Fixed recognition history loss in certain scenarios\n- **[Pro] Cursor Glide**: Fix entering the mode on dynamic keyboard layouts; sliding to the start or end of text no longer makes the cursor disappear",
+  "important_notice": "1. 4.0.0 版本将迎来大量重构和众多更新，欢迎下载尝鲜\n2. BiBi Keyboard Pro版本已上架，欢迎在3.8.6后版本-关于页面中了解详情。\n3. 官方网站和使用文档均已上线,网址分别为: bibi.brycewg.com bibidocs.brycewg.com",
+  "notice_level": "info",
+  "min_supported_version": "2.6.5",
+  "update_time": "2026-09-15T13:43:32Z"
+}

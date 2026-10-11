@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * IME 面板渲染器。
  *
@@ -11,6 +12,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import com.brycewg.asrkb.R
+import com.brycewg.asrkb.ui.CherryKeyDrawable
 import com.brycewg.asrkb.store.Prefs
 import com.brycewg.asrkb.store.debug.DebugLogManager
 import com.brycewg.asrkb.store.debug.StreamingPreviewDiag
@@ -56,6 +58,14 @@ internal class ImeUiRenderer(
         if (forceNextStructuralRender || lastRenderMode != renderMode) {
             forceNextStructuralRender = false
             lastRenderMode = renderMode
+            val caption = when (state) {
+                is KeyboardState.Listening, is KeyboardState.AiEditListening -> "TAP TO STOP"
+                is KeyboardState.Processing, is KeyboardState.AiProcessing, is KeyboardState.AiEditProcessing -> "WORKING"
+                else -> if (prefs.micTapToggleEnabled) "TAP TO TALK" else "HOLD TO TALK"
+            }
+            listOf(views.btnMic, views.btnAiPanelMic).forEach { mic ->
+                (mic?.background as? CherryKeyDrawable)?.micCaption = caption
+            }
             when (state) {
                 is KeyboardState.Idle -> updateUiIdle()
                 is KeyboardState.Listening -> updateUiListening(state)

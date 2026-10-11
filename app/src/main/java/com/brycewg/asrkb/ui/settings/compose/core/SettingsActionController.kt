@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * 设置页系统动作统一入口。
  *
@@ -131,6 +132,10 @@ class SettingsActionController(
 
     fun buildLicensesText(): String? = try {
         buildString {
+            append(activity.readAssetFile("licenses/BiBi-Keyboard-NOTICE"))
+            append("\n\n")
+            append(activity.readAssetFile("licenses/BiBi-Keyboard-LICENSE"))
+            append("\n\n")
             append(activity.readAssetFile("licenses/sherpa-onnx-LICENSE"))
             append("\n\n")
             append("=".repeat(80))

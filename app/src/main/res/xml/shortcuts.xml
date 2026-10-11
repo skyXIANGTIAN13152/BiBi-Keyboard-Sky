@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md. -->
 <!-- Static app shortcuts for common settings destinations. -->
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
@@ -9,7 +10,7 @@
         android:shortcutLongLabel="@string/title_asr_settings">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.brycewg.asrkb"
+            android:targetPackage="com.brycewg.asrkb.cherry"
             android:targetClass="com.brycewg.asrkb.ui.SettingsActivity">
             <extra
                 android:name="extra_initial_settings_route"
@@ -25,7 +26,7 @@
         android:shortcutLongLabel="@string/title_ai_settings">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.brycewg.asrkb"
+            android:targetPackage="com.brycewg.asrkb.cherry"
             android:targetClass="com.brycewg.asrkb.ui.SettingsActivity">
             <extra
                 android:name="extra_initial_settings_route"
@@ -41,7 +42,7 @@
         android:shortcutLongLabel="@string/title_asr_history">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.brycewg.asrkb"
+            android:targetPackage="com.brycewg.asrkb.cherry"
             android:targetClass="com.brycewg.asrkb.ui.SettingsActivity">
             <extra
                 android:name="extra_initial_settings_route"

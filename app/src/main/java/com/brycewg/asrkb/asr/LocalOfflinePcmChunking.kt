@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /** 本地离线模型的 PCM16 安全分段与静音切点选择。 */
 package com.brycewg.asrkb.asr
 
@@ -10,17 +11,19 @@ internal fun splitLocalOfflinePcm16(
     pcm: ByteArray,
     sampleRate: Int,
     maxChunkMs: Int = NON_STREAMING_MAX_CHUNK_MS,
-    silenceRanges: List<IntRange> = emptyList()
+    silenceRanges: List<IntRange> = emptyList(),
+    minChunkMs: Int = NON_STREAMING_MIN_CHUNK_MS
 ): List<ByteArray> {
     require(sampleRate > 0)
     require(maxChunkMs > 0)
+    require(minChunkMs > 0)
     require(pcm.size % PCM16_BYTES_PER_SAMPLE == 0) { "Incomplete PCM16 frame" }
     if (pcm.isEmpty()) return emptyList()
 
     val chunkBytes = (sampleRate.toLong() * PCM16_BYTES_PER_SAMPLE * maxChunkMs / 1_000L)
         .coerceAtMost(Int.MAX_VALUE.toLong()).toInt() and -PCM16_BYTES_PER_SAMPLE
     val minChunkBytes = (
-        sampleRate.toLong() * PCM16_BYTES_PER_SAMPLE * NON_STREAMING_MIN_CHUNK_MS / 1_000L
+        sampleRate.toLong() * PCM16_BYTES_PER_SAMPLE * minChunkMs / 1_000L
         ).coerceAtMost(chunkBytes.toLong()).toInt() and -PCM16_BYTES_PER_SAMPLE
     require(chunkBytes > 0)
     if (pcm.size <= chunkBytes) return listOf(pcm)
@@ -44,17 +47,23 @@ internal fun splitLocalOfflinePcm16(
     }
 }
 
-internal fun localOfflinePcmNeedsChunking(pcm: ByteArray, sampleRate: Int): Boolean = sampleRate > 0 &&
+internal fun localOfflinePcmNeedsChunking(
+    pcm: ByteArray,
+    sampleRate: Int,
+    maxChunkMs: Int = NON_STREAMING_MAX_CHUNK_MS
+): Boolean = sampleRate > 0 &&
     pcm.size.toLong() >
-    sampleRate.toLong() * PCM16_BYTES_PER_SAMPLE * NON_STREAMING_MAX_CHUNK_MS / 1_000L
+    sampleRate.toLong() * PCM16_BYTES_PER_SAMPLE * maxChunkMs / 1_000L
 
 internal fun splitLocalOfflinePcm16WithVad(
     context: Context,
     prefs: Prefs,
     pcm: ByteArray,
-    sampleRate: Int
+    sampleRate: Int,
+    maxChunkMs: Int = NON_STREAMING_MAX_CHUNK_MS,
+    minChunkMs: Int = NON_STREAMING_MIN_CHUNK_MS
 ): List<ByteArray> {
-    val silenceRanges = if (localOfflinePcmNeedsChunking(pcm, sampleRate)) {
+    val silenceRanges = if (localOfflinePcmNeedsChunking(pcm, sampleRate, maxChunkMs)) {
         RecordedAudioVoiceFilter.findSilenceRangesForLocalOfflineChunking(
             context = context,
             prefs = prefs,
@@ -64,7 +73,11 @@ internal fun splitLocalOfflinePcm16WithVad(
     } else {
         emptyList()
     }
-    return splitLocalOfflinePcm16(pcm, sampleRate, silenceRanges = silenceRanges)
+    return splitLocalOfflinePcm16(
+        pcm, sampleRate, maxChunkMs,
+        silenceRanges = silenceRanges,
+        minChunkMs = minChunkMs
+    )
 }
 
 private fun preferredSilenceCut(

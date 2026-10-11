@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * View 系 UI 的设置页主题桥接。
  *
@@ -49,7 +50,26 @@ internal data class BibiViewTheme(
 
 internal object BibiViewThemes {
 
-    fun resolve(context: Context, prefs: Prefs): BibiViewTheme {
+    fun resolve(context: Context, prefs: Prefs): BibiViewTheme = resolveOriginal(context, prefs).copy(
+        isDark = false,
+        keyboardBackground = 0xFFCCC6BE.toInt(),
+        keyBackground = 0xFFFFFEFA.toInt(),
+        keyContent = 0xFF92182C.toInt(),
+        panelBackground = 0xFFFFFEFA.toInt(),
+        panelContent = 0xFF5C4A43.toInt(),
+        panelSummary = 0xFF786860.toInt(),
+        primary = 0xFFB51E35.toInt(),
+        onPrimary = 0xFFFFF8EE.toInt(),
+        micContainer = 0xFFB51E35.toInt(),
+        micContent = 0xFFFFF8EE.toInt(),
+        floatingIcon = 0xFFB51E35.toInt(),
+        ripple = 0x2292182C,
+        iconKeyRadiusDp = 6f,
+        rectKeyRadiusDp = 6f,
+        menuItemBackground = 0xFFFFFEFA.toInt()
+    )
+
+    private fun resolveOriginal(context: Context, prefs: Prefs): BibiViewTheme {
         val isMiuix = prefs.settingsUiMode != Prefs.SETTINGS_UI_MODE_MATERIAL
         val isDark = resolveDarkMode(context, prefs)
         if (isMiuix) return miuixTheme(isDark)

@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * IME 面板布局缩放、悬浮键盘与 inset 协调器。
  *
@@ -332,7 +333,7 @@ internal class ImeLayoutController(
             val targetWidth: Int
             val targetHeight: Int
             if (groupWidth != null && groupHeight != null) {
-                targetWidth = scaledMicDimension(groupWidth)
+                targetWidth = (scaledMicDimension(groupWidth) * 0.84f).toInt()
                 targetHeight = scaledMicDimension(groupHeight)
             } else {
                 val fallbackSize = dp(80f * scale)

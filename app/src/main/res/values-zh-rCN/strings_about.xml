@@ -1,3 +1,4 @@
+<!-- Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md. -->
 <resources>
     <!-- 关于页面相关字符串 - About page related strings -->
 
@@ -8,13 +9,13 @@
     <string name="about_version">版本：%1$s</string>
     <string name="about_package">包名：%1$s</string>
     <string name="about_auto_update_check">自动检查更新</string>
-    <string name="about_open_github">查看项目主页</string>
+    <string name="about_open_github">Original Project by BryceWG</string>
     <string name="about_project_url">https://github.com/BryceWG/BiBi-Keyboard</string>
     <string name="about_open_website">查看项目官网</string>
     <string name="about_website_url">https://bibi.brycewg.com</string>
     <string name="about_open_docs">查看项目文档</string>
     <string name="about_docs_url">https://bibidocs.brycewg.com</string>
-    <string name="about_desc">简洁高效的语音输入法，支持多家 ASR 与 LLM 后处理</string>
+    <string name="about_desc">Sky Wuji Edition, based on BiBi Keyboard (Shuo Dian Sha) v4.4.5 by BryceWG. Unofficial modified distribution under Apache 2.0. Includes the Cherry Ivory theme and local FunASR Nano fixes. Original copyright and third-party notices are retained.</string>
 
     <string name="label_asr_total_chars">历史语音识别总字数：%1$d</string>
 
