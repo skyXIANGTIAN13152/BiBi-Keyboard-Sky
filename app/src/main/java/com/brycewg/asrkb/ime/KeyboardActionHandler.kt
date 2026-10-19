@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-19; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 package com.brycewg.asrkb.ime
 
 import android.content.Context
@@ -92,7 +93,8 @@ class KeyboardActionHandler(
                 failStage = AsrHistoryStore.AsrHistoryFailStage.RECOGNITION,
                 failReasonCode = AsrFailReasonCodes.TIMEOUT
             )
-            transitionToIdle()
+            transitionToIdle(keepMessage = true)
+            uiListener?.onStatusMessage(context.getString(R.string.error_asr_timeout))
         }
     )
 

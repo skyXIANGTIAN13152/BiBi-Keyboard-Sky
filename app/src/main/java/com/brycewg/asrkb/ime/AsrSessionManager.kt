@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-19; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * IME 录音会话管理与 ASR 引擎生命周期协调器。
  *
@@ -125,6 +126,7 @@ class AsrSessionManager(
     private var lastFinalVendorForStats: AsrVendor? = null
 
     // 本地模型：Processing 阶段等待“模型就绪”的耗时（用于将处理耗时统计从模型就绪开始）
+    private var lastAllocatedSessionSeq: Long = 0L
     private var sessionSeq: Long = 0L
     private var engineSessionSeq: Long = 0L
     private var engineListenerBridge: SessionBoundEngineListener? = null
@@ -153,9 +155,9 @@ class AsrSessionManager(
     )
 
     private fun nextSessionSeq(): Long {
-        sessionSeq += 1L
-        // 会话序号会被复用（结束时归零、下次又从 1 开始），onStopped 去重闸门必须跟着新会话重置，
-        // 否则自动判停这条只靠 onStopped 驱动的链路从第二次录音起就会整段丢失。
+        // 活动会话结束后会归零；分配计数器必须独立保留，防止迟到回调命中新会话。
+        lastAllocatedSessionSeq += 1L
+        sessionSeq = lastAllocatedSessionSeq
         stoppedSessionGate.reset()
         return sessionSeq
     }

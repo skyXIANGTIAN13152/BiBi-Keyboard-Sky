@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-19; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 package com.brycewg.asrkb.asr
 
 import com.brycewg.asrkb.store.AsrRuntimeVendorSnapshot
@@ -19,6 +20,7 @@ internal data class BackupSwitchPlan(
  * 统一的 ASR 超时计算。
  * - 云端/默认：基准 10 秒，每增加 5 秒录音增加 2 秒，上限 40 秒。
  * - 本地模型：按 vendor 放宽最短等待与上限，避免重模型在设备侧推理时过早超时。
+ * - FunASR Nano：禁用自动处理超时，等待识别完成或用户取消。
  */
 object AsrTimeoutCalculator {
     private const val BASE_TIMEOUT_MS = 10000L
@@ -58,11 +60,13 @@ object AsrTimeoutCalculator {
         return rawTimeoutMs.coerceIn(profile.minTimeoutMs, profile.maxTimeoutMs)
     }
 
+    /** Null disables the automatic processing timer; it is not a long finite delay. */
     internal fun calculateProcessingTimeoutMs(
         audioMs: Long,
         vendor: AsrVendor?,
         statsSnapshot: AsrRuntimeVendorSnapshot? = null
-    ): Long {
+    ): Long? {
+        if (vendor == AsrVendor.FunAsrNano) return null
         val staticTimeoutMs = calculateTimeoutMs(audioMs, vendor)
         val dynamicBaselineMs = dynamicSlowBaselineMs(statsSnapshot) ?: return staticTimeoutMs
         val profile = profileFor(vendor)
@@ -70,6 +74,7 @@ object AsrTimeoutCalculator {
             .coerceIn(profile.minTimeoutMs, profile.maxTimeoutMs)
     }
 
+    /** A disabled timer on either participating engine disables the session timer. */
     internal fun calculateBackupAwareProcessingTimeoutMs(
         audioMs: Long,
         primaryVendor: AsrVendor?,
@@ -79,22 +84,27 @@ object AsrTimeoutCalculator {
         backupStatsSnapshot: AsrRuntimeVendorSnapshot? = null,
         sensitivityTier: Int = 1,
         primaryStreaming: Boolean = true
-    ): Long {
+    ): Long? {
         val primaryTimeoutMs = calculateProcessingTimeoutMs(
             audioMs = audioMs,
             vendor = primaryVendor,
             statsSnapshot = primaryStatsSnapshot
-        )
+        ) ?: return null
         return when (backupStrategy) {
             AsrParallelEngineDecision.UseParallel -> {
                 val backupProcessingTimeoutMs = calculateProcessingTimeoutMs(
                     audioMs = audioMs,
                     vendor = backupVendor,
                     statsSnapshot = backupStatsSnapshot
-                )
+                ) ?: return null
                 maxOf(primaryTimeoutMs, backupProcessingTimeoutMs) + BACKUP_PROCESSING_MARGIN_MS
             }
             AsrParallelEngineDecision.UseLazyLocalBackup -> {
+                val backupInferenceMs = calculateProcessingTimeoutMs(
+                    audioMs = audioMs,
+                    vendor = backupVendor,
+                    statsSnapshot = backupStatsSnapshot
+                ) ?: return null
                 // Processing timeout is the final session fuse. It must leave room after
                 // the switch deadline for lazy backup startup and inference; it does not
                 // decide whether backup is allowed to win.
@@ -107,11 +117,6 @@ object AsrTimeoutCalculator {
                     backupStrategy = AsrParallelEngineDecision.UseLazyLocalBackup,
                     backupStatsSnapshot = backupStatsSnapshot,
                     sensitivityTier = sensitivityTier
-                )
-                val backupInferenceMs = calculateProcessingTimeoutMs(
-                    audioMs = audioMs,
-                    vendor = backupVendor,
-                    statsSnapshot = backupStatsSnapshot
                 )
                 maxOf(
                     primaryTimeoutMs + BACKUP_PROCESSING_MARGIN_MS,

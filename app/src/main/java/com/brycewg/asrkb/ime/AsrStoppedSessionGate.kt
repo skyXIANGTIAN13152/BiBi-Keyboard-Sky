@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-19; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * 按 IME 录音会话去重 onStopped 终态交付。
  *
@@ -10,8 +11,7 @@ internal class AsrStoppedSessionGate {
     private var deliveredSessionSeq = 0L
 
     /**
-     * 会话序号在会话结束时会被归零并由下一次录音复用，
-     * 因此每次新会话开始必须重置，否则后续会话的 onStopped 会被误判成重复交付而丢弃。
+     * 新录音开始时清除上一轮的交付记录；迟到回调由会话管理器的唯一序号校验拦截。
      */
     fun reset() {
         synchronized(lock) { deliveredSessionSeq = 0L }

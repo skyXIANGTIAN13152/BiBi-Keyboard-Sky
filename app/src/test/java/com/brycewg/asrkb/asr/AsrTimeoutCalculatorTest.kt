@@ -6,6 +6,7 @@ import androidx.test.core.app.ApplicationProvider
 import com.brycewg.asrkb.store.AsrRuntimeVendorSnapshot
 import com.brycewg.asrkb.store.Prefs
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -20,6 +21,104 @@ class AsrTimeoutCalculatorTest {
             .edit()
             .clear()
             .commit()
+    }
+
+    @Test
+    fun funAsrNanoDoesNotTimeoutRecordingsThatPreviouslyLostCompletedResults() {
+        // Device failures: inference completed in 18.768, 16.717, 24.183 and
+        // 26.369 seconds after the old 15-21.8 second UI deadlines expired.
+        for (audioMs in listOf(15_600L, 19_300L, 25_500L, 33_800L)) {
+            assertNull(
+                AsrTimeoutCalculator.calculateBackupAwareProcessingTimeoutMs(
+                    audioMs = audioMs,
+                    primaryVendor = AsrVendor.FunAsrNano,
+                    primaryStatsSnapshot = snapshot(
+                        vendor = AsrVendor.FunAsrNano,
+                        targetAudioMs = audioMs,
+                        slowRequestMs = 13_000L
+                    ),
+                    backupStrategy = AsrParallelEngineDecision.UsePrimaryOnly
+                )
+            )
+        }
+    }
+
+    @Test
+    fun funAsrNanoProcessingTimeoutIsDisabledRegardlessOfDurationOrRuntimeStats() {
+        for (audioMs in listOf(Long.MIN_VALUE, -1L, 0L, 300_000L, Long.MAX_VALUE)) {
+            val snapshots = listOf(
+                null,
+                snapshot(AsrVendor.FunAsrNano, audioMs, requestSampleCount = 4, slowRequestMs = 13_000L),
+                snapshot(AsrVendor.FunAsrNano, audioMs, slowRequestMs = 1_000L),
+                snapshot(AsrVendor.FunAsrNano, audioMs, slowRequestMs = Long.MAX_VALUE)
+            )
+            for (stats in snapshots) {
+                assertNull(
+                    AsrTimeoutCalculator.calculateProcessingTimeoutMs(audioMs, AsrVendor.FunAsrNano, stats)
+                )
+            }
+        }
+    }
+
+    @Test
+    fun funAsrNanoPrimaryDisablesSessionTimeoutForEveryBackupStrategy() {
+        val strategies = listOf(null) + AsrParallelEngineDecision.entries
+        for (strategy in strategies) {
+            for (audioMs in listOf(Long.MIN_VALUE, 20_000L, Long.MAX_VALUE)) {
+                assertNull(
+                    AsrTimeoutCalculator.calculateBackupAwareProcessingTimeoutMs(
+                        audioMs = audioMs,
+                        primaryVendor = AsrVendor.FunAsrNano,
+                        backupStrategy = strategy,
+                        backupVendor = AsrVendor.SenseVoice
+                    )
+                )
+            }
+        }
+    }
+
+    @Test
+    fun funAsrNanoBackupDisablesParallelAndLazySessionTimeoutWithoutApplyingCaps() {
+        for (strategy in listOf(AsrParallelEngineDecision.UseParallel, AsrParallelEngineDecision.UseLazyLocalBackup)) {
+            for (audioMs in listOf(Long.MIN_VALUE, 20_000L, Long.MAX_VALUE)) {
+                val snapshots = listOf(
+                    null,
+                    snapshot(AsrVendor.FunAsrNano, audioMs, slowRequestMs = Long.MAX_VALUE, p90LoadMs = Long.MAX_VALUE)
+                )
+                for (stats in snapshots) {
+                    assertNull(
+                        AsrTimeoutCalculator.calculateBackupAwareProcessingTimeoutMs(
+                            audioMs = audioMs,
+                            primaryVendor = AsrVendor.OpenAI,
+                            backupStrategy = strategy,
+                            backupVendor = AsrVendor.FunAsrNano,
+                            backupStatsSnapshot = stats
+                        )
+                    )
+                }
+            }
+        }
+    }
+
+    @Test
+    fun inactiveFunAsrNanoBackupDoesNotDisablePrimaryTimeout() {
+        for (strategy in listOf(null, AsrParallelEngineDecision.UsePrimaryOnly)) {
+            assertEquals(
+                18_000L,
+                AsrTimeoutCalculator.calculateBackupAwareProcessingTimeoutMs(
+                    audioMs = 20_000L,
+                    primaryVendor = AsrVendor.OpenAI,
+                    backupStrategy = strategy,
+                    backupVendor = AsrVendor.FunAsrNano
+                )
+            )
+        }
+    }
+
+    @Test
+    fun staticEstimateRemainsIndependentOfDisabledFunAsrNanoProcessingTimer() {
+        assertEquals(18_000L, AsrTimeoutCalculator.calculateTimeoutMs(20_000L, AsrVendor.FunAsrNano))
+        assertNull(AsrTimeoutCalculator.calculateProcessingTimeoutMs(20_000L, AsrVendor.FunAsrNano))
     }
 
     @Test
@@ -354,7 +453,7 @@ class AsrTimeoutCalculatorTest {
     }
 
     @Test
-    fun parallelProcessingTimeoutLetsResidentLocalBackupFinishShortAudio() {
+    fun parallelProcessingTimeoutLetsResidentNanoBackupFinishWithoutDeadline() {
         val timeoutMs = AsrTimeoutCalculator.calculateBackupAwareProcessingTimeoutMs(
             audioMs = 1_000L,
             primaryVendor = AsrVendor.OpenAI,
@@ -365,7 +464,7 @@ class AsrTimeoutCalculatorTest {
             sensitivityTier = 1
         )
 
-        assertEquals(17_000L, timeoutMs)
+        assertNull(timeoutMs)
     }
 
     @Test
@@ -474,9 +573,9 @@ class AsrTimeoutCalculatorTest {
                 slowRequestMs = 16_000L
             ),
             backupStrategy = AsrParallelEngineDecision.UseLazyLocalBackup,
-            backupVendor = AsrVendor.FunAsrNano,
+            backupVendor = AsrVendor.FireRedAsr,
             backupStatsSnapshot = snapshot(
-                vendor = AsrVendor.FunAsrNano,
+                vendor = AsrVendor.FireRedAsr,
                 targetAudioMs = 10_000L,
                 slowRequestMs = 130_000L,
                 p90LoadMs = 50_000L

@@ -1,4 +1,4 @@
-// Modified for Sky Wuji Edition on 2026-10-11; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
+// Modified for Sky Wuji Edition on 2026-10-20; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose") version "2.3.21"
@@ -29,8 +29,8 @@ android {
         applicationId = "com.brycewg.asrkb.cherry"
         minSdk = 26
         targetSdk = 36
-        versionCode = 176
-        versionName = "4.4.5-sky.1"
+        versionCode = 180
+        versionName = "4.4.5-sky.4"
 
         // 默认仅构建 arm64-v8a 以减小包体体积；CI 可通过 -PabiFilters=armeabi-v7a 单独出包。
         ndk {

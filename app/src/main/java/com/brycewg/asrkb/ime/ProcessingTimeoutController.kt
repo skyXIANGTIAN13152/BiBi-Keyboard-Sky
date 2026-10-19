@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-19; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 package com.brycewg.asrkb.ime
 
 import android.util.Log
@@ -54,7 +55,7 @@ internal class ProcessingTimeoutController(
             backupStatsSnapshot = backupSnapshot,
             sensitivityTier = safeBackupSensitivityTier(),
             primaryStreaming = backupEngine?.primaryStreamingForSwitchPlan ?: true
-        )
+        ) ?: return
 
         val shouldDeferForLocalModel = shouldDeferForLocalModel(backupEngine != null)
         job = scope.launch {

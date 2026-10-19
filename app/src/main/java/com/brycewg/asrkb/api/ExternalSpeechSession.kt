@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-19; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * 外部语音识别共享会话，供说点啥自有 AIDL 与 fxliang fcitx5 Provider AIDL 复用。
  *
@@ -245,7 +246,10 @@ internal class ExternalSpeechSession(
             backupStatsSnapshot = prefs.getAsrRuntimeStatsSnapshotOrNull(backupVendor, audioMs),
             sensitivityTier = safeBackupSensitivityTier(),
             primaryStreaming = backupEngine?.primaryStreamingForSwitchPlan ?: true
-        )
+        ) ?: run {
+            cancelProcessingTimeout()
+            return
+        }
         synchronized(processingTimeoutLock) {
             if (processingTimeoutJob != null) return
             processingTimeoutJob = sessionScope.launch {

@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-19; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * Android 标准 `RecognitionService` 适配入口。
  *
@@ -691,7 +692,7 @@ class AsrRecognitionService : RecognitionService() {
         }
 
         private fun scheduleProcessingTimeoutIfNeeded() {
-            // stop->processing 后必须最终回调 results/error；否则会卡住 currentSession，导致后续 startListening 永久 BUSY。
+            // 有限等待策略保留终态兜底；无上限策略等待识别结束或客户端主动取消。
             cancelProcessingTimeout()
             val audioMs = lastAudioMsForTimeout
             val backupEngine = engine as? BackupAwareAsrEngine
@@ -706,7 +707,7 @@ class AsrRecognitionService : RecognitionService() {
                 backupStatsSnapshot = prefs.getAsrRuntimeStatsSnapshotOrNull(backupVendor, audioMs),
                 sensitivityTier = safeBackupSensitivityTier(),
                 primaryStreaming = backupEngine?.primaryStreamingForSwitchPlan ?: true
-            )
+            ) ?: return
             processingTimeoutJob = serviceScope.launch {
                 val shouldDeferForLocalModel =
                     backupEngine == null && isLocalAsrVendor(prefs.asrVendor)

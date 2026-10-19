@@ -1,10 +1,10 @@
 {
-  "version": "4.4.5-sky.1",
-  "version_code": 176,
+  "version": "4.4.5-sky.4",
+  "version_code": 180,
   "app_name": "说点啥(Sky无极君特供版)",
-  "download_url": "https://github.com/skyXIANGTIAN13152/BiBi-Keyboard-Sky/releases/tag/v4.4.5-sky.1",
-  "update_time": "2026-10-11",
-  "release_notes": "基于 BryceWG/BiBi-Keyboard v4.4.5 的非官方 Sky无极君特供版。保留 Cherry 主题与长句、静音标记修复。",
-  "release_notes_en": "Unofficial Sky Wuji edition based on BryceWG/BiBi-Keyboard v4.4.5.",
+  "download_url": "https://github.com/skyXIANGTIAN13152/BiBi-Keyboard-Sky/releases/tag/v4.4.5-sky.4",
+  "update_time": "2026-10-20",
+  "release_notes": "修复 FunASR Nano 长句被自动超时丢弃；录音期间提前分段识别，8 秒以内短句保持整句；保留手动取消、Cherry 主题与原签名。",
+  "release_notes_en": "Remove automatic FunASR Nano processing timeout, decode long recordings progressively while keeping short utterances whole, and retain manual cancellation, the Cherry theme and signing identity.",
   "update_policy": "Manual updates from this repository only."
 }

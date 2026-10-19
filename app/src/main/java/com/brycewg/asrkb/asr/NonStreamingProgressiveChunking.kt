@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-20; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /** 非流式识别的实时 PCM 分段与分段结果收口。 */
 package com.brycewg.asrkb.asr
 
@@ -9,6 +10,22 @@ import java.io.ByteArrayOutputStream
 internal const val NON_STREAMING_MIN_CHUNK_MS = 15_000
 internal const val NON_STREAMING_MAX_CHUNK_MS = 24_000
 internal const val NON_STREAMING_MIN_SILENCE_MS = 300
+
+internal fun createNonStreamingPcmChunker(
+    sampleRate: Int,
+    vendor: AsrVendor?
+): NonStreamingPcmChunker = if (vendor == AsrVendor.FunAsrNano) {
+    // Keep utterances <=8s whole. For longer speech, feed Nano near its safe decode
+    // size while recording continues, instead of waiting for a generic 15–24s batch.
+    NonStreamingPcmChunker(
+        sampleRate = sampleRate,
+        minChunkMs = FUNASR_NANO_MIN_CHUNK_MS,
+        maxChunkMs = FUNASR_NANO_MAX_CHUNK_MS,
+        deferUntilMaxDuration = true
+    )
+} else {
+    NonStreamingPcmChunker(sampleRate)
+}
 
 internal fun joinNonStreamingChunkTexts(texts: List<String>): String = buildString {
     for (text in texts) {
@@ -56,18 +73,23 @@ internal class NonStreamingPcmChunker(
     sampleRate: Int,
     minChunkMs: Int = NON_STREAMING_MIN_CHUNK_MS,
     maxChunkMs: Int = NON_STREAMING_MAX_CHUNK_MS,
-    minSilenceMs: Int = NON_STREAMING_MIN_SILENCE_MS
+    minSilenceMs: Int = NON_STREAMING_MIN_SILENCE_MS,
+    private val deferUntilMaxDuration: Boolean = false
 ) {
     private val minBytes = pcmBytes(sampleRate, minChunkMs)
     private val maxBytes = pcmBytes(sampleRate, maxChunkMs)
     private val minSilenceBytes = pcmBytes(sampleRate, minSilenceMs)
     private val buffer = ByteArrayOutputStream(maxBytes)
     private var silenceStart: Int? = null
+    private var rememberedSilenceCut: Int? = null
+    private var rememberedSilenceBytes = 0
 
     init {
         require(sampleRate > 0)
         require(minChunkMs > 0 && maxChunkMs >= minChunkMs)
         require(minSilenceMs > 0)
+        // After a cut, remembered candidates must fall before the next cut window.
+        require(!deferUntilMaxDuration || minBytes >= maxBytes - minBytes)
     }
 
     fun append(pcm: ByteArray, isSpeech: Boolean): List<ByteArray> {
@@ -81,6 +103,13 @@ internal class NonStreamingPcmChunker(
         return buildList {
             while (true) {
                 val size = buffer.size()
+                if (deferUntilMaxDuration) {
+                    rememberSilenceCut(size)
+                    // A recording ending at exactly maxBytes still stays in one piece.
+                    if (size <= maxBytes) break
+                    add(takePrefix(rememberedSilenceCut ?: maxBytes))
+                    continue
+                }
                 val quietStart = silenceStart
                 val quietCut = if (
                     quietStart != null &&
@@ -104,7 +133,29 @@ internal class NonStreamingPcmChunker(
         val tail = buffer.toByteArray()
         buffer.reset()
         silenceStart = null
+        clearRememberedSilence()
         return tail
+    }
+
+    private fun rememberSilenceCut(size: Int) {
+        val quietStart = silenceStart ?: return
+        if (size - quietStart < minSilenceBytes) return
+        val start = maxOf(quietStart, minBytes)
+        val end = minOf(size, maxBytes)
+        if (end <= start) return
+        val length = end - start
+        val cut = ((start.toLong() + end) / 2L).toInt().alignPcm16()
+        if (length > rememberedSilenceBytes ||
+            (length == rememberedSilenceBytes && cut > (rememberedSilenceCut ?: 0))
+        ) {
+            rememberedSilenceCut = cut
+            rememberedSilenceBytes = length
+        }
+    }
+
+    private fun clearRememberedSilence() {
+        rememberedSilenceCut = null
+        rememberedSilenceBytes = 0
     }
 
     private fun takePrefix(cut: Int): ByteArray {
@@ -115,6 +166,7 @@ internal class NonStreamingPcmChunker(
         silenceStart = silenceStart?.let { start ->
             if (start < cut) 0 else start - cut
         }
+        clearRememberedSilence()
         return head
     }
 

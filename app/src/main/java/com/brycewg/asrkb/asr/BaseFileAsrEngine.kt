@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-19; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 package com.brycewg.asrkb.asr
 
 import android.content.Context
@@ -55,6 +56,11 @@ abstract class BaseFileAsrEngine(
         onRequestDuration
     }
     protected open val progressiveVendor: AsrVendor? = null
+
+    // Share the same live chunk size with microphone and pushed-PCM capture.
+    internal fun createProgressiveChunker(): NonStreamingPcmChunker =
+        createNonStreamingPcmChunker(sampleRate, progressiveVendor)
+
     protected val isProgressiveChunkDecode: Boolean
         get() = progressiveChunkDecode
 
@@ -342,7 +348,7 @@ abstract class BaseFileAsrEngine(
         val vadInputLeveler = VadInputLevelerBranch(sampleRate = sampleRate)
         var vadLevelerFinishReason = "capture_end"
         val progressiveChunker = if (progressiveChunkingEnabled) {
-            NonStreamingPcmChunker(sampleRate)
+            createProgressiveChunker()
         } else {
             null
         }

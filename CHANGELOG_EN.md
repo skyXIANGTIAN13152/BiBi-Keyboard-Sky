@@ -1,5 +1,15 @@
 # Changelog
 
+## v4.4.5-sky.4 (2026-10-20) — Unofficial Sky edition
+
+- Remove the automatic FunASR Nano processing timeout that discarded results before long utterances finished; retain manual cancellation.
+- Decode long recordings progressively around pauses in the 6–8 second window, while keeping utterances of up to 8 seconds whole.
+- Isolate late callbacks after cancellation, timeout or completion from the next recording.
+- Retain the Cherry theme, silence-marker cleanup, exactly-zero audio protection and signing identity; publish the previously local sky.2/sky.3 fixes.
+- Pass 88 regression tests; the same recognition code has device validation across six short, long and complex samples.
+
+---
+
 ## v4.4.5 (2026-09-11)
 
 ### New Features

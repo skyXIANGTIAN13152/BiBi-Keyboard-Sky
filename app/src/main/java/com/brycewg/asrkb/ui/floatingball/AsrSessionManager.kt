@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-19; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 /**
  * 悬浮球录音会话管理与结果提交协调器。
  *
@@ -1205,6 +1206,7 @@ class AsrSessionManager(
         } catch (e: Throwable) {
             Log.w(TAG, "Failed to cancel previous timeout job", e)
         }
+        processingTimeoutJob = null
         val audioMs = audioMsOverride ?: lastAudioMsForStats
         val backupEngine = asrEngine as? BackupAwareAsrEngine
         val primaryVendor = backupEngine?.primaryVendor ?: sessionPrimaryVendor
@@ -1218,7 +1220,7 @@ class AsrSessionManager(
             backupStatsSnapshot = prefs.getAsrRuntimeStatsSnapshotOrNull(backupVendor, audioMs),
             sensitivityTier = safeBackupSensitivityTier(),
             primaryStreaming = backupEngine?.primaryStreamingForSwitchPlan ?: true
-        )
+        ) ?: return
         processingTimeoutJob = serviceScope.launch {
             if (!isSessionActive(sessionToken)) return@launch
             val shouldDeferForLocalModel = try {

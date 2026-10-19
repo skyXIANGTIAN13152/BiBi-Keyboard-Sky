@@ -17,7 +17,7 @@
 
 ## 安装与使用
 
-当前版本：**4.4.5-sky.1（176）**。当前 APK 面向 **ARM64 Android 8.0 及以上**设备。
+当前版本：**4.4.5-sky.4（180）**。FunASR Nano 在长句录音期间提前分段识别，减少停录后的等待；8 秒以内的短句保持整句处理。取消 Nano 的自动处理超时，仍可手动取消，并隔离上一次会话的迟到回调。详见 [修改说明](MODIFICATIONS.md)。当前 APK 面向 **ARM64 Android 8.0 及以上**设备。
 
 1. 在 [Releases](https://github.com/skyXIANGTIAN13152/BiBi-Keyboard-Sky/releases) 下载 APK 后安装。
 2. 新用户按应用引导启用语音输入法并授予麦克风权限。
@@ -25,8 +25,8 @@
 
 GitHub 会自动简化包含中文的附件文件名，因此提供两种下载：
 
-- **直接安装 APK**：`SaySomething-Sky-Wuji-4.4.5-sky.1-arm64.apk`，安装后应用名称为 **说点啥(Sky无极君特供版)**。
-- **保留中文安装包名称的 ZIP**：`SaySomething-Sky-Wuji-4.4.5-sky.1-arm64.zip`，解压后得到 **说点啥(Sky无极君特供版).apk**。
+- **直接安装 APK**：`SaySomething-Sky-Wuji-4.4.5-sky.4-arm64.apk`，安装后应用名称为 **说点啥(Sky无极君特供版)**。
+- **保留中文安装包名称的 ZIP**：`SaySomething-Sky-Wuji-4.4.5-sky.4-arm64.zip`，解压后得到 **说点啥(Sky无极君特供版).apk**。
 
 两种下载包含同一个已签名安装包，任选一种即可。
 
@@ -40,7 +40,7 @@ GitHub 会自动简化包含中文的附件文件名，因此提供两种下载�
 
 上游版本：`v4.4.5`；上游提交：[`12eb5c31ec72f8aff34c53eccbcca1f605e54a41`](https://github.com/BryceWG/BiBi-Keyboard/commit/12eb5c31ec72f8aff34c53eccbcca1f605e54a41)。上游归档校验记录见 [UPSTREAM.json](UPSTREAM.json)。
 
-25 项静音标记、全零音频、分段及合并测试已通过。识别修复在 HONOR Android 15 手机上用约 51 秒的长停顿样本复测，输出与未加停顿的原语音一致。改名版本保留同一识别修复。测试结果不代表所有设备或噪声环境下的识别准确率保证。
+88 项回归测试通过，覆盖短句保护、长音频完整性、分段合并、手动取消、无超时等待和迟到结果隔离。相同识别代码的 sky.3 构建已在 Android 15 手机上回放 6 条短句、长句及长难句样本（3.8～33.6 秒），均正常返回一次最终结果；四条长句的平均停录后等待从 25.31 秒降至 20.20 秒。短句未确认稳定提速，个别长句的字词和标点有变化；这是单设备样本比较，不是准确率保证。sky.4 仅更新发行版本与公开文档，识别代码与该已测构建一致。详情见 [验证记录](RELEASE_VALIDATION.json)。
 
 ## 从源码构建
 

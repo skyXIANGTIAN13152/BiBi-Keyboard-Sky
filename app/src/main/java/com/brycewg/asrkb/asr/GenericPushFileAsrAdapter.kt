@@ -1,3 +1,4 @@
+// Modified for Sky Wuji Edition on 2026-10-19; based on BryceWG/BiBi-Keyboard v4.4.5. See MODIFICATIONS.md.
 package com.brycewg.asrkb.asr
 
 import android.content.Context
@@ -28,7 +29,8 @@ internal class GenericPushFileAsrAdapter(
     private val listener: StreamingAsrEngine.Listener,
     private val recognizer: PcmBatchRecognizer,
     private val applyAudioPreprocess: Boolean = true,
-    private val progressiveResults: NonStreamingChunkResultCollector? = null
+    private val progressiveResults: NonStreamingChunkResultCollector? = null,
+    private val progressiveChunkerFactory: (() -> NonStreamingPcmChunker)? = null
 ) : StreamingAsrEngine,
     ExternalPcmConsumer,
     CancelableAsrEngine {
@@ -63,7 +65,9 @@ internal class GenericPushFileAsrAdapter(
         results.start()
         progressiveAudioBytes = 0
         progressiveRecognizer?.beginExternalProgressiveSession()
-        progressiveChunker = NonStreamingPcmChunker(sampleRate = 16_000)
+        progressiveChunker = progressiveChunkerFactory?.invoke()
+            ?: progressiveRecognizer?.createProgressiveChunker()
+            ?: NonStreamingPcmChunker(sampleRate = 16_000)
         sentenceVadDetector = createNonStreamingSentenceVad(context, 16_000)
         val channel = Channel<ByteArray>(Channel.UNLIMITED)
         chunkChannel = channel
