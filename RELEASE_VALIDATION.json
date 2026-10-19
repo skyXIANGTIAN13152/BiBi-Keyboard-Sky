@@ -1,23 +1,121 @@
 {
-  "version": "4.4.5-sky.1",
-  "versionCode": 176,
+  "version": "4.4.5-sky.4",
+  "versionCode": 180,
   "applicationId": "com.brycewg.asrkb.cherry",
   "applicationLabel": "说点啥(Sky无极君特供版)",
-  "date": "2026-10-11",
-  "apkSha256": "5f5856700a2a2f2be350b91395516ef51a9dfb05b81d817a44b13ac9eca0443b",
+  "date": "2026-10-20",
+  "apkSha256": "a6b5605f8b5b9859477da18d57df15dc14f107aa405002bef4f0d62e55ca8cb8",
+  "apkFilename": "SaySomething-Sky-Wuji-4.4.5-sky.4-arm64.apk",
+  "compiledSourceCommit": "f1f95c29b3ac13902cc8d89234521de6357ac2d0",
   "signingCertificateSha256": "082bc602b3b7503d6a672749d49a89734cf639909ee3685687d143b81e582004",
-  "unitTestsPassed": 25,
   "sameSignatureAsPreviousPersonalEdition": true,
+  "zipAlignmentVerified": true,
   "publicSourceMatchesCompiledAppSource": true,
-  "phoneInstallationVerified": true,
-  "attributionVisibleInApp": true,
+  "unitTestsPassed": 88,
+  "unitTestSuites": [
+    {
+      "name": "com.brycewg.asrkb.api.ExternalSpeechSessionUnboundedWaitTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "name": "com.brycewg.asrkb.asr.AsrTimeoutCalculatorTest",
+      "tests": 26,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "name": "com.brycewg.asrkb.asr.FunAsrNanoAudioTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "name": "com.brycewg.asrkb.asr.FunAsrNanoTextTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "name": "com.brycewg.asrkb.asr.GenericPushFileAsrAdapterTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "name": "com.brycewg.asrkb.asr.LocalOfflinePcmChunkingTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "name": "com.brycewg.asrkb.asr.NanoProgressiveChunkingTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "name": "com.brycewg.asrkb.asr.NonStreamingProgressiveChunkingTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "name": "com.brycewg.asrkb.ime.AsrInputCompletionPolicyTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "name": "com.brycewg.asrkb.ime.AsrSessionManagerSessionIsolationTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "name": "com.brycewg.asrkb.ime.AsrStoppedSessionGateTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "name": "com.brycewg.asrkb.ime.ProcessingTimeoutControllerTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0
+    }
+  ],
+  "releaseBuildAndVitalLintPassed": true,
+  "targetArchitectures": [
+    "arm64-v8a"
+  ],
+  "minimumAndroidApi": 26,
+  "bundledCloudApiKey": false,
+  "bundledPocketBaseAddress": false,
   "originalLicenseAndNoticeIncluded": true,
-  "recognitionFixDeviceTest": {
-    "testedBaseVersion": "4.4.5-cherry.3",
-    "unchangedInThisEdition": true,
-    "audioDurationMs": 51400,
-    "speechPreserved": true,
-    "noSilenceMarker": true
+  "previousDeviceValidation": {
+    "testedVersion": "4.4.5-sky.3",
+    "testedVersionCode": 179,
+    "recognitionCodeUnchangedInThisRelease": true,
+    "androidVersion": 15,
+    "validSampleCount": 6,
+    "coverage": [
+      "short utterances",
+      "long utterances",
+      "complex long utterance"
+    ],
+    "durationRangeSeconds": [
+      3.8,
+      33.6
+    ],
+    "allSamplesReturnedOneNonemptyFinalResult": true,
+    "errorsOrLeakedSilenceMarkers": 0,
+    "longSampleCount": 4,
+    "longMeanPostStopSecondsBefore": 25.31,
+    "longMeanPostStopSecondsAfter": 20.2,
+    "shortSpeechSpeedupEstablished": false,
+    "limitations": "Single-device sample comparison with possible cold-start and thermal variation; some long outputs changed words or punctuation. Not an accuracy benchmark. No recordings or transcripts are published."
   },
   "upstreamRepository": "https://github.com/BryceWG/BiBi-Keyboard",
   "upstreamTag": "v4.4.5",
